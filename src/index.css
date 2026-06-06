@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  
+  --color-gold-50: #FBFBFD;
+  --color-gold-100: #F5F5F7;
+  --color-gold-200: #E8E8ED;
+  --color-gold-300: #D2D2D7;
+  --color-gold-400: #86868B;
+  --color-gold-500: #0066CC;
+  --color-gold-600: #0071E3;
+  --color-gold-700: #004385;
+  --color-gold-800: #1D1D1F;
+  --color-gold-900: #1D1D1F;
+  --color-gold-950: #111112;
+
+  --color-zinc-950: #1D1D1F;
+  --color-slate-900: #1D1D1F;
+  --color-slate-950: #111112;
+}
+
+/* Brand Gradients - Blue, Turquoise, Seagreen */
+.bg-brand-grad {
+  background: linear-gradient(135deg, #0066ff 0%, #00d4aa 50%, #10b981 100%) !important;
+}
+
+.hover-bg-brand-grad:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #059669 100%) !important;
+}
+
+.text-brand-grad {
+  background: linear-gradient(135deg, #0066ff 0%, #00d4aa 50%, #10b981 100%);
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.border-brand-grad {
+  border-image: linear-gradient(135deg, #0066ff 0%, #00d4aa 50%, #10b981 100%) 1 !important;
+}
+
+.border-brand-grad-hover:hover {
+  border-image: linear-gradient(135deg, #1d4ed8 0%, #059669 100%) 1 !important;
+}
+
+@layer base {
+  html, body {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans) !important;
+    background-color: #FBFBFD;
+    color: #1D1D1F;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Universal Poppins styling for all human copies */
+  *, h1, h2, h3, h4, h5, h6, p, span, a, button, input, select, textarea, label {
+    font-family: var(--font-sans) !important;
+  }
+
+  /* Keep authentic system/monospaced elements styled with JetBrains Mono */
+  code, pre, .font-mono, [class*="font-mono"] {
+    font-family: var(--font-mono) !important;
+  }
+
+  /* Elegant Thin/Light typography for an ultra-premium aesthetic */
+  h1, .text-4xl, .text-5xl, .text-6xl, .text-7xl {
+    font-weight: 200 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  h2, h3, h4, .text-lg, .text-xl, .text-2xl, .text-3xl {
+    font-weight: 300 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  /* De-bold subheadings, menus, headings and standard structural text to light/medium weight */
+  h5, h6, .font-semibold, .font-bold {
+    font-weight: 400 !important;
+  }
+
+  /* Soften text weights in secondary blocks for airy spacing */
+  .font-medium {
+    font-weight: 300 !important;
+  }
+
+
+
+  /* Custom high-end scrollbar matching the sleek theme */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 102, 204, 0.15);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 102, 204, 0.3);
+  }
+}
+
+/* Glassmorphism effects redesigned for Sleek Apple interface */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.glass-nav-dark {
+  background: rgba(29, 29, 31, 0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 45%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 55%
+  );
+  transform: rotate(45deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+.card-shine:hover::after {
+  transform: translate(50%, 50%) rotate(45deg);
+}
