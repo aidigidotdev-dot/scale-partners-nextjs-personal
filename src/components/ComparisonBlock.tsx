@@ -3,9 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { CheckCircle2, XCircle, Shield, Award, Landmark, Zap } from 'lucide-react';
+import { CheckCircle2, XCircle, Shield, Award, Landmark, Zap, Globe, Building2 } from 'lucide-react';
+import { PageId } from '../types';
 
-export default function ComparisonBlock() {
+interface ComparisonBlockProps {
+  setPage?: (page: PageId) => void;
+}
+
+export default function ComparisonBlock({ setPage }: ComparisonBlockProps) {
   const comparisonData = {
     title: "The Scale Partners Difference",
     badge: "D33 Strategic Mandate Alignment",
@@ -176,81 +181,202 @@ export default function ComparisonBlock() {
           </div>
         </div>
 
-        {/* JURISDICTION COMPARISON TABLE (Mainland vs Free Zone) */}
+        {/* JURISDICTION COMPARISON GRID (Mainland vs Free Zone) */}
         <div className="mb-20 bg-white border border-zinc-150 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.02)] text-left relative z-10">
-          <div className="pb-6 mb-6 border-b border-zinc-100">
-            <h3 className="text-[20px] font-bold text-zinc-900 font-sans tracking-tight">Mainland vs Free Zone Jurisdiction Comparison</h3>
-            <p className="text-[13.5px] text-zinc-500 font-sans mt-1">Understanding the trade boundaries, municipal access, office flexibility, and setup cost differences.</p>
+          
+          <div className="pb-6 mb-8 border-b border-zinc-100 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <h3 className="text-[20px] font-bold text-zinc-900 font-sans tracking-tight">Mainland vs Free Zone Jurisdiction Comparison</h3>
+              <p className="text-[13.5px] text-zinc-500 font-sans mt-1">Understanding the trade boundaries, municipal access, office flexibility, and setup cost differences.</p>
+            </div>
+            <div className="flex space-x-2 shrink-0">
+              <span className="inline-flex items-center space-x-1.5 bg-emerald-500/10 text-emerald-600 px-3 py-1 rounded-full font-mono text-[9.5px] font-bold uppercase tracking-widest border border-emerald-500/15">
+                <span>Active Comparison Matrix</span>
+              </span>
+            </div>
           </div>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse min-w-[700px]">
-              <thead>
-                <tr className="border-b border-zinc-150 text-[10.5px] font-mono uppercase tracking-[0.15em] text-zinc-400">
-                  <th className="pb-4 font-semibold w-1/4">Key Feature</th>
-                  <th className="pb-4 px-6 font-semibold text-zinc-800 w-3/8 text-center">Mainland Entity</th>
-                  <th className="pb-4 px-6 font-semibold text-zinc-800 w-3/8 text-center">Free Zone Entity</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-zinc-100/80 text-[13.5px]">
-                <tr className="hover:bg-zinc-50/20 transition-colors">
-                  <td className="py-5 font-semibold text-zinc-900">UAE Local Market Trade</td>
-                  <td className="py-5 px-6 text-center">
-                    <span className="inline-flex items-center justify-center bg-emerald-50 text-[#08854C] px-3.5 py-1.5 rounded-full border border-emerald-100/50 text-[12.5px] font-medium gap-1.5 shadow-3xs">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                      Yes (Direct local trade anywhere in UAE)
-                    </span>
-                  </td>
-                  <td className="py-5 px-6 text-center">
-                    <span className="inline-flex items-center justify-center bg-zinc-50 text-zinc-500 px-3.5 py-1.5 rounded-full border border-zinc-200/40 text-[12.5px] font-normal">
-                      Restricted to Zone / Third-Party Agents
-                    </span>
-                  </td>
-                </tr>
-                <tr className="hover:bg-zinc-50/20 transition-colors">
-                  <td className="py-5 font-semibold text-zinc-900">Government Contracts</td>
-                  <td className="py-5 px-6 text-center">
-                    <span className="inline-flex items-center justify-center bg-emerald-50 text-[#08854C] px-3.5 py-1.5 rounded-full border border-emerald-100/50 text-[12.5px] font-medium gap-1.5 shadow-3xs">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                      Yes (Direct bidding access for tenders)
-                    </span>
-                  </td>
-                  <td className="py-5 px-6 text-center">
-                    <span className="inline-flex items-center justify-center bg-zinc-50 text-zinc-400 px-3.5 py-1.5 rounded-full border border-zinc-200/20 text-[12.5px] font-normal">
-                      Usually Restricted from Mainland Tenders
-                    </span>
-                  </td>
-                </tr>
-                <tr className="hover:bg-zinc-50/20 transition-colors">
-                  <td className="py-5 font-semibold text-zinc-900">Office Requirements</td>
-                  <td className="py-5 px-6 text-center">
-                    <span className="inline-flex items-center justify-center bg-zinc-50 text-zinc-600 px-3.5 py-1.5 rounded-full border border-zinc-200/40 text-[12.5px] font-normal">
-                      Physical Premises Required (9 sqm/visa)
-                    </span>
-                  </td>
-                  <td className="py-5 px-6 text-center">
-                    <span className="inline-flex items-center justify-center bg-emerald-50 text-[#08854C] px-3.5 py-1.5 rounded-full border border-emerald-100/50 text-[12.5px] font-medium gap-1.5 shadow-3xs">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                      Flexible (Virtual, shared flexi, zero office)
-                    </span>
-                  </td>
-                </tr>
-                <tr className="hover:bg-zinc-50/20 transition-colors">
-                  <td className="py-5 font-semibold text-zinc-900">Startup Setup Cost</td>
-                  <td className="py-5 px-6 text-center">
-                    <span className="inline-flex items-center justify-center bg-zinc-50 text-zinc-600 px-3.5 py-1.5 rounded-full border border-zinc-200/40 text-[12.5px] font-normal">
-                      Higher (Municipal & government approvals)
-                    </span>
-                  </td>
-                  <td className="py-5 px-6 text-center">
-                    <span className="inline-flex items-center justify-center bg-emerald-50 text-[#08854C] px-3.5 py-1.5 rounded-full border border-emerald-100/50 text-[12.5px] font-medium gap-1.5 shadow-3xs">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                      Lower (Cost-effective startup packages)
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            
+            {/* Left Column: Dimensions (Hidden on mobile, layout as rows on mobile instead) */}
+            <div className="lg:col-span-4 hidden lg:flex flex-col justify-between py-6 pr-4">
+              <div className="space-y-12">
+                <div className="text-[11px] font-mono uppercase tracking-widest text-zinc-400 font-bold">Key Dimension</div>
+                
+                <div className="space-y-2 h-[120px] flex flex-col justify-center">
+                  <h4 className="text-[14px] font-bold text-zinc-900 leading-tight">UAE Onshore Commerce</h4>
+                  <p className="text-[12px] text-zinc-450 leading-normal">Ability to trade directly in the local UAE market and coordinate onshore deals.</p>
+                </div>
+                
+                <div className="space-y-2 h-[120px] flex flex-col justify-center">
+                  <h4 className="text-[14px] font-bold text-zinc-900 leading-tight">Government Procurement</h4>
+                  <p className="text-[12px] text-zinc-450 leading-normal">Direct bidding access for municipal, federal, or government tenders.</p>
+                </div>
+
+                <div className="space-y-2 h-[120px] flex flex-col justify-center">
+                  <h4 className="text-[14px] font-bold text-zinc-900 leading-tight">Office Requirements</h4>
+                  <p className="text-[12px] text-zinc-450 leading-normal">Obligatory physical premises and workspace leasing restrictions.</p>
+                </div>
+
+                <div className="space-y-2 h-[120px] flex flex-col justify-center">
+                  <h4 className="text-[14px] font-bold text-zinc-900 leading-tight">Initial Setup Cost</h4>
+                  <p className="text-[12px] text-zinc-450 leading-normal">Upfront capital requirement for registration and initial regulatory licensing.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Middle Column: Mainland Corporate Setup */}
+            <div className="lg:col-span-4 bg-emerald-500/[0.02] border-2 border-emerald-500/15 rounded-2xl p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between shadow-[0_20px_40px_rgba(18,183,106,0.02)]">
+              {/* Highlight ribbon */}
+              <div className="absolute top-0 right-0 bg-emerald-500 text-white text-[8px] font-mono font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+                Direct Access
+              </div>
+              
+              <div className="space-y-8">
+                <div className="flex items-center space-x-3.5 pb-4 border-b border-zinc-100">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center border border-emerald-500/20 shrink-0">
+                    <Globe className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-[16px] font-bold text-zinc-900 leading-tight">Mainland Entity</h3>
+                    <span className="text-[9.5px] font-mono uppercase text-[#08854C] font-semibold">Department of Economy (DET)</span>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  {/* Feature 1 */}
+                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left">
+                    <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest lg:hidden">UAE Onshore Commerce</span>
+                    <div className="flex items-start space-x-2.5">
+                      <CheckCircle2 className="w-4.5 h-4.5 text-emerald-500 shrink-0 mt-0.5" />
+                      <div className="text-[13.5px] font-medium text-zinc-800">Direct Onshore Trade (Unrestricted)</div>
+                    </div>
+                    <p className="text-[12px] text-zinc-500 font-light mt-1 pl-7 lg:hidden">Ability to trade directly in the local UAE market and coordinate onshore deals.</p>
+                  </div>
+
+                  {/* Feature 2 */}
+                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left">
+                    <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest lg:hidden">Government Procurement</span>
+                    <div className="flex items-start space-x-2.5">
+                      <CheckCircle2 className="w-4.5 h-4.5 text-emerald-500 shrink-0 mt-0.5" />
+                      <div className="text-[13.5px] font-medium text-zinc-800">Full Tendering Access (Municipal & Federal)</div>
+                    </div>
+                    <p className="text-[12px] text-zinc-500 font-light mt-1 pl-7 lg:hidden">Direct bidding access for municipal, federal, or government tenders.</p>
+                  </div>
+
+                  {/* Feature 3 */}
+                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left">
+                    <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest lg:hidden">Office Requirements</span>
+                    <div className="flex items-start space-x-2.5">
+                      <CheckCircle2 className="w-4.5 h-4.5 text-emerald-500 shrink-0 mt-0.5" />
+                      <div className="text-[13.5px] font-medium text-zinc-800">Physical Premises Required (9 sqm per visa ratio)</div>
+                    </div>
+                    <p className="text-[12px] text-zinc-500 font-light mt-1 pl-7 lg:hidden">Obligatory physical premises and workspace leasing restrictions.</p>
+                  </div>
+
+                  {/* Feature 4 */}
+                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left">
+                    <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest lg:hidden">Initial Setup Cost</span>
+                    <div className="flex items-start space-x-2.5">
+                      <CheckCircle2 className="w-4.5 h-4.5 text-emerald-500 shrink-0 mt-0.5" />
+                      <div className="text-[13.5px] font-medium text-zinc-800">Higher Capital Output (Regulatory DET Fees)</div>
+                    </div>
+                    <p className="text-[12px] text-zinc-500 font-light mt-1 pl-7 lg:hidden">Upfront capital requirement for registration and initial regulatory licensing.</p>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                onClick={() => {
+                  if (setPage) {
+                    setPage('setup-mainland');
+                  } else {
+                    window.location.href = '/setup-mainland';
+                  }
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="mt-8 bg-zinc-950 text-white hover:bg-emerald-600 px-5 py-3 rounded-xl text-[12.5px] font-semibold tracking-tight transition-all text-center flex items-center justify-center space-x-1.5 cursor-pointer border-0"
+              >
+                <span>Structure Mainland Setup</span>
+                <span>→</span>
+              </button>
+            </div>
+
+            {/* Right Column: Free Zone Authority */}
+            <div className="lg:col-span-4 bg-white border border-zinc-150 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-[0_20px_40px_rgba(0,0,0,0.01)] hover:border-zinc-250 transition-all duration-300">
+              
+              <div className="space-y-8">
+                <div className="flex items-center space-x-3 pb-4 border-b border-zinc-100">
+                  <div className="w-10 h-10 rounded-xl bg-zinc-50 text-zinc-500 flex items-center justify-center border border-zinc-150 shrink-0">
+                    <Building2 className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-[16px] font-bold text-zinc-900 leading-tight">Free Zone Entity</h3>
+                    <span className="text-[9.5px] font-mono uppercase text-zinc-400 font-semibold">Specialized Customs Enclaves</span>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  {/* Feature 1 */}
+                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left">
+                    <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest lg:hidden">UAE Onshore Commerce</span>
+                    <div className="flex items-start space-x-2.5">
+                      <XCircle className="w-4.5 h-4.5 text-zinc-350 shrink-0 mt-0.5" />
+                      <div className="text-[13.5px] font-medium text-zinc-650">Restricted to Zone / Local Agent Required</div>
+                    </div>
+                    <p className="text-[12px] text-zinc-500 font-light mt-1 pl-7 lg:hidden">Ability to trade directly in the local UAE market and coordinate onshore deals.</p>
+                  </div>
+
+                  {/* Feature 2 */}
+                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left">
+                    <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest lg:hidden">Government Procurement</span>
+                    <div className="flex items-start space-x-2.5">
+                      <XCircle className="w-4.5 h-4.5 text-zinc-350 shrink-0 mt-0.5" />
+                      <div className="text-[13.5px] font-medium text-zinc-500">Excluded from Mainland Public Bidding</div>
+                    </div>
+                    <p className="text-[12px] text-zinc-500 font-light mt-1 pl-7 lg:hidden">Direct bidding access for municipal, federal, or government tenders.</p>
+                  </div>
+
+                  {/* Feature 3 */}
+                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left">
+                    <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest lg:hidden">Office Requirements</span>
+                    <div className="flex items-start space-x-2.5">
+                      <CheckCircle2 className="w-4.5 h-4.5 text-emerald-500 shrink-0 mt-0.5" />
+                      <div className="text-[13.5px] font-medium text-zinc-700">Highly Flexible (Virtual, Shared, or Flexi-Desks)</div>
+                    </div>
+                    <p className="text-[12px] text-zinc-500 font-light mt-1 pl-7 lg:hidden">Obligatory physical premises and workspace leasing restrictions.</p>
+                  </div>
+
+                  {/* Feature 4 */}
+                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left">
+                    <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest lg:hidden">Initial Setup Cost</span>
+                    <div className="flex items-start space-x-2.5">
+                      <CheckCircle2 className="w-4.5 h-4.5 text-emerald-500 shrink-0 mt-0.5" />
+                      <div className="text-[13.5px] font-medium text-zinc-700">Cost-Effective Startup Packages Available</div>
+                    </div>
+                    <p className="text-[12px] text-zinc-500 font-light mt-1 pl-7 lg:hidden">Upfront capital requirement for registration and initial regulatory licensing.</p>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                onClick={() => {
+                  if (setPage) {
+                    setPage('setup-freezone');
+                  } else {
+                    window.location.href = '/setup-freezone';
+                  }
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="mt-8 bg-zinc-950 text-white hover:bg-emerald-600 px-5 py-3 rounded-xl text-[12.5px] font-semibold tracking-tight transition-all text-center flex items-center justify-center space-x-1.5 cursor-pointer border-0"
+              >
+                <span>Structure Free Zone Setup</span>
+                <span>→</span>
+              </button>
+            </div>
+
           </div>
+
         </div>
 
         {/* GOVERNMENT MANDATES HIGHLIGHT CARD */}

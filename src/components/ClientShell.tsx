@@ -59,7 +59,7 @@ export default function ClientShell({ children }: { children: React.ReactNode })
         <SovereignFloatingHelp setPage={setPage} />
 
         {/* Corporate Comparison Desk on Every Page */}
-        {pageId !== 'contact' && <ComparisonBlock />}
+        {pageId !== 'contact' && <ComparisonBlock setPage={setPage} />}
 
         {/* Corporate Custom Call To Action with FOMO on Every Page */}
         <SovereignCta currentPage={pageId} openContactModal={openBlankModal} />
