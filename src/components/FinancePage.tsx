@@ -385,6 +385,52 @@ export default function FinancePage({ type, setPage, openContactModal }: Finance
           </div>
         </div>
 
+        {type === 'banking' && (
+          <div className="mt-20 pt-16 border-t border-zinc-200/85 space-y-8 animate-fade-in_500">
+            <div className="space-y-2 text-center md:text-left">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-[#08854C] font-bold block">
+                Pre-Approved Correspondent Networks
+              </span>
+              <h2 className="text-[24px] sm:text-[28px] font-serif font-semibold text-zinc-900 tracking-tight">
+                Supported UAE & International Corporate Banks
+              </h2>
+              <p className="text-[13px] text-zinc-500 font-sans max-w-2xl leading-relaxed">
+                We coordinate setup corridors directly with premier regional and international banking institutions, bypassing traditional AML screening queues.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+              {[
+                { name: "Wio Bank", src: "/assets/imgi_65_WIO.png" },
+                { name: "Emirates NBD", src: "/assets/imgi_115_enbd-logo.jpg" },
+                { name: "Mashreq Bank", src: "/assets/imgi_111_mashreq-logo.jpg" },
+                { name: "First Abu Dhabi Bank", src: "/assets/imgi_116_fab-bank-logo.jpg" },
+                { name: "Abu Dhabi Islamic Bank", src: "/assets/imgi_112_adib-logo-1.jpg" },
+                { name: "RAK BANK", src: "/assets/imgi_114_rak-bank-logo.jpg" },
+                { name: "Emirates Islamic", src: "/assets/imgi_113_emirates-islamic-logo.jpg" },
+                { name: "HSBC Bank", src: "/assets/imgi_117_hsbc-logo.jpg" },
+                { name: "Euro Pacific Bank", src: "/assets/imgi_118_euro-pacific-logo.jpg" },
+                { name: "ICICI Bank", src: "/assets/imgi_119_icici-logo.jpg" }
+              ].map((bank, idx) => (
+                <div 
+                  key={idx} 
+                  className="bg-white border border-zinc-200/80 rounded-2xl p-5 flex items-center justify-center h-20 shadow-3xs hover:border-emerald-500/25 hover:shadow-2xs transition-all duration-300"
+                >
+                  <div className="relative w-full h-full">
+                    <Image 
+                      src={bank.src} 
+                      alt={bank.name} 
+                      fill
+                      sizes="(max-width: 768px) 50vw, 20vw"
+                      className="object-contain transition-all duration-300" 
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
       </div>
     </motion.div>
   );
