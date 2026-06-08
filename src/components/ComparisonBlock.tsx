@@ -177,78 +177,74 @@ export default function ComparisonBlock() {
         </div>
 
         {/* JURISDICTION COMPARISON TABLE (Mainland vs Free Zone) */}
-        <div className="mb-16 bg-white/95 backdrop-blur-md rounded-2xl border border-zinc-200/80 shadow-sm overflow-hidden text-left relative z-10">
-          <div className="p-6 md:p-8 border-b border-zinc-150">
-            <h3 className="text-[18px] font-bold text-zinc-900 font-sans tracking-tight">Mainland vs Free Zone Jurisdiction Comparison</h3>
-            <p className="text-[13px] text-zinc-500 font-sans mt-1">Understanding the trade boundaries, municipal access, office flexibility, and setup cost differences.</p>
+        <div className="mb-20 bg-white border border-zinc-150 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.02)] text-left relative z-10">
+          <div className="pb-6 mb-6 border-b border-zinc-100">
+            <h3 className="text-[20px] font-bold text-zinc-900 font-sans tracking-tight">Mainland vs Free Zone Jurisdiction Comparison</h3>
+            <p className="text-[13.5px] text-zinc-500 font-sans mt-1">Understanding the trade boundaries, municipal access, office flexibility, and setup cost differences.</p>
           </div>
           <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse min-w-[640px]">
+            <table className="w-full text-left border-collapse min-w-[700px]">
               <thead>
-                <tr className="border-b border-zinc-200 bg-zinc-50/50 text-[11px] font-mono uppercase text-zinc-500 select-none">
-                  <th className="py-4.5 px-6 font-semibold w-1/4">Key Feature</th>
-                  <th className="py-4.5 px-6 font-semibold bg-emerald-500/5 text-emerald-900 border-x border-zinc-150/80 w-3/8 text-center">Mainland Entity</th>
-                  <th className="py-4.5 px-6 font-semibold w-3/8 text-center">Free Zone Entity</th>
+                <tr className="border-b border-zinc-150 text-[10.5px] font-mono uppercase tracking-[0.15em] text-zinc-400">
+                  <th className="pb-4 font-semibold w-1/4">Key Feature</th>
+                  <th className="pb-4 px-6 font-semibold text-zinc-800 w-3/8 text-center">Mainland Entity</th>
+                  <th className="pb-4 px-6 font-semibold text-zinc-800 w-3/8 text-center">Free Zone Entity</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-zinc-100 text-[13px] leading-relaxed">
-                <tr className="hover:bg-zinc-50/25 transition-colors">
-                  <td className="py-4 px-6 font-semibold text-zinc-800">UAE Local Market Trade</td>
-                  <td className="py-4 px-6 bg-emerald-500/5 border-x border-zinc-150/80 text-zinc-700 font-medium">
-                    <span className="inline-flex items-center text-emerald-600 font-bold gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              <tbody className="divide-y divide-zinc-100/80 text-[13.5px]">
+                <tr className="hover:bg-zinc-50/20 transition-colors">
+                  <td className="py-5 font-semibold text-zinc-900">UAE Local Market Trade</td>
+                  <td className="py-5 px-6 text-center">
+                    <span className="inline-flex items-center justify-center bg-emerald-50 text-[#08854C] px-3.5 py-1.5 rounded-full border border-emerald-100/50 text-[12.5px] font-medium gap-1.5 shadow-3xs">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                       Yes (Direct local trade anywhere in UAE)
                     </span>
                   </td>
-                  <td className="py-4 px-6 text-zinc-500">
-                    <span className="inline-flex items-center text-amber-600 font-medium gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
-                      Restricted (Limited to the zone or via local agents)
+                  <td className="py-5 px-6 text-center">
+                    <span className="inline-flex items-center justify-center bg-zinc-50 text-zinc-500 px-3.5 py-1.5 rounded-full border border-zinc-200/40 text-[12.5px] font-normal">
+                      Restricted to Zone / Third-Party Agents
                     </span>
                   </td>
                 </tr>
-                <tr className="hover:bg-zinc-50/25 transition-colors">
-                  <td className="py-4 px-6 font-semibold text-zinc-800">Government Contracts</td>
-                  <td className="py-4 px-6 bg-emerald-500/5 border-x border-zinc-150/80 text-zinc-700 font-medium">
-                    <span className="inline-flex items-center text-emerald-600 font-bold gap-1.5">
+                <tr className="hover:bg-zinc-50/20 transition-colors">
+                  <td className="py-5 font-semibold text-zinc-900">Government Contracts</td>
+                  <td className="py-5 px-6 text-center">
+                    <span className="inline-flex items-center justify-center bg-emerald-50 text-[#08854C] px-3.5 py-1.5 rounded-full border border-emerald-100/50 text-[12.5px] font-medium gap-1.5 shadow-3xs">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                      Yes (Direct bidding access for municipal/federal tenders)
+                      Yes (Direct bidding access for tenders)
                     </span>
                   </td>
-                  <td className="py-4 px-6 text-zinc-500">
-                    <span className="inline-flex items-center text-zinc-450 gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-350"></span>
-                      Usually No (Bidding on local government tenders is generally restricted)
+                  <td className="py-5 px-6 text-center">
+                    <span className="inline-flex items-center justify-center bg-zinc-50 text-zinc-400 px-3.5 py-1.5 rounded-full border border-zinc-200/20 text-[12.5px] font-normal">
+                      Usually Restricted from Mainland Tenders
                     </span>
                   </td>
                 </tr>
-                <tr className="hover:bg-zinc-55/25 transition-colors">
-                  <td className="py-4 px-6 font-semibold text-zinc-800">Office Requirements</td>
-                  <td className="py-4 px-6 bg-emerald-500/5 border-x border-zinc-150/80 text-zinc-700 font-medium">
-                    <span className="inline-flex items-center text-zinc-750 gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-400"></span>
-                      Sometimes (Physical address required for specific activities)
+                <tr className="hover:bg-zinc-50/20 transition-colors">
+                  <td className="py-5 font-semibold text-zinc-900">Office Requirements</td>
+                  <td className="py-5 px-6 text-center">
+                    <span className="inline-flex items-center justify-center bg-zinc-50 text-zinc-600 px-3.5 py-1.5 rounded-full border border-zinc-200/40 text-[12.5px] font-normal">
+                      Physical Premises Required (9 sqm/visa)
                     </span>
                   </td>
-                  <td className="py-4 px-6 text-zinc-500">
-                    <span className="inline-flex items-center text-emerald-600 font-bold gap-1.5">
+                  <td className="py-5 px-6 text-center">
+                    <span className="inline-flex items-center justify-center bg-emerald-50 text-[#08854C] px-3.5 py-1.5 rounded-full border border-emerald-100/50 text-[12.5px] font-medium gap-1.5 shadow-3xs">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                      Often Flexible (Virtual desks, shared flexi desks, zero office packs)
+                      Flexible (Virtual, shared flexi, zero office)
                     </span>
                   </td>
                 </tr>
-                <tr className="hover:bg-zinc-55/25 transition-colors">
-                  <td className="py-4 px-6 font-semibold text-zinc-800">Startup Setup Cost</td>
-                  <td className="py-4 px-6 bg-emerald-500/5 border-x border-zinc-150/80 text-zinc-700 font-medium">
-                    <span className="inline-flex items-center text-zinc-750 gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-400"></span>
-                      Higher (Includes municipal approvals & registration fees)
+                <tr className="hover:bg-zinc-50/20 transition-colors">
+                  <td className="py-5 font-semibold text-zinc-900">Startup Setup Cost</td>
+                  <td className="py-5 px-6 text-center">
+                    <span className="inline-flex items-center justify-center bg-zinc-50 text-zinc-600 px-3.5 py-1.5 rounded-full border border-zinc-200/40 text-[12.5px] font-normal">
+                      Higher (Municipal & government approvals)
                     </span>
                   </td>
-                  <td className="py-4 px-6 text-zinc-500">
-                    <span className="inline-flex items-center text-emerald-600 font-bold gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                      Lower (Highly cost-effective packages for startups)
+                  <td className="py-5 px-6 text-center">
+                    <span className="inline-flex items-center justify-center bg-emerald-50 text-[#08854C] px-3.5 py-1.5 rounded-full border border-emerald-100/50 text-[12.5px] font-medium gap-1.5 shadow-3xs">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                      Lower (Cost-effective startup packages)
                     </span>
                   </td>
                 </tr>
