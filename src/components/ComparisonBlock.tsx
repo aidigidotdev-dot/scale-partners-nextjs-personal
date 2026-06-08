@@ -226,11 +226,7 @@ export default function ComparisonBlock({ setPage }: ComparisonBlockProps) {
             </div>
 
             {/* Middle Column: Mainland Corporate Setup */}
-            <div className="lg:col-span-4 bg-emerald-500/[0.02] border-2 border-emerald-500/15 rounded-2xl p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between shadow-[0_20px_40px_rgba(18,183,106,0.02)]">
-              {/* Highlight ribbon */}
-              <div className="absolute top-0 right-0 bg-emerald-500 text-white text-[8px] font-mono font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
-                Direct Access
-              </div>
+            <div className="lg:col-span-4 bg-white border border-zinc-150 rounded-2xl p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between shadow-[0_20px_40px_rgba(0,0,0,0.01)] hover:border-zinc-250 transition-all duration-300">
               
               <div className="space-y-8">
                 <div className="flex items-center space-x-3.5 pb-4 border-b border-zinc-100">
@@ -244,42 +240,42 @@ export default function ComparisonBlock({ setPage }: ComparisonBlockProps) {
                 </div>
 
                 <div className="space-y-6">
-                  {/* Feature 1 */}
-                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left">
-                    <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest lg:hidden">UAE Onshore Commerce</span>
+                  {/* Feature 1 (PRO) */}
+                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left bg-[#22C55E]/8 border border-[#22C55E]/15 rounded-xl px-4 py-3">
+                    <span className="text-[10px] font-mono text-[#08854C] uppercase tracking-widest lg:hidden">UAE Onshore Commerce</span>
                     <div className="flex items-start space-x-2.5">
-                      <CheckCircle2 className="w-4.5 h-4.5 text-emerald-500 shrink-0 mt-0.5" />
-                      <div className="text-[13.5px] font-medium text-zinc-800">Direct Onshore Trade (Unrestricted)</div>
+                      <CheckCircle2 className="w-4.5 h-4.5 text-[#08854C] shrink-0 mt-0.5" />
+                      <div className="text-[13.5px] font-bold text-[#08854C]">Direct Onshore Trade (Unrestricted)</div>
                     </div>
-                    <p className="text-[12px] text-zinc-500 font-light mt-1 pl-7 lg:hidden">Ability to trade directly in the local UAE market and coordinate onshore deals.</p>
+                    <p className="text-[12px] text-[#08854C] font-light mt-1 pl-7 lg:hidden">Ability to trade directly in the local UAE market and coordinate onshore deals.</p>
                   </div>
 
-                  {/* Feature 2 */}
-                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left">
-                    <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest lg:hidden">Government Procurement</span>
+                  {/* Feature 2 (PRO) */}
+                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left bg-[#22C55E]/8 border border-[#22C55E]/15 rounded-xl px-4 py-3">
+                    <span className="text-[10px] font-mono text-[#08854C] uppercase tracking-widest lg:hidden">Government Procurement</span>
                     <div className="flex items-start space-x-2.5">
-                      <CheckCircle2 className="w-4.5 h-4.5 text-emerald-500 shrink-0 mt-0.5" />
-                      <div className="text-[13.5px] font-medium text-zinc-800">Full Tendering Access (Municipal & Federal)</div>
+                      <CheckCircle2 className="w-4.5 h-4.5 text-[#08854C] shrink-0 mt-0.5" />
+                      <div className="text-[13.5px] font-bold text-[#08854C]">Full Tendering Access (Municipal & Federal)</div>
                     </div>
-                    <p className="text-[12px] text-zinc-500 font-light mt-1 pl-7 lg:hidden">Direct bidding access for municipal, federal, or government tenders.</p>
+                    <p className="text-[12px] text-[#08854C] font-light mt-1 pl-7 lg:hidden">Direct bidding access for municipal, federal, or government tenders.</p>
                   </div>
 
-                  {/* Feature 3 */}
-                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left">
+                  {/* Feature 3 (Neutral/Con) */}
+                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left bg-transparent border border-transparent px-4 py-3">
                     <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest lg:hidden">Office Requirements</span>
                     <div className="flex items-start space-x-2.5">
-                      <CheckCircle2 className="w-4.5 h-4.5 text-emerald-500 shrink-0 mt-0.5" />
-                      <div className="text-[13.5px] font-medium text-zinc-800">Physical Premises Required (9 sqm per visa ratio)</div>
+                      <CheckCircle2 className="w-4.5 h-4.5 text-zinc-400 shrink-0 mt-0.5" />
+                      <div className="text-[13.5px] font-medium text-zinc-650">Physical Premises Required (9 sqm per visa ratio)</div>
                     </div>
                     <p className="text-[12px] text-zinc-500 font-light mt-1 pl-7 lg:hidden">Obligatory physical premises and workspace leasing restrictions.</p>
                   </div>
 
-                  {/* Feature 4 */}
-                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left">
+                  {/* Feature 4 (Neutral/Con) */}
+                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left bg-transparent border border-transparent px-4 py-3">
                     <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest lg:hidden">Initial Setup Cost</span>
                     <div className="flex items-start space-x-2.5">
-                      <CheckCircle2 className="w-4.5 h-4.5 text-emerald-500 shrink-0 mt-0.5" />
-                      <div className="text-[13.5px] font-medium text-zinc-800">Higher Capital Output (Regulatory DET Fees)</div>
+                      <CheckCircle2 className="w-4.5 h-4.5 text-zinc-400 shrink-0 mt-0.5" />
+                      <div className="text-[13.5px] font-medium text-zinc-650">Higher Capital Output (Regulatory DET Fees)</div>
                     </div>
                     <p className="text-[12px] text-zinc-500 font-light mt-1 pl-7 lg:hidden">Upfront capital requirement for registration and initial regulatory licensing.</p>
                   </div>
@@ -317,8 +313,8 @@ export default function ComparisonBlock({ setPage }: ComparisonBlockProps) {
                 </div>
 
                 <div className="space-y-6">
-                  {/* Feature 1 */}
-                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left">
+                  {/* Feature 1 (Neutral/Con) */}
+                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left bg-transparent border border-transparent px-4 py-3">
                     <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest lg:hidden">UAE Onshore Commerce</span>
                     <div className="flex items-start space-x-2.5">
                       <XCircle className="w-4.5 h-4.5 text-zinc-350 shrink-0 mt-0.5" />
@@ -327,8 +323,8 @@ export default function ComparisonBlock({ setPage }: ComparisonBlockProps) {
                     <p className="text-[12px] text-zinc-500 font-light mt-1 pl-7 lg:hidden">Ability to trade directly in the local UAE market and coordinate onshore deals.</p>
                   </div>
 
-                  {/* Feature 2 */}
-                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left">
+                  {/* Feature 2 (Neutral/Con) */}
+                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left bg-transparent border border-transparent px-4 py-3">
                     <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest lg:hidden">Government Procurement</span>
                     <div className="flex items-start space-x-2.5">
                       <XCircle className="w-4.5 h-4.5 text-zinc-350 shrink-0 mt-0.5" />
@@ -337,24 +333,24 @@ export default function ComparisonBlock({ setPage }: ComparisonBlockProps) {
                     <p className="text-[12px] text-zinc-500 font-light mt-1 pl-7 lg:hidden">Direct bidding access for municipal, federal, or government tenders.</p>
                   </div>
 
-                  {/* Feature 3 */}
-                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left">
-                    <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest lg:hidden">Office Requirements</span>
+                  {/* Feature 3 (PRO) */}
+                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left bg-[#22C55E]/8 border border-[#22C55E]/15 rounded-xl px-4 py-3">
+                    <span className="text-[10px] font-mono text-[#08854C] uppercase tracking-widest lg:hidden">Office Requirements</span>
                     <div className="flex items-start space-x-2.5">
-                      <CheckCircle2 className="w-4.5 h-4.5 text-emerald-500 shrink-0 mt-0.5" />
-                      <div className="text-[13.5px] font-medium text-zinc-700">Highly Flexible (Virtual, Shared, or Flexi-Desks)</div>
+                      <CheckCircle2 className="w-4.5 h-4.5 text-[#08854C] shrink-0 mt-0.5" />
+                      <div className="text-[13.5px] font-bold text-[#08854C]">Highly Flexible (Virtual, Shared, or Flexi-Desks)</div>
                     </div>
-                    <p className="text-[12px] text-zinc-500 font-light mt-1 pl-7 lg:hidden">Obligatory physical premises and workspace leasing restrictions.</p>
+                    <p className="text-[12px] text-[#08854C] font-light mt-1 pl-7 lg:hidden">Obligatory physical premises and workspace leasing restrictions.</p>
                   </div>
 
-                  {/* Feature 4 */}
-                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left">
-                    <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest lg:hidden">Initial Setup Cost</span>
+                  {/* Feature 4 (PRO) */}
+                  <div className="space-y-1.5 h-auto lg:h-[120px] flex flex-col justify-center text-left bg-[#22C55E]/8 border border-[#22C55E]/15 rounded-xl px-4 py-3">
+                    <span className="text-[10px] font-mono text-[#08854C] uppercase tracking-widest lg:hidden">Initial Setup Cost</span>
                     <div className="flex items-start space-x-2.5">
-                      <CheckCircle2 className="w-4.5 h-4.5 text-emerald-500 shrink-0 mt-0.5" />
-                      <div className="text-[13.5px] font-medium text-zinc-700">Cost-Effective Startup Packages Available</div>
+                      <CheckCircle2 className="w-4.5 h-4.5 text-[#08854C] shrink-0 mt-0.5" />
+                      <div className="text-[13.5px] font-bold text-[#08854C]">Cost-Effective Startup Packages Available</div>
                     </div>
-                    <p className="text-[12px] text-zinc-500 font-light mt-1 pl-7 lg:hidden">Upfront capital requirement for registration and initial regulatory licensing.</p>
+                    <p className="text-[12px] text-[#08854C] font-light mt-1 pl-7 lg:hidden">Upfront capital requirement for registration and initial regulatory licensing.</p>
                   </div>
                 </div>
               </div>

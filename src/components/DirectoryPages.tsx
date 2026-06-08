@@ -725,7 +725,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                 className="object-cover group-hover:scale-[1.015] transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B2E16]/95 via-[#08854C]/35 to-transparent flex flex-col justify-end p-6 sm:p-8 z-10">
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-gold-400 font-bold">{content.image1Label}</span>
+                <span className="inline-block px-2.5 py-0.5 rounded-md bg-white/10 backdrop-blur-xs text-[10px] font-mono uppercase tracking-[0.2em] text-white border border-white/10 mb-1.5 shadow-3xs">{content.image1Label}</span>
                 <h3 className="font-serif text-[18px] sm:text-[22px] text-white font-medium mt-1 leading-snug">{content.image1Heading}</h3>
                 <p className="text-[12.5px] text-zinc-300 max-w-xl mt-1 font-sans">
                   {content.image1Desc}
@@ -735,7 +735,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
 
             {/* Dynamic Certified Trust Badges Row */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 border-t border-b border-zinc-200/60/40 py-6 relative z-10 bg-zinc-50/40 px-6 rounded-2xl animate-fade-in">
-              <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left space-y-2 md:space-y-0 md:space-x-3">
+              <div className="flex items-center gap-3 text-left">
                 <div className="p-2 bg-white rounded-lg border border-zinc-200 shrink-0 shadow-2xs text-gold-600">
                   <ShieldCheck className="w-4.5 h-4.5" />
                 </div>
@@ -744,7 +744,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                   <p className="text-[10px] text-zinc-500 font-sans mt-0.5">Corporate Tax Certified Desk</p>
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left space-y-2 md:space-y-0 md:space-x-3">
+              <div className="flex items-center gap-3 text-left">
                 <div className="p-2 bg-white rounded-lg border border-zinc-200 shrink-0 shadow-2xs text-gold-600">
                   <Award className="w-4.5 h-4.5" />
                 </div>
@@ -753,8 +753,8 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                   <p className="text-[10px] text-zinc-500 font-sans mt-0.5">Sovereign Asset Protection</p>
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left space-y-2 md:space-y-0 md:space-x-3 col-span-2 md:col-span-1">
-                <div className="p-2 bg-white rounded-lg border border-zinc-200 shrink-0 shadow-2xs text-gold-600 mx-auto md:mx-0">
+              <div className="flex items-center gap-3 text-left col-span-2 md:col-span-1">
+                <div className="p-2 bg-white rounded-lg border border-zinc-200 shrink-0 shadow-2xs text-gold-600">
                   <Building2 className="w-4.5 h-4.5" />
                 </div>
                 <div>
@@ -804,7 +804,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                 className="object-cover group-hover:scale-[1.015] transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B2E16]/95 via-[#08854C]/35 to-transparent flex flex-col justify-end p-6 sm:p-8 z-10">
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-gold-400 font-bold">{content.image2Label}</span>
+                <span className="inline-block px-2.5 py-0.5 rounded-md bg-white/10 backdrop-blur-xs text-[10px] font-mono uppercase tracking-[0.2em] text-white border border-white/10 mb-1.5 shadow-3xs">{content.image2Label}</span>
                 <h3 className="font-serif text-[18px] sm:text-[22px] text-white font-medium mt-1 leading-snug">{content.image2Heading}</h3>
                 <p className="text-[12.5px] text-zinc-300 max-w-xl mt-1 font-sans">
                   {content.image2Desc}
@@ -1191,18 +1191,18 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                   "{content.advisor.bio}"
                 </p>
 
-                <div className="bg-zinc-50 rounded-xl p-3 border border-zinc-200/60 space-y-1.5 text-[11.5px] text-zinc-500">
-                  <div className="flex justify-between">
-                    <span>Credentials:</span>
-                    <strong className="text-zinc-800">{content.advisor.credentials}</strong>
+                <div className="bg-zinc-50 rounded-xl p-4 border border-zinc-200/60 space-y-3.5 text-[11.5px] text-zinc-500">
+                  <div className="flex flex-col space-y-0.5 text-left">
+                    <span className="text-[10px] uppercase tracking-wider font-mono text-zinc-400">Credentials</span>
+                    <strong className="text-zinc-800 font-medium">{content.advisor.credentials}</strong>
                   </div>
-                  <div className="flex justify-between">
-                    <span>Active Experience:</span>
-                    <strong className="text-zinc-800">{content.advisor.experience}</strong>
+                  <div className="flex flex-col space-y-0.5 text-left">
+                    <span className="text-[10px] uppercase tracking-wider font-mono text-zinc-400">Active Experience</span>
+                    <strong className="text-zinc-800 font-medium">{content.advisor.experience}</strong>
                   </div>
-                  <div className="flex justify-between">
-                    <span>Advisory Status:</span>
-                    <strong className="text-emerald-700 font-semibold">Active Registered Consultant</strong>
+                  <div className="flex flex-col space-y-0.5 text-left">
+                    <span className="text-[10px] uppercase tracking-wider font-mono text-zinc-400">Advisory Status</span>
+                    <strong className="text-[#08854C] font-semibold">Active Registered Consultant</strong>
                   </div>
                 </div>
               </div>

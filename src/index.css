@@ -11,9 +11,12 @@
   --color-gold-100: rgba(230, 247, 237, 0.6); /* Mint Glass Fill (Replaces Gray Fills) */
   --color-gold-200: rgba(122, 154, 133, 0.15); /* Soft Sage Border */
   --color-gold-300: rgba(18, 183, 106, 0.12);  /* Glass Emerald Border */
+  --color-gold-350: rgba(18, 183, 106, 0.35);  /* Muted Emerald */
   --color-gold-400: #7A9A85;               /* Soft Sage Text */
+  --color-gold-450: #12B76A;               /* Mid Emerald */
   --color-gold-500: #12B76A;               /* Scale Emerald */
   --color-gold-600: #22C55E;               /* Neon Green Hover */
+  --color-gold-650: #08854C;               /* Primary Emerald */
   --color-gold-700: #0B2E16;               /* Deep Forest */
   --color-gold-800: #08854C;               /* Emerald Forest Gradient */
   --color-gold-900: #07140B;               /* Forest Obsidian */

@@ -172,7 +172,7 @@ export default function FinancePage({ type, setPage, openContactModal }: Finance
                 className="object-cover group-hover:scale-[1.015] transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B2E16]/90 via-[#08854C]/25 to-transparent p-5 flex flex-col justify-end z-10">
-                <span className="text-[10px] font-mono text-gold-400 uppercase tracking-widest font-bold">{current.image1Label}</span>
+                <span className="inline-block px-2.5 py-0.5 rounded-md bg-white/10 backdrop-blur-xs text-[10px] font-mono uppercase tracking-widest text-white border border-white/10 mb-1.5 shadow-3xs">{current.image1Label}</span>
                 <p className="text-[12.5px] text-zinc-100 font-sans mt-0.5">{current.image1Desc}</p>
               </div>
             </div>
@@ -353,7 +353,7 @@ export default function FinancePage({ type, setPage, openContactModal }: Finance
             className="object-cover group-hover:scale-[1.015] transition-transform duration-700"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B2E16]/95 via-[#08854C]/35 to-transparent flex flex-col justify-end p-6 sm:p-8 z-10">
-            <span className="text-[10.5px] font-mono uppercase tracking-[0.2em] text-gold-400 font-bold">{current.image2Label}</span>
+            <span className="inline-block px-2.5 py-0.5 rounded-md bg-white/10 backdrop-blur-xs text-[10.5px] font-mono uppercase tracking-[0.2em] text-white border border-white/10 mb-1.5 shadow-3xs">{current.image2Label}</span>
             <h3 className="font-serif text-[20px] sm:text-[24px] text-white font-medium mt-1 leading-snug">{current.image2Heading}</h3>
             <p className="text-[12px] sm:text-[13px] text-zinc-300 max-w-xl mt-1 font-sans">
               {current.image2Desc}
