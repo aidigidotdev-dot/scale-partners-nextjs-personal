@@ -5,6 +5,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { useRef, useEffect } from 'react';
 import { PageId } from '../types';
 import { MessageSquare, ShieldCheck, Clock, AlertTriangle, CheckCircle, HelpCircle } from 'lucide-react';
 
@@ -14,6 +15,124 @@ interface SovereignCtaProps {
 }
 
 export default function SovereignCta({ currentPage, openContactModal }: SovereignCtaProps) {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+  // Subtle Neurolink Constellation Animation
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let animationFrameId: number;
+    let width = (canvas.width = canvas.offsetWidth || 800);
+    let height = (canvas.height = canvas.offsetHeight || 300);
+
+    const particles: Array<{
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      radius: number;
+      pulseSpeed: number;
+      pulseFactor: number;
+    }> = [];
+
+    // Initialize particles (32 particles for a subtle look)
+    for (let i = 0; i < 32; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        radius: Math.random() * 2 + 0.8,
+        pulseSpeed: Math.random() * 0.015 + 0.005,
+        pulseFactor: Math.random() * Math.PI
+      });
+    }
+
+    let mouseX = width / 2;
+    let mouseY = height / 2;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    const render = () => {
+      ctx.clearRect(0, 0, width, height);
+
+      // Render & dynamic link particles
+      particles.forEach((p, idx) => {
+        // Apply velocity
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // Bounce boundaries
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+
+        // Pulse scale
+        p.pulseFactor += p.pulseSpeed;
+        const currentRadius = p.radius + Math.sin(p.pulseFactor) * 0.3;
+
+        // Attract lightly to mouse pointer if close
+        const dx = mouseX - p.x;
+        const dy = mouseY - p.y;
+        const distToMouse = Math.sqrt(dx * dx + dy * dy);
+        if (distToMouse < 150) {
+          p.x += dx * 0.0008;
+          p.y += dy * 0.0008;
+        }
+
+        // Draw particle node (very subtle opacity)
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, currentRadius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.22)';
+        ctx.fill();
+
+        // Connect near particle nodes (Constellation)
+        for (let j = idx + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const distDx = p.x - p2.x;
+          const distDy = p.y - p2.y;
+          const dist = Math.sqrt(distDx * distDx + distDy * distDy);
+
+          if (dist < 90) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            const alpha = (1 - dist / 90) * 0.08;
+            ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
+            ctx.lineWidth = 0.7;
+            ctx.stroke();
+          }
+        }
+      });
+
+      animationFrameId = requestAnimationFrame(render);
+    };
+
+    render();
+
+    const handleResize = () => {
+      if (!canvas) return;
+      width = canvas.width = canvas.offsetWidth;
+      height = canvas.height = canvas.offsetHeight;
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   // Define WhatsApp Phone Number and Message based on page context
   const whatsAppPhone = '971501234567'; // Premium UAE business line
   
@@ -102,14 +221,22 @@ export default function SovereignCta({ currentPage, openContactModal }: Sovereig
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-12 relative animate-fade-in">
-      {/* Container holding premium styling: dark background, micro subtle gradient, radial shadows */}
-      <div className="relative overflow-hidden bg-[#07140B] rounded-3xl p-1 sm:p-1.5 shadow-[0_32px_80px_rgba(0,0,0,0.45)] transition-all">
+      {/* Container holding premium styling: dark background, micro subtle gradient, border */}
+      <div className="relative overflow-hidden bg-[#07140B] rounded-3xl p-1 sm:p-1.5 transition-all">
         {/* Border Image emulation using gradient backdrop with padding */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#12B76A] via-[#22C55E] to-[#10b981] rounded-3xl pointer-events-none opacity-[0.45]"></div>
         
         {/* Core content area inside gradient border */}
         <div className="relative bg-[#07140B]/95 rounded-[22px] px-6 sm:px-10 py-10 sm:py-12 z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
           
+          {/* Subtle Neurolink Constellation Animation */}
+          <div className="absolute inset-0 z-0 pointer-events-none opacity-40 overflow-hidden rounded-[22px]">
+            <canvas 
+              ref={canvasRef} 
+              className="w-full h-full block"
+            />
+          </div>
+
           {/* Ambient light turquoise/blue spotlights behind the text */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-[22px] z-0">
             <div className="absolute top-[-25%] left-[-20%] w-[50%] h-[50%] rounded-full bg-[#22C55E]/[0.12] blur-[100px]"></div>

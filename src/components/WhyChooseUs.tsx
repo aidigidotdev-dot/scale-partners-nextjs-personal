@@ -123,9 +123,18 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Elegant Bottom CTA Callout */}
-        <div className="mt-12 bg-brand-grad text-white rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
-          <div className="space-y-1 text-center md:text-left relative z-10">
+        <div className="mt-12 text-white rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center z-0 pointer-events-none"
+            style={{ backgroundImage: `url('/assets/invoice_accounting_hands.png')` }}
+          />
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-brand-grad opacity-[0.90] z-10 pointer-events-none"></div>
+
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none z-10"></div>
+          
+          <div className="space-y-1 text-center md:text-left relative z-20">
             <span className="text-[10px] tracking-widest font-mono text-emerald-300 uppercase font-semibold">DUBAI TAX & LICENSE COMPLIANCE</span>
             <p className="text-[16px] sm:text-[18px] font-light text-white leading-tight">
               Looking for a custom tax holding architecture?
@@ -134,7 +143,7 @@ export default function WhyChooseUs() {
               Get an instant strategic recommendation based on your company registration requirements in Dubai.
             </p>
           </div>
-          <div className="relative z-10 shrink-0">
+          <div className="relative z-20 shrink-0">
             <div className="flex flex-col sm:flex-row items-center gap-3">
               <span className="text-[11px] font-mono uppercase tracking-wider text-white bg-white/10 px-3.5 py-2 rounded-full border border-white/15">
                 ● 100% REGULATORY COMPLIANT
