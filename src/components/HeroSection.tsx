@@ -219,21 +219,37 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
     };
-  }, []);  return (
+  }, []);
+
+  return (
     <div className="relative bg-white font-sans">
       
-      {/* HERO REGION WITH SOLID GRADIENT BACKGROUND */}
-      <div className="relative pt-[110px] pb-16 overflow-hidden bg-hero-parallax-section text-white">
+      {/* HERO REGION WITH VIDEO BACKGROUND */}
+      <div className="relative pt-[110px] pb-16 overflow-hidden text-white bg-[#07140B]">
+        
+        {/* VIDEO BACKGROUND */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+        >
+          <source src="/assets/dubai_skyline.mp4" type="video/mp4" />
+        </video>
+
+        {/* BRAND GRADIENT OVERLAY */}
+        <div className="absolute inset-0 bg-brand-grad opacity-85 z-10 pointer-events-none" />
         
         {/* 3D FLOATING CONSTELLATION BACKSTAGE */}
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-80 overflow-hidden">
+        <div className="absolute inset-0 z-20 pointer-events-none opacity-80 overflow-hidden">
           <canvas 
             ref={canvasRef} 
             className="w-full h-full block"
           />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
           
           {/* TOP LEVEL TAGS: Trust Endorsement Indicator */}
           <div className="flex justify-center lg:justify-start">
