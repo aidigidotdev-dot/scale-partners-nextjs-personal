@@ -102,34 +102,33 @@ export default function SovereignCta({ currentPage, openContactModal }: Sovereig
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-12 relative animate-fade-in">
-      {/* Container holding premium styling: light background, micro subtle gradient, radial shadows, 
-          and replaced standard blue borders with a beautiful gradient of blue, turquoise and seagreen. */}
-      <div className="relative overflow-hidden bg-white rounded-3xl p-1 sm:p-1.5 shadow-[0_32px_80px_rgba(30,41,59,0.04)] transition-all">
+      {/* Container holding premium styling: dark background, micro subtle gradient, radial shadows */}
+      <div className="relative overflow-hidden bg-[#07140B] rounded-3xl p-1 sm:p-1.5 shadow-[0_32px_80px_rgba(0,0,0,0.45)] transition-all">
         {/* Border Image emulation using gradient backdrop with padding */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#12B76A] via-[#22C55E] to-[#10b981] rounded-3xl pointer-events-none opacity-[0.45]"></div>
         
         {/* Core content area inside gradient border */}
-        <div className="relative bg-white rounded-[22px] px-6 sm:px-10 py-10 sm:py-12 z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+        <div className="relative bg-[#07140B]/95 rounded-[22px] px-6 sm:px-10 py-10 sm:py-12 z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
           
           {/* Ambient light turquoise/blue spotlights behind the text */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-[22px] z-0">
-            <div className="absolute top-[-25%] left-[-20%] w-[50%] h-[50%] rounded-full bg-[#22C55E]/[0.08] blur-[100px]"></div>
-            <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[#22C55E]/[0.08] blur-[120px]"></div>
+            <div className="absolute top-[-25%] left-[-20%] w-[50%] h-[50%] rounded-full bg-[#22C55E]/[0.12] blur-[100px]"></div>
+            <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[#22C55E]/[0.12] blur-[120px]"></div>
           </div>
 
-          <div className="lg:col-span-12 relative z-10 flex flex-col md:flex-row md:items-center md:justify-between border-b border-zinc-100 pb-5 gap-3.5">
+          <div className="lg:col-span-12 relative z-10 flex flex-col md:flex-row md:items-center md:justify-between border-b border-white/10 pb-5 gap-3.5">
             <div className="flex items-center space-x-2.5">
               <span className="flex h-2.5 w-2.5 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
-              <span className="font-mono text-[10px] tracking-[0.25em] text-zinc-500 font-bold uppercase">
+              <span className="font-mono text-[10px] tracking-[0.25em] text-zinc-400 font-bold uppercase">
                 {cta.badge}
               </span>
             </div>
             
-            <div className="inline-flex items-center space-x-1.5 bg-amber-50/70 border border-amber-200/50 px-3 py-1 rounded-full text-[11px] text-amber-850 font-sans font-medium self-start md:self-auto">
-              <Clock className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+            <div className="inline-flex items-center space-x-1.5 bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-full text-[11px] text-amber-300 font-sans font-medium self-start md:self-auto">
+              <Clock className="w-3.5 h-3.5 text-amber-400 shrink-0" />
               <span>Only 3 Pre-Approved Structuring Slots Open Today</span>
             </div>
           </div>
@@ -137,13 +136,13 @@ export default function SovereignCta({ currentPage, openContactModal }: Sovereig
           {/* Left Block: The Main Value Prop (7 Cols) */}
           <div className="lg:col-span-7 flex flex-col justify-between space-y-6 relative z-10 text-left">
             <div className="space-y-4">
-              <h2 className="font-sans text-[28px] sm:text-[36px] font-light text-zinc-900 leading-[1.2] tracking-wide">
+              <h2 className="font-sans text-[28px] sm:text-[36px] font-light text-white leading-[1.2] tracking-wide">
                 {cta.title}
               </h2>
               
-              <div className="p-4 bg-slate-900/5 border border-[#22C55E]/15 rounded-2xl flex items-start space-x-3">
-                <AlertTriangle className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
-                <p className="text-[13px] text-zinc-700 leading-relaxed font-sans font-semibold">
+              <div className="p-4 bg-white/5 border border-[#22C55E]/20 rounded-2xl flex items-start space-x-3">
+                <AlertTriangle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                <p className="text-[13px] text-zinc-100 leading-relaxed font-sans font-semibold">
                   {cta.fomo}
                 </p>
               </div>
@@ -151,12 +150,12 @@ export default function SovereignCta({ currentPage, openContactModal }: Sovereig
 
             {/* Benefits Block */}
             <div className="space-y-3.5 font-sans pt-2">
-              <span className="text-[10.5px] uppercase font-mono tracking-wider font-bold text-zinc-450 block">Consultation Priority Advantages:</span>
+              <span className="text-[10.5px] uppercase font-mono tracking-wider font-bold text-zinc-350 block">Consultation Priority Advantages:</span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {cta.benefits.map((benefit, i) => (
                   <div key={i} className="flex items-start space-x-2.5">
-                    <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                    <span className="text-[12.5px] text-zinc-700 leading-tight font-medium font-sans">
+                    <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <span className="text-[12.5px] text-zinc-200 leading-tight font-medium font-sans">
                       {benefit}
                     </span>
                   </div>
@@ -166,14 +165,14 @@ export default function SovereignCta({ currentPage, openContactModal }: Sovereig
           </div>
 
           {/* Right Block: Instant WhatsApp CTA & Disclaimer Card (5 Cols) */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-6 relative z-10 text-left bg-zinc-50/50 border border-zinc-200/50 p-6 sm:p-8 rounded-2xl">
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-6 relative z-10 text-left bg-white/5 border border-white/10 p-6 sm:p-8 rounded-2xl">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <ShieldCheck className="w-4 h-4 text-gold-650" />
-                <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-450 font-bold block">Certified Advisory Gateway</span>
+                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-300 font-bold block">Certified Advisory Gateway</span>
               </div>
               
-              <p className="text-[12px] text-zinc-550 leading-relaxed font-sans">
+              <p className="text-[12px] text-zinc-300 leading-relaxed font-sans font-light">
                 Establish direct secure communications with licensed Scale Partners coordinators on corporate registries. Fully encrypted, secure, and hassle-free representation.
               </p>
             </div>
@@ -192,13 +191,13 @@ export default function SovereignCta({ currentPage, openContactModal }: Sovereig
 
               <button
                 onClick={openContactModal}
-                className="w-full py-3 bg-white text-zinc-800 hover:bg-zinc-50 border border-zinc-200 rounded-xl text-[12.5px] font-semibold transition-all text-center block"
+                className="w-full py-3 bg-white/5 text-white hover:bg-white/10 border border-white/15 rounded-xl text-[12.5px] font-semibold transition-all text-center block cursor-pointer"
               >
                 Or Book Standard Callback
               </button>
             </div>
 
-            <div className="border-t border-zinc-200 pt-3 flex items-start space-x-2">
+            <div className="border-t border-white/10 pt-3 flex items-start space-x-2">
               <HelpCircle className="w-3.5 h-3.5 text-zinc-400 shrink-0 mt-0.5" />
               <p className="text-[10px] text-zinc-400 italic leading-snug font-sans">
                 Scale Partners does not charge for initial feasibility slots. Your preliminary consultation is 100% confidential.
@@ -207,8 +206,8 @@ export default function SovereignCta({ currentPage, openContactModal }: Sovereig
           </div>
 
           {/* Wide Disclaimer block spanning base */}
-          <div className="lg:col-span-12 border-t border-zinc-100 pt-5 font-sans leading-relaxed text-[11px] text-zinc-400 text-left">
-            <span className="font-mono text-[9px] uppercase tracking-wider font-bold block text-zinc-500 mb-1">
+          <div className="lg:col-span-12 border-t border-white/10 pt-5 font-sans leading-relaxed text-[11px] text-zinc-400 text-left">
+            <span className="font-mono text-[9px] uppercase tracking-wider font-bold block text-zinc-350 mb-1">
               Federal Statutory Advisory Disclaimer:
             </span>
             <p>{cta.disclaimer}</p>

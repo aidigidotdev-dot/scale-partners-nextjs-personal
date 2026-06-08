@@ -6,6 +6,7 @@
  */
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { PageId } from '../types';
 import { 
   Building2, 
@@ -60,19 +61,34 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
       icon: Building2,
       title: "Company Setup & Corporate Architecture",
       desc: "Deploy legal structures optimized for global venture capital, corporate tax safety, and asset shielding across 45+ jurisdictions.",
-      link: "setup-freezone" as PageId
+      link: "setup-freezone" as PageId,
+      bullets: [
+        "100% foreign ownership registry",
+        "DET & Free Zone fast-track files",
+        "Custom holding group structures"
+      ]
     },
     {
       icon: Scale,
       title: "Corporate Tax Strategy & Reporting",
       desc: "Protect operations under the 9% UAE corporate tax frameworks with secure exemptions, VAT clearances, and GAAP bookkeeping.",
-      link: "finance-tax" as PageId
+      link: "finance-tax" as PageId,
+      bullets: [
+        "9% corporate tax optimization",
+        "FTA agent compliance liaison",
+        "GAAP dual-ledger bookkeeping"
+      ]
     },
     {
       icon: ShieldCheck,
       title: "Golden Visas & Executive Residency",
       desc: "Direct administrative clearance for 10-year Golden Visas, family sponsorships, and local corporate registry status.",
-      link: "visa-golden" as PageId
+      link: "visa-golden" as PageId,
+      bullets: [
+        "10-year Golden Visa tracking",
+        "VIP medical & identity escort",
+        "Family & employee sponsorship"
+      ]
     }
   ];
 
@@ -84,6 +100,21 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
     { name: "Shams Sharjah", tag: "SHAMS", desc: "Media & Agency" },
     { name: "RAKEZ Ras Al Khaimah", tag: "RAKEZ", desc: "Logistics & Plants" },
     { name: "DWTC Zayed Road", tag: "DWTC", desc: "VIP Commerce Hub" },
+  ];
+
+  const authorityLogos = [
+    { name: "Dubai DED", src: "/assets/imgi_103_dubai-ded.jpg" },
+    { name: "Abu Dhabi DED", src: "/assets/imgi_104_abu-dhabi-ded.jpg" },
+    { name: "Sharjah DED", src: "/assets/imgi_107_sharjah-ded.jpg" },
+    { name: "UAQ DED", src: "/assets/imgi_108_uaq-ded.jpg" },
+    { name: "Fujairah DED", src: "/assets/imgi_105_fujairah-ded.jpg" },
+    { name: "RAK Govt", src: "/assets/imgi_106_rak-govt.jpg" },
+    { name: "SRTIP", src: "/assets/imgi_33_SRTIP.webp" },
+    { name: "Adriatic", src: "/assets/imgi_50_Adriatic.png" },
+    { name: "JAFZA", src: "/assets/imgi_45_JAFZA.webp" },
+    { name: "Dubai Silicon Oasis", src: "/assets/imgi_40_Dubai-silicon.webp" },
+    { name: "Dubai South", src: "/assets/imgi_41_DUbai-south.webp" },
+    { name: "DWTC", src: "/assets/imgi_42_DWTC.webp" }
   ];
 
 
@@ -316,7 +347,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
         <div className="pt-8 space-y-12">
           
           <div className="text-center space-y-2.5 max-w-xl mx-auto">
-            <span className="text-[10.5px] uppercase font-mono tracking-[0.25em] text-zinc-500 font-bold block">
+            <span className="text-[10.5px] uppercase font-mono tracking-[0.25em] text-[#08854C] font-bold block">
               Strategic Jurisdictional Arbitrage
             </span>
             <h2 className="text-[28px] sm:text-[34px] font-sans font-light text-zinc-900 tracking-wide leading-snug">
@@ -331,25 +362,43 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                 <div 
                   key={idx} 
                   id={`feature_bento_item_${idx}`}
-                  className="bg-white border border-zinc-100 rounded-2xl p-6 sm:p-8 hover:shadow-xl hover:border-gold-300/20 transition-all duration-300 flex flex-col justify-between hover:scale-[1.01]"
+                  className="bg-white/90 border border-zinc-150 rounded-2xl p-6 sm:p-8 hover:shadow-[0_22px_60px_rgba(18,183,106,0.05)] hover:border-emerald-500/20 hover:bg-white transition-all duration-300 flex flex-col justify-between hover:scale-[1.015] relative overflow-hidden group shadow-2xs"
                 >
-                  <div className="space-y-4">
-                    <div className="p-3 bg-red-400/5 text-gold-600 rounded-xl inline-block">
-                      <Icon className="w-5 h-5" />
+                  <div className="space-y-5">
+                    {/* Icon & Glow Decoration */}
+                    <div className="flex items-center justify-between">
+                      <div className="p-3 bg-emerald-500/10 text-emerald-600 border border-emerald-500/15 rounded-xl inline-block group-hover:bg-emerald-500 group-hover:text-white group-hover:border-transparent transition-all duration-300">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <span className="text-[10.5px] font-mono font-bold text-zinc-300 group-hover:text-emerald-500 transition-colors">0{idx + 1}</span>
                     </div>
-                    <h3 className="text-[16px] font-bold text-zinc-900 tracking-tight">
-                      {prop.title}
-                    </h3>
-                    <p className="text-[12.5px] text-zinc-500 leading-relaxed font-sans">
-                      {prop.desc}
-                    </p>
+
+                    <div className="space-y-2.5 text-left">
+                      <h3 className="text-[16.5px] font-bold text-zinc-900 tracking-tight font-sans">
+                        {prop.title}
+                      </h3>
+                      <p className="text-[12.5px] text-zinc-500 leading-relaxed font-sans font-light">
+                        {prop.desc}
+                      </p>
+                    </div>
+
+                    {/* Features list */}
+                    <ul className="space-y-2.5 pt-4 border-t border-zinc-100/80">
+                      {prop.bullets.map((bullet, bIdx) => (
+                        <li key={bIdx} className="flex items-center space-x-2 text-[12px] text-zinc-650 font-medium font-sans">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 stroke-[2.25]" />
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
+
                   <button
                     onClick={() => {
                       setPage(prop.link);
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
-                    className="mt-6 text-[12.5px] font-semibold text-gold-600 hover:text-gold-700 flex items-center space-x-1 transition-colors group self-start"
+                    className="mt-8 text-[12.5px] font-semibold text-emerald-600 hover:text-emerald-700 flex items-center space-x-1.5 transition-colors group self-start border-0 bg-transparent p-0 cursor-pointer"
                   >
                     <span>Analyze Compliant Scope</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -357,6 +406,38 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                 </div>
               );
             })}
+          </div>
+
+          {/* LICENSING AUTHORITIES LOGO MARQUEE */}
+          <div className="pt-10 border-t border-zinc-150 space-y-6">
+            <div className="text-center space-y-1">
+              <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#08854C] font-bold block">
+                Authorized Licensing & Registry Authorities
+              </span>
+              <p className="text-[11.5px] text-zinc-400 font-sans">
+                Scale Partners integrates official company registrations directly with prime UAE registrar departments
+              </p>
+            </div>
+
+            {/* Auto-scroll marquee for authorities */}
+            <div className="w-full overflow-hidden relative py-4 select-none">
+              <div className="flex animate-marquee gap-8 items-center">
+                {[...authorityLogos, ...authorityLogos].map((logo, indx) => (
+                  <div 
+                    key={indx} 
+                    className="h-12 w-[140px] shrink-0 relative bg-zinc-50 border border-zinc-150 rounded-xl p-2.5 flex items-center justify-center hover:border-zinc-300 transition-all"
+                  >
+                    <Image 
+                      src={logo.src} 
+                      alt={logo.name} 
+                      fill
+                      sizes="140px"
+                      className="object-contain p-2 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
         
