@@ -20,7 +20,8 @@ import {
   CheckCircle2,
   Lock,
   Building2,
-  FileText
+  FileText,
+  Scale
 } from 'lucide-react';
 
 interface SeoFaqBlockProps {
@@ -84,128 +85,87 @@ export default function SeoFaqBlock({ setPage }: SeoFaqBlockProps) {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 relative z-10">
         
-        {/* SECTION 1: INFORMATIVE ARTICLES */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
-          {/* Main Editorial Text Column (7 Cols) - BEAUTIFULLY SHADED WRAPPER */}
-          <div className="lg:col-span-7 bg-zinc-50/70 border border-zinc-200/60 p-6 sm:p-8 rounded-2xl space-y-6 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-gold-450/5 rounded-full blur-xl pointer-events-none"></div>
-            <div className="space-y-3">
-              <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-gold-600 font-bold block">
-                UAE Jurisdictions & Licensing Quick Guide
-              </span>
-              <h2 className="font-serif text-[28px] sm:text-[34px] font-semibold text-zinc-900 tracking-tight leading-snug">
-                Quick Guide: How to Structure Your UAE Business
-              </h2>
-            </div>
+        {/* Section Heading */}
+        <div className="space-y-3 text-center max-w-2xl mx-auto mb-16">
+          <span className="inline-flex items-center space-x-1.5 bg-emerald-500/10 text-[#08854C] px-3.5 py-1.5 rounded-full border border-emerald-500/20 font-mono text-[10px] font-bold uppercase tracking-wider">
+            <span>Corporate Divisions</span>
+          </span>
+          <h2 className="font-serif text-[28px] sm:text-[36px] font-semibold text-zinc-900 tracking-tight leading-tight">
+            Our Core Corporate Solutions
+          </h2>
+          <p className="text-[14px] sm:text-[15px] text-zinc-500 font-sans">
+            Dedicated divisions to structure, register, protect, and finance your business operations in the UAE.
+          </p>
+        </div>
 
-            <p className="text-[13.5px] text-zinc-650 leading-relaxed font-sans">
-              Setting up a business in Dubai or other Emirates involves two key choices: selecting your legal jurisdiction (where your company is registered) and choosing your license activity (the exact scope of your operations). Use this quick guide to choose the right setup pathway for your company.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
-              <div className="space-y-3 bg-white p-5 rounded-xl border border-zinc-200/60/80 shadow-2xs hover:shadow-xs transition-shadow">
-                <span className="w-8 h-8 rounded-lg bg-gold-50 text-gold-600 flex items-center justify-center font-mono text-xs font-bold">01</span>
-                <h4 className="font-bold text-zinc-800 text-[14.5px]">1. Select Your Jurisdiction (Free Zone)</h4>
-                <p className="text-[12px] text-zinc-500 leading-relaxed font-sans">
-                  The UAE hosts over 45 custom Free Zones. Selecting the right jurisdiction depends entirely on whether you require instant digital setup SLAs (like Meydan), holding structures (like IFZA), heavy industrial plants (like RAKEZ), or raw commodities trading setups (like DMCC).
-                </p>
-                <div className="flex flex-wrap gap-x-3 gap-y-1 pt-1 border-t border-zinc-50">
-                  {['Meydan', 'IFZA', 'DMCC', 'Shams'].map((fz_name, index) => {
-                    const mappedIds = ['fz-meydan', 'fz-ifza', 'fz-dmcc', 'fz-shams'];
-                    return (
-                      <button
-                        key={index}
-                        onClick={() => handleLinkNavigate(mappedIds[index] as PageId)}
-                        className="text-[11.5px] text-gold-650 font-semibold hover:text-gold-750 hover:underline inline-flex items-center space-x-0.5"
-                      >
-                        <span>{fz_name}</span>
-                        <span className="text-[8px] text-zinc-400">→</span>
-                      </button>
-                    );
-                  })}
+        {/* Core Corporate Divisions Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          {[
+            {
+              title: "Business Setup & Company Formation",
+              icon: Building2,
+              pageId: 'setup-freezone' as PageId,
+              p1: "Establishing a company in the United Arab Emirates provides a powerful foundation for global commerce. We handle the entire registration sequence, name approvals, and municipal registries on your behalf across Dubai Mainland (DET) and 45+ specialized Free Zones.",
+              p2: "Whether you require domestic market access with unlimited team visas or a tax-exempt Free Zone hub with instant virtual flexi-desk approvals, we coordinate directly with official registrars to get your trade license active within 24 hours.",
+              cta: "Explore Setup Solutions"
+            },
+            {
+              title: "Trade Licensing & Activity Structuring",
+              icon: FileText,
+              pageId: 'lic-ecommerce' as PageId,
+              p1: "A trade license is the legal operational ledger of your GCC enterprise. Selecting the correct activity divisions prevents regulatory compliance fines, ensures smooth local tax audits, and guarantees quick merchant payment gate approvals.",
+              p2: "We align your corporate structure with specialized activities including E-Commerce, B2B Consultancy, General Trading, and Holding Company SPVs, securing direct registrar approvals tailored specifically to your sector.",
+              cta: "Explore License Types"
+            },
+            {
+              title: "Corporate Tax Strategy & GAAP Accounting",
+              icon: Scale,
+              pageId: 'finance-tax' as PageId,
+              p1: "Operating a compliant enterprise requires careful coordination under the federal 9% UAE Corporate Tax guidelines and standard 5% VAT filing rules. Our chartered accountants prepare your ledgers in strict accordance with global GAAP standards.",
+              p2: "We register your entity for Tax Registration Numbers (TRN), optimize your eligible exemptions legally, and supervise yearly corporate audits to safeguard your business assets from unexpected administrative penalties.",
+              cta: "Explore Tax & Accounting"
+            },
+            {
+              title: "VIP Corporate Bank Account Opening",
+              icon: Lock,
+              pageId: 'finance-banking' as PageId,
+              p1: "Accessing secure, multi-currency banking is critical for international trade, payment processing, and treasury management. We provide direct pre-approved pipelines to top UAE banking institutions including Emirates NBD, Mashreq, and Wio Bank.",
+              p2: "Our banking relations team guides you through the complex corporate KYC screening queues, ensuring you secure active corporate IBANs and payment processing merchant integrations with zero administrative friction.",
+              cta: "Explore Banking Solutions"
+            }
+          ].map((sec, idx) => {
+            const Icon = sec.icon;
+            return (
+              <div 
+                key={idx} 
+                className="bg-zinc-50/70 border border-zinc-200/60 p-8 rounded-2xl hover:bg-white hover:shadow-[0_20px_50px_rgba(18,183,106,0.04)] hover:border-zinc-350 transition-all duration-300 flex flex-col justify-between space-y-6"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3 pb-3 border-b border-zinc-200/50">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-[#08854C] flex items-center justify-center border border-emerald-500/15">
+                      <Icon className="w-5 h-5 text-[#08854C]" />
+                    </div>
+                    <h3 className="text-[17px] font-bold text-zinc-900 tracking-tight font-sans">
+                      {sec.title}
+                    </h3>
+                  </div>
+                  
+                  <div className="space-y-3 text-[13px] text-zinc-655 leading-relaxed font-sans font-light text-left">
+                    <p>{sec.p1}</p>
+                    <p>{sec.p2}</p>
+                  </div>
                 </div>
+
+                <button
+                  onClick={() => handleLinkNavigate(sec.pageId)}
+                  className="group inline-flex items-center space-x-1.5 text-[13px] font-semibold text-emerald-600 hover:text-emerald-700 font-sans self-start cursor-pointer border-0 bg-transparent p-0"
+                >
+                  <span>{sec.cta}</span>
+                  <span className="transition-transform group-hover:translate-x-0.5">→</span>
+                </button>
               </div>
-
-              <div className="space-y-3 bg-white p-5 rounded-xl border border-zinc-200/60/80 shadow-2xs hover:shadow-xs transition-shadow">
-                <span className="w-8 h-8 rounded-lg bg-[#22C55E]/15 text-gold-500 flex items-center justify-center font-mono text-xs font-bold">02</span>
-                <h4 className="font-bold text-zinc-800 text-[14.5px]">2. Select Your License Activity</h4>
-                <p className="text-[12px] text-zinc-500 leading-relaxed font-sans">
-                  A trade license represents your legal operating ledger. Selecting matching activity divisions prevents regulatory fines and merchant gateway holds. E-commerce setups, consulting service portals, and digital agency branches require explicit structural alignment for smooth audits.
-                </p>
-                <div className="flex flex-wrap gap-x-3 gap-y-1 pt-1 border-t border-zinc-50">
-                  {['E-Commerce', 'Consultancy', 'Holding'].map((lic_name, index) => {
-                    const mappedIds = ['lic-ecommerce', 'lic-commercial', 'lic-holding'];
-                    return (
-                      <button
-                        key={index}
-                        onClick={() => handleLinkNavigate(mappedIds[index] as PageId)}
-                        className="text-[11.5px] text-gold-650 font-semibold hover:text-gold-750 hover:underline inline-flex items-center space-x-0.5"
-                      >
-                        <span>{lic_name}</span>
-                        <span className="text-[8px] text-zinc-400">→</span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-
-            <p className="text-[11.5px] text-zinc-450 italic font-serif pt-3 border-t border-zinc-200/60">
-              Disclaimer: Scale Partners is a fully licensed corporate advisory firm. This guide is for educational purposes. Official setup approvals require partner biometric security clearing clearances.
-            </p>
-          </div>
-
-          {/* Core Trust & Security Sidebar Column (5 Cols) - BLUE ACCENTED CONTAINER */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-[#fbfaf6] via-white to-[#22C55E]/5 border border-zinc-200/40 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#22C55E]/5 rounded-full blur-2xl pointer-events-none"></div>
-            <div className="flex items-center space-x-2 text-[11px] font-mono text-gold-600 font-bold uppercase tracking-wider relative z-10">
-              <ShieldCheck className="w-4 h-4 text-emerald-600 animate-pulse" />
-              <span>Our Pre-Approved Advisory Credentials</span>
-            </div>
-
-            <div className="space-y-5 relative z-10">
-              <div className="flex items-start space-x-3 text-[13px] text-zinc-700 bg-white/70 p-3 rounded-xl border border-zinc-100 shadow-2xs">
-                <CheckCircle2 className="w-4 h-4 text-gold-500 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-zinc-900 block font-sans">Authorized Sovereign Registered Agent</strong>
-                  Approved corporate registry coordinating body in continuous standing with major registries across Dubai and Northern Emirates.
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-3 text-[13px] text-zinc-700 bg-white/70 p-3 rounded-xl border border-zinc-100 shadow-2xs">
-                <CheckCircle2 className="w-4 h-4 text-gold-500 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-zinc-900 block font-sans">Corporate Tax Protection Certification</strong>
-                  Advisors are licensed to configure asset security strategies tailored explicitly to defend domestic corporate assets.
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3 text-[13px] text-zinc-700 bg-white/70 p-3 rounded-xl border border-zinc-100 shadow-2xs">
-                <CheckCircle2 className="w-4 h-4 text-gold-500 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-zinc-900 block font-sans">Zero Bank Account Friction</strong>
-                  Priority pre-approved digital ledger setups ensure direct corporate accounting priority at top-tier digital banks.
-                </div>
-              </div>
-            </div>
-
-            <div className="border-t border-zinc-200/60 pt-5 mt-4 space-y-3 relative z-10">
-              <span className="text-[10px] font-mono uppercase text-zinc-400 block tracking-widest">Active Partner Desks</span>
-              <div className="grid grid-cols-2 gap-3 text-[12px] font-medium text-zinc-800">
-                <div className="bg-white border border-zinc-200/60/60 p-2.5 rounded-lg flex items-center space-x-1.5 shadow-2xs">
-                  <Building2 className="w-4 h-4 text-gold-500" />
-                  <span>Wio Premium Partner</span>
-                </div>
-                <div className="bg-white border border-zinc-200/60/60 p-2.5 rounded-lg flex items-center space-x-1.5 shadow-2xs">
-                  <FileText className="w-4 h-4 text-gold-500" />
-                  <span>DET Integration</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
+            );
+          })}
         </div>
 
         {/* SECTION 2: RICH GENERAL ACCORDION FAQS */}
