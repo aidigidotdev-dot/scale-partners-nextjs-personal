@@ -48,8 +48,8 @@ export default function SetupSteps() {
         {/* Editorial Title */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="space-y-3 max-w-xl">
-            <span className="inline-flex items-center space-x-1.5 bg-gold-500/10 text-gold-500 px-3 py-1 bg-zinc-50 rounded-full font-mono text-[9.5px] font-bold uppercase tracking-widest border border-gold-500/10">
-              <Activity className="w-3.5 h-3.5 text-gold-500" />
+            <span className="inline-flex items-center space-x-1.5 bg-emerald-500/10 text-emerald-600 px-3 py-1 rounded-full font-mono text-[9.5px] font-bold uppercase tracking-widest border border-emerald-500/15">
+              <Activity className="w-3.5 h-3.5 text-emerald-500" />
               <span>LOGISTICAL FLOWSHEET</span>
             </span>
             <h2 className="text-[30px] sm:text-[36px] font-sans font-light text-zinc-900 tracking-tight leading-snug">
@@ -63,7 +63,40 @@ export default function SetupSteps() {
           <div className="hidden lg:flex items-center space-x-2 text-[12px] font-mono text-zinc-400 font-semibold select-none">
             <span>REGISTRATION FLOW</span>
             <ChevronRight className="w-3.5 h-3.5 text-zinc-350" />
-            <span className="text-gold-500">ACTIVE INTERACTIVE COMPILER</span>
+            <span className="text-emerald-600">ACTIVE INTERACTIVE PIPELINE</span>
+          </div>
+        </div>
+
+        {/* Visual Onboarding Pipeline Diagram */}
+        <div className="mb-12 bg-white border border-zinc-200/75 rounded-2xl p-6 md:p-8 shadow-xs text-left relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-full blur-xl"></div>
+          <span className="text-[10px] font-mono font-bold text-[#08854C] uppercase tracking-widest block mb-6">
+            End-to-End Onboarding Protocol
+          </span>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 relative">
+            {[
+              { num: "01", title: "Choose Activity", subtitle: "Define Operations", color: "bg-emerald-500/10 text-[#08854C]" },
+              { num: "02", title: "Choose Jurisdiction", subtitle: "Mainland vs Free Zone", color: "bg-emerald-500/10 text-[#08854C]" },
+              { num: "03", title: "License Approval", subtitle: "DET / Registry Clearance", color: "bg-emerald-500/10 text-[#08854C]" },
+              { num: "04", title: "Bank Account", subtitle: "Corporate IBAN Setup", color: "bg-emerald-500/10 text-[#08854C]" },
+              { num: "05", title: "Visa Processing", subtitle: "Residency & EID", color: "bg-emerald-500/10 text-[#08854C]" },
+              { num: "06", title: "Launch", subtitle: "Active Operations", color: "bg-[#08854C] text-white" }
+            ].map((node, nIdx) => (
+              <div key={nIdx} className="flex flex-col space-y-2 relative group">
+                <div className="flex items-center">
+                  <div className={`w-8 h-8 rounded-full ${node.color} flex items-center justify-center font-mono font-bold text-[12px] border border-emerald-500/15 shadow-2xs z-10`}>
+                    {node.num}
+                  </div>
+                  {nIdx < 5 && (
+                    <div className="hidden lg:block absolute left-8 right-[-12px] top-4 h-[1px] bg-zinc-200 group-hover:bg-emerald-300 transition-colors z-0"></div>
+                  )}
+                </div>
+                <div>
+                  <h4 className="text-[13px] font-bold text-zinc-900 leading-tight">{node.title}</h4>
+                  <p className="text-[10px] text-zinc-450 leading-normal font-sans">{node.subtitle}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -98,7 +131,7 @@ export default function SetupSteps() {
                         {st.subtitle}
                       </span>
                       <strong className={`font-mono text-[14px] transition-colors ${
-                        isSelected ? 'text-gold-500' : 'text-zinc-350'
+                        isSelected ? 'text-emerald-500' : 'text-zinc-350'
                       }`}>
                         STEP {st.stepNum}
                       </strong>

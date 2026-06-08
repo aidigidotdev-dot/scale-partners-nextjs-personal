@@ -52,10 +52,10 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
   };
 
   const trustFactors = [
-    { label: "Golden Visas Cleared", value: "1,200+", desc: "100% security clear rate on 10-Year Tracks" },
-    { label: "Processing Speed SLA", value: "72 Hours", desc: "Digital immigration channels bypassing queues" },
-    { label: "Family Visas Secured", value: "3,500+", desc: "Complete family & staff sponsorship corridors" },
-    { label: "Approval Success Rate", value: "100%", desc: "Direct pre-vetted GDRFA & ICP file processing" },
+    { label: "Structures Processed", value: "AED 8B+", desc: "AED 8B+ Corporate Structures Processed" },
+    { label: "Companies Registered", value: "30,000+", desc: "30,000+ Companies Registered in the UAE" },
+    { label: "Free Zones Supported", value: "45+", desc: "45+ Free Zones Supported nationwide" },
+    { label: "Operating Experience", value: "12+ Years", desc: "12+ Years Operating with 100% UAE Focus" },
   ];
 
   const divisionsScrollRef = useRef<HTMLDivElement>(null);
@@ -81,32 +81,52 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
       title: "Business Setup & Company Formation",
       icon: Building2,
       pageId: 'setup-freezone' as PageId,
-      p1: "Establishing a company in the United Arab Emirates provides a powerful foundation for global commerce. We handle the entire registration sequence, name approvals, and municipal registries on your behalf across Dubai Mainland (DET) and 45+ specialized Free Zones.",
-      p2: "Whether you require domestic market access with unlimited team visas or a tax-exempt Free Zone hub with instant virtual flexi-desk approvals, we coordinate directly with official registrars to get your trade license active within 24 hours.",
+      bullets: [
+        "Mainland & Free Zone Setup",
+        "Name Reservation",
+        "Trade License Processing",
+        "Government Liaison",
+        "24-Hour Fast Track"
+      ],
       cta: "Explore Setup Solutions"
     },
     {
       title: "Trade Licensing & Activity Structuring",
       icon: FileText,
       pageId: 'lic-ecommerce' as PageId,
-      p1: "A trade license is the legal operational ledger of your GCC enterprise. Selecting the correct activity divisions prevents regulatory compliance fines, ensures smooth local tax audits, and guarantees quick merchant payment gate approvals.",
-      p2: "We align your corporate structure with specialized activities including E-Commerce, B2B Consultancy, General Trading, and Holding Company SPVs, securing direct registrar approvals tailored specifically to your sector.",
+      bullets: [
+        "Activity Mapping & Optimization",
+        "E-Commerce & Trading Licenses",
+        "Holding Company Structures",
+        "DET Portal Coordination",
+        "Compliance Fine Mitigation"
+      ],
       cta: "Explore License Types"
     },
     {
       title: "Corporate Tax Strategy & GAAP Accounting",
       icon: Scale,
       pageId: 'finance-tax' as PageId,
-      p1: "Operating a compliant enterprise requires careful coordination under the federal 9% UAE Corporate Tax guidelines and standard 5% VAT filing rules. Our chartered accountants prepare your ledgers in strict accordance with global GAAP standards.",
-      p2: "We register your entity for Tax Registration Numbers (TRN), optimize your eligible exemptions legally, and supervise yearly corporate audits to safeguard your business assets from unexpected administrative penalties.",
+      bullets: [
+        "9% Corporate Tax Mitigation",
+        "TRN Registration & VAT Filing",
+        "GAAP/IFRS Compliant Ledgers",
+        "Shielding Assets from Penalties",
+        "Annual Audit Supervision"
+      ],
       cta: "Explore Tax & Accounting"
     },
     {
       title: "VIP Corporate Bank Account Opening",
       icon: Lock,
       pageId: 'finance-banking' as PageId,
-      p1: "Accessing secure, multi-currency banking is critical for international trade, payment processing, and treasury management. We provide direct pre-approved pipelines to top UAE banking institutions including Emirates NBD, Mashreq, and Wio Bank.",
-      p2: "Our banking relations team guides you through the complex corporate KYC screening queues, ensuring you secure active corporate IBANs and payment processing merchant integrations with zero administrative friction.",
+      bullets: [
+        "Pre-Approved Bank Pipelines",
+        "VIP Fast-Track KYC Queues",
+        "Multi-Currency IBAN Accounts",
+        "Merchant Gateways Integration",
+        "Zero Friction Onboarding"
+      ],
       cta: "Explore Banking Solutions"
     }
   ];
@@ -184,15 +204,15 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
             <div className="lg:col-span-7 text-center lg:text-left space-y-7">
               
               <h1 className="font-sans text-[38px] sm:text-[52px] lg:text-[60px] font-extralight text-white leading-[1.2] tracking-wide">
-                Setup Your Business<br />
+                The UAE Entry Point<br />
                 <span className="text-emerald-400 font-light">
-                  in Dubai within 24 Hours.
+                  for Global Founders.
                 </span>
               </h1>
               
               {/* GEO/AEO Rich Descriptive Abstract targeting prime corporate keywords */}
               <p className="max-w-xl mx-auto lg:mx-0 font-sans text-zinc-100/90 text-[14.5px] sm:text-[16px] leading-[1.7] tracking-wide font-light">
-                Scale Partners is the Top Rated Business Setup & Professional Services in Dubai. We design custom-structured <strong className="font-semibold text-white">Dubai Mainland approvals</strong>, secure <strong className="font-bold text-white">exempt Free Zone companies</strong>, and establish high-speed structures. We coordinate directly with official government registrars to remove administrative friction entirely.
+                Scale Partners is the <strong className="font-semibold text-emerald-400">safest path into the UAE</strong>. We design secure, compliant corporate structures, protect your assets under the 9% corporate tax framework, and manage your entire mainland or free zone licensing process with absolute risk mitigation.
               </p>
 
               {/* Premium Trust Badges Grid (Sovereign Trust Indicators) */}
@@ -201,17 +221,17 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                 <div className="flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-zinc-200 border-b border-white/10 pb-3">
                   <div className="flex items-center space-x-2">
                     <Users className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span className="font-light">Trusted by 30K+ Clients</span>
+                    <span className="font-light">AED 8B+ Processed</span>
                   </div>
                   <div className="hidden sm:block text-white/20">|</div>
                   <div className="flex items-center space-x-2">
                     <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span className="font-light">12+ Years in the UAE</span>
+                    <span className="font-light">30,000+ Companies</span>
                   </div>
                   <div className="hidden sm:block text-white/20">|</div>
                   <div className="flex items-center space-x-2">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span className="font-light">End-to-End Setup</span>
+                    <span className="font-light">12+ Years Operating</span>
                   </div>
                 </div>
 
@@ -504,10 +524,14 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                       </h3>
                     </div>
                     
-                    <div className="space-y-3 text-[13px] text-zinc-600 leading-relaxed font-sans font-light text-left">
-                      <p>{sec.p1}</p>
-                      <p>{sec.p2}</p>
-                    </div>
+                    <ul className="space-y-2.5 text-[13px] text-zinc-650 leading-relaxed font-sans text-left">
+                      {sec.bullets.map((bullet, bIdx) => (
+                        <li key={bIdx} className="flex items-start space-x-2">
+                          <span className="text-emerald-500 font-bold shrink-0">✔</span>
+                          <span className="text-zinc-700 font-light">{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
 
                     {/* BANKING LOGOS GRID INSIDE CARD 4 */}
                     {sec.title === "VIP Corporate Bank Account Opening" && (
