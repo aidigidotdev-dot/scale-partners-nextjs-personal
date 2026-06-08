@@ -52,10 +52,10 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
   };
 
   const trustFactors = [
-    { label: "Foreign Ownership", value: "100%", desc: "Direct equity shielding in mainland & free zones" },
-    { label: "Licensing Speed SLA", value: "24 Hours", desc: "Digital registrar gateways bypassing queues" },
-    { label: "Assets Under Placement", value: "$1.4 Billion+", desc: "Supervising complex merchant configurations" },
-    { label: "Residencies Cleared", value: "1,200+", desc: "100% security clear rate on Golden Tracks" },
+    { label: "Golden Visas Cleared", value: "1,200+", desc: "100% security clear rate on 10-Year Tracks" },
+    { label: "Processing Speed SLA", value: "72 Hours", desc: "Digital immigration channels bypassing queues" },
+    { label: "Family Visas Secured", value: "3,500+", desc: "Complete family & staff sponsorship corridors" },
+    { label: "Approval Success Rate", value: "100%", desc: "Direct pre-vetted GDRFA & ICP file processing" },
   ];
 
   const divisionsScrollRef = useRef<HTMLDivElement>(null);
@@ -658,9 +658,141 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
 
       <WhyChooseUs />
       <SetupSteps />
+      {/* SECTION: ACCOUNTING & TAX SERVICES FOR NEW BUSINESSES IN DUBAI */}
+      <section className="py-20 border-t border-zinc-100 bg-white font-sans text-left relative z-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Column: Text Content */}
+            <div className="lg:col-span-7 space-y-6">
+              <span className="inline-flex items-center space-x-1.5 bg-emerald-500/10 text-[#08854C] px-3.5 py-1.5 rounded-full border border-emerald-500/20 font-mono text-[10px] font-bold uppercase tracking-wider">
+                <span>Statutory Fiscal Shield</span>
+              </span>
+              <h2 className="font-serif text-[30px] sm:text-[38px] font-semibold text-zinc-900 tracking-tight leading-tight">
+                Accounting & Tax Services for New Businesses in Dubai
+              </h2>
+              
+              <div className="space-y-4 text-[14.5px] text-zinc-550 leading-relaxed font-sans font-light">
+                <p>
+                  Operating a corporate entity in the UAE requires strict adherence to the federal 9% Corporate Tax framework and standard 5% VAT filing rules. Our chartered accountants build and maintain IFRS-compliant ledger systems tailored specifically to protect your business margins.
+                </p>
+                <p>
+                  From securing your Tax Registration Number (TRN) to preparing quarterly audit bundles and navigating transfer pricing documentation, we coordinate directly with the Federal Tax Authority (FTA) so you avoid unexpected administrative compliance fines.
+                </p>
+              </div>
 
-      {/* MID-HOME GRADIENT COLOR BREAKER BLOCK */}
-      <div className="w-full bg-breaker-parallax-section py-16 text-white my-16 relative overflow-hidden text-left">
+              <div className="pt-2">
+                <button
+                  onClick={() => {
+                    setPage('finance-tax');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="group inline-flex items-center space-x-2 bg-zinc-900 hover:bg-zinc-800 text-white px-6 py-3.5 rounded-xl font-sans text-[13.5px] font-bold tracking-tight transition-all duration-300 shadow-md border-0 cursor-pointer"
+                >
+                  <span>Optimize Tax Structure</span>
+                  <ArrowRight className="w-4 h-4 text-emerald-400 group-hover:translate-x-0.5 transition-transform" />
+                </button>
+              </div>
+            </div>
+
+            {/* Right Column: Visual Dashboard Card */}
+            <div className="lg:col-span-5 bg-zinc-950 text-white rounded-3xl p-6 sm:p-8 space-y-6 relative overflow-hidden shadow-xl border border-zinc-800">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl"></div>
+              <div className="text-[10px] tracking-widest uppercase font-mono text-emerald-400 font-bold">FTA Compliance Checklist</div>
+              <h3 className="font-serif text-[18px] text-white">Sovereign Audit Prevention Matrix</h3>
+              
+              <div className="space-y-4 border-t border-white/10 pt-4 text-[12.5px] text-zinc-300">
+                {[
+                  "Dual-ledger IFRS accounting audits by licensed chartered agents",
+                  "9% Corporate Tax registration & strategic exemption filing",
+                  "Standard 5% VAT ledger auditing and quarterly return logs",
+                  "Transfer pricing alignment preventing retrospective audits"
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-start space-x-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#12B76A] shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION: VIP CORPORATE BANK ACCOUNT OPENING SECTION */}
+      <section className="py-20 border-t border-zinc-100 bg-zinc-50/40 font-sans text-left relative z-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Column: Colored Bank Logos Grid */}
+            <div className="lg:col-span-5 space-y-4 order-last lg:order-first">
+              <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block mb-2">Pre-Approved Banking Partners:</span>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {[
+                  { name: "Wio Bank", src: "/assets/imgi_65_WIO.png" },
+                  { name: "Emirates NBD", src: "/assets/imgi_115_enbd-logo.jpg" },
+                  { name: "Mashreq Bank", src: "/assets/imgi_111_mashreq-logo.jpg" },
+                  { name: "First Abu Dhabi Bank", src: "/assets/imgi_116_fab-bank-logo.jpg" },
+                  { name: "Abu Dhabi Islamic Bank", src: "/assets/imgi_112_adib-logo-1.jpg" },
+                  { name: "RAK BANK", src: "/assets/imgi_114_rak-bank-logo.jpg" },
+                  { name: "Emirates Islamic", src: "/assets/imgi_113_emirates-islamic-logo.jpg" },
+                  { name: "HSBC Bank", src: "/assets/imgi_117_hsbc-logo.jpg" },
+                  { name: "Euro Pacific Bank", src: "/assets/imgi_118_euro-pacific-logo.jpg" }
+                ].map((bank, idx) => (
+                  <div key={idx} className="h-16 bg-white border border-zinc-200/80 rounded-2xl flex items-center justify-center p-3 shadow-3xs hover:shadow-2xs transition-all hover:border-emerald-500/20">
+                    <div className="relative w-full h-full">
+                      <Image 
+                        src={bank.src} 
+                        alt={bank.name} 
+                        fill
+                        sizes="(max-width: 768px) 50vw, 15vw"
+                        className="object-contain" 
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column: Text Content */}
+            <div className="lg:col-span-7 space-y-6">
+              <span className="inline-flex items-center space-x-1.5 bg-emerald-500/10 text-[#08854C] px-3.5 py-1.5 rounded-full border border-emerald-500/20 font-mono text-[10px] font-bold uppercase tracking-wider">
+                <span>AML Priority Corridors</span>
+              </span>
+              <h2 className="font-serif text-[30px] sm:text-[38px] font-semibold text-zinc-900 tracking-tight leading-tight">
+                VIP Corporate Bank Account Opening Section
+              </h2>
+              
+              <div className="space-y-4 text-[14.5px] text-zinc-550 leading-relaxed font-sans font-light">
+                <p>
+                  Securing active multi-currency banking is critical for international trade, payment processing, and treasury management. We provide direct pre-approved pipelines to top UAE banking institutions including Emirates NBD, Mashreq, and digital-first gateways like Wio Business.
+                </p>
+                <p>
+                  Our banking relations team guides you through the complex corporate AML and KYC screening queues, verifying your shareholder dossier before submission. This guarantees your business secures active corporate IBANs with zero administrative friction.
+                </p>
+              </div>
+
+              <div className="pt-2">
+                <button
+                  onClick={() => {
+                    setPage('finance-banking');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="group inline-flex items-center space-x-2 bg-zinc-900 hover:bg-zinc-800 text-white px-6 py-3.5 rounded-xl font-sans text-[13.5px] font-bold tracking-tight transition-all duration-300 shadow-md border-0 cursor-pointer"
+                >
+                  <span>Explore Banking Corridors</span>
+                  <ArrowRight className="w-4 h-4 text-emerald-400 group-hover:translate-x-0.5 transition-transform" />
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* MID-HOME GRADIENT COLOR BREAKER BLOCK (SOVEREIGN VISA & RESIDENCE SERVICES) */}
+      <div className="w-full bg-breaker-parallax-section py-16 text-white my-16 relative overflow-hidden text-left z-20">
         {/* Constellation Canvas style drift backdrop */}
         <div className="absolute inset-0 bg-black/[0.08] mix-blend-overlay"></div>
         
@@ -668,13 +800,13 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
           
           <div className="max-w-3xl space-y-3">
             <span className="inline-flex items-center space-x-1.5 bg-white/10 text-emerald-300 px-3 py-1 rounded-full border border-white/10 font-mono text-[10px] font-bold uppercase tracking-wider">
-              <span>Sovereign Corporate Security Track</span>
+              <span>VIP Residency & Residence Channels</span>
             </span>
             <h2 className="font-sans text-[26px] sm:text-[34px] font-light text-white tracking-wide leading-tight">
-              A bespoke approach to protecting global wealth.
+              Sovereign Visa & 10-Year Golden Visa Pathways
             </h2>
             <p className="text-[13px] sm:text-[14px] text-zinc-100/90 max-w-2xl font-light leading-relaxed">
-              We design robust holdings, bypass administrative queues, and protect dynamic corporate assets under the 2026 OECD tax framework indices. Maintain complete operational harmony across zones.
+              We coordinate directly with federal immigration authorities to process your residency documents, family sponsorships, and executive Golden Visas. Bypass standard queues with complete legal compliance.
             </p>
           </div>
 
@@ -718,7 +850,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
             </div>
 
             <p className="text-[13.5px] sm:text-[14px] text-zinc-700 leading-relaxed italic border-l-2 border-gold-500 pl-4 font-light">
-              "Every legal structure compiled by Scale Partners is manually audited against Dubai Economy and Tourism regulations and updated 2026 OECD tax indices. We ensure your corporate assets remain shielded from local risks, ensuring complete operational holding harmony."
+              "Every residency and golden visa dossier is pre-audited against GDRFA and ICP regulatory frameworks. We ensure all personal and investor structures are fully aligned with immigration protocols, enabling zero-friction residency stamping."
             </p>
 
             <div className="flex flex-wrap gap-x-6 gap-y-2 pt-4 border-t border-zinc-200/60 text-[11.5px] text-zinc-500 font-light">
@@ -728,7 +860,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
               </span>
               <span className="flex items-center space-x-1.5">
                 <BookOpen className="w-4 h-4 text-gold-500" />
-                <span>Publisher of official UAE regulatory setup whitepapers</span>
+                <span>Publisher of official UAE residency compliance guidelines</span>
               </span>
             </div>
           </div>

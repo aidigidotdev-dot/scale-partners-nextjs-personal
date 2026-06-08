@@ -167,15 +167,19 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
                             key={subitem.id}
                             id={`nav_subitem_link_${subitem.id}`}
                             onClick={() => handleLinkClick(subitem.id)}
-                            className={`w-full text-left p-3 rounded-xl flex items-start space-x-3 transition-colors ${
+                            className={`w-full text-left p-3 rounded-xl flex items-start space-x-3 transition-colors group ${
                               isSelected ? 'bg-gold-50/50 border-l-[3px] border-gold-500 pl-2.5' : 'hover:bg-zinc-50'
                             }`}
                           >
-                            <div className={`p-2 rounded-lg ${isSelected ? 'bg-gold-100 text-gold-600' : 'bg-zinc-100 text-zinc-500'} transition-colors`}>
+                            <div className={`p-2 rounded-lg transition-colors ${
+                              isSelected 
+                                ? 'bg-emerald-500/15 text-emerald-600' 
+                                : 'bg-emerald-500/5 text-emerald-500 group-hover:bg-emerald-500/15 group-hover:text-emerald-600'
+                            }`}>
                               <Icon className="w-4 h-4" />
                             </div>
                             <div className="flex-1">
-                              <div className={`text-[13px] font-semibold tracking-tight ${isSelected ? 'text-gold-700' : 'text-zinc-800'}`}>
+                              <div className={`text-[13px] font-semibold tracking-tight transition-colors ${isSelected ? 'text-[#08854C]' : 'text-zinc-800 group-hover:text-[#08854C]'}`}>
                                 {subitem.name}
                               </div>
                               <p className="text-[11px] text-zinc-500 leading-snug font-sans font-normal mt-0.5">
