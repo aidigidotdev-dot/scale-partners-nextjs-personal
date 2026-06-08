@@ -1,6 +1,25 @@
-import { Shield, Sparkles, Zap, MapPin, Users, CheckCircle2 } from 'lucide-react';
+import { useRef } from 'react';
+import { Shield, Sparkles, Zap, MapPin, Users, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function WhyChooseUs() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      const card = container.querySelector('div');
+      if (card) {
+        const cardWidth = card.clientWidth;
+        const gap = 24; // space-x-6 is 24px
+        const scrollAmount = cardWidth + gap;
+        container.scrollBy({
+          left: direction === 'left' ? -scrollAmount : scrollAmount,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
+
   const points = [
     {
       icon: Zap,
@@ -32,28 +51,51 @@ export default function WhyChooseUs() {
     <section id="why_choose_scale_partners" className="relative py-16 bg-white border-t border-b border-zinc-100 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Editorial Heading */}
-        <div className="text-center space-y-3 max-w-2xl mx-auto mb-14">
-          <span className="inline-flex items-center space-x-1.5 bg-gold-400/10 text-gold-650 px-3 py-1 rounded-full border border-gold-300/20 font-mono text-[9.5px] font-bold uppercase tracking-widest">
-            <Sparkles className="w-3.5 h-3.5 text-gold-600" />
-            <span>EXECUTIVE ADVISORY STANDARDS</span>
-          </span>
-          <h2 className="text-[30px] sm:text-[36px] font-sans font-light text-zinc-900 tracking-tight leading-snug">
-            Why global founders choose <span className="text-gold-500 font-medium">Scale Partners</span>
-          </h2>
-          <p className="text-[14px] text-zinc-500 font-sans leading-relaxed">
-            We operate beyond standard agency registrations. We architect custom, fully tax-optimized holding structures and high-speed UAE corporate vehicles tailored to protect international equity.
-          </p>
+        {/* Editorial Heading & Slider Controls */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 gap-6">
+          <div className="space-y-3 max-w-2xl text-left">
+            <span className="inline-flex items-center space-x-1.5 bg-gold-400/10 text-gold-650 px-3 py-1 rounded-full border border-gold-300/20 font-mono text-[9.5px] font-bold uppercase tracking-widest">
+              <Sparkles className="w-3.5 h-3.5 text-gold-600" />
+              <span>EXECUTIVE ADVISORY STANDARDS</span>
+            </span>
+            <h2 className="text-[30px] sm:text-[36px] font-sans font-light text-zinc-900 tracking-tight leading-snug">
+              Why global founders choose <span className="text-gold-500 font-medium">Scale Partners</span>
+            </h2>
+            <p className="text-[14px] text-zinc-500 font-sans leading-relaxed">
+              We operate beyond standard agency registrations. We architect custom, fully tax-optimized holding structures and high-speed UAE corporate vehicles tailored to protect international equity.
+            </p>
+          </div>
+
+          {/* Slider controls */}
+          <div className="flex items-center space-x-2.5 shrink-0 self-start md:self-end">
+            <button 
+              onClick={() => handleScroll('left')}
+              className="p-3 rounded-full bg-zinc-50 border border-zinc-200 text-zinc-650 hover:bg-white hover:text-gold-500 hover:border-gold-500/30 transition-all cursor-pointer shadow-xs active:scale-95 flex items-center justify-center"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button 
+              onClick={() => handleScroll('right')}
+              className="p-3 rounded-full bg-zinc-50 border border-zinc-200 text-zinc-650 hover:bg-white hover:text-gold-500 hover:border-gold-500/30 transition-all cursor-pointer shadow-xs active:scale-95 flex items-center justify-center"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
-        {/* Dynamic Multi-Column Corporate Value Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+        {/* Dynamic Multi-Column Corporate Value Slider */}
+        <div 
+          ref={scrollRef}
+          className="flex space-x-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-none scroll-smooth w-full"
+        >
           {points.map((pt, idx) => {
             const IconComponent = pt.icon;
             return (
               <div 
                 key={idx} 
-                className="bg-zinc-50 border border-zinc-200/60 rounded-2xl p-6 sm:p-8 hover:bg-white hover:shadow-[0_22px_60px_rgba(0,0,0,0.06)] hover:border-gold-500/20 transition-all duration-300 flex flex-col justify-between group"
+                className="w-[290px] sm:w-[320px] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 bg-zinc-50 border border-zinc-200/60 rounded-2xl p-6 sm:p-8 hover:bg-white hover:shadow-[0_22px_60px_rgba(0,0,0,0.06)] hover:border-gold-500/20 transition-all duration-300 flex flex-col justify-between group snap-start"
               >
                 <div className="space-y-4">
                   {/* Icon Block */}

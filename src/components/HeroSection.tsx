@@ -311,6 +311,54 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
 
       {/* LIGHT BODY WRAPPER FOR THE REST OF HOMEPAGE */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16 py-12">
+
+        {/* SECTION 6: HIGH-AESTHETIC CORE SERVICES BLOCK */}
+        <div className="pt-8 space-y-12">
+          
+          <div className="text-center space-y-2.5 max-w-xl mx-auto">
+            <span className="text-[10.5px] uppercase font-mono tracking-[0.25em] text-zinc-500 font-bold block">
+              Strategic Jurisdictional Arbitrage
+            </span>
+            <h2 className="text-[28px] sm:text-[34px] font-sans font-light text-zinc-900 tracking-wide leading-snug">
+              End-to-End Business Setup Services in Dubai
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {valueProps.map((prop, idx) => {
+              const Icon = prop.icon;
+              return (
+                <div 
+                  key={idx} 
+                  id={`feature_bento_item_${idx}`}
+                  className="bg-white border border-zinc-100 rounded-2xl p-6 sm:p-8 hover:shadow-xl hover:border-gold-300/20 transition-all duration-300 flex flex-col justify-between hover:scale-[1.01]"
+                >
+                  <div className="space-y-4">
+                    <div className="p-3 bg-red-400/5 text-gold-600 rounded-xl inline-block">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-[16px] font-bold text-zinc-900 tracking-tight">
+                      {prop.title}
+                    </h3>
+                    <p className="text-[12.5px] text-zinc-500 leading-relaxed font-sans">
+                      {prop.desc}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      setPage(prop.link);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="mt-6 text-[12.5px] font-semibold text-gold-600 hover:text-gold-700 flex items-center space-x-1 transition-colors group self-start"
+                  >
+                    <span>Analyze Compliant Scope</span>
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        </div>
         
         {/* SECTION: EXQUISITE GOOGLE REVIEWS SHOWCASE */}
         <div className="space-y-8 bg-transparent">
@@ -413,7 +461,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
         </div>
 
         {/* Sovereign Clearance Integration Portfolio */}
-        <div className="pt-16 border-t border-zinc-200/80 space-y-16">
+        <div className="pt-16 border-t border-zinc-200/80 space-y-8 overflow-hidden">
           <div className="text-center space-y-1.5 font-sans">
             <span className="text-[9.5px] font-mono tracking-[0.25em] text-zinc-450 uppercase block font-semibold">
               Sovereign Clearance Integration Portfolio
@@ -423,39 +471,40 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
             </p>
           </div>
 
-          {/* Sleek, interactive Horizontal brand grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5 pt-3">
-            {partnersLogos.map((logo, indx) => {
-              const matchingPageIds = ['fz-meydan', 'fz-ifza', 'fz-dmcc', 'fz-shams', 'fz-rakez', 'fz-dwtc'];
-              return (
-                <div
-                  key={indx}
-                  onClick={() => {
-                    setPage(matchingPageIds[indx] as PageId);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
-                  className="bg-white border border-zinc-200 hover:border-zinc-300 hover:shadow-md hover:scale-[1.01] p-3.5 rounded-xl text-center space-y-1.5 transition-all cursor-pointer group"
-                >
-                  <span className="text-[10px] font-bold tracking-widest text-zinc-300 group-hover:text-gold-500 transition-colors block font-mono">
-                    {logo.tag}
-                  </span>
-                  <div>
-                    <h5 className="text-[11.5px] font-semibold text-zinc-700 group-hover:text-zinc-950 leading-none">
-                      {logo.name.split(' ')[0]} Free Zone
-                    </h5>
-                    <span className="text-[8.5px] text-zinc-400 uppercase tracking-widest block font-mono mt-0.5">
-                      {logo.desc}
+          {/* Endless horizontal marquee auto rotate */}
+          <div className="w-full overflow-hidden relative py-2 select-none">
+            <div className="flex animate-marquee gap-4">
+              {[...partnersLogos, ...partnersLogos].map((logo, indx) => {
+                const originalIndex = indx % partnersLogos.length;
+                const matchingPageIds = ['fz-meydan', 'fz-ifza', 'fz-dmcc', 'fz-shams', 'fz-rakez', 'fz-dwtc'];
+                return (
+                  <div
+                    key={indx}
+                    onClick={() => {
+                      setPage(matchingPageIds[originalIndex] as PageId);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="w-[180px] shrink-0 bg-white border border-zinc-200 hover:border-zinc-300 hover:shadow-md hover:scale-[1.01] p-3.5 rounded-xl text-center space-y-1.5 transition-all cursor-pointer group"
+                  >
+                    <span className="text-[10px] font-bold tracking-widest text-zinc-300 group-hover:text-gold-500 transition-colors block font-mono">
+                      {logo.tag}
                     </span>
+                    <div>
+                      <h5 className="text-[11.5px] font-semibold text-zinc-700 group-hover:text-zinc-950 leading-none">
+                        {logo.name.split(' ')[0]} Free Zone
+                      </h5>
+                      <span className="text-[8.5px] text-zinc-400 uppercase tracking-widest block font-mono mt-0.5">
+                        {logo.desc}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
-
       </div>
 
-      {/* Dynamic Brand-level sections */}
       <WhyChooseUs />
       <SetupSteps />
 
@@ -536,58 +585,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
         </div>
       </div>
 
-      {/* Re-open main container for the rest of homepage elements */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16 py-12">
 
-        {/* SECTION 6: HIGH-AESTHETIC CORE SERVICES BLOCK */}
-        <div className="pt-8 space-y-12">
-          
-          <div className="text-center space-y-2.5 max-w-xl mx-auto">
-            <span className="text-[10.5px] uppercase font-mono tracking-[0.25em] text-zinc-500 font-bold block">
-              Strategic Jurisdictional Arbitrage
-            </span>
-            <h2 className="text-[28px] sm:text-[34px] font-sans font-light text-zinc-900 tracking-wide leading-snug">
-              Bespoke legal channels built to defend asset value.
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {valueProps.map((prop, idx) => {
-              const Icon = prop.icon;
-              return (
-                <div 
-                  key={idx} 
-                  id={`feature_bento_item_${idx}`}
-                  className="bg-white border border-zinc-100 rounded-2xl p-6 sm:p-8 hover:shadow-xl hover:border-gold-300/20 transition-all duration-300 flex flex-col justify-between hover:scale-[1.01]"
-                >
-                  <div className="space-y-4">
-                    <div className="p-3 bg-red-400/5 text-gold-600 rounded-xl inline-block">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <h3 className="text-[16px] font-bold text-zinc-900 tracking-tight">
-                      {prop.title}
-                    </h3>
-                    <p className="text-[12.5px] text-zinc-500 leading-relaxed font-sans">
-                      {prop.desc}
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => {
-                      setPage(prop.link);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="mt-6 text-[12.5px] font-semibold text-gold-600 hover:text-gold-700 flex items-center space-x-1 transition-colors group self-start"
-                  >
-                    <span>Analyze Compliant Scope</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-                  </button>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-      </div>
 
       {/* Dynamic Leadership, Registries, Media, and Educational sections */}
       <LeadershipTeam />
