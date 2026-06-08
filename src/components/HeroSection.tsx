@@ -36,7 +36,6 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ setPage, openContactModal }: HeroSectionProps) {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [activeSimulationStep, setActiveSimulationStep] = useState<'freezone' | 'mainland'>('freezone');
   
   // High-Trust Advisory Board profile (For trust indices)
@@ -87,139 +86,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
     { name: "DWTC Zayed Road", tag: "DWTC", desc: "VIP Commerce Hub" },
   ];
 
-  // Interactive 3D constellation simulation
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
 
-    let animationFrameId: number;
-    let width = (canvas.width = canvas.offsetWidth || 800);
-    let height = (canvas.height = canvas.offsetHeight || 600);
-
-    const particles: Array<{
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      radius: number;
-      pulseSpeed: number;
-      pulseFactor: number;
-    }> = [];
-
-    // Initialize particles
-    for (let i = 0; i < 48; i++) {
-      particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        radius: Math.random() * 2.5 + 1,
-        pulseSpeed: Math.random() * 0.02 + 0.005,
-        pulseFactor: Math.random() * Math.PI
-      });
-    }
-
-    let mouseX = width / 2;
-    let mouseY = height / 2;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      mouseX = e.clientX - rect.left;
-      mouseY = e.clientY - rect.top;
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    const render = () => {
-      ctx.clearRect(0, 0, width, height);
-
-      // Draw subtle orbital rings in 3D perspective
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.06)';
-      ctx.lineWidth = 1;
-      ctx.save();
-      ctx.translate(width / 2, height / 2);
-      ctx.scale(1.5, 0.6); // 3D Perspective tilt
-      
-      ctx.beginPath();
-      ctx.arc(0, 0, 180, 0, Math.PI * 2);
-      ctx.stroke();
-
-      ctx.beginPath();
-      ctx.arc(0, 0, 320, 0, Math.PI * 2);
-      ctx.stroke();
-
-      ctx.restore();
-
-      // Render & dynamic link particles
-      particles.forEach((p, idx) => {
-        // Apply velocity
-        p.x += p.vx;
-        p.y += p.vy;
-
-        // Bounce boundaries
-        if (p.x < 0 || p.x > width) p.vx *= -1;
-        if (p.y < 0 || p.y > height) p.vy *= -1;
-
-        // Pulse scale
-        p.pulseFactor += p.pulseSpeed;
-        const currentRadius = p.radius + Math.sin(p.pulseFactor) * 0.5;
-
-        // Attract lightly to mouse pointer
-        const dx = mouseX - p.x;
-        const dy = mouseY - p.y;
-        const distToMouse = Math.sqrt(dx * dx + dy * dy);
-        if (distToMouse < 200) {
-          p.x += dx * 0.001;
-          p.y += dy * 0.001;
-        }
-
-        // Draw particle node
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, currentRadius, 0, Math.PI * 2);
-        // Clean white glowing particles matching the minimalist layout
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.45)';
-        ctx.fill();
-
-        // Connect near particle nodes (Constellation)
-        for (let j = idx + 1; j < particles.length; j++) {
-          const p2 = particles[j];
-          const distDx = p.x - p2.x;
-          const distDy = p.y - p2.y;
-          const dist = Math.sqrt(distDx * distDx + distDy * distDy);
-
-          if (dist < 110) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(p2.x, p2.y);
-            const alpha = (1 - dist / 110) * 0.12;
-            ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
-            ctx.lineWidth = 0.85;
-            ctx.stroke();
-          }
-        }
-      });
-
-      animationFrameId = requestAnimationFrame(render);
-    };
-
-    render();
-
-    const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = canvas.offsetWidth;
-      height = canvas.height = canvas.offsetHeight;
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   return (
     <div className="relative bg-white font-sans">
@@ -241,13 +108,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
         {/* DARK GRADIENT OVERLAY */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#07140B]/90 to-[#0B2E16]/70 z-10 pointer-events-none" />
         
-        {/* 3D FLOATING CONSTELLATION BACKSTAGE */}
-        <div className="absolute inset-0 z-20 pointer-events-none opacity-80 overflow-hidden">
-          <canvas 
-            ref={canvasRef} 
-            className="w-full h-full block"
-          />
-        </div>
+
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
           
