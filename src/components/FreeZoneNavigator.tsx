@@ -748,7 +748,7 @@ export default function FreeZoneNavigator({ onSelectFreeZone, openContactModal }
         {activeTab === 'comparison' && (
           <div className="space-y-6 animate-fade-in">
             <div className="overflow-x-auto rounded-xl border border-zinc-200/60">
-              <table className="w-full text-left border-collapse bg-white">
+              <table className="w-full min-w-[750px] text-left border-collapse bg-white">
                 <thead>
                   <tr className="border-b border-zinc-200 bg-zinc-50/50">
                     <th className="p-4 text-[11px] font-mono uppercase text-zinc-400 w-1/5">Free Zone Details</th>

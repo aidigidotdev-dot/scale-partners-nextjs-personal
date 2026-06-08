@@ -1064,7 +1064,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
 
                 {/* Live Comparison Scores Table */}
                 <div className="overflow-x-auto rounded-xl border border-zinc-200/60 bg-zinc-50/25">
-                  <table className="w-full text-left border-collapse text-[12px]">
+                  <table className="w-full min-w-[700px] text-left border-collapse text-[12px]">
                     <thead>
                       <tr className="bg-zinc-50 text-[10px] font-mono uppercase text-zinc-500 border-b border-zinc-200/60">
                         <td className="p-3">Jurisdiction</td>

@@ -409,7 +409,7 @@ export default function BusinessSetupPage({ type, setPage, openContactModal, onS
           </div>
 
           <div className="overflow-x-auto relative z-10">
-            <table className="w-full text-left border-collapse bg-white/70 backdrop-blur-xs rounded-xl overflow-hidden border border-zinc-200/60/45 font-sans">
+            <table className="w-full min-w-[750px] text-left border-collapse bg-white/70 backdrop-blur-xs rounded-xl overflow-hidden border border-zinc-200/60/45 font-sans">
               <thead>
                 <tr className="border-b border-zinc-200 bg-zinc-50/60 font-mono text-[10.5px]">
                   <th className="py-4.5 px-4 uppercase text-zinc-450 w-1/4 select-none">Criterion</th>
