@@ -96,13 +96,13 @@ export default function Footer({ setPage, openContactModal }: FooterProps) {
           
           <div className="lg:col-span-6 space-y-4">
             
-            <div className="flex items-center">
+            <div className="inline-flex items-center bg-white px-3.5 py-2 rounded-xl">
               <Image 
                 src="/assets/logo.jpg" 
                 alt="Scale Partners Logo" 
-                width={120} 
+                width={130} 
                 height={42} 
-                className="object-contain max-h-[42px] w-auto brightness-0 invert"
+                className="object-contain max-h-[42px] w-auto"
               />
             </div>
             

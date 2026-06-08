@@ -92,21 +92,21 @@ export default function SeoFaqBlock({ setPage }: SeoFaqBlockProps) {
             <div className="absolute top-0 right-0 w-24 h-24 bg-gold-450/5 rounded-full blur-xl pointer-events-none"></div>
             <div className="space-y-3">
               <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-gold-600 font-bold block">
-                Sovereign Market Entry Insights
+                UAE Jurisdictions & Licensing Quick Guide
               </span>
               <h2 className="font-serif text-[28px] sm:text-[34px] font-semibold text-zinc-900 tracking-tight leading-snug">
-                Architecting compliant growth in GCC trade corridors.
+                Quick Guide: How to Structure Your UAE Business
               </h2>
             </div>
 
             <p className="text-[13.5px] text-zinc-650 leading-relaxed font-sans">
-              Setting up a company in the United Arab Emirates is no longer a matter of mere physical residency. It is a strategic corporate choice that influences tax liabilities under the new 9% UAE Corporate Tax guidelines, access to digital payment pipelines, and credibility with global financial providers. We compile your structure specifically to address audits.
+              Setting up a business in Dubai or other Emirates involves two key choices: selecting your legal jurisdiction (where your company is registered) and choosing your license activity (the exact scope of your operations). Use this quick guide to choose the right setup pathway for your company.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
               <div className="space-y-3 bg-white p-5 rounded-xl border border-zinc-200/60/80 shadow-2xs hover:shadow-xs transition-shadow">
                 <span className="w-8 h-8 rounded-lg bg-gold-50 text-gold-600 flex items-center justify-center font-mono text-xs font-bold">01</span>
-                <h4 className="font-bold text-zinc-800 text-[14.5px]">Free Zones Directory</h4>
+                <h4 className="font-bold text-zinc-800 text-[14.5px]">1. Select Your Jurisdiction (Free Zone)</h4>
                 <p className="text-[12px] text-zinc-500 leading-relaxed font-sans">
                   The UAE hosts over 45 custom Free Zones. Selecting the right jurisdiction depends entirely on whether you require instant digital setup SLAs (like Meydan), holding structures (like IFZA), heavy industrial plants (like RAKEZ), or raw commodities trading setups (like DMCC).
                 </p>
@@ -129,7 +129,7 @@ export default function SeoFaqBlock({ setPage }: SeoFaqBlockProps) {
 
               <div className="space-y-3 bg-white p-5 rounded-xl border border-zinc-200/60/80 shadow-2xs hover:shadow-xs transition-shadow">
                 <span className="w-8 h-8 rounded-lg bg-[#22C55E]/15 text-gold-500 flex items-center justify-center font-mono text-xs font-bold">02</span>
-                <h4 className="font-bold text-zinc-800 text-[14.5px]">Strategic License Types</h4>
+                <h4 className="font-bold text-zinc-800 text-[14.5px]">2. Select Your License Activity</h4>
                 <p className="text-[12px] text-zinc-500 leading-relaxed font-sans">
                   A trade license represents your legal operating ledger. Selecting matching activity divisions prevents regulatory fines and merchant gateway holds. E-commerce setups, consulting service portals, and digital agency branches require explicit structural alignment for smooth audits.
                 </p>
@@ -161,7 +161,7 @@ export default function SeoFaqBlock({ setPage }: SeoFaqBlockProps) {
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#22C55E]/5 rounded-full blur-2xl pointer-events-none"></div>
             <div className="flex items-center space-x-2 text-[11px] font-mono text-gold-600 font-bold uppercase tracking-wider relative z-10">
               <ShieldCheck className="w-4 h-4 text-emerald-600 animate-pulse" />
-              <span>Trust and Security Indicators</span>
+              <span>Our Pre-Approved Advisory Credentials</span>
             </div>
 
             <div className="space-y-5 relative z-10">
