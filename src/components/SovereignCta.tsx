@@ -112,10 +112,7 @@ export default function SovereignCta({ currentPage, openContactModal }: Sovereig
         
         {/* Core content area inside gradient border */}
         <div 
-          className="relative bg-[#07140B]/95 rounded-[22px] px-6 sm:px-10 py-10 sm:py-12 z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch bg-cover bg-center"
-          style={{
-            backgroundImage: "linear-gradient(to right, rgba(7, 20, 11, 0.94) 0%, rgba(7, 20, 11, 0.82) 60%, rgba(7, 20, 11, 0.94) 100%), url('/assets/dubai_skyline_premium.png')"
-          }}
+          className="relative bg-gradient-to-br from-[#07140B] via-[#0B2E16] to-[#07140B] rounded-[22px] px-6 sm:px-10 py-10 sm:py-12 z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch"
         >
           
           {/* Ambient light turquoise/blue spotlights behind the text */}
