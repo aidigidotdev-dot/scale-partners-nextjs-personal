@@ -20,6 +20,8 @@ import {
   CheckCircle2,
   Lock,
   ChevronRight,
+  ChevronLeft,
+  FileText,
   Shield,
   Award,
   BookOpen
@@ -56,39 +58,56 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
     { label: "Residencies Cleared", value: "1,200+", desc: "100% security clear rate on Golden Tracks" },
   ];
 
-  const valueProps = [
+  const divisionsScrollRef = useRef<HTMLDivElement>(null);
+
+  const handleDivisionsScroll = (direction: 'left' | 'right') => {
+    if (divisionsScrollRef.current) {
+      const container = divisionsScrollRef.current;
+      const card = container.querySelector('div');
+      if (card) {
+        const cardWidth = card.clientWidth;
+        const gap = 24; // space-x-6 is 24px
+        const scrollAmount = cardWidth + gap;
+        container.scrollBy({
+          left: direction === 'left' ? -scrollAmount : scrollAmount,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
+
+  const divisions = [
     {
+      title: "Business Setup & Company Formation",
       icon: Building2,
-      title: "Company Setup & Corporate Architecture",
-      desc: "Deploy legal structures optimized for global venture capital, corporate tax safety, and asset shielding across 45+ jurisdictions.",
-      link: "setup-freezone" as PageId,
-      bullets: [
-        "100% foreign ownership registry",
-        "DET & Free Zone fast-track files",
-        "Custom holding group structures"
-      ]
+      pageId: 'setup-freezone' as PageId,
+      p1: "Establishing a company in the United Arab Emirates provides a powerful foundation for global commerce. We handle the entire registration sequence, name approvals, and municipal registries on your behalf across Dubai Mainland (DET) and 45+ specialized Free Zones.",
+      p2: "Whether you require domestic market access with unlimited team visas or a tax-exempt Free Zone hub with instant virtual flexi-desk approvals, we coordinate directly with official registrars to get your trade license active within 24 hours.",
+      cta: "Explore Setup Solutions"
     },
     {
+      title: "Trade Licensing & Activity Structuring",
+      icon: FileText,
+      pageId: 'lic-ecommerce' as PageId,
+      p1: "A trade license is the legal operational ledger of your GCC enterprise. Selecting the correct activity divisions prevents regulatory compliance fines, ensures smooth local tax audits, and guarantees quick merchant payment gate approvals.",
+      p2: "We align your corporate structure with specialized activities including E-Commerce, B2B Consultancy, General Trading, and Holding Company SPVs, securing direct registrar approvals tailored specifically to your sector.",
+      cta: "Explore License Types"
+    },
+    {
+      title: "Corporate Tax Strategy & GAAP Accounting",
       icon: Scale,
-      title: "Corporate Tax Strategy & Reporting",
-      desc: "Protect operations under the 9% UAE corporate tax frameworks with secure exemptions, VAT clearances, and GAAP bookkeeping.",
-      link: "finance-tax" as PageId,
-      bullets: [
-        "9% corporate tax optimization",
-        "FTA agent compliance liaison",
-        "GAAP dual-ledger bookkeeping"
-      ]
+      pageId: 'finance-tax' as PageId,
+      p1: "Operating a compliant enterprise requires careful coordination under the federal 9% UAE Corporate Tax guidelines and standard 5% VAT filing rules. Our chartered accountants prepare your ledgers in strict accordance with global GAAP standards.",
+      p2: "We register your entity for Tax Registration Numbers (TRN), optimize your eligible exemptions legally, and supervise yearly corporate audits to safeguard your business assets from unexpected administrative penalties.",
+      cta: "Explore Tax & Accounting"
     },
     {
-      icon: ShieldCheck,
-      title: "Golden Visas & Executive Residency",
-      desc: "Direct administrative clearance for 10-year Golden Visas, family sponsorships, and local corporate registry status.",
-      link: "visa-golden" as PageId,
-      bullets: [
-        "10-year Golden Visa tracking",
-        "VIP medical & identity escort",
-        "Family & employee sponsorship"
-      ]
+      title: "VIP Corporate Bank Account Opening",
+      icon: Lock,
+      pageId: 'finance-banking' as PageId,
+      p1: "Accessing secure, multi-currency banking is critical for international trade, payment processing, and treasury management. We provide direct pre-approved pipelines to top UAE banking institutions including Emirates NBD, Mashreq, and Wio Bank.",
+      p2: "Our banking relations team guides you through the complex corporate KYC screening queues, ensuring you secure active corporate IBANs and payment processing merchant integrations with zero administrative friction.",
+      cta: "Explore Banking Solutions"
     }
   ];
 
@@ -346,62 +365,101 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
         {/* SECTION 6: HIGH-AESTHETIC CORE SERVICES BLOCK */}
         <div className="pt-8 space-y-12">
           
-          <div className="text-center space-y-2.5 max-w-xl mx-auto">
-            <span className="text-[10.5px] uppercase font-mono tracking-[0.25em] text-[#08854C] font-bold block">
-              Strategic Jurisdictional Arbitrage
-            </span>
-            <h2 className="text-[28px] sm:text-[34px] font-sans font-light text-zinc-900 tracking-wide leading-snug">
-              End-to-End Business Setup Services in Dubai
-            </h2>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div className="space-y-3 text-left max-w-2xl">
+              <span className="inline-flex items-center space-x-1.5 bg-emerald-500/10 text-[#08854C] px-3.5 py-1.5 rounded-full border border-emerald-500/20 font-mono text-[10px] font-bold uppercase tracking-wider">
+                <span>Strategic Jurisdictional Arbitrage</span>
+              </span>
+              <h2 className="text-[28px] sm:text-[36px] font-serif font-semibold text-zinc-900 tracking-tight leading-tight">
+                End-to-End Business Setup Services in Dubai
+              </h2>
+              <p className="text-[14px] sm:text-[15px] text-zinc-500 font-sans">
+                Dedicated divisions to structure, register, protect, and finance your business operations in the UAE.
+              </p>
+            </div>
+
+            {/* Slider controls */}
+            <div className="flex items-center space-x-2.5 shrink-0 self-start md:self-end">
+              <button 
+                onClick={() => handleDivisionsScroll('left')}
+                className="p-3 rounded-full bg-zinc-50 border border-zinc-200 text-zinc-600 hover:bg-white hover:text-emerald-500 hover:border-emerald-500/30 transition-all cursor-pointer shadow-xs active:scale-95 flex items-center justify-center"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button 
+                onClick={() => handleDivisionsScroll('right')}
+                className="p-3 rounded-full bg-zinc-50 border border-zinc-200 text-zinc-600 hover:bg-white hover:text-emerald-500 hover:border-emerald-500/30 transition-all cursor-pointer shadow-xs active:scale-95 flex items-center justify-center"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {valueProps.map((prop, idx) => {
-              const Icon = prop.icon;
+          {/* Core Corporate Divisions Slider Row */}
+          <div 
+            ref={divisionsScrollRef}
+            className="flex space-x-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-none scroll-smooth w-full"
+          >
+            {divisions.map((sec, idx) => {
+              const Icon = sec.icon;
               return (
                 <div 
                   key={idx} 
-                  id={`feature_bento_item_${idx}`}
-                  className="bg-white/90 border border-zinc-150 rounded-2xl p-6 sm:p-8 hover:shadow-[0_22px_60px_rgba(18,183,106,0.05)] hover:border-emerald-500/20 hover:bg-white transition-all duration-300 flex flex-col justify-between hover:scale-[1.015] relative overflow-hidden group shadow-2xs"
+                  className="w-[290px] sm:w-[320px] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 bg-zinc-50/70 border border-zinc-200/60 p-6 sm:p-8 rounded-2xl hover:bg-white hover:shadow-[0_20px_50px_rgba(18,183,106,0.04)] hover:border-emerald-500/20 transition-all duration-300 flex flex-col justify-between group snap-start space-y-6"
                 >
-                  <div className="space-y-5">
-                    {/* Icon & Glow Decoration */}
-                    <div className="flex items-center justify-between">
-                      <div className="p-3 bg-emerald-500/10 text-emerald-600 border border-emerald-500/15 rounded-xl inline-block group-hover:bg-emerald-500 group-hover:text-white group-hover:border-transparent transition-all duration-300">
-                        <Icon className="w-5 h-5" />
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3 pb-3 border-b border-zinc-200/50">
+                      <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-[#08854C] flex items-center justify-center border border-emerald-500/15">
+                        <Icon className="w-5 h-5 text-[#08854C]" />
                       </div>
-                      <span className="text-[10.5px] font-mono font-bold text-zinc-300 group-hover:text-emerald-500 transition-colors">0{idx + 1}</span>
-                    </div>
-
-                    <div className="space-y-2.5 text-left">
-                      <h3 className="text-[16.5px] font-bold text-zinc-900 tracking-tight font-sans">
-                        {prop.title}
+                      <h3 className="text-[16.5px] font-bold text-zinc-900 tracking-tight font-sans text-left">
+                        {sec.title}
                       </h3>
-                      <p className="text-[12.5px] text-zinc-500 leading-relaxed font-sans font-light">
-                        {prop.desc}
-                      </p>
+                    </div>
+                    
+                    <div className="space-y-3 text-[13px] text-zinc-600 leading-relaxed font-sans font-light text-left">
+                      <p>{sec.p1}</p>
+                      <p>{sec.p2}</p>
                     </div>
 
-                    {/* Features list */}
-                    <ul className="space-y-2.5 pt-4 border-t border-zinc-100/80">
-                      {prop.bullets.map((bullet, bIdx) => (
-                        <li key={bIdx} className="flex items-center space-x-2 text-[12px] text-zinc-650 font-medium font-sans">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 stroke-[2.25]" />
-                          <span>{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    {/* BANKING LOGOS GRID INSIDE CARD 4 */}
+                    {sec.title === "VIP Corporate Bank Account Opening" && (
+                      <div className="mt-4 pt-4 border-t border-zinc-200/50 space-y-2">
+                        <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block text-left">Pre-Integrated Banking Partners:</span>
+                        <div className="grid grid-cols-4 gap-2">
+                          {['Wio', 'ENBD', 'Mashreq', 'FAB', 'ADIB', 'RAK-BANK', 'Emirates-islamic', 'RUya'].map((bank) => (
+                            <div key={bank} className="h-8 bg-white border border-zinc-150 rounded-lg flex items-center justify-center p-1.5 hover:border-emerald-500/20 transition-all shadow-3xs">
+                              <img 
+                                src={`/assets/imgi_${
+                                  bank === 'Wio' ? '65_WIO' : 
+                                  bank === 'ENBD' ? '58_ENBD' : 
+                                  bank === 'Mashreq' ? '59_Mashreq' : 
+                                  bank === 'FAB' ? '56_FAB' : 
+                                  bank === 'ADIB' ? '60_ADIB' : 
+                                  bank === 'RAK-BANK' ? '54_RAK-BANK' : 
+                                  bank === 'Emirates-islamic' ? '61_Emirates-islamic' : '66_RUya'
+                                }.png`} 
+                                alt={bank} 
+                                className="h-full w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300" 
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   <button
                     onClick={() => {
-                      setPage(prop.link);
+                      setPage(sec.pageId);
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
-                    className="mt-8 text-[12.5px] font-semibold text-emerald-600 hover:text-emerald-700 flex items-center space-x-1.5 transition-colors group self-start border-0 bg-transparent p-0 cursor-pointer"
+                    className="group inline-flex items-center space-x-1.5 text-[13px] font-semibold text-emerald-600 hover:text-emerald-700 font-sans self-start cursor-pointer border-0 bg-transparent p-0"
                   >
-                    <span>Analyze Compliant Scope</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                    <span>{sec.cta}</span>
+                    <span className="transition-transform group-hover:translate-x-0.5">→</span>
                   </button>
                 </div>
               );
@@ -425,14 +483,14 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                 {[...authorityLogos, ...authorityLogos].map((logo, indx) => (
                   <div 
                     key={indx} 
-                    className="h-12 w-[140px] shrink-0 relative bg-zinc-50 border border-zinc-150 rounded-xl p-2.5 flex items-center justify-center hover:border-zinc-300 transition-all"
+                    className="h-16 w-[180px] shrink-0 relative flex items-center justify-center transition-all"
                   >
                     <Image 
                       src={logo.src} 
                       alt={logo.name} 
                       fill
-                      sizes="140px"
-                      className="object-contain p-2 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+                      sizes="180px"
+                      className="object-contain filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
                     />
                   </div>
                 ))}

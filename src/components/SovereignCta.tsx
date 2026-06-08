@@ -183,7 +183,7 @@ export default function SovereignCta({ currentPage, openContactModal }: Sovereig
                 href={whatsAppLink}
                 target="_blank"
                 rel="noreferrer referrerPolicy"
-                className="w-full py-4 bg-brand-grad text-white hover-bg-brand-grad rounded-xl text-[13.5px] font-bold tracking-tight transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:scale-[1.015]"
+                className="w-full py-4 bg-brand-grad text-white hover-bg-brand-grad rounded-xl text-[13.5px] font-bold tracking-tight transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:scale-[1.015] border border-[#22C55E]/40"
               >
                 <MessageSquare className="w-4.5 h-4.5 text-white shrink-0 fill-current" />
                 <span>{cta.ctaText}</span>
