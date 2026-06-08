@@ -39,7 +39,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [activeSimulationStep, setActiveSimulationStep] = useState<'freezone' | 'mainland'>('freezone');
   
-  // High-Trust Advisory Board profile (For E-E-A-T authority indices)
+  // High-Trust Advisory Board profile (For trust indices)
   const leadAuthor = {
     name: "Advocate Tarik Al-Mehairi",
     title: "Senior Corporate Structuring Advisor",
@@ -238,8 +238,8 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
           <source src="/assets/dubai_skyline.mp4" type="video/mp4" />
         </video>
 
-        {/* BRAND GRADIENT OVERLAY */}
-        <div className="absolute inset-0 bg-brand-grad opacity-85 z-10 pointer-events-none" />
+        {/* DARK GRADIENT OVERLAY */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#07140B]/90 to-[#0B2E16]/70 z-10 pointer-events-none" />
         
         {/* 3D FLOATING CONSTELLATION BACKSTAGE */}
         <div className="absolute inset-0 z-20 pointer-events-none opacity-80 overflow-hidden">
@@ -450,7 +450,110 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
 
       {/* LIGHT BODY WRAPPER FOR THE REST OF HOMEPAGE */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16 py-12">
-          <div className="text-center space-y-1.5">
+        
+        {/* SECTION: EXQUISITE GOOGLE REVIEWS SHOWCASE */}
+        <div className="space-y-8 bg-transparent">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div className="space-y-2 text-center md:text-left">
+              <span className="text-[10px] uppercase font-mono tracking-wider text-gold-500 font-bold block">
+                Corporate Reputation & Compliance Standing
+              </span>
+              <h3 className="font-sans text-[26px] sm:text-[32px] font-light text-zinc-900 tracking-wide leading-none">
+                4.9/5 on Google Business Specialist Indexes
+              </h3>
+              <p className="text-[13px] text-zinc-500 font-sans">
+                Review verified corporate setups, direct DET registry files, and strategic tax exemption clearances.
+              </p>
+            </div>
+            
+            {/* Aggregate Google rating summary with icon */}
+            <div className="bg-zinc-50 border border-zinc-200 p-4 rounded-2xl flex items-center space-x-3 self-center md:self-end">
+              <div className="flex -space-x-1">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-4 h-4 text-amber-400 fill-amber-400" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <div className="text-left font-sans">
+                <span className="text-[12.5px] font-bold text-zinc-800 block leading-tight">184 Verified Reviews</span>
+                <span className="text-[10px] text-zinc-400 block font-mono">GOOGLE VERIFIED SPECIALIST</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Marcus Vance",
+                role: "Managing Director, NexusFlow software holding",
+                review: "Scale Partners handled our entire DET mainland licensing structure and tax registration. Handled in under 24 hours without a single office visit. Clean, transparent corporate setups at its pinnacle.",
+                rating: 5,
+                date: "2 days ago",
+                avatar: "MV"
+              },
+              {
+                name: "Amara Al-Suwaidi",
+                role: "Founder, Oryx Luxury Trading",
+                review: "Absolute class. The cost estimator was exactly aligned with the real registry fee breakdown. They fast-tracked our corporate account with Wio and set up our virtual desk smoothly.",
+                rating: 5,
+                date: "1 week ago",
+                avatar: "AA"
+              },
+              {
+                name: "Dr. Robert Chen",
+                role: "Chief Compliance Officer, BioGen UAE",
+                review: "Setting up biotech holding branches is complex, but senior advisor advocate Tarik Al-Mehairi managed the complete ministerial registrations. Flawless 10-year Golden Visa tracking.",
+                rating: 5,
+                date: "3 weeks ago",
+                avatar: "RC"
+              }
+            ].map((rev, idx) => (
+              <div key={idx} className="bg-white border border-zinc-200/80 p-5 rounded-2xl space-y-4 hover:shadow-[0_15px_40px_rgba(0,0,0,0.03)] hover:border-zinc-350 transition-all font-sans relative text-left">
+                <div className="flex justify-between items-start">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center font-bold text-zinc-700 text-[13px] border border-zinc-200">
+                      {rev.avatar}
+                    </div>
+                    <div>
+                      <h4 className="text-[13.5px] font-bold text-zinc-900">{rev.name}</h4>
+                      <p className="text-[10px] text-zinc-500 leading-tight">{rev.role}</p>
+                    </div>
+                  </div>
+                  
+                  {/* Google Icon */}
+                  <svg className="w-4 h-4 opacity-70 shrink-0" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l3.66-2.85z" />
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.85c.87-2.6 3.3-4.53 6.16-4.53z" />
+                  </svg>
+                </div>
+                
+                <div className="flex space-x-0.5">
+                  {[...Array(rev.rating)].map((_, i) => (
+                    <svg key={i} className="w-3.5 h-3.5 text-amber-400 fill-amber-400" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                  <span className="text-[10px] text-zinc-400 font-mono ml-2 font-medium">{rev.date}</span>
+                </div>
+                
+                <p className="text-[12.5px] text-zinc-650 leading-relaxed italic font-sans">
+                  "{rev.review}"
+                </p>
+                
+                <div className="text-[9.5px] font-mono font-bold text-emerald-600 flex items-center space-x-1 uppercase tracking-wide bg-emerald-50/50 py-1 px-2.5 rounded-lg border border-emerald-100/30 self-start inline-block">
+                  <span>✓ Verified Setup Entry</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Sovereign Clearance Integration Portfolio */}
+        <div className="pt-16 border-t border-zinc-200/80 space-y-16">
+          <div className="text-center space-y-1.5 font-sans">
             <span className="text-[9.5px] font-mono tracking-[0.25em] text-zinc-450 uppercase block font-semibold">
               Sovereign Clearance Integration Portfolio
             </span>
@@ -488,6 +591,8 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
             })}
           </div>
         </div>
+
+      </div>
 
       {/* Dynamic Brand-level sections */}
       <WhyChooseUs />
@@ -572,106 +677,6 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
 
       {/* Re-open main container for the rest of homepage elements */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16 py-12">
-
-        {/* SECTION 5.5: EXQUISITE GOOGLE REVIEWS SHOWCASE */}
-        <div className="pt-16 border-t border-zinc-200/80 space-y-8 bg-transparent">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div className="space-y-2 text-center md:text-left">
-              <span className="text-[10px] uppercase font-mono tracking-wider text-gold-500 font-bold block">
-                Corporate Reputation & Compliance Standing
-              </span>
-              <h3 className="font-sans text-[26px] sm:text-[32px] font-light text-zinc-900 tracking-wide leading-none">
-                4.9/5 on Google Business Specialist Indexes
-              </h3>
-              <p className="text-[13px] text-zinc-500 font-sans">
-                Review verified corporate setups, direct DET registry files, and strategic tax exemption clearances.
-              </p>
-            </div>
-            
-            {/* Aggregate Google rating summary with icon */}
-            <div className="bg-zinc-50 border border-zinc-200 p-4 rounded-2xl flex items-center space-x-3 self-center md:self-end">
-              <div className="flex -space-x-1">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-4 h-4 text-amber-400 fill-amber-400" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <div className="text-left font-sans">
-                <span className="text-[12.5px] font-bold text-zinc-800 block leading-tight">184 Verified Reviews</span>
-                <span className="text-[10px] text-zinc-400 block font-mono">GOOGLE VERIFIED SPECIALIST</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                name: "Marcus Vance",
-                role: "Managing Director, NexusFlow software holding",
-                review: "Scale Partners handled our entire DET mainland licensing structure and tax registration. Handled in under 24 hours without a single office visit. Clean, transparent corporate setups at its pinnacle.",
-                rating: 5,
-                date: "2 days ago",
-                avatar: "MV"
-              },
-              {
-                name: "Amara Al-Suwaidi",
-                role: "Founder, Oryx Luxury Trading",
-                review: "Absolute class. The cost estimator was exactly aligned with the real registry fee breakdown. They fast-tracked our corporate account with Wio and set up our virtual desk smoothly.",
-                rating: 5,
-                date: "1 week ago",
-                avatar: "AA"
-              },
-              {
-                name: "Dr. Robert Chen",
-                role: "Chief Compliance Officer, BioGen UAE",
-                review: "Setting up biotech holding branches is complex, but senior advisor advocate Tarik Al-Mehairi managed the complete ministerial registrations. Flawless 10-year Golden Visa tracking.",
-                rating: 5,
-                date: "3 weeks ago",
-                avatar: "RC"
-              }
-            ].map((rev, idx) => (
-              <div key={idx} className="bg-white border border-zinc-200/80 p-5 rounded-2xl space-y-4 hover:shadow-[0_15px_40px_rgba(0,0,0,0.03)] hover:border-zinc-350 transition-all font-sans relative">
-                <div className="flex justify-between items-start">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center font-bold text-zinc-700 text-[13px] border border-zinc-200">
-                      {rev.avatar}
-                    </div>
-                    <div>
-                      <h4 className="text-[13.5px] font-bold text-zinc-900">{rev.name}</h4>
-                      <p className="text-[10px] text-zinc-500 leading-tight">{rev.role}</p>
-                    </div>
-                  </div>
-                  
-                  {/* Google Icon */}
-                  <svg className="w-4 h-4 opacity-70 shrink-0" viewBox="0 0 24 24">
-                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l3.66-2.85z" />
-                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.85c.87-2.6 3.3-4.53 6.16-4.53z" />
-                  </svg>
-                </div>
-                
-                <div className="flex space-x-0.5">
-                  {[...Array(rev.rating)].map((_, i) => (
-                    <svg key={i} className="w-3.5 h-3.5 text-amber-400 fill-amber-400" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                  <span className="text-[10px] text-zinc-400 font-mono ml-2 font-medium">{rev.date}</span>
-                </div>
-                
-                <p className="text-[12.5px] text-zinc-600 leading-relaxed italic">
-                  "{rev.review}"
-                </p>
-                
-                <div className="text-[9.5px] font-mono font-bold text-emerald-600 flex items-center space-x-1 uppercase tracking-wide bg-emerald-50/50 py-1 px-2.5 rounded-lg border border-emerald-100/30 self-start inline-block">
-                  <span>✓ Verified Setup Entry</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* SECTION 6: HIGH-AESTHETIC CORE SERVICES BLOCK */}
         <div className="pt-8 space-y-12">

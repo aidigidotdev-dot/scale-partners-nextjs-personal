@@ -72,7 +72,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
     }
   };
 
-  // High-E-E-A-T expert advisor data (Simulates a world-class legal consulting board)
+  // Expert advisor data (Simulates a world-class legal consulting board)
   const advisors = {
     tarik: {
       name: "Advocate Tarik Al-Mehairi",
@@ -287,7 +287,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
           title: "E-Commerce License UAE",
           subtitle: "Official Licensing & Strategy Guide for Online Retail in Dubai",
           price: 12500,
-          location: "Topical National Directory Page",
+          location: "Official UAE Licensing Hub",
           speed: "2-3 Business Days",
           score: 9.7,
           industry: "E-Commerce, Dropshipping, Web Stores, Retail Platforms",
@@ -317,7 +317,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
           title: "General Trading License UAE",
           subtitle: "Import, Export & Wholesale Distribution Authority",
           price: 13900,
-          location: "Topical National Directory Page",
+          location: "Official UAE Licensing Hub",
           speed: "3-4 Business Days",
           score: 9.5,
           industry: "Wholesale, Electronics distribution, Fashion supply, Foodstuffs distribution",
@@ -347,7 +347,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
           title: "Commercial & Business Services License",
           subtitle: "Consultancies, SaaS Platforms, Agencies & B2B Structuring",
           price: 12500,
-          location: "Topical National Directory Page",
+          location: "Official UAE Licensing Hub",
           speed: "2-3 Business Days",
           score: 9.6,
           industry: "Consultants, Tech Agencies, Marketing partners, SaaS companies",
@@ -377,7 +377,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
           title: "Media, Publishing & Creative License UAE",
           subtitle: "Perfect for Freelance Creators, Publishers & agencies",
           price: 8900,
-          location: "Topical National Directory Page",
+          location: "Official UAE Licensing Hub",
           speed: "1-2 Business Days",
           score: 9.4,
           industry: "Influencers, Content creators, Photographers, Copywriters, Publishing platforms",
@@ -407,7 +407,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
           title: "Industrial & Manufacturing License UAE",
           subtitle: "Heavy Assembly, Packing & Factory Operations",
           price: 11200,
-          location: "Topical National Directory Page",
+          location: "Official UAE Licensing Hub",
           speed: "4-5 Business Days",
           score: 9.1,
           industry: "Manufacturers, Packaging firms, Metal assembly shops, Chemical processors",
@@ -437,7 +437,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
           title: "Holding Company & SPV Setup Guide",
           subtitle: "Secure Asset Protection & International Equity Management",
           price: 13900,
-          location: "Topical National Directory Page",
+          location: "Official UAE Licensing Hub",
           speed: "3-4 Business Days",
           score: 9.6,
           industry: "Wealth management, IP protection, Family offices, Stocks holding",
@@ -625,7 +625,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Breadcrumbs / Back navigation indicators (E-E-A-T Signal for clear navigation path) */}
+        {/* Breadcrumbs / Back navigation indicators for clear navigation path */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
           <div className="flex items-center space-x-2 text-[11px] font-mono tracking-wider uppercase text-zinc-400">
             <button onClick={() => setPage('home')} className="hover:text-zinc-800 transition-colors">Home</button>
@@ -764,7 +764,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
               </div>
             </div>
 
-             {/* In-Depth Overview (Topical Authority Content) - BEAUTIFUL SHADED GRADIENT PANEL */}
+             {/* In-Depth Overview (In-Depth Strategy Content) - BEAUTIFUL SHADED GRADIENT PANEL */}
             <div className="bg-gradient-to-br from-zinc-50 via-zinc-50/50 to-[#22C55E]/5 rounded-2xl border border-zinc-200/60 p-6 sm:p-8 space-y-5 shadow-sm font-sans relative overflow-hidden">
               <div className="absolute top-0 right-0 w-24 h-24 bg-[#22C55E]/5 rounded-full blur-xl"></div>
               <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[16px] pb-3 border-b border-zinc-200/60 relative z-10">
@@ -1130,7 +1130,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
 
           </div>
 
-          {/* Expert E-E-A-T Sidebar Panel */}
+          {/* Expert Sidebar Panel */}
           <div className="space-y-8">
             
             {/* Lead Application Action Card */}
@@ -1169,7 +1169,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
               </div>
             </div>
 
-            {/* E-E-A-T Expert Profiles Verification */}
+            {/* Expert Profiles Verification */}
             <div className="bg-white rounded-2xl border border-zinc-100 p-6 sm:p-8 space-y-5 shadow-sm">
               <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[13px] font-mono uppercase tracking-wider pb-3 border-b border-zinc-100">
                 <Award className="w-4 h-4 text-gold-500" />

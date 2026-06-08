@@ -191,7 +191,7 @@ export default function SeoEngine({ page }: SeoEngineProps) {
         ];
         break;
 
-      // FREE ZONE SPECIFIC PAGES (Topical SEO Pages)
+      // FREE ZONE SPECIFIC PAGES (SEO Directory Pages)
       case 'fz-meydan':
         title = 'Meydan Free Zone Dubai Setup | Cost, Visas & Instant Registration';
         description = 'Apply for Meydan Free Zone company registration instantly. Starting at 12,500 AED. Zero-audit virtual desk setups with direct pre-approved corporate banking integration.';

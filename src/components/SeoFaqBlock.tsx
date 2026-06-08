@@ -84,7 +84,7 @@ export default function SeoFaqBlock({ setPage }: SeoFaqBlockProps) {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 relative z-10">
         
-        {/* SECTION 1: INFORMATIVE SEO ARTICLES (Topical Authority & E-E-A-T) */}
+        {/* SECTION 1: INFORMATIVE ARTICLES */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Main Editorial Text Column (7 Cols) - BEAUTIFULLY SHADED WRAPPER */}
@@ -106,7 +106,7 @@ export default function SeoFaqBlock({ setPage }: SeoFaqBlockProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
               <div className="space-y-3 bg-white p-5 rounded-xl border border-zinc-200/60/80 shadow-2xs hover:shadow-xs transition-shadow">
                 <span className="w-8 h-8 rounded-lg bg-gold-50 text-gold-600 flex items-center justify-center font-mono text-xs font-bold">01</span>
-                <h4 className="font-bold text-zinc-800 text-[14.5px]">Topical Free Zones Directory</h4>
+                <h4 className="font-bold text-zinc-800 text-[14.5px]">Free Zones Directory</h4>
                 <p className="text-[12px] text-zinc-500 leading-relaxed font-sans">
                   The UAE hosts over 45 custom Free Zones. Selecting the right jurisdiction depends entirely on whether you require instant digital setup SLAs (like Meydan), holding structures (like IFZA), heavy industrial plants (like RAKEZ), or raw commodities trading setups (like DMCC).
                 </p>
@@ -152,16 +152,16 @@ export default function SeoFaqBlock({ setPage }: SeoFaqBlockProps) {
             </div>
 
             <p className="text-[11.5px] text-zinc-450 italic font-serif pt-3 border-t border-zinc-200/60">
-              Disclaimer: Scale Partners is a fully licensed corporate advisory firm. This guide is for educational optimization and topical search indexing. Official setup approvals require partner biometric security clearing clearances.
+              Disclaimer: Scale Partners is a fully licensed corporate advisory firm. This guide is for educational purposes. Official setup approvals require partner biometric security clearing clearances.
             </p>
           </div>
 
-          {/* Core Trust & EEAT Sidebar Column (5 Cols) - BLUE ACCENTED CONTAINER */}
+          {/* Core Trust & Security Sidebar Column (5 Cols) - BLUE ACCENTED CONTAINER */}
           <div className="lg:col-span-5 bg-gradient-to-br from-[#fbfaf6] via-white to-[#22C55E]/5 border border-zinc-200/40 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#22C55E]/5 rounded-full blur-2xl pointer-events-none"></div>
             <div className="flex items-center space-x-2 text-[11px] font-mono text-gold-600 font-bold uppercase tracking-wider relative z-10">
               <ShieldCheck className="w-4 h-4 text-emerald-600 animate-pulse" />
-              <span>E-E-A-T Trust Score indicators</span>
+              <span>Trust and Security Indicators</span>
             </div>
 
             <div className="space-y-5 relative z-10">
