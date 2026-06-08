@@ -5,17 +5,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 import { PageId } from '../types';
 import { 
   Building2, 
-  MapPin, 
   ArrowRight, 
   Globe, 
   Scale, 
   Users, 
-  Sparkles, 
   ShieldCheck, 
   CheckCircle2,
   Lock,

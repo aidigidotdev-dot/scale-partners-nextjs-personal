@@ -3,7 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import Image from 'next/image';
 import { CheckCircle2, XCircle, Shield, Award, Landmark, Zap } from 'lucide-react';
 
 export default function ComparisonBlock() {
