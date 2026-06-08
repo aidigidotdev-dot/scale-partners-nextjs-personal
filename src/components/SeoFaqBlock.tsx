@@ -80,7 +80,7 @@ export default function SeoFaqBlock({ setPage }: SeoFaqBlockProps) {
   return (
     <div id="seo_and_faq_knowledge_hub" className="bg-white border-t border-zinc-100 pt-24 pb-20 font-sans relative overflow-hidden">
       {/* GLOW DECORATIONS */}
-      <div className="absolute top-0 left-0 w-[40%] h-[350px] bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.03),transparent_50%)] pointer-events-none z-0"></div>
+      <div className="absolute top-0 left-0 w-[40%] h-[350px] bg-[radial-gradient(circle_at_top_left,rgba(18,183,106,0.03),transparent_50%)] pointer-events-none z-0"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 relative z-10">
         
@@ -88,7 +88,7 @@ export default function SeoFaqBlock({ setPage }: SeoFaqBlockProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Main Editorial Text Column (7 Cols) - BEAUTIFULLY SHADED WRAPPER */}
-          <div className="lg:col-span-7 bg-zinc-50/70 border border-zinc-150 p-6 sm:p-8 rounded-2xl space-y-6 relative overflow-hidden">
+          <div className="lg:col-span-7 bg-zinc-50/70 border border-zinc-200/60 p-6 sm:p-8 rounded-2xl space-y-6 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-24 h-24 bg-gold-450/5 rounded-full blur-xl pointer-events-none"></div>
             <div className="space-y-3">
               <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-gold-600 font-bold block">
@@ -104,7 +104,7 @@ export default function SeoFaqBlock({ setPage }: SeoFaqBlockProps) {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
-              <div className="space-y-3 bg-white p-5 rounded-xl border border-zinc-150/80 shadow-2xs hover:shadow-xs transition-shadow">
+              <div className="space-y-3 bg-white p-5 rounded-xl border border-zinc-200/60/80 shadow-2xs hover:shadow-xs transition-shadow">
                 <span className="w-8 h-8 rounded-lg bg-gold-50 text-gold-600 flex items-center justify-center font-mono text-xs font-bold">01</span>
                 <h4 className="font-bold text-zinc-800 text-[14.5px]">Topical Free Zones Directory</h4>
                 <p className="text-[12px] text-zinc-500 leading-relaxed font-sans">
@@ -127,8 +127,8 @@ export default function SeoFaqBlock({ setPage }: SeoFaqBlockProps) {
                 </div>
               </div>
 
-              <div className="space-y-3 bg-white p-5 rounded-xl border border-zinc-150/80 shadow-2xs hover:shadow-xs transition-shadow">
-                <span className="w-8 h-8 rounded-lg bg-[#00d4aa]/15 text-[#0066ff] flex items-center justify-center font-mono text-xs font-bold">02</span>
+              <div className="space-y-3 bg-white p-5 rounded-xl border border-zinc-200/60/80 shadow-2xs hover:shadow-xs transition-shadow">
+                <span className="w-8 h-8 rounded-lg bg-[#22C55E]/15 text-gold-500 flex items-center justify-center font-mono text-xs font-bold">02</span>
                 <h4 className="font-bold text-zinc-800 text-[14.5px]">Strategic License Types</h4>
                 <p className="text-[12px] text-zinc-500 leading-relaxed font-sans">
                   A trade license represents your legal operating ledger. Selecting matching activity divisions prevents regulatory fines and merchant gateway holds. E-commerce setups, consulting service portals, and digital agency branches require explicit structural alignment for smooth audits.
@@ -151,14 +151,14 @@ export default function SeoFaqBlock({ setPage }: SeoFaqBlockProps) {
               </div>
             </div>
 
-            <p className="text-[11.5px] text-zinc-450 italic font-serif pt-3 border-t border-zinc-150">
+            <p className="text-[11.5px] text-zinc-450 italic font-serif pt-3 border-t border-zinc-200/60">
               Disclaimer: Scale Partners is a fully licensed corporate advisory firm. This guide is for educational optimization and topical search indexing. Official setup approvals require partner biometric security clearing clearances.
             </p>
           </div>
 
           {/* Core Trust & EEAT Sidebar Column (5 Cols) - BLUE ACCENTED CONTAINER */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-[#fbfaf6] via-white to-[#00d4aa]/5 border border-zinc-200/40 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#00d4aa]/5 rounded-full blur-2xl pointer-events-none"></div>
+          <div className="lg:col-span-5 bg-gradient-to-br from-[#fbfaf6] via-white to-[#22C55E]/5 border border-zinc-200/40 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#22C55E]/5 rounded-full blur-2xl pointer-events-none"></div>
             <div className="flex items-center space-x-2 text-[11px] font-mono text-gold-600 font-bold uppercase tracking-wider relative z-10">
               <ShieldCheck className="w-4 h-4 text-emerald-600 animate-pulse" />
               <span>E-E-A-T Trust Score indicators</span>
@@ -190,14 +190,14 @@ export default function SeoFaqBlock({ setPage }: SeoFaqBlockProps) {
               </div>
             </div>
 
-            <div className="border-t border-zinc-150 pt-5 mt-4 space-y-3 relative z-10">
+            <div className="border-t border-zinc-200/60 pt-5 mt-4 space-y-3 relative z-10">
               <span className="text-[10px] font-mono uppercase text-zinc-400 block tracking-widest">Active Partner Desks</span>
               <div className="grid grid-cols-2 gap-3 text-[12px] font-medium text-zinc-800">
-                <div className="bg-white border border-zinc-150/60 p-2.5 rounded-lg flex items-center space-x-1.5 shadow-2xs">
+                <div className="bg-white border border-zinc-200/60/60 p-2.5 rounded-lg flex items-center space-x-1.5 shadow-2xs">
                   <Building2 className="w-4 h-4 text-gold-500" />
                   <span>Wio Premium Partner</span>
                 </div>
-                <div className="bg-white border border-zinc-150/60 p-2.5 rounded-lg flex items-center space-x-1.5 shadow-2xs">
+                <div className="bg-white border border-zinc-200/60/60 p-2.5 rounded-lg flex items-center space-x-1.5 shadow-2xs">
                   <FileText className="w-4 h-4 text-gold-500" />
                   <span>DET Integration</span>
                 </div>
@@ -232,7 +232,7 @@ export default function SeoFaqBlock({ setPage }: SeoFaqBlockProps) {
                   key={index} 
                   className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                     isOpen 
-                      ? 'bg-transparent text-zinc-900 border-[#0066ff]/40 shadow-sm' 
+                      ? 'bg-transparent text-zinc-900 border-gold-500/40 shadow-sm' 
                       : 'bg-transparent hover:border-zinc-300 text-zinc-850 border-zinc-200'
                   }`}
                 >
@@ -245,7 +245,7 @@ export default function SeoFaqBlock({ setPage }: SeoFaqBlockProps) {
                       {faq.q}
                     </span>
                     <ChevronDown className={`w-4 h-4 shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'rotate-180 text-[#0066ff]' : 'text-zinc-400'
+                      isOpen ? 'rotate-180 text-gold-500' : 'text-zinc-400'
                     }`} />
                   </button>
                   

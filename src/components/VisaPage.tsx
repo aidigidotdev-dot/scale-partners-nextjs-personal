@@ -113,14 +113,14 @@ export default function VisaPage({ type, setPage, openContactModal }: VisaPagePr
         { number: "03", name: "File Transfer & Medical", desc: "Express VIP VIP medical screenings in private suites. Speed-run biometrics under 1 hour." },
         { number: "04", name: "10-Yr Visa Vignette & ID", desc: "Formal stamp and Golden Emirates ID card hand-delivered by our premium courier." }
       ],
-      image1: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop",
+      image1: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop",
       image1Label: "GOLDEN RESIDENCY LEAD ADVISOR",
       image1Alt: "Advocate Tarik Al-Mehairi, Golden Visa expert",
       image1Desc: "Enjoy permanent 10-year family-sponsored status under golden visas structured by our executive advisor Tarik Al-Mehairi.",
-      image2: "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?q=80&w=1200&auto=format&fit=crop",
+      image2: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop",
       image2Label: "GDRFA SYSTEM LEVEL CORRIDORS",
       image2Desc: "Our executive legal liaisons submit accredited files directly to senior immigration deans.",
-      image3: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop",
+      image3: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1200&auto=format&fit=crop",
       image3Label: "ELITE CONCIERGE RESIDENCY",
       image3Heading: "Accredited Golden Passports & Asset Credentials",
       image3Desc: "All premium 10-year files undergo priority pre-checks. Scale Partners minimizes biometric queue times."
@@ -146,14 +146,14 @@ export default function VisaPage({ type, setPage, openContactModal }: VisaPagePr
         { number: "03", name: "Status Change & VIP Medical", desc: "In-country status adjustment followed by luxury VIP clinic diagnostics." },
         { number: "04", name: "Embrace ID Issuance", desc: "Fingerprint biometrics completion followed by physical card dispatch." }
       ],
-      image1: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop",
+      image1: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1200&auto=format&fit=crop",
       image1Label: "PARTNER RESIDENCY LEAD ADVISOR",
       image1Alt: "Elena Rostova, Investor & Partner Visa expert",
       image1Desc: "Establish an instant 2-year residency framework matching official trade registry files under lead advisor Elena Rostova.",
-      image2: "https://images.unsplash.com/photo-1577415124269-fc1140a69e91?q=80&w=1200&auto=format&fit=crop",
+      image2: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop",
       image2Label: "DIRECT ESTABLISHMENT CREATION",
       image2Desc: "Every 2-year standard application secures immediate biometric clearance logs in central Dubai.",
-      image3: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&auto=format&fit=crop",
+      image3: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
       image3Label: "MERCEDES S-CLASS ESCORT TRANSIT",
       image3Heading: "VIP Biometric Screening & Fast Card Delivery",
       image3Desc: "We coordinate chauffeured transfers for your medical screening and deliver your physical Emirates ID card to your door."
@@ -179,7 +179,7 @@ export default function VisaPage({ type, setPage, openContactModal }: VisaPagePr
         { number: "03", name: "Direct Courier dispatch", desc: "We pick up passports, notarizations, and original deeds from your residence." },
         { number: "04", name: "State Portals update", desc: "Instant digital updates made across Immigration, Labor, and Tax systems." }
       ],
-      image1: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop",
+      image1: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop",
       image1Label: "SOVEREIGN CORPORATE SECRETARIAL PRO DESK",
       image1Alt: "Zayn Shah, VIP secretarial and banking specialist",
       image1Desc: "Outsource traditional administrative bottlenecks. Zayn Shah and our strategic legal teams act as your local state registrar agents.",
@@ -200,9 +200,13 @@ export default function VisaPage({ type, setPage, openContactModal }: VisaPagePr
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-      className="pt-[100px] pb-24 bg-gold-50 min-h-screen"
+      className="pt-[100px] pb-24 bg-gold-50 min-h-screen relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* SOFT AMBIENT BRAND GREEN GLOWS FOR ULTRA-PREMIUM VIBES */}
+      <div className="absolute top-0 right-0 w-[55%] h-[500px] bg-[radial-gradient(circle_at_top_right,rgba(18,183,106,0.045),transparent_50%)] pointer-events-none z-0"></div>
+      <div className="absolute bottom-[10%] left-[-10%] w-[50%] h-[450px] bg-[radial-gradient(circle_at_bottom_left,rgba(18,183,106,0.03),transparent_45%)] pointer-events-none z-0"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Navigation Indicator / Back */}
         <div className="mb-8">
@@ -250,36 +254,41 @@ export default function VisaPage({ type, setPage, openContactModal }: VisaPagePr
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 flex items-end justify-between z-10">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0B2E16]/90 to-transparent p-4 flex items-end justify-between z-10">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-100 font-semibold">{current.image1Label}</span>
                 <span className="text-[10px] text-zinc-300 font-sans mt-0.5">{current.image1Desc}</span>
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-5 bg-gold-50/20 border border-gold-300/10 rounded-2xl p-6 sm:p-8">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2 text-[12px] font-mono uppercase tracking-widest text-gold-600 font-bold">
-                <ShieldCheck className="w-4 h-4" />
-                <span>Exclusion Privileges & Safeguards</span>
-              </div>
-              <p className="text-[12px] text-zinc-500 leading-relaxed font-serif italic">
-                "Our immigration lawyers handle submissions directly with GDRFA authorities to avoid queue delays."
-              </p>
-              <div className="space-y-2 border-t border-zinc-100 pt-4">
-                {current.highlights.map((highlight, idx) => (
-                  <div key={idx} className="flex items-start space-x-2 text-[12.5px] text-zinc-600 leading-snug">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-gold-500 mt-0.5 shrink-0" />
-                    <span>{highlight}</span>
-                  </div>
-                ))}
+          <div className="lg:col-span-5 bg-gradient-to-br from-[#12B76A]/40 via-[#22C55E]/20 to-transparent p-[1.5px] rounded-3xl shadow-[0_20px_50px_rgba(18,183,106,0.05)] hover:shadow-[0_20px_50px_rgba(18,183,106,0.08)] transition-all duration-300 relative group">
+            <div className="bg-gradient-to-br from-[#E6F7ED]/40 via-white to-white rounded-[22px] p-6 sm:p-8 h-full relative overflow-hidden">
+              {/* Glowing Accent */}
+              <div className="absolute top-0 right-0 w-24 h-24 bg-[#12B76A]/5 rounded-full blur-xl pointer-events-none group-hover:scale-125 transition-transform duration-550"></div>
+              
+              <div className="space-y-4 relative z-10">
+                <div className="flex items-center space-x-2 text-[12px] font-mono uppercase tracking-widest text-[#08854C] font-bold">
+                  <ShieldCheck className="w-4 h-4 text-[#12B76A]" />
+                  <span>Exclusion Privileges & Safeguards</span>
+                </div>
+                <p className="text-[12px] text-zinc-550 leading-relaxed font-sans italic border-l-2 border-[#12B76A]/40 pl-3">
+                  "Our immigration lawyers handle submissions directly with GDRFA authorities to avoid queue delays."
+                </p>
+                <div className="space-y-3.5 border-t border-zinc-100 pt-4">
+                  {current.highlights.map((highlight, idx) => (
+                    <div key={idx} className="flex items-start space-x-2.5 text-[12.5px] text-zinc-650 leading-snug">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 mt-0.5 shrink-0" />
+                      <span>{highlight}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Dynamic Pre-approved Residence Trust Badges Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20 border-t border-b border-zinc-150/40 py-6 relative z-10 bg-zinc-50/40 px-6 rounded-2xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20 border-t border-b border-zinc-200/60/40 py-6 relative z-10 bg-zinc-50/40 px-6 rounded-2xl">
           <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left space-y-2 md:space-y-0 md:space-x-3.5">
             <div className="p-2.5 bg-white rounded-xl border border-zinc-200 shrink-0 shadow-3xs text-gold-600">
               <Building2 className="w-5 h-5" />
@@ -327,7 +336,7 @@ export default function VisaPage({ type, setPage, openContactModal }: VisaPagePr
             sizes="100vw"
             className="object-cover group-hover:scale-[1.015] transition-transform duration-700"
           />
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 flex items-end justify-between z-10">
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0B2E16]/90 to-transparent p-4 flex items-end justify-between z-10">
             <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-100 font-semibold">{current.image2Label}</span>
             <span className="text-[10px] text-zinc-300 font-sans mt-0.5">{current.image2Desc}</span>
           </div>
@@ -404,7 +413,7 @@ export default function VisaPage({ type, setPage, openContactModal }: VisaPagePr
                         onClick={() => setSelectedTrack(track.id)}
                         className={`text-left p-3 rounded-xl border text-[11.5px] leading-snug transition-all ${
                           selectedTrack === track.id 
-                            ? 'border-[#00d4aa] bg-[#00d4aa]/5 text-zinc-900 font-semibold shadow-xs' 
+                            ? 'border-[#22C55E] bg-[#22C55E]/5 text-zinc-900 font-semibold shadow-xs' 
                             : 'border-zinc-200 text-zinc-500 hover:border-zinc-350 bg-zinc-50/20'
                         }`}
                       >
@@ -430,7 +439,7 @@ export default function VisaPage({ type, setPage, openContactModal }: VisaPagePr
                         onClick={() => setCapitalValue(salary.id)}
                         className={`text-left p-3 rounded-xl border text-[11.5px] leading-snug transition-all ${
                           capitalValue === salary.id 
-                            ? 'border-[#00d4aa] bg-[#00d4aa]/5 text-zinc-900 font-semibold shadow-xs' 
+                            ? 'border-[#22C55E] bg-[#22C55E]/5 text-zinc-900 font-semibold shadow-xs' 
                             : 'border-zinc-200 text-zinc-500 hover:border-zinc-350 bg-zinc-50/20'
                         }`}
                       >
@@ -455,7 +464,7 @@ export default function VisaPage({ type, setPage, openContactModal }: VisaPagePr
                         onClick={() => setOwnsRealEstate(property.id)}
                         className={`text-center p-3 rounded-xl border text-[11.5px] leading-snug transition-all ${
                           ownsRealEstate === property.id 
-                            ? 'border-[#00d4aa] bg-[#00d4aa]/5 text-zinc-900 font-semibold shadow-xs' 
+                            ? 'border-[#22C55E] bg-[#22C55E]/5 text-zinc-900 font-semibold shadow-xs' 
                             : 'border-zinc-200 text-zinc-505 hover:border-zinc-350 bg-zinc-50/20'
                         }`}
                       >
@@ -522,7 +531,7 @@ export default function VisaPage({ type, setPage, openContactModal }: VisaPagePr
                         <label className="text-[10px] font-mono text-zinc-400 uppercase font-semibold block">Full Name</label>
                         <input
                           type="text"
-                          className="w-full bg-slate-950 border border-white/[0.08] rounded-xl px-4 py-2.5 text-[12px] text-white focus:outline-none focus:border-[#00d4aa] transition-all placeholder:text-zinc-650"
+                          className="w-full bg-slate-950 border border-white/[0.08] rounded-xl px-4 py-2.5 text-[12px] text-white focus:outline-none focus:border-[#22C55E] transition-all placeholder:text-zinc-650"
                           placeholder="e.g. Liam Sterling"
                           value={leadName}
                           onChange={(e) => setLeadName(e.target.value)}
@@ -533,7 +542,7 @@ export default function VisaPage({ type, setPage, openContactModal }: VisaPagePr
                         <label className="text-[10px] font-mono text-zinc-400 uppercase font-semibold block">Corporate Email</label>
                         <input
                           type="email"
-                          className="w-full bg-slate-950 border border-white/[0.08] rounded-xl px-4 py-2.5 text-[12px] text-white focus:outline-none focus:border-[#00d4aa] transition-all placeholder:text-zinc-650"
+                          className="w-full bg-slate-950 border border-white/[0.08] rounded-xl px-4 py-2.5 text-[12px] text-white focus:outline-none focus:border-[#22C55E] transition-all placeholder:text-zinc-650"
                           placeholder="e.g. liam@sterling.co"
                           value={leadEmail}
                           onChange={(e) => setLeadEmail(e.target.value)}
@@ -544,7 +553,7 @@ export default function VisaPage({ type, setPage, openContactModal }: VisaPagePr
                         <label className="text-[10px] font-mono text-zinc-400 uppercase font-semibold block">Mobile Number</label>
                         <input
                           type="tel"
-                          className="w-full bg-slate-950 border border-white/[0.08] rounded-xl px-4 py-2.5 text-[12px] text-white focus:outline-none focus:border-[#00d4aa] transition-all placeholder:text-zinc-650"
+                          className="w-full bg-slate-950 border border-white/[0.08] rounded-xl px-4 py-2.5 text-[12px] text-white focus:outline-none focus:border-[#22C55E] transition-all placeholder:text-zinc-650"
                           placeholder="e.g. +971 50 123 4567"
                           value={leadPhone}
                           onChange={(e) => setLeadPhone(e.target.value)}
@@ -572,7 +581,7 @@ export default function VisaPage({ type, setPage, openContactModal }: VisaPagePr
                     </p>
                   </div>
                 ) : (
-                  <div className="h-full bg-gradient-to-tr from-[#0052ff] via-[#00a3ff] to-[#00d4aa] rounded-2xl p-6 sm:p-8 flex flex-col justify-between text-left space-y-6 animate-fade-in border-0 text-white shadow-lg relative overflow-hidden">
+                  <div className="h-full bg-gradient-to-tr from-[#0C2E1A] via-[#12B76A] to-[#22C55E] rounded-2xl p-6 sm:p-8 flex flex-col justify-between text-left space-y-6 animate-fade-in border-0 text-white shadow-lg relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
                     <div className="space-y-4 relative z-10">
                       <div className="flex items-center justify-between">
@@ -613,7 +622,7 @@ export default function VisaPage({ type, setPage, openContactModal }: VisaPagePr
                       </button>
                       <button
                         onClick={openContactModal}
-                        className="bg-white hover:bg-zinc-50 text-[#0066ff] font-bold text-[12px] px-4 py-2.5 rounded-xl transition-all shadow-md border-0"
+                        className="bg-white hover:bg-zinc-50 text-gold-500 font-bold text-[12px] px-4 py-2.5 rounded-xl transition-all shadow-md border-0"
                       >
                         Submit Attested Copy
                       </button>
@@ -634,7 +643,7 @@ export default function VisaPage({ type, setPage, openContactModal }: VisaPagePr
             sizes="100vw"
             className="object-cover group-hover:scale-[1.015] transition-transform duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent flex flex-col justify-end p-6 sm:p-8 z-10">
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B2E16]/95 via-[#08854C]/35 to-transparent flex flex-col justify-end p-6 sm:p-8 z-10">
             <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-gold-400 font-bold">{current.image3Label}</span>
             <h3 className="font-serif text-[20px] sm:text-[24px] text-white font-medium mt-1 leading-snug">{current.image3Heading}</h3>
             <p className="text-[12px] sm:text-[13px] text-zinc-300 max-w-xl mt-1 font-sans">
@@ -644,7 +653,7 @@ export default function VisaPage({ type, setPage, openContactModal }: VisaPagePr
         </div>
 
         {/* Sovereign Process Flow */}
-        <div className="bg-gradient-to-tr from-[#0052ff] via-[#00a3ff] to-[#00d4aa] rounded-2xl p-8 sm:p-12 text-white relative overflow-hidden mb-20 shadow-lg border-0 animate-fade-in">
+        <div className="bg-gradient-to-tr from-[#0C2E1A] via-[#12B76A] to-[#22C55E] rounded-2xl p-8 sm:p-12 text-white relative overflow-hidden mb-20 shadow-lg border-0 animate-fade-in">
           <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-[120px]"></div>
           
           <div className="max-w-xl space-y-4 mb-12 relative z-10">

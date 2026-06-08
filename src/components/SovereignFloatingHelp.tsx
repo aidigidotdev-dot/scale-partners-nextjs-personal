@@ -211,16 +211,16 @@ export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelp
         <div className="w-[360px] sm:w-[380px] h-[520px] bg-white border border-zinc-200 shadow-2xl rounded-2xl flex flex-col overflow-hidden animate-fade-in relative z-50">
           
           {/* Glassmorphic Header */}
-          <div className="bg-gradient-to-r from-[#011B3D] via-[#0066ff]/95 to-[#00d4aa]/90 text-white p-4.5 flex items-center justify-between border-b border-white/10">
+          <div className="bg-gradient-to-r from-[#011B3D] via-[#12B76A]/95 to-[#22C55E]/90 text-white p-4.5 flex items-center justify-between border-b border-white/10">
             <div className="flex items-center space-x-2.5">
               <div className="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center relative">
-                <Sparkles className="w-4 h-4 text-[#00d4aa] animate-pulse" />
+                <Sparkles className="w-4 h-4 text-[#22C55E] animate-pulse" />
                 <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-[#011B3D]"></span>
               </div>
               <div className="text-left">
                 <h4 className="text-[13.5px] font-bold tracking-tight">Executive AI Advisor</h4>
                 <div className="flex items-center space-x-1">
-                  <span className="text-[9.5px] text-[#00d4aa] font-mono tracking-widest uppercase">Verified Desk Agent • Live</span>
+                  <span className="text-[9.5px] text-[#22C55E] font-mono tracking-widest uppercase">Verified Desk Agent • Live</span>
                 </div>
               </div>
             </div>
@@ -240,7 +240,7 @@ export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelp
             {!leadCaptured ? (
               /* Phase A: Corporate Lead Qualification */
               <div className="flex-grow flex flex-col justify-center items-center p-6 text-center space-y-5 animate-fade-in bg-white">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#0066ff]/10 to-[#00d4aa]/15 flex items-center justify-center border border-zinc-150 shadow-xs">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#12B76A]/10 to-[#22C55E]/15 flex items-center justify-center border border-zinc-200/60 shadow-xs">
                   <ShieldCheck className="w-6 h-6 text-[#006ccf]" />
                 </div>
                 
@@ -268,7 +268,7 @@ export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelp
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="e.g. Marcus Vance"
-                        className="w-full pl-9 pr-3.5 py-2 text-[12.5px] bg-white border border-zinc-200 rounded-xl focus:outline-none focus:border-[#0066ff] placeholder-zinc-350"
+                        className="w-full pl-9 pr-3.5 py-2 text-[12.5px] bg-white border border-zinc-200 rounded-xl focus:outline-none focus:border-gold-500 placeholder-zinc-350"
                       />
                     </div>
                   </div>
@@ -283,7 +283,7 @@ export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelp
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="e.g. founder@company.ae"
-                        className="w-full pl-9 pr-3.5 py-2 text-[12.5px] bg-white border border-zinc-200 rounded-xl focus:outline-none focus:border-[#0066ff] placeholder-zinc-350"
+                        className="w-full pl-9 pr-3.5 py-2 text-[12.5px] bg-white border border-zinc-200 rounded-xl focus:outline-none focus:border-gold-500 placeholder-zinc-350"
                       />
                     </div>
                   </div>
@@ -298,7 +298,7 @@ export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelp
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="e.g. +971 50 123 4567"
-                        className="w-full pl-9 pr-3.5 py-2 text-[12.5px] bg-white border border-zinc-200 rounded-xl focus:outline-none focus:border-[#0066ff] placeholder-zinc-350"
+                        className="w-full pl-9 pr-3.5 py-2 text-[12.5px] bg-white border border-zinc-200 rounded-xl focus:outline-none focus:border-gold-500 placeholder-zinc-350"
                       />
                     </div>
                   </div>
@@ -348,9 +348,9 @@ export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelp
                 {isLoading && (
                   <div className="flex justify-start animate-pulse">
                     <div className="bg-white border border-zinc-200 max-w-[50px] p-3 px-4 rounded-2xl rounded-tl-none flex items-center space-x-1.5">
-                      <div className="w-2 h-2 bg-gradient-to-r from-[#0066ff] to-[#00d4aa] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                      <div className="w-2 h-2 bg-gradient-to-r from-[#0066ff] to-[#00d4aa] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                      <div className="w-2 h-2 bg-gradient-to-r from-[#0066ff] to-[#00d4aa] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                      <div className="w-2 h-2 bg-gradient-to-r from-[#12B76A] to-[#22C55E] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                      <div className="w-2 h-2 bg-gradient-to-r from-[#12B76A] to-[#22C55E] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                      <div className="w-2 h-2 bg-gradient-to-r from-[#12B76A] to-[#22C55E] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                     </div>
                   </div>
                 )}
@@ -363,14 +363,14 @@ export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelp
 
           {/* Interactive Input Trigger Bar */}
           {leadCaptured && (
-            <div className="bg-white border-t border-zinc-150 p-3 flex flex-col space-y-2">
+            <div className="bg-white border-t border-zinc-200/60 p-3 flex flex-col space-y-2">
               <form onSubmit={handleSendMessage} className="flex items-center space-x-2">
                 <input 
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask about registries, taxes, prices..."
-                  className="flex-grow px-3.5 py-2 bg-zinc-50 border border-zinc-200 rounded-xl text-[12.5px] focus:outline-none focus:border-[#0066ff] placeholder-zinc-400"
+                  className="flex-grow px-3.5 py-2 bg-zinc-50 border border-zinc-200 rounded-xl text-[12.5px] focus:outline-none focus:border-gold-500 placeholder-zinc-400"
                 />
                 <button 
                   type="submit"

@@ -6,52 +6,84 @@
   --font-serif: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   
-  --color-gold-50: #FBFBFD;
-  --color-gold-100: #F5F5F7;
-  --color-gold-200: #E8E8ED;
-  --color-gold-300: #D2D2D7;
-  --color-gold-400: #86868B;
-  --color-gold-500: #0066CC;
-  --color-gold-600: #0071E3;
-  --color-gold-700: #004385;
-  --color-gold-800: #1D1D1F;
-  --color-gold-900: #1D1D1F;
-  --color-gold-950: #111112;
+  /* Retain gold variable names so existing classes function, but map to new green palette */
+  --color-gold-50: #FFFFFF;                /* White base replacing gold off-white */
+  --color-gold-100: rgba(230, 247, 237, 0.6); /* Mint Glass Fill (Replaces Gray Fills) */
+  --color-gold-200: rgba(122, 154, 133, 0.15); /* Soft Sage Border */
+  --color-gold-300: rgba(18, 183, 106, 0.12);  /* Glass Emerald Border */
+  --color-gold-400: #7A9A85;               /* Soft Sage Text */
+  --color-gold-500: #12B76A;               /* Scale Emerald */
+  --color-gold-600: #22C55E;               /* Neon Green Hover */
+  --color-gold-700: #0B2E16;               /* Deep Forest */
+  --color-gold-800: #08854C;               /* Emerald Forest Gradient */
+  --color-gold-900: #07140B;               /* Forest Obsidian */
+  --color-gold-950: #040A06;               /* Dark Obsidian */
 
-  --color-zinc-950: #1D1D1F;
-  --color-slate-900: #1D1D1F;
-  --color-slate-950: #111112;
+  --color-zinc-950: #07140B;
+  --color-slate-900: #07140B;
+  --color-slate-950: #040A06;
 }
 
-/* Brand Gradients - Blue, Turquoise, Seagreen */
+/* Updated Brand Gradients */
+.bg-brand-dark-grad {
+  background: linear-gradient(135deg, #0B2E16 0%, #08854C 100%) !important;
+}
+
 .bg-brand-grad {
-  background: linear-gradient(135deg, #0066ff 0%, #00d4aa 50%, #10b981 100%) !important;
+  background: linear-gradient(135deg, #0C2E1A 0%, #12B76A 50%, #22C55E 100%) !important;
 }
 
 .hover-bg-brand-grad:hover {
-  background: linear-gradient(135deg, #1d4ed8 0%, #059669 100%) !important;
+  background: linear-gradient(135deg, #0B2E16 0%, #08854C 100%) !important;
 }
 
 .text-brand-grad {
-  background: linear-gradient(135deg, #0066ff 0%, #00d4aa 50%, #10b981 100%);
+  background: linear-gradient(135deg, #0C2E1A 0%, #12B76A 50%, #22C55E 100%);
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
 }
 
 .border-brand-grad {
-  border-image: linear-gradient(135deg, #0066ff 0%, #00d4aa 50%, #10b981 100%) 1 !important;
+  border-image: linear-gradient(135deg, #0C2E1A 0%, #12B76A 50%, #22C55E 100%) 1 !important;
 }
 
 .border-brand-grad-hover:hover {
-  border-image: linear-gradient(135deg, #1d4ed8 0%, #059669 100%) 1 !important;
+  border-image: linear-gradient(135deg, #0B2E16 0%, #08854C 100%) 1 !important;
+}
+
+/* Custom Parallax Background Sections with Gradient Overlays (Tailwind v4 @utility) */
+@utility bg-hero-parallax-section {
+  background-image: linear-gradient(135deg, rgba(7, 20, 11, 0.90) 0%, rgba(11, 46, 22, 0.70) 100%), url('/assets/dubai_skyline_premium.png');
+  background-attachment: scroll;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media (min-width: 768px) {
+    background-attachment: fixed;
+  }
+}
+
+@utility bg-breaker-parallax-section {
+  background-image: linear-gradient(to bottom, rgba(11, 46, 22, 0.95) 0%, rgba(11, 46, 22, 0.8) 60%, #FFFFFF 100%), url('/assets/invoice_accounting_hands.png');
+  background-attachment: scroll;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media (min-width: 768px) {
+    background-attachment: fixed;
+  }
+}
+
+@utility shadow-emerald-glow {
+  box-shadow: 0 20px 50px rgba(18, 183, 106, 0.05) !important;
 }
 
 @layer base {
   html, body {
     scroll-behavior: smooth;
     font-family: var(--font-sans) !important;
-    background-color: #FBFBFD;
+    background-color: #FFFFFF;
     color: #1D1D1F;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

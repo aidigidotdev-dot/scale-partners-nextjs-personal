@@ -220,10 +220,10 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
       window.removeEventListener('resize', handleResize);
     };
   }, []);  return (
-    <div className="relative bg-[#FBFBFD] font-sans">
+    <div className="relative bg-white font-sans">
       
       {/* HERO REGION WITH SOLID GRADIENT BACKGROUND */}
-      <div className="relative pt-[110px] pb-16 overflow-hidden bg-brand-grad text-white">
+      <div className="relative pt-[110px] pb-16 overflow-hidden bg-hero-parallax-section text-white">
         
         {/* 3D FLOATING CONSTELLATION BACKSTAGE */}
         <div className="absolute inset-0 z-0 pointer-events-none opacity-80 overflow-hidden">
@@ -236,7 +236,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* TOP LEVEL TAGS: Trust Endorsement Indicator */}
-          <div className="flex justify-center xl:justify-start">
+          <div className="flex justify-center lg:justify-start">
             <div className="inline-flex items-center space-x-2.5 bg-white/10 text-white border border-white/20 px-4.5 py-1.5 rounded-full shadow-sm mb-6 animate-fade-in">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -256,13 +256,13 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
               
               <h1 className="font-sans text-[38px] sm:text-[52px] lg:text-[60px] font-extralight text-white leading-[1.2] tracking-wide">
                 Setup Your Business<br />
-                <span className="text-emerald-200 font-light italic">
-                  in Dubai in 4 Hours.
+                <span className="text-emerald-400 font-light">
+                  in Dubai within 24 Hours.
                 </span>
               </h1>
               
               {/* GEO/AEO Rich Descriptive Abstract targeting prime corporate keywords */}
-              <p className="max-w-xl mx-auto xl:mx-0 font-sans text-zinc-100/90 text-[14.5px] sm:text-[16px] leading-[1.7] tracking-wide font-light">
+              <p className="max-w-xl mx-auto lg:mx-0 font-sans text-zinc-100/90 text-[14.5px] sm:text-[16px] leading-[1.7] tracking-wide font-light">
                 Scale Partners is the Top Rated Business Setup & Professional Services in Dubai. We design custom-structured <strong className="font-semibold text-white">Dubai Mainland approvals</strong>, secure <strong className="font-bold text-white">exempt Free Zone companies</strong>, and establish high-speed structures. We coordinate directly with official government registrars to remove administrative friction entirely.
               </p>
 
@@ -271,10 +271,10 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                 <button
                   id="hero_cta_evaluator_prime"
                   onClick={() => setPage('calculator')}
-                  className="w-full sm:w-auto bg-white text-[#0066ff] hover:opacity-95 hover:scale-[1.015] active:scale-95 px-8 py-4 rounded-full font-sans text-[14.5px] font-bold tracking-tight transition-all duration-300 shadow-lg flex items-center justify-center space-x-2 border-0 cursor-pointer shrink-0"
+                  className="w-full sm:w-auto bg-white text-gold-500 hover:opacity-95 hover:scale-[1.015] active:scale-95 px-8 py-4 rounded-full font-sans text-[14.5px] font-bold tracking-tight transition-all duration-300 shadow-lg flex items-center justify-center space-x-2 border-0 cursor-pointer shrink-0"
                 >
                   <span>Initialize 24h Setup Session</span>
-                  <ArrowRight className="w-4 h-4 text-[#0066ff]" />
+                  <ArrowRight className="w-4 h-4 text-gold-500" />
                 </button>
               </div>
 
@@ -286,7 +286,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                   {/* Badge 1 */}
                   <div className="bg-white/5 border border-white/10 px-3 py-2 rounded-xl flex items-center space-x-2 shadow-2xs hover:scale-[1.01] transition-transform">
                     <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
-                      <Award className="w-4 h-4 text-[#00d4aa]" />
+                      <Award className="w-4 h-4 text-[#22C55E]" />
                     </div>
                     <div className="text-left leading-none">
                       <span className="text-[9.5px] font-mono text-zinc-300 uppercase tracking-tight block">DET License Status</span>
@@ -297,7 +297,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                   {/* Badge 2 */}
                   <div className="bg-white/5 border border-white/10 px-3 py-2 rounded-xl flex items-center space-x-2 shadow-2xs hover:scale-[1.01] transition-transform">
                     <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
-                      <ShieldCheck className="w-4 h-4 text-[#00d4aa]" />
+                      <ShieldCheck className="w-4 h-4 text-[#22C55E]" />
                     </div>
                     <div className="text-left leading-none">
                       <span className="text-[9.5px] font-mono text-zinc-300 uppercase tracking-tight block">Corporate Registry</span>
@@ -308,7 +308,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                   {/* Badge 3 */}
                   <div className="bg-white/5 border border-white/10 px-3 py-2 rounded-xl flex items-center space-x-2 shadow-2xs hover:scale-[1.01] transition-transform font-sans">
                     <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
-                      <Lock className="w-4 h-4 text-[#00d4aa]" />
+                      <Lock className="w-4 h-4 text-[#22C55E]" />
                     </div>
                     <div className="text-left leading-none">
                       <span className="text-[9.5px] font-mono text-zinc-300 uppercase tracking-tight block">Direct Encryption</span>
@@ -358,10 +358,10 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                     </p>
                     <div className="flex items-center space-x-4 text-[11px] text-zinc-200">
                       <span className="flex items-center gap-1.5 font-light">
-                        <CheckCircle2 className="w-4 h-4 text-[#00d4aa] stroke-[2.25] shrink-0" /> Flexi-desk Approved
+                        <CheckCircle2 className="w-4 h-4 text-[#22C55E] stroke-[2.25] shrink-0" /> Flexi-desk Approved
                       </span>
                       <span className="flex items-center gap-1.5 font-light">
-                        <CheckCircle2 className="w-4 h-4 text-[#00d4aa] stroke-[2.25] shrink-0" /> 100% Repatriation
+                        <CheckCircle2 className="w-4 h-4 text-[#22C55E] stroke-[2.25] shrink-0" /> 100% Repatriation
                       </span>
                     </div>
                   </div>
@@ -383,10 +383,10 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                     </p>
                     <div className="flex items-center space-x-4 text-[11px] text-zinc-200">
                       <span className="flex items-center gap-1.5 font-light">
-                        <CheckCircle2 className="w-4 h-4 text-[#00d4aa] stroke-[2.25] shrink-0" /> Unlimited Licenses
+                        <CheckCircle2 className="w-4 h-4 text-[#22C55E] stroke-[2.25] shrink-0" /> Unlimited Licenses
                       </span>
                       <span className="flex items-center gap-1.5 font-light">
-                        <CheckCircle2 className="w-4 h-4 text-[#00d4aa] stroke-[2.25] shrink-0" /> Local Branch Options
+                        <CheckCircle2 className="w-4 h-4 text-[#22C55E] stroke-[2.25] shrink-0" /> Local Branch Options
                       </span>
                     </div>
                   </div>
@@ -394,7 +394,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                 </div>
 
                 {/* DYNAMIC MULTI-YEAR DISCOUNT BANNER */}
-                <div className="bg-gradient-to-r from-emerald-500/20 to-[#00d4aa]/10 border border-emerald-400/25 p-4 rounded-2xl flex items-center justify-between gap-3 shadow-inner">
+                <div className="bg-gradient-to-r from-emerald-500/20 to-[#22C55E]/10 border border-emerald-400/25 p-4 rounded-2xl flex items-center justify-between gap-3 shadow-inner">
                   <div className="space-y-0.5">
                     <span className="text-[9.5px] font-mono text-emerald-300 uppercase tracking-widest block font-bold">
                       EXCLUSIVE COMPLIANCE BENEFIT
@@ -456,7 +456,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                   }}
                   className="bg-white border border-zinc-200 hover:border-zinc-300 hover:shadow-md hover:scale-[1.01] p-3.5 rounded-xl text-center space-y-1.5 transition-all cursor-pointer group"
                 >
-                  <span className="text-[10px] font-bold tracking-widest text-zinc-300 group-hover:text-[#0066ff] transition-colors block font-mono">
+                  <span className="text-[10px] font-bold tracking-widest text-zinc-300 group-hover:text-gold-500 transition-colors block font-mono">
                     {logo.tag}
                   </span>
                   <div>
@@ -478,7 +478,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
       <SetupSteps />
 
       {/* MID-HOME GRADIENT COLOR BREAKER BLOCK */}
-      <div className="w-full bg-brand-grad py-16 text-white my-16 relative overflow-hidden text-left">
+      <div className="w-full bg-breaker-parallax-section py-16 text-white my-16 relative overflow-hidden text-left">
         {/* Constellation Canvas style drift backdrop */}
         <div className="absolute inset-0 bg-black/[0.08] mix-blend-overlay"></div>
         
@@ -521,7 +521,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                   {leadAuthor.avatarText}
                 </div>
                 <div className="space-y-1">
-                  <span className="text-[10px] font-mono uppercase text-[#0066ff] font-bold block tracking-wider leading-none">
+                  <span className="text-[10px] font-mono uppercase text-gold-500 font-bold block tracking-wider leading-none">
                     Verified Coordinating Author & Senior Legal Reviewer
                   </span>
                   <h4 className="text-[17px] font-bold text-zinc-900 leading-none">{leadAuthor.name}</h4>
@@ -535,17 +535,17 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
               </div>
             </div>
 
-            <p className="text-[13.5px] sm:text-[14px] text-zinc-700 leading-relaxed italic border-l-2 border-[#0066ff] pl-4 font-light">
+            <p className="text-[13.5px] sm:text-[14px] text-zinc-700 leading-relaxed italic border-l-2 border-gold-500 pl-4 font-light">
               "Every legal structure compiled by Scale Partners is manually audited against Dubai Economy and Tourism regulations and updated 2026 OECD tax indices. We ensure your corporate assets remain shielded from local risks, ensuring complete operational holding harmony."
             </p>
 
-            <div className="flex flex-wrap gap-x-6 gap-y-2 pt-4 border-t border-zinc-150 text-[11.5px] text-zinc-500 font-light">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 pt-4 border-t border-zinc-200/60 text-[11.5px] text-zinc-500 font-light">
               <span className="flex items-center space-x-1.5">
-                <Award className="w-4 h-4 text-[#0066ff]" />
+                <Award className="w-4 h-4 text-gold-500" />
                 <span>Full compliance standing with GCC Ministries of Economy</span>
               </span>
               <span className="flex items-center space-x-1.5">
-                <BookOpen className="w-4 h-4 text-[#0066ff]" />
+                <BookOpen className="w-4 h-4 text-gold-500" />
                 <span>Publisher of official UAE regulatory setup whitepapers</span>
               </span>
             </div>
@@ -561,7 +561,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
         <div className="pt-16 border-t border-zinc-200/80 space-y-8 bg-transparent">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div className="space-y-2 text-center md:text-left">
-              <span className="text-[10px] uppercase font-mono tracking-wider text-[#0066ff] font-bold block">
+              <span className="text-[10px] uppercase font-mono tracking-wider text-gold-500 font-bold block">
                 Corporate Reputation & Compliance Standing
               </span>
               <h3 className="font-sans text-[26px] sm:text-[32px] font-light text-zinc-900 tracking-wide leading-none">

@@ -6,6 +6,7 @@
  */
 
 import { PageId } from '../types';
+import Image from 'next/image';
 import { Compass, Landmark, ShieldCheck, Mail, Phone, MapPin, Scale } from 'lucide-react';
 
 interface FooterProps {
@@ -95,13 +96,14 @@ export default function Footer({ setPage, openContactModal }: FooterProps) {
           
           <div className="lg:col-span-6 space-y-4">
             
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 rounded bg-brand-grad text-white flex items-center justify-center font-bold text-[13px] border border-gold-300/25">
-                S
-              </div>
-              <span className="font-semibold text-white tracking-tight text-[15px]">
-                SCALE <span className="text-gold-400 font-medium">PARTNERS</span>
-              </span>
+            <div className="flex items-center">
+              <Image 
+                src="/assets/logo.jpg" 
+                alt="Scale Partners Logo" 
+                width={120} 
+                height={42} 
+                className="object-contain max-h-[42px] w-auto brightness-0 invert"
+              />
             </div>
             
             <p className="text-[12px] text-zinc-500 max-w-md leading-relaxed font-sans">

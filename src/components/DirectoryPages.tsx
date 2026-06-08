@@ -481,17 +481,17 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
       image2Desc: string;
     }> = {
       'fz-meydan': {
-        image1: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop",
+        image1: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop",
         image1Label: "MEYDAN PRESTIGE DIGITAL BUSINESS HQ",
         image1Heading: "Prestige Corporate Suites at Meydan Dubai",
         image1Desc: "Located in the elite Meydan Hotel Resort boundary, presenting premium brand associations with digital API licensing coordinates of real expert advisors.",
-        image2: "https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?q=80&w=1200&auto=format&fit=crop",
+        image2: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1200&auto=format&fit=crop",
         image2Label: "FAST-TRACK BANKING ACCESS CORRIDORS",
         image2Heading: "Sovereign ADIB & Wio Business Onboarding Desks",
         image2Desc: "Each Meydan corporate suite file is pre-cleared by our dedicated deans with live digital merchant logs."
       },
       'fz-ifza': {
-        image1: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop",
+        image1: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1200&auto=format&fit=crop",
         image1Label: "IFZA SILICON OASIS ECOSYSTEM",
         image1Heading: "Continuous Multi-Year Holding Structures",
         image1Desc: "The prime gateway for institutional consultancies and high-status global holding families overseen by our partner advisors.",
@@ -501,17 +501,17 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
         image2Desc: "Protect capital yields without standard local filing constraints, fully structured under custom bylaws."
       },
       'fz-dmcc': {
-        image1: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop",
+        image1: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop",
         image1Label: "DMCC JLT HEADQUARTERS DISTRICT",
         image1Heading: "Sovereign Precious Metals & Commodities Vault Flow",
         image1Desc: "Voted world's best commodities terminal, housing global financial boardrooms and elite investment desks run by registered clearing brokers.",
-        image2: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&auto=format&fit=crop",
+        image2: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
         image2Label: "COMMODITIES REGISTERED CUSTODIAN",
         image2Heading: "Continuous Multi-Currency Escrow Corridors",
         image2Desc: "Maintain active dual-currency investment channels in Emirates NBD and First Abu Dhabi central divisions."
       },
       'fz-shams': {
-        image1: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop",
+        image1: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&auto=format&fit=crop",
         image1Label: "SHAMS SHARJAH MEDIA DISTRICT",
         image1Heading: "SaaS & Digital Content Production Studios",
         image1Desc: "Optimized for visual media, creative agencies, and cross-border digital platforms under elite advisory managers.",
@@ -521,37 +521,37 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
         image2Desc: "Establish virtual desk locations and allocate up to 6 investor visas under express procedures."
       },
       'fz-rakez': {
-        image1: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=1200&auto=format&fit=crop",
+        image1: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop",
         image1Label: "RAKEZ INDUSTRIAL DEEPWATER SEAPORT",
         image1Heading: "Industrial Logistics & Heavy Packaging Warehouses",
         image1Desc: "Northern Emirates manufacturing and distribution center, governed by active on-site factory managers and logistical clearing deans.",
-        image2: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop",
+        image2: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
         image2Label: "BULK CARGO CUSTOMS PORT",
         image2Heading: "Zero-Duty Customs Approvals & Freight Corridors",
         image2Desc: "Direct integration with sea border guards ensures instant, seamless goods delivery logs."
       },
       'fz-dwtc': {
-        image1: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop",
+        image1: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop",
         image1Label: "DWTC FINANCIAL COMPLEX SECTOR",
         image1Heading: "Premium Sheikh Zayed Road Financial Offices",
         image1Desc: "Surrounded by Dubai's most historic corporate high-rises, guided by wealth management directors and family offices.",
-        image2: "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?q=80&w=1200&auto=format&fit=crop",
+        image2: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop",
         image2Label: "FAMILY WEALTH ESCROW COUNCILS",
         image2Heading: "Dual-Category Financial Licensing Safeguards",
         image2Desc: "Operate across Free Zone limits and Mainland advisory channels on the same regulatory file."
       },
       'lic-ecommerce': {
-        image1: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1200&auto=format&fit=crop",
+        image1: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1200&auto=format&fit=crop",
         image1Label: "DIGITAL MERCHANT SETUPS",
         image1Heading: "Standard Credit Card Processor Gateway Corridors",
         image1Desc: "Unlock instant merchant profiles on Stripe, Adyen, and PayPal under professional online retail strategy consultants.",
-        image2: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop",
+        image2: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1200&auto=format&fit=crop",
         image2Label: "B2C COURIER & DHL ROUTING DESK",
         image2Heading: "Fast-Track Custom Clearance Integration Logs",
         image2Desc: "Our legal representatives map operations directly inside dnata and Dubai custom gates."
       },
       'lic-trading': {
-        image1: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop",
+        image1: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1200&auto=format&fit=crop",
         image1Label: "GLOBAL TRADING HOUSES",
         image1Heading: "Chartered Import & Export Asset Operations",
         image1Desc: "Perfect for physical commodities bulk trading, petroleum, clothing, and construction materials.",
@@ -561,7 +561,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
         image2Desc: "Enjoy direct personal access to assigned premium Dubai banker relationship managers."
       },
       'lic-commercial': {
-        image1: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop",
+        image1: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1200&auto=format&fit=crop",
         image1Label: "B2B ADVISORY OFFICES",
         image1Heading: "Mainland Corporate Structures & Board Seats",
         image1Desc: "Professional business setups designed to serve mainland companies with 100% foreign equity under designated executive partners.",
@@ -571,11 +571,11 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
         image2Desc: "Our legal firm acts as your formal, non-interfering local agent to protect ownership of key assets."
       },
       'lic-media': {
-        image1: "https://images.unsplash.com/photo-1542744094-3a31f103e35f?q=80&w=1200&auto=format&fit=crop",
+        image1: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop",
         image1Label: "CREATIVE PRODUCTION CHANNELS",
         image1Heading: "Sovereign Intellectual Property & Broadcasting Permits",
         image1Desc: "Perfect for cinematic producers, digital content designers, and high-status modeling agencies overseen by our creative director consultants.",
-        image2: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1200&auto=format&fit=crop",
+        image2: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&auto=format&fit=crop",
         image2Label: "TRADEMARK SHIELDS",
         image2Heading: "Continuous Ministry of Economy Trademark Audits",
         image2Desc: "Ensure proprietary marketing codes and digital creative copyrights are legally guarded."
@@ -595,7 +595,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
         image1Label: "FAMILY OFFICES & SPVS",
         image1Heading: "Sovereign SPV Custodians & Holding Structures",
         image1Desc: "Protect real estate assets, private stocks, and intellectual brands with total confidentiality under premium advisor audit reviews.",
-        image2: "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?q=80&w=1200&auto=format&fit=crop",
+        image2: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop",
         image2Label: "FAMILY TRUST PROTECTION",
         image2Heading: "Ultimate Beneficial Owner Shielding & Capital Access Channels",
         image2Desc: "Ensure absolute privacy and transfer global assets with zero operates tax or double taxation issues."
@@ -619,9 +619,9 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
 
   return (
     <div className="pt-[110px] pb-24 bg-white min-h-screen font-sans relative overflow-hidden">
-      {/* SOFT AMBIENT ROYAL BLUE GLOW AND AMBER ACCENTS FOR CORPORATE FEEL */}
-      <div className="absolute top-0 right-0 w-[50%] h-[500px] bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.05),transparent_50%)] pointer-events-none z-0"></div>
-      <div className="absolute bottom-[10%] left-[-10%] w-[45%] h-[400px] bg-[radial-gradient(circle_at_bottom_left,rgba(182,145,90,0.04),transparent_45%)] pointer-events-none z-0"></div>
+      {/* SOFT AMBIENT BRAND GREEN GLOWS FOR ULTRA-PREMIUM VIBES */}
+      <div className="absolute top-0 right-0 w-[50%] h-[500px] bg-[radial-gradient(circle_at_top_right,rgba(18,183,106,0.05),transparent_50%)] pointer-events-none z-0"></div>
+      <div className="absolute bottom-[10%] left-[-10%] w-[45%] h-[400px] bg-[radial-gradient(circle_at_bottom_left,rgba(18,183,106,0.04),transparent_45%)] pointer-events-none z-0"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -724,7 +724,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover group-hover:scale-[1.015] transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent flex flex-col justify-end p-6 sm:p-8 z-10">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B2E16]/95 via-[#08854C]/35 to-transparent flex flex-col justify-end p-6 sm:p-8 z-10">
                 <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-gold-400 font-bold">{content.image1Label}</span>
                 <h3 className="font-serif text-[18px] sm:text-[22px] text-white font-medium mt-1 leading-snug">{content.image1Heading}</h3>
                 <p className="text-[12.5px] text-zinc-300 max-w-xl mt-1 font-sans">
@@ -734,7 +734,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
             </div>
 
             {/* Dynamic Certified Trust Badges Row */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 border-t border-b border-zinc-150/40 py-6 relative z-10 bg-zinc-50/40 px-6 rounded-2xl animate-fade-in">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 border-t border-b border-zinc-200/60/40 py-6 relative z-10 bg-zinc-50/40 px-6 rounded-2xl animate-fade-in">
               <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left space-y-2 md:space-y-0 md:space-x-3">
                 <div className="p-2 bg-white rounded-lg border border-zinc-200 shrink-0 shadow-2xs text-gold-600">
                   <ShieldCheck className="w-4.5 h-4.5" />
@@ -765,10 +765,10 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
             </div>
 
              {/* In-Depth Overview (Topical Authority Content) - BEAUTIFUL SHADED GRADIENT PANEL */}
-            <div className="bg-gradient-to-br from-zinc-50 via-zinc-50/50 to-[#00d4aa]/5 rounded-2xl border border-zinc-150 p-6 sm:p-8 space-y-5 shadow-sm font-sans relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-[#00d4aa]/5 rounded-full blur-xl"></div>
-              <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[16px] pb-3 border-b border-zinc-150 relative z-10">
-                <BookOpen className="w-4 h-4 text-[#0066ff]" />
+            <div className="bg-gradient-to-br from-zinc-50 via-zinc-50/50 to-[#22C55E]/5 rounded-2xl border border-zinc-200/60 p-6 sm:p-8 space-y-5 shadow-sm font-sans relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-[#22C55E]/5 rounded-full blur-xl"></div>
+              <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[16px] pb-3 border-b border-zinc-200/60 relative z-10">
+                <BookOpen className="w-4 h-4 text-gold-500" />
                 <h2>Comprehensive Registry Analysis & Strategy</h2>
               </div>
               
@@ -776,7 +776,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                 {content.overview}
               </p>
 
-              <div className="space-y-1 bg-white p-4.5 rounded-xl border border-zinc-150/80 shadow-xs relative z-10 animate-fade-in_500">
+              <div className="space-y-1 bg-white p-4.5 rounded-xl border border-zinc-200/60/80 shadow-xs relative z-10 animate-fade-in_500">
                 <span className="text-[10.5px] font-mono text-gold-700 font-bold block uppercase tracking-wider">Strategic Business Leverage Advantage</span>
                 <p className="text-[13px] text-zinc-700 leading-relaxed font-sans">{content.whyThis}</p>
               </div>
@@ -803,7 +803,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover group-hover:scale-[1.015] transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent flex flex-col justify-end p-6 sm:p-8 z-10">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B2E16]/95 via-[#08854C]/35 to-transparent flex flex-col justify-end p-6 sm:p-8 z-10">
                 <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-gold-400 font-bold">{content.image2Label}</span>
                 <h3 className="font-serif text-[18px] sm:text-[22px] text-white font-medium mt-1 leading-snug">{content.image2Heading}</h3>
                 <p className="text-[12.5px] text-zinc-300 max-w-xl mt-1 font-sans">
@@ -813,8 +813,8 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
             </div>
 
             {/* In-Depth Step-by-Step Processing Timeline - PREMIUM WARM AMBER DESK PANEL */}
-            <div className="bg-gradient-to-br from-[#faf9f6] to-amber-50/20 rounded-2xl border border-zinc-150 p-6 sm:p-8 space-y-6 shadow-sm">
-              <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[16px] pb-3 border-b border-zinc-150">
+            <div className="bg-gradient-to-br from-[#faf9f6] to-amber-50/20 rounded-2xl border border-zinc-200/60 p-6 sm:p-8 space-y-6 shadow-sm">
+              <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[16px] pb-3 border-b border-zinc-200/60">
                 <Clock className="w-4 h-4 text-gold-600" />
                 <h2>Official Administrative Setup Sequence</h2>
               </div>
@@ -836,16 +836,16 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
             </div>
 
             {/* Dynamic FAQs Section Specific to target setup - COMPLIANT SHADED CONTAINER */}
-            <div className="bg-gradient-to-br from-[#00d4aa]/5 via-zinc-50/40 to-white rounded-2xl border border-[#00d4aa]/20 p-6 sm:p-8 space-y-5 shadow-sm relative overflow-hidden">
-              <div className="absolute bottom-0 right-0 w-32 h-32 bg-[#00d4aa]/5 rounded-full blur-2xl"></div>
-              <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[16px] pb-3 border-b border-zinc-150 relative z-10">
-                <HelpCircle className="w-4 h-4 text-[#0066ff]" />
+            <div className="bg-gradient-to-br from-[#22C55E]/5 via-zinc-50/40 to-white rounded-2xl border border-[#22C55E]/20 p-6 sm:p-8 space-y-5 shadow-sm relative overflow-hidden">
+              <div className="absolute bottom-0 right-0 w-32 h-32 bg-[#22C55E]/5 rounded-full blur-2xl"></div>
+              <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[16px] pb-3 border-b border-zinc-200/60 relative z-10">
+                <HelpCircle className="w-4 h-4 text-gold-500" />
                 <h2>Registration FAQs & Compliance Guide</h2>
               </div>
 
               <div className="space-y-3.5 relative z-10">
                 {content.faq.map((faq_item, ind) => (
-                  <div key={ind} className="bg-white/95 backdrop-blur-xs border border-zinc-150/60 p-4.5 rounded-xl hover:border-[#00d4aa]/40 shadow-2xs hover:shadow-xs transition-all space-y-2">
+                  <div key={ind} className="bg-white/95 backdrop-blur-xs border border-zinc-200/60/60 p-4.5 rounded-xl hover:border-[#22C55E]/40 shadow-2xs hover:shadow-xs transition-all space-y-2">
                     <h3 className="text-[13.5px] font-bold text-zinc-900 flex items-start space-x-2">
                       <span className="text-gold-650 font-mono font-bold">Q:</span>
                       <span>{faq_item.q}</span>
@@ -858,7 +858,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
               </div>
             </div>            {/* INTERACTIVE COMPONENT: CHOOSE ACTIVITY FORM & PRICE CALCULATOR */}
             {page.startsWith('fz-') && (
-              <div id="fz_interactive_calculator_card" className="bg-gradient-to-tr from-[#0052ff] via-[#00a3ff] to-[#00d4aa] text-white rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl border-0 relative overflow-hidden text-left">
+              <div id="fz_interactive_calculator_card" className="bg-gradient-to-tr from-[#0C2E1A] via-[#12B76A] to-[#22C55E] text-white rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl border-0 relative overflow-hidden text-left">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
                 
                 <div className="space-y-2 relative z-10">
@@ -965,7 +965,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
 
                     <button
                       type="submit"
-                      className="w-full bg-white text-[#0066ff] font-bold py-3.5 rounded-xl text-[13.5px] shadow-lg transition-transform hover:scale-[1.005] border-0"
+                      className="w-full bg-white text-gold-500 font-bold py-3.5 rounded-xl text-[13.5px] shadow-lg transition-transform hover:scale-[1.005] border-0"
                     >
                       Process Registry Pricing Quote
                     </button>
@@ -1012,7 +1012,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                       </button>
                       <button
                         onClick={() => onApplySetup(`${content.title} (Pre-calculated)`, calculatedTotal)}
-                        className="flex-2 bg-white text-[#0066ff] font-bold text-[12.5px] py-3 rounded-lg transition-transform hover:scale-[1.01] shadow-md text-center border-0"
+                        className="flex-2 bg-white text-gold-500 font-bold text-[12.5px] py-3 rounded-lg transition-transform hover:scale-[1.01] shadow-md text-center border-0"
                       >
                         Lock & Register License
                       </button>
@@ -1024,7 +1024,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
 
             {/* INTERACTIVE COMPONENT: ACTIVE FREE ZONE COMPARISON TOOL */}
             {page.startsWith('fz-') && (
-              <div id="fz_active_comparisons_card" className="bg-white rounded-2xl border border-zinc-150 p-6 sm:p-8 space-y-6 shadow-sm text-left">
+              <div id="fz_active_comparisons_card" className="bg-white rounded-2xl border border-zinc-200/60 p-6 sm:p-8 space-y-6 shadow-sm text-left">
                 <div className="space-y-1.5">
                   <div className="flex items-center space-x-1.5">
                     <Building2 className="w-4 h-4 text-gold-650" />
@@ -1050,7 +1050,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                           onClick={() => handleToggleComparison(zone.id)}
                           className={`px-3 py-1.5 rounded-full text-[11px] font-medium transition-all ${
                             isSelected 
-                              ? 'bg-[#00d4aa]/10 text-zinc-900 border border-[#00d4aa]/20 shadow-2xs font-semibold' 
+                              ? 'bg-[#22C55E]/10 text-zinc-900 border border-[#22C55E]/20 shadow-2xs font-semibold' 
                               : 'bg-zinc-50 hover:bg-zinc-100 text-zinc-600 border border-zinc-200'
                           }`}
                         >
@@ -1063,10 +1063,10 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                 </div>
 
                 {/* Live Comparison Scores Table */}
-                <div className="overflow-x-auto rounded-xl border border-zinc-150 bg-zinc-50/25">
+                <div className="overflow-x-auto rounded-xl border border-zinc-200/60 bg-zinc-50/25">
                   <table className="w-full text-left border-collapse text-[12px]">
                     <thead>
-                      <tr className="bg-zinc-50 text-[10px] font-mono uppercase text-zinc-500 border-b border-zinc-150">
+                      <tr className="bg-zinc-50 text-[10px] font-mono uppercase text-zinc-500 border-b border-zinc-200/60">
                         <td className="p-3">Jurisdiction</td>
                         <td className="p-3">Base Price</td>
                         <td className="p-3">Visa Cost</td>
@@ -1077,18 +1077,18 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                     </thead>
                     <tbody className="divide-y divide-zinc-100 font-sans text-zinc-700">
                       {/* Current Page Zone */}
-                      <tr className="bg-[#00d4aa]/5 font-medium text-zinc-900">
+                      <tr className="bg-[#22C55E]/5 font-medium text-zinc-900">
                         <td className="p-3 flex items-center space-x-1.5">
-                          <span className="w-2 h-2 rounded-full bg-[#00d4aa]"></span>
+                          <span className="w-2 h-2 rounded-full bg-[#22C55E]"></span>
                           <span>{content.title.split(' Setup')[0].split(' License')[0]}</span>
-                          <span className="text-[9px] bg-[#00d4aa]/10 text-[#0066ff] px-1 rounded uppercase font-mono block">Current</span>
+                          <span className="text-[9px] bg-[#22C55E]/10 text-gold-500 px-1 rounded uppercase font-mono block">Current</span>
                         </td>
                         <td className="p-3 font-mono font-semibold">AED {content.price.toLocaleString()}</td>
                         <td className="p-3 font-mono">AED {content.visasCost.toLocaleString()}</td>
                         <td className="p-3 truncate max-w-[140px] text-zinc-400" title={content.location}>{content.location.split(' (')[0]}</td>
                         <td className="p-3">{content.speed}</td>
                         <td className="p-3 text-right">
-                          <span className="text-[10px] font-mono text-[#0066ff] block bg-[#00d4aa]/10 px-2 py-0.5 rounded text-center font-bold">Active Page</span>
+                          <span className="text-[10px] font-mono text-gold-500 block bg-[#22C55E]/10 px-2 py-0.5 rounded text-center font-bold">Active Page</span>
                         </td>
                       </tr>
 
@@ -1134,7 +1134,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
           <div className="space-y-8">
             
             {/* Lead Application Action Card */}
-            <div className="bg-gradient-to-tr from-[#0052ff] via-[#00a3ff] to-[#00d4aa] text-white rounded-2xl p-6 sm:p-8 space-y-5 relative overflow-hidden shadow-xl border-0">
+            <div className="bg-gradient-to-tr from-[#0C2E1A] via-[#12B76A] to-[#22C55E] text-white rounded-2xl p-6 sm:p-8 space-y-5 relative overflow-hidden shadow-xl border-0">
               <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
               
               <div className="space-y-2 relative z-10">
@@ -1153,10 +1153,10 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
               <button
                 id={`apply_action_for_${page}`}
                 onClick={() => onApplySetup(content.title, content.price)}
-                className="w-full bg-white text-[#0066ff] text-[13px] font-bold py-3.5 rounded-xl transition-all hover:scale-[1.015] flex items-center justify-center space-x-1 shadow-md border-0 relative z-10"
+                className="w-full bg-white text-gold-500 text-[13px] font-bold py-3.5 rounded-xl transition-all hover:scale-[1.015] flex items-center justify-center space-x-1 shadow-md border-0 relative z-10"
               >
                 <span>Initiate Business Registration</span>
-                <ChevronLeft className="w-4 h-4 rotate-180 text-[#0066ff]" />
+                <ChevronLeft className="w-4 h-4 rotate-180 text-gold-500" />
               </button>
 
               <div className="text-center relative z-10">
@@ -1191,7 +1191,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                   "{content.advisor.bio}"
                 </p>
 
-                <div className="bg-zinc-50 rounded-xl p-3 border border-zinc-150 space-y-1.5 text-[11.5px] text-zinc-500">
+                <div className="bg-zinc-50 rounded-xl p-3 border border-zinc-200/60 space-y-1.5 text-[11.5px] text-zinc-500">
                   <div className="flex justify-between">
                     <span>Credentials:</span>
                     <strong className="text-zinc-800">{content.advisor.credentials}</strong>

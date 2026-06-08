@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="bg-gold-50/10 text-zinc-900 selection:bg-gold-200">
         <QuoteProvider>
           <ClientShell>

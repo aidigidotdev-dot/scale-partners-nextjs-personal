@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BookOpen, Calendar, Clock, ArrowRight, X, User } from 'lucide-react';
+import Image from 'next/image';
 
 export default function RecentBlogs() {
   const [selectedPost, setSelectedPost] = useState<number | null>(null);
@@ -10,6 +11,7 @@ export default function RecentBlogs() {
       category: "TAXES & REGULATORY",
       date: "May 28, 2026",
       readTime: "6 Min Read",
+      image: "/assets/blog_tax_regulations.png",
       excerpt: "Deep dive into when a Free Zone enterprise qualifies for the prestigious 0% corporate tax rate and how to structuredly maintain non-qualifying income safely under 2026 OECD tax indices.",
       content: `### Understanding the 2026 UAE Corporate Tax Landscape
 
@@ -28,6 +30,7 @@ As of 2026, the UAE has fully integrated its 9% corporate tax framework on busin
       category: "STRATEGIC ARBITRAGE",
       date: "May 15, 2026",
       readTime: "8 Min Read",
+      image: "/assets/blog_mainland_freezone.png",
       excerpt: "An objective financial breakdown comparing the local bidding capabilities, office overhead requirements, and absolute real-world licensing costs of Dubai Mainland vs. Free Zones.",
       content: `### Making the Right Choice: Mainland vs. Free Zone
 
@@ -49,6 +52,7 @@ Choosing between Mainland and Free Zone is one of the most critical foundational
       category: "EXECUTIVE RESIDENCY",
       date: "May 02, 2026",
       readTime: "5 Min Read",
+      image: "/assets/blog_golden_visa.png",
       excerpt: "The ultimate direct walkthrough for active startup directors, specialized global tech talent, and high-net-worth real estate investors looking to secure executive status.",
       content: `### Accelerating Your UAE Golden Visa Process
 
@@ -72,8 +76,8 @@ By utilizing Scale Partners' VIP administrative PRO channel, your medical fitnes
         {/* Editorial Heading */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="space-y-3 max-w-xl">
-            <span className="inline-flex items-center space-x-1.5 bg-[#0066ff]/10 text-[#0066ff] px-3 py-1 bg-zinc-50 rounded-full font-mono text-[9.5px] font-bold uppercase tracking-widest border border-[#0066ff]/10">
-              <BookOpen className="w-3.5 h-3.5 text-[#0066ff]" />
+            <span className="inline-flex items-center space-x-1.5 bg-gold-500/10 text-gold-500 px-3 py-1 bg-zinc-50 rounded-full font-mono text-[9.5px] font-bold uppercase tracking-widest border border-gold-500/10">
+              <BookOpen className="w-3.5 h-3.5 text-gold-500" />
               <span>KNOWLEDGE PORTAL</span>
             </span>
             <h2 className="text-[30px] sm:text-[36px] font-sans font-light text-zinc-900 tracking-tight leading-snug">
@@ -92,14 +96,22 @@ By utilizing Scale Partners' VIP administrative PRO channel, your medical fitnes
               key={idx} 
               className="bg-white border border-zinc-200/80 rounded-2xl overflow-hidden hover:shadow-xl hover:border-zinc-300 transition-all duration-300 flex flex-col justify-between"
             >
+              <div className="relative w-full h-44 overflow-hidden border-b border-zinc-100">
+                <Image 
+                  src={post.image} 
+                  alt={post.title} 
+                  fill 
+                  className="object-cover hover:scale-[1.03] transition-transform duration-500"
+                />
+              </div>
               <div className="p-6 space-y-4">
                 {/* Meta details */}
-                <div className="flex items-center justify-between text-[10px] font-mono font-bold tracking-wider text-[#0066ff]">
+                <div className="flex items-center justify-between text-[10px] font-mono font-bold tracking-wider text-gold-500">
                   <span>{post.category}</span>
                   <span className="text-zinc-400 font-medium">{post.readTime}</span>
                 </div>
                 
-                <h3 className="text-[16px] font-bold text-zinc-900 tracking-tight leading-snug hover:text-[#0066ff] transition-colors">
+                <h3 className="text-[16px] font-bold text-zinc-900 tracking-tight leading-snug hover:text-gold-500 transition-colors">
                   {post.title}
                 </h3>
                 
@@ -117,7 +129,7 @@ By utilizing Scale Partners' VIP administrative PRO channel, your medical fitnes
                 
                 <button
                   onClick={() => setSelectedPost(idx)}
-                  className="text-[12px] font-semibold text-[#0066ff] hover:text-[#0055d4] flex items-center space-x-1 transition-colors hover:scale-102 cursor-pointer"
+                  className="text-[12px] font-semibold text-gold-500 hover:text-[#0B2E16] flex items-center space-x-1 transition-colors hover:scale-102 cursor-pointer"
                 >
                   <span>Read Article</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -141,7 +153,7 @@ By utilizing Scale Partners' VIP administrative PRO channel, your medical fitnes
               </button>
 
               <div className="space-y-6">
-                <div className="flex items-center space-x-2 text-[10px] font-mono text-[#0066ff] font-bold">
+                <div className="flex items-center space-x-2 text-[10px] font-mono text-gold-500 font-bold">
                   <span>{posts[selectedPost].category}</span>
                   <span>•</span>
                   <span>{posts[selectedPost].readTime}</span>

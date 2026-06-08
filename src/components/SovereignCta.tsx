@@ -106,15 +106,15 @@ export default function SovereignCta({ currentPage, openContactModal }: Sovereig
           and replaced standard blue borders with a beautiful gradient of blue, turquoise and seagreen. */}
       <div className="relative overflow-hidden bg-white rounded-3xl p-1 sm:p-1.5 shadow-[0_32px_80px_rgba(30,41,59,0.04)] transition-all">
         {/* Border Image emulation using gradient backdrop with padding */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0066ff] via-[#00d4aa] to-[#10b981] rounded-3xl pointer-events-none opacity-[0.45]"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#12B76A] via-[#22C55E] to-[#10b981] rounded-3xl pointer-events-none opacity-[0.45]"></div>
         
         {/* Core content area inside gradient border */}
         <div className="relative bg-white rounded-[22px] px-6 sm:px-10 py-10 sm:py-12 z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
           
           {/* Ambient light turquoise/blue spotlights behind the text */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-[22px] z-0">
-            <div className="absolute top-[-25%] left-[-20%] w-[50%] h-[50%] rounded-full bg-[#00d4aa]/[0.08] blur-[100px]"></div>
-            <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[#00d4aa]/[0.08] blur-[120px]"></div>
+            <div className="absolute top-[-25%] left-[-20%] w-[50%] h-[50%] rounded-full bg-[#22C55E]/[0.08] blur-[100px]"></div>
+            <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[#22C55E]/[0.08] blur-[120px]"></div>
           </div>
 
           <div className="lg:col-span-12 relative z-10 flex flex-col md:flex-row md:items-center md:justify-between border-b border-zinc-100 pb-5 gap-3.5">
@@ -141,7 +141,7 @@ export default function SovereignCta({ currentPage, openContactModal }: Sovereig
                 {cta.title}
               </h2>
               
-              <div className="p-4 bg-slate-900/5 border border-[#00d4aa]/15 rounded-2xl flex items-start space-x-3">
+              <div className="p-4 bg-slate-900/5 border border-[#22C55E]/15 rounded-2xl flex items-start space-x-3">
                 <AlertTriangle className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
                 <p className="text-[13px] text-zinc-700 leading-relaxed font-sans font-semibold">
                   {cta.fomo}

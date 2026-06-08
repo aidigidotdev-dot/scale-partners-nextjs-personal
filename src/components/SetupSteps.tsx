@@ -48,8 +48,8 @@ export default function SetupSteps() {
         {/* Editorial Title */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="space-y-3 max-w-xl">
-            <span className="inline-flex items-center space-x-1.5 bg-[#0066ff]/10 text-[#0066ff] px-3 py-1 bg-zinc-50 rounded-full font-mono text-[9.5px] font-bold uppercase tracking-widest border border-[#0066ff]/10">
-              <Activity className="w-3.5 h-3.5 text-[#0066ff]" />
+            <span className="inline-flex items-center space-x-1.5 bg-gold-500/10 text-gold-500 px-3 py-1 bg-zinc-50 rounded-full font-mono text-[9.5px] font-bold uppercase tracking-widest border border-gold-500/10">
+              <Activity className="w-3.5 h-3.5 text-gold-500" />
               <span>LOGISTICAL FLOWSHEET</span>
             </span>
             <h2 className="text-[30px] sm:text-[36px] font-sans font-light text-zinc-900 tracking-tight leading-snug">
@@ -63,7 +63,7 @@ export default function SetupSteps() {
           <div className="hidden lg:flex items-center space-x-2 text-[12px] font-mono text-zinc-400 font-semibold select-none">
             <span>REGISTRATION FLOW</span>
             <ChevronRight className="w-3.5 h-3.5 text-zinc-350" />
-            <span className="text-[#0066ff]">ACTIVE INTERACTIVE COMPILER</span>
+            <span className="text-gold-500">ACTIVE INTERACTIVE COMPILER</span>
           </div>
         </div>
 
@@ -82,7 +82,7 @@ export default function SetupSteps() {
                   onClick={() => setActiveStep(idx)}
                   className={`border text-left p-5 sm:p-6 rounded-2xl cursor-pointer transition-all duration-300 relative overflow-hidden flex items-start space-x-4 ${
                     isSelected 
-                      ? 'bg-white border-transparent shadow-[0_15px_45px_rgba(0,102,255,0.07)] ring-1 ring-zinc-100' 
+                      ? 'bg-white border-transparent shadow-[0_15px_45px_rgba(18,183,106,0.07)] ring-1 ring-zinc-100' 
                       : 'bg-zinc-50/50 border-zinc-200 hover:border-zinc-350 hover:bg-white'
                   }`}
                 >
@@ -98,7 +98,7 @@ export default function SetupSteps() {
                         {st.subtitle}
                       </span>
                       <strong className={`font-mono text-[14px] transition-colors ${
-                        isSelected ? 'text-[#0066ff]' : 'text-zinc-350'
+                        isSelected ? 'text-gold-500' : 'text-zinc-350'
                       }`}>
                         STEP {st.stepNum}
                       </strong>

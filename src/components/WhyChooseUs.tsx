@@ -39,7 +39,7 @@ export default function WhyChooseUs() {
             <span>EXECUTIVE ADVISORY STANDARDS</span>
           </span>
           <h2 className="text-[30px] sm:text-[36px] font-sans font-light text-zinc-900 tracking-tight leading-snug">
-            Why global founders choose <span className="text-[#0066ff] font-medium">Scale Partners</span>
+            Why global founders choose <span className="text-gold-500 font-medium">Scale Partners</span>
           </h2>
           <p className="text-[14px] text-zinc-500 font-sans leading-relaxed">
             We operate beyond standard agency registrations. We architect custom, fully tax-optimized holding structures and high-speed UAE corporate vehicles tailored to protect international equity.
@@ -53,11 +53,11 @@ export default function WhyChooseUs() {
             return (
               <div 
                 key={idx} 
-                className="bg-zinc-50 border border-zinc-150 rounded-2xl p-6 sm:p-8 hover:bg-white hover:shadow-[0_22px_60px_rgba(0,0,0,0.06)] hover:border-[#0066ff]/20 transition-all duration-300 flex flex-col justify-between group"
+                className="bg-zinc-50 border border-zinc-200/60 rounded-2xl p-6 sm:p-8 hover:bg-white hover:shadow-[0_22px_60px_rgba(0,0,0,0.06)] hover:border-gold-500/20 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div className="space-y-4">
                   {/* Icon Block */}
-                  <div className="p-3 bg-white border border-zinc-200 text-[#0066ff] rounded-xl inline-block group-hover:bg-[#0066ff] group-hover:text-white group-hover:border-transparent transition-all duration-300">
+                  <div className="p-3 bg-white border border-zinc-200 text-gold-500 rounded-xl inline-block group-hover:bg-gold-500 group-hover:text-white group-hover:border-transparent transition-all duration-300">
                     <IconComponent className="w-5 h-5" />
                   </div>
                   

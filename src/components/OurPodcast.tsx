@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Headphones, Play, Pause, Volume2, Calendar, Clock, BarChart2, Activity } from 'lucide-react';
+import Image from 'next/image';
 
 export default function OurPodcast() {
   const [activeEpisode, setActiveEpisode] = useState<number>(0);
@@ -71,8 +72,8 @@ export default function OurPodcast() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="space-y-3 max-w-xl">
-            <span className="inline-flex items-center space-x-1.5 bg-[#0066ff]/10 text-[#0066ff] px-3 py-1 bg-zinc-50 rounded-full font-mono text-[9.5px] font-bold uppercase tracking-widest border border-[#0066ff]/10">
-              <Headphones className="w-3.5 h-3.5 text-[#0066ff]" />
+            <span className="inline-flex items-center space-x-1.5 bg-gold-500/10 text-gold-500 px-3 py-1 bg-zinc-50 rounded-full font-mono text-[9.5px] font-bold uppercase tracking-widest border border-gold-500/10">
+              <Headphones className="w-3.5 h-3.5 text-gold-500" />
               <span>Scale Partners Podcast</span>
             </span>
             <h2 className="text-[30px] sm:text-[36px] font-sans font-light text-zinc-900 tracking-tight leading-snug">
@@ -104,13 +105,13 @@ export default function OurPodcast() {
                     }}
                     className={`p-4 sm:p-5 text-left rounded-2xl border transition-all cursor-pointer flex items-center justify-between gap-4 ${
                       isActive 
-                        ? 'bg-white border-transparent shadow-[0_15px_40px_rgba(0,102,255,0.06)] ring-1 ring-zinc-100' 
+                        ? 'bg-white border-transparent shadow-[0_15px_40px_rgba(18,183,106,0.06)] ring-1 ring-zinc-100' 
                         : 'bg-zinc-50/50 border-zinc-200 hover:border-zinc-300 hover:bg-white'
                     }`}
                   >
                     <div className="space-y-1">
                       <div className="flex items-center space-x-2 text-[10px] font-mono">
-                        <span className="font-bold text-[#0066ff]">{ep.category}</span>
+                        <span className="font-bold text-gold-500">{ep.category}</span>
                         <span className="text-zinc-300">•</span>
                         <span className="text-zinc-450">{ep.date}</span>
                       </div>
@@ -125,7 +126,7 @@ export default function OurPodcast() {
                     <div className="shrink-0 flex items-center space-x-2.5">
                       <span className="text-[11px] font-mono text-zinc-400">{ep.duration}</span>
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${
-                        isActive && isPlaying ? 'bg-emerald-500 text-white animate-pulse' : 'bg-zinc-200 text-zinc-700 hover:bg-[#0066ff] hover:text-white'
+                        isActive && isPlaying ? 'bg-emerald-500 text-white animate-pulse' : 'bg-zinc-200 text-zinc-700 hover:bg-gold-500 hover:text-white'
                       }`}>
                         {isActive && isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5 translate-x-0.5" />}
                       </div>
@@ -136,7 +137,7 @@ export default function OurPodcast() {
             </div>
             
             <div className="text-[11.5px] text-zinc-400 bg-white/50 border border-zinc-200/50 rounded-xl p-3 inline-flex items-center gap-2 mt-4 select-none">
-              <Volume2 className="w-4 h-4 text-[#0066ff]" />
+              <Volume2 className="w-4 h-4 text-gold-500" />
               <span>Available on Spotify, Apple Podcasts, and major corporate advisory archives.</span>
             </div>
           </div>
@@ -145,7 +146,7 @@ export default function OurPodcast() {
           <div className="lg:col-span-5 bg-zinc-900 text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden text-left shadow-xl">
             
             {/* Ambient decorative glow effect */}
-            <div className="absolute top-0 right-0 w-44 h-44 bg-[#0066ff]/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-44 h-44 bg-gold-500/20 rounded-full blur-3xl pointer-events-none"></div>
             
             <div className="space-y-6 relative z-10 w-full">
               <div className="flex items-center justify-between border-b border-white/10 pb-4">
@@ -162,9 +163,15 @@ export default function OurPodcast() {
 
               {/* Cover Art Preview */}
               <div className="bg-gradient-to-tr from-zinc-800 to-zinc-950 border border-white/10 aspect-video rounded-2xl flex flex-col items-center justify-center space-y-3 relative overflow-hidden">
-                <div className="absolute inset-0 bg-black/40"></div>
+                <Image 
+                  src="/assets/podcast_studio_dubai.png" 
+                  alt="Podcast Studio Dubai" 
+                  fill 
+                  className="object-cover opacity-60"
+                />
+                <div className="absolute inset-0 bg-black/60"></div>
                 <div className="relative z-10 flex flex-col items-center text-center p-4">
-                  <div className={`p-4 bg-white/10 border border-white/20 text-[#0066ff] rounded-2.5xl mb-2.5 transition-transform ${
+                  <div className={`p-4 bg-white/10 border border-white/20 text-gold-500 rounded-2.5xl mb-2.5 transition-transform ${
                     isPlaying ? 'scale-105' : ''
                   }`}>
                     <Headphones className="w-6 h-6 text-white" />
@@ -181,7 +188,7 @@ export default function OurPodcast() {
                     {[1, 2, 3, 4, 5, 6, 7, 8].map((bar) => (
                       <div 
                         key={bar} 
-                        className="w-1 bg-[#0066ff] rounded-t"
+                        className="w-1 bg-gold-500 rounded-t"
                         style={{
                           height: `${Math.random() * 80 + 20}%`,
                           animation: `bounce 1s ease-in-out infinite alternate`,
@@ -211,7 +218,7 @@ export default function OurPodcast() {
               <div className="space-y-1.5">
                 <div className="relative h-1 w-full bg-white/20 rounded-full overflow-hidden">
                   <div 
-                    className="absolute top-0 left-0 h-full bg-[#0066ff] transition-all duration-300"
+                    className="absolute top-0 left-0 h-full bg-gold-500 transition-all duration-300"
                     style={{ width: `${progressPercent}%` }}
                   />
                 </div>
@@ -228,7 +235,7 @@ export default function OurPodcast() {
                 </div>
                 <button
                   onClick={() => setIsPlaying(!isPlaying)}
-                  className="px-6 py-2.5 bg-[#0066ff] hover:bg-[#0055d4] text-white font-bold rounded-xl space-x-1.5 transition-all flex items-center cursor-pointer active:scale-95"
+                  className="px-6 py-2.5 bg-gold-500 hover:bg-[#0B2E16] text-white font-bold rounded-xl space-x-1.5 transition-all flex items-center cursor-pointer active:scale-95"
                 >
                   {isPlaying ? <Pause className="w-4 h-4 text-white" /> : <Play className="w-4 h-4 text-white translate-x-0.5" />}
                   <span>{isPlaying ? "Pause Briefing" : "Listen Now"}</span>

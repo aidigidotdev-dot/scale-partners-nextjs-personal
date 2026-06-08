@@ -3,13 +3,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import Image from 'next/image';
 import { FileText, FileCheck, Landmark, Check, HelpCircle } from 'lucide-react';
 
 export default function RequiredDocuments() {
   const documents = [
     {
       title: "Identity Dossier (Standard)",
-      purpose: "Mandatory for all physical owners, managers, and ultimate beneficial owners (UBOs).",
+      purpose: "Mandatory for all owners, managers, and ultimate beneficial owners (UBOs).",
+      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=600&auto=format&fit=crop",
       items: [
         { name: "Passport Copy", detail: "High-resolution color photograph page (must be valid for at least 6 months)." },
         { name: "Entry Stamp or Current UAE Visa Copy", detail: "Visit Visa, Tourist entry stamp, or existing residency cancelation paper." },
@@ -19,6 +21,7 @@ export default function RequiredDocuments() {
     {
       title: "Corporate & Address Verification",
       purpose: "Required by central banking and registry AML compliance guards.",
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=600&auto=format&fit=crop",
       items: [
         { name: "Proof of Address", detail: "Utility bill, bank statement, or official lease contract under 3 months old." },
         { name: "Corporate Registry Brief (CV)", detail: "Comprehensive professional portfolio outlining business experience." },
@@ -28,6 +31,7 @@ export default function RequiredDocuments() {
     {
       title: "Attested Academic Credentials",
       purpose: "Mandatory only for professional consultancies, healthcare, and executive residency.",
+      image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=600&auto=format&fit=crop",
       items: [
         { name: "Certified Degree Certificate", detail: "Bachelor's degree or higher, legally attested by the UAE Embassy in country of origin and MOFA UAE." }
       ]
@@ -37,12 +41,12 @@ export default function RequiredDocuments() {
   return (
     <section id="official_required_documents_block" className="py-16 bg-white border-t border-b border-zinc-200 relative overflow-hidden">
       {/* Soft Radial Background Spotlight for an elegant human-crafted finish */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#00d4aa]/[0.02] blur-[100px] pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#12B76A]/[0.02] blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
         <div className="max-w-3xl mb-12 space-y-3">
-          <div className="inline-flex items-center space-x-1.5 bg-zinc-100 text-[#0066ff] px-3 py-1 rounded-full border border-zinc-200 font-mono text-[10px] font-bold uppercase tracking-wider">
-            <FileCheck className="w-3.5 h-3.5 text-[#0066ff]" />
+          <div className="inline-flex items-center space-x-1.5 bg-[#E6F7ED] text-[#08854C] px-3.5 py-1.5 rounded-full border border-emerald-500/10 font-mono text-[10px] font-bold uppercase tracking-wider">
+            <FileCheck className="w-3.5 h-3.5 text-[#12B76A]" />
             <span>Sovereign Registry Guidelines</span>
           </div>
           <h2 className="font-sans text-[24px] sm:text-[30px] font-light text-zinc-900 tracking-wide leading-tight">
@@ -57,12 +61,22 @@ export default function RequiredDocuments() {
           {documents.map((category, idx) => (
             <div 
               key={idx} 
-              className="bg-zinc-50/50 rounded-2xl p-6 border border-zinc-200 shadow-xs flex flex-col justify-between hover:border-zinc-300 transition-colors"
+              className="bg-white/95 rounded-2xl p-5 border border-zinc-200 shadow-sm flex flex-col justify-between hover:border-emerald-500/20 hover:shadow-[0_20px_50px_rgba(18,183,106,0.05)] transition-all duration-300"
             >
               <div className="space-y-4">
+                <div className="relative w-full h-28 rounded-xl overflow-hidden mb-3">
+                  <Image 
+                    src={category.image} 
+                    alt={category.title} 
+                    fill
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B2E16]/65 via-transparent to-transparent"></div>
+                </div>
                 <div className="space-y-1">
-                  <span className="font-mono text-[10px] text-zinc-400 font-bold block uppercase">FOLDER 0{idx + 1}</span>
-                  <h3 className="font-sans text-[16.5px] font-light text-zinc-900 tracking-wide">
+                  <span className="font-mono text-[9.5px] text-zinc-400 font-bold block uppercase">FOLDER 0{idx + 1}</span>
+                  <h3 className="font-sans text-[16.5px] font-semibold text-zinc-900 tracking-wide">
                     {category.title}
                   </h3>
                   <p className="text-[11.5px] text-zinc-500 leading-relaxed font-sans">
@@ -89,7 +103,7 @@ export default function RequiredDocuments() {
         </div>
 
         <div className="mt-8 p-4 bg-amber-50/35 border border-amber-500/10 rounded-xl flex items-start space-x-3 text-[11.5px] text-amber-850">
-          <Landmark className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
+          <Landmark className="w-4 h-4 text-amber-650 mt-0.5 shrink-0" />
           <div className="space-y-0.5">
             <span className="font-bold">Important Attestation Warning:</span>
             <p className="leading-relaxed text-zinc-650">

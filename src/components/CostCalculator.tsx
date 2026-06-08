@@ -6,6 +6,7 @@
  */
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { 
   Building2, 
   Globe, 
@@ -87,11 +88,15 @@ export default function CostCalculator({ onQuoteSubmit, openContactModal }: Cost
   };
 
   return (
-    <div className="pt-[100px] pb-24 bg-gold-50 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="pt-[100px] pb-24 bg-white min-h-screen relative overflow-hidden">
+      {/* SOFT AMBIENT BRAND GREEN GLOWS FOR ULTRA-PREMIUM VIBES */}
+      <div className="absolute top-0 right-0 w-[55%] h-[500px] bg-[radial-gradient(circle_at_top_right,rgba(18,183,106,0.045),transparent_50%)] pointer-events-none z-0"></div>
+      <div className="absolute bottom-[10%] left-[-10%] w-[50%] h-[450px] bg-[radial-gradient(circle_at_bottom_left,rgba(18,183,106,0.03),transparent_45%)] pointer-events-none z-0"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Intro Tag */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
+        <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
           <div className="inline-flex items-center space-x-1 border border-gold-300/15 bg-gold-50/50 px-3.5 py-1 rounded-full backdrop-blur-sm">
             <Calculator className="w-3.5 h-3.5 text-gold-500" />
             <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-600 font-semibold">Scale Cost Engine</span>
@@ -102,6 +107,24 @@ export default function CostCalculator({ onQuoteSubmit, openContactModal }: Cost
           <p className="font-sans text-zinc-500 text-[14.5px] max-w-lg mx-auto">
             Design your ideal business framework dynamically. Receive pricing clarity on government fees and visa Clearances in real-time.
           </p>
+        </div>
+
+        {/* Cost Calculator Banner Photo */}
+        <div className="max-w-5xl mx-auto rounded-3xl overflow-hidden border border-zinc-200/50 shadow-md h-[200px] mb-12 relative group z-10 animate-fade-in">
+          <Image 
+            src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1200&auto=format&fit=crop" 
+            alt="License Cost Estimator" 
+            fill
+            sizes="100vw"
+            className="object-cover group-hover:scale-[1.01] transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B2E16]/95 via-[#08854C]/35 to-transparent flex flex-col justify-end p-6 sm:p-8 z-10">
+            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-gold-400 font-bold">REAL-TIME BUDGET MODELING</span>
+            <h3 className="font-serif text-[18px] sm:text-[22px] text-white font-medium mt-1 leading-snug">Statutory Fee Calculator</h3>
+            <p className="text-[12px] text-zinc-300 max-w-xl mt-1 font-sans">
+              Evaluate economic zones, license codes, and visa quotas under verified government portal indexes.
+            </p>
+          </div>
         </div>
 
         {/* Layout Grid */}
@@ -145,22 +168,32 @@ export default function CostCalculator({ onQuoteSubmit, openContactModal }: Cost
                   <div 
                     id="calc_jurisdiction_freezone"
                     onClick={() => setJurisdiction('freezone')}
-                    className={`border-2 rounded-2xl p-5 cursor-pointer transition-all ${
+                    className={`border-2 rounded-2xl p-4 cursor-pointer transition-all hover:shadow-md ${
                       jurisdiction === 'freezone' 
                         ? 'border-gold-500 bg-gold-50/10' 
                         : 'border-zinc-200 hover:border-zinc-300 bg-white'
                     }`}
                   >
-                    <div className="flex justify-between items-start mb-3">
-                      <div className="p-2 bg-gold-50 rounded-lg text-gold-600">
-                        <Globe className="w-5 h-5" />
+                    <div className="relative w-full h-28 rounded-xl overflow-hidden mb-3">
+                      <Image 
+                        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600&auto=format&fit=crop" 
+                        alt="Free Zone Authority" 
+                        fill
+                        sizes="(max-width: 768px) 100vw, 30vw"
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B2E16]/70 via-transparent to-transparent"></div>
+                    </div>
+                    <div className="flex justify-between items-start mb-2">
+                      <div className="p-1.5 bg-gold-50 rounded-lg text-gold-600">
+                        <Globe className="w-4 h-4" />
                       </div>
                       <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${jurisdiction === 'freezone' ? 'border-gold-500' : 'border-zinc-300'}`}>
                         {jurisdiction === 'freezone' && <div className="w-2 h-2 bg-gold-500 rounded-full"></div>}
                       </div>
                     </div>
                     <h4 className="text-[14.5px] font-semibold text-zinc-900">Free Zone Authority</h4>
-                    <p className="text-[12px] text-zinc-500 leading-normal mt-1.5 font-sans">
+                    <p className="text-[11.5px] text-zinc-500 leading-normal mt-1 font-sans">
                       Optimized for global services, absolute corporate tax exemption, and simplified digital reporting.
                     </p>
                   </div>
@@ -168,22 +201,32 @@ export default function CostCalculator({ onQuoteSubmit, openContactModal }: Cost
                   <div 
                     id="calc_jurisdiction_mainland"
                     onClick={() => setJurisdiction('mainland')}
-                    className={`border-2 rounded-2xl p-5 cursor-pointer transition-all ${
+                    className={`border-2 rounded-2xl p-4 cursor-pointer transition-all hover:shadow-md ${
                       jurisdiction === 'mainland' 
                         ? 'border-gold-500 bg-gold-50/10' 
                         : 'border-zinc-200 hover:border-zinc-300 bg-white'
                     }`}
                   >
-                    <div className="flex justify-between items-start mb-3">
-                      <div className="p-2 bg-gold-50 rounded-lg text-gold-600">
-                        <Building2 className="w-5 h-5" />
+                    <div className="relative w-full h-28 rounded-xl overflow-hidden mb-3">
+                      <Image 
+                        src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=600&auto=format&fit=crop" 
+                        alt="Mainland (DET)" 
+                        fill
+                        sizes="(max-width: 768px) 100vw, 30vw"
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B2E16]/70 via-transparent to-transparent"></div>
+                    </div>
+                    <div className="flex justify-between items-start mb-2">
+                      <div className="p-1.5 bg-gold-50 rounded-lg text-gold-600">
+                        <Building2 className="w-4 h-4" />
                       </div>
                       <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${jurisdiction === 'mainland' ? 'border-gold-500' : 'border-zinc-300'}`}>
                         {jurisdiction === 'mainland' && <div className="w-2 h-2 bg-gold-500 rounded-full"></div>}
                       </div>
                     </div>
                     <h4 className="text-[14.5px] font-semibold text-zinc-900">Mainland (DET)</h4>
-                    <p className="text-[12px] text-zinc-500 leading-normal mt-1.5 font-sans">
+                    <p className="text-[11.5px] text-zinc-500 leading-normal mt-1 font-sans">
                       Unlocks total access directly with local UAE clients and public B2B entities without geographical borders.
                     </p>
                   </div>
@@ -199,29 +242,41 @@ export default function CostCalculator({ onQuoteSubmit, openContactModal }: Cost
                   <h3 className="text-[18px] font-semibold text-zinc-900 tracking-tight">Select your Primary License Type</h3>
                 </div>
 
-                <div className="space-y-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {[
-                    { id: 'service', label: 'Professional / Service License', cost: 'AED 1,500', desc: 'Sectors: Consulting, Technology, Advisory services, Media, and Digital Agencies.' },
-                    { id: 'commercial', label: 'Commercial / General Trading License', cost: 'AED 2,500', desc: 'Sectors: Domestic trade, physical imports, export operations, and warehouse logistics.' },
-                    { id: 'ecommerce', label: 'E-Commerce Retail License', cost: 'AED 2,000', desc: 'Sectors: Consumer-facing online portals, dropshipping, and digital checkout brands.' }
+                    { id: 'service', label: 'Professional / Service', cost: 'AED 1,500', desc: 'Sectors: Consulting, Technology, Advisory services, Media, and Digital Agencies.', image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop' },
+                    { id: 'commercial', label: 'Commercial / Trading', cost: 'AED 2,500', desc: 'Sectors: Domestic trade, physical imports, export operations, and logistics.', image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600&auto=format&fit=crop' },
+                    { id: 'ecommerce', label: 'E-Commerce Retail', cost: 'AED 2,000', desc: 'Sectors: Consumer online portals, dropshipping, and digital checkout brands.', image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop' }
                   ].map((act) => (
                     <div 
                       key={act.id}
                       id={`calc_activity_${act.id}`}
                       onClick={() => setActivity(act.id as any)}
-                      className={`border p-4 rounded-xl cursor-pointer transition-all flex items-center justify-between ${
+                      className={`border-2 rounded-2xl p-4 cursor-pointer transition-all hover:shadow-md flex flex-col justify-between ${
                         activity === act.id 
-                          ? 'border-gold-500 bg-gold-50/5 select-none' 
+                          ? 'border-gold-500 bg-gold-50/10' 
                           : 'border-zinc-200 bg-white hover:border-zinc-300'
                       }`}
                     >
-                      <div className="flex-1 pr-4">
-                        <div className="text-[14px] font-semibold text-zinc-900">{act.label}</div>
-                        <p className="text-[11.5px] text-zinc-500 font-sans mt-0.5">{act.desc}</p>
+                      <div className="space-y-3">
+                        <div className="relative w-full h-24 rounded-xl overflow-hidden">
+                          <Image 
+                            src={act.image} 
+                            alt={act.label} 
+                            fill
+                            sizes="(max-width: 768px) 100vw, 20vw"
+                            className="object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#0B2E16]/70 via-transparent to-transparent"></div>
+                        </div>
+                        <div>
+                          <div className="text-[13.5px] font-semibold text-zinc-900 leading-snug">{act.label}</div>
+                          <p className="text-[11px] text-zinc-500 font-sans mt-1 leading-normal">{act.desc}</p>
+                        </div>
                       </div>
-                      <div className="text-right shrink-0">
-                        <div className="text-[12.5px] font-mono font-bold text-zinc-800">{act.cost}</div>
-                        <span className="text-[10px] text-zinc-400 block font-mono font-semibold uppercase">Category cost</span>
+                      <div className="pt-3 border-t border-zinc-100 mt-3 flex justify-between items-baseline">
+                        <span className="text-[9.5px] text-zinc-400 font-mono font-semibold uppercase">Est. Cost</span>
+                        <div className="text-[13px] font-mono font-bold text-gold-700">{act.cost}</div>
                       </div>
                     </div>
                   ))}
@@ -281,29 +336,41 @@ export default function CostCalculator({ onQuoteSubmit, openContactModal }: Cost
                   <h3 className="text-[18px] font-semibold text-zinc-900 tracking-tight">Select your Workspace Option</h3>
                 </div>
 
-                <div className="grid grid-cols-1 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {[
-                    { id: 'virtual', name: 'Virtual Address License', cost: 'AED 4,500', desc: 'Valid address for DET/freezone compliant registrations without active physical workspace lease keys.' },
-                    { id: 'flexi', name: 'Flexi Shared Desk Spaces', cost: 'AED 6,500', desc: 'A dedicated shared workspace credential inside premium co-working suites in central Dubai. Perfect for startup visas.' },
-                    { id: 'dedicated', name: 'Dedicated Enclosed Office Suite', cost: 'AED 18,500', desc: 'Independent physical lockable executive room. Unlocks unlimited resident visa quotas under labor inspection rules.' }
+                    { id: 'virtual', name: 'Virtual Address', cost: 'AED 4,500', desc: 'Valid address for DET/freezone compliant registrations without active physical lease keys.', image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600&auto=format&fit=crop' },
+                    { id: 'flexi', name: 'Flexi Shared Desk', cost: 'AED 6,500', desc: 'Dedicated shared workspace desk inside premium co-working suites in central Dubai. Perfect for startup visas.', image: 'https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?q=80&w=600&auto=format&fit=crop' },
+                    { id: 'dedicated', name: 'Dedicated Office', cost: 'AED 18,500', desc: 'Independent physical lockable executive room. Unlocks unlimited resident visa quotas under labor rules.', image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=600&auto=format&fit=crop' }
                   ].map((office) => (
                     <div 
                       key={office.id}
                       id={`calc_office_${office.id}`}
                       onClick={() => setOfficeType(office.id as any)}
-                      className={`border p-4 rounded-xl cursor-pointer transition-all flex items-center justify-between ${
+                      className={`border-2 rounded-2xl p-4 cursor-pointer transition-all hover:shadow-md flex flex-col justify-between ${
                         officeType === office.id 
-                          ? 'border-gold-500 bg-gold-50/5' 
+                          ? 'border-gold-500 bg-gold-50/10' 
                           : 'border-zinc-200 bg-white hover:border-zinc-300'
                       }`}
                     >
-                      <div className="flex-1 pr-4">
-                        <div className="text-[14px] font-bold text-zinc-900">{office.name}</div>
-                        <p className="text-[11.5px] text-zinc-500 mt-0.5 font-sans leading-normal">{office.desc}</p>
+                      <div className="space-y-3">
+                        <div className="relative w-full h-24 rounded-xl overflow-hidden">
+                          <Image 
+                            src={office.image} 
+                            alt={office.name} 
+                            fill
+                            sizes="(max-width: 768px) 100vw, 20vw"
+                            className="object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#0B2E16]/70 via-transparent to-transparent"></div>
+                        </div>
+                        <div>
+                          <div className="text-[13.5px] font-semibold text-zinc-900 leading-snug">{office.name}</div>
+                          <p className="text-[11px] text-zinc-500 font-sans mt-1 leading-normal">{office.desc}</p>
+                        </div>
                       </div>
-                      <div className="text-right shrink-0">
-                        <div className="text-[13px] font-mono font-bold text-zinc-800">{office.cost}</div>
-                        <span className="text-[9.5px] text-zinc-400 block font-mono font-semibold uppercase">Annual rent</span>
+                      <div className="pt-3 border-t border-zinc-100 mt-3 flex justify-between items-baseline">
+                        <span className="text-[9.5px] text-zinc-400 font-mono font-semibold uppercase">Annual Rent</span>
+                        <div className="text-[13px] font-mono font-bold text-gold-700">{office.cost}</div>
                       </div>
                     </div>
                   ))}
@@ -350,8 +417,17 @@ export default function CostCalculator({ onQuoteSubmit, openContactModal }: Cost
           </div>
 
           {/* Premium Preview/Invoice Sidebar (5 Cols) */}
-          <div className="lg:col-span-5 bg-gradient-to-tr from-[#0052ff] via-[#00a3ff] to-[#00d4aa] text-white rounded-2xl p-6 sm:p-8 space-y-6 relative overflow-hidden shadow-2xl border-0">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+          <div className="lg:col-span-5 bg-gradient-to-tr from-[#0C2E1A] via-[#12B76A] to-[#22C55E] text-white rounded-2xl p-6 sm:p-8 space-y-6 relative overflow-hidden shadow-2xl border-0">
+            <div className="absolute inset-0 z-0 opacity-[0.08] mix-blend-overlay">
+              <Image 
+                src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=800&auto=format&fit=crop" 
+                alt="Dubai Skyline Overlay"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl pointer-events-none z-0"></div>
             
             {!leadSubmitted ? (
               <div className="space-y-5 animate-fade-in text-left relative z-10">
@@ -414,7 +490,7 @@ export default function CostCalculator({ onQuoteSubmit, openContactModal }: Cost
                     setLeadError('');
                     setLeadSubmitted(true);
                   }}
-                  className="w-full py-3.5 bg-white text-[#0066ff] hover:bg-zinc-50 rounded-xl text-[13px] font-bold tracking-tight transition-transform hover:scale-[1.015] shadow-lg text-center border-0"
+                  className="w-full py-3.5 bg-white text-gold-500 hover:bg-zinc-50 rounded-xl text-[13px] font-bold tracking-tight transition-transform hover:scale-[1.015] shadow-lg text-center border-0"
                 >
                   Retrieve Live Price Model
                 </button>
@@ -507,7 +583,7 @@ export default function CostCalculator({ onQuoteSubmit, openContactModal }: Cost
                     <button
                       id="calc_estimate_consult"
                       onClick={openContactModal}
-                      className="bg-white hover:bg-zinc-50 text-[#0052ff] text-[11.5px] font-bold py-2.5 px-3 rounded-lg flex items-center justify-center space-x-1 transition-colors"
+                      className="bg-white hover:bg-zinc-50 text-gold-700 text-[11.5px] font-bold py-2.5 px-3 rounded-lg flex items-center justify-center space-x-1 transition-colors"
                     >
                       <span>Book Partner</span>
                     </button>

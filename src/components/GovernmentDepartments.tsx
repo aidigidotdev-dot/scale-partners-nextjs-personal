@@ -39,8 +39,8 @@ export default function GovernmentDepartments() {
         {/* Section Heading */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="space-y-3 max-w-xl">
-            <span className="inline-flex items-center space-x-1.5 bg-[#0066ff]/10 text-[#0066ff] px-3 py-1 bg-zinc-50 rounded-full font-mono text-[9.5px] font-bold uppercase tracking-widest border border-[#0066ff]/10">
-              <Landmark className="w-3.5 h-3.5 text-[#0066ff]" />
+            <span className="inline-flex items-center space-x-1.5 bg-gold-500/10 text-gold-500 px-3 py-1 bg-zinc-50 rounded-full font-mono text-[9.5px] font-bold uppercase tracking-widest border border-gold-500/10">
+              <Landmark className="w-3.5 h-3.5 text-gold-500" />
               <span>OFFICIAL CLEARANCES</span>
             </span>
             <h2 className="text-[30px] sm:text-[36px] font-sans font-light text-zinc-900 tracking-tight leading-snug">
@@ -62,7 +62,7 @@ export default function GovernmentDepartments() {
           {departments.map((dept, idx) => (
             <div 
               key={idx} 
-              className="bg-zinc-50/50 border border-zinc-200 rounded-2xl p-5 sm:p-6 hover:bg-white hover:shadow-[0_20px_50px_rgba(0,102,255,0.04)] hover:border-zinc-350 transition-all duration-300 flex flex-col justify-between"
+              className="bg-zinc-50/50 border border-zinc-200 rounded-2xl p-5 sm:p-6 hover:bg-white hover:shadow-[0_20px_50px_rgba(18,183,106,0.04)] hover:border-zinc-350 transition-all duration-300 flex flex-col justify-between"
             >
               <div className="space-y-4">
                 <div className="flex items-start justify-between">

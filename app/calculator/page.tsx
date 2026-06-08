@@ -15,11 +15,9 @@ export default function CalculatorPage() {
   };
 
   return (
-    <div className="pt-24 pb-20 max-w-5xl mx-auto px-4">
-      <CostCalculator 
-        onQuoteSubmit={handleQuoteCalculated} 
-        openContactModal={openBlankModal} 
-      />
-    </div>
+    <CostCalculator 
+      onQuoteSubmit={handleQuoteCalculated} 
+      openContactModal={openBlankModal} 
+    />
   );
 }

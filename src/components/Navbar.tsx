@@ -7,6 +7,7 @@
 
 import { useState } from 'react';
 import { PageId } from '../types';
+import Image from 'next/image';
 import { 
   ChevronDown, 
   Menu, 
@@ -100,26 +101,16 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
           {/* Logo Brand Symbol */}
           <div 
             id="brand_logo" 
-            className="flex items-center space-x-3 cursor-pointer group"
+            className="flex items-center cursor-pointer group"
             onClick={() => handleLinkClick('home')}
           >
-            <div className="w-9 h-9 rounded-lg bg-brand-grad flex items-center justify-center border border-gold-300/30 shadow-sm relative overflow-hidden transition-transform group-hover:scale-105 duration-300">
-              {/* Geometric Minimal Scale Vectors */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-gold-600 to-zinc-950 opacity-20"></div>
-              <div className="relative flex flex-col items-center justify-center">
-                <span className="text-[14px] font-sans font-bold text-gold-300 tracking-tighter leading-none">S</span>
-                <span className="text-[10px] font-sans font-bold text-gold-400 tracking-tighter leading-none -mt-0.5">P</span>
-              </div>
-            </div>
-            
-            <div className="flex flex-col">
-              <span className="font-sans font-semibold text-[17px] tracking-tight text-zinc-900 leading-tight">
-                SCALE <span className="text-gold-500 font-medium">PARTNERS</span>
-              </span>
-              <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-zinc-400 -mt-0.5">
-                Corporate advisory
-              </span>
-            </div>
+            <Image 
+              src="/assets/logo.jpg" 
+              alt="Scale Partners Logo" 
+              width={140} 
+              height={50} 
+              className="object-contain max-h-[50px] w-auto transition-transform group-hover:scale-[1.015]"
+            />
           </div>
 
           {/* Desktop Navigation Link Directory */}
@@ -157,9 +148,11 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
                 {activeDropdown === category.id && (
                   <div 
                     id={`nav_dropdown_panel_${category.id}`}
-                    className={`absolute left-1/2 -translate-x-1/2 top-full ${
+                    className={`absolute top-full ${
+                      category.id === 'finance' ? 'right-0' : 'left-1/2 -translate-x-1/2'
+                    } ${
                       category.gridCols === 2 ? 'w-[680px]' : 'w-[360px]'
-                    } bg-white rounded-2xl border border-zinc-100 shadow-xl p-4 animate-fade-in z-50 mt-1`}
+                    } bg-white rounded-2xl border border-zinc-100 shadow-xl p-4 animate-fade-in z-50 mt-0 before:absolute before:inset-x-0 before:-top-4 before:h-4 before:content-['']`}
                   >
                     <div className="text-[10px] uppercase font-mono tracking-wider text-zinc-400 px-2 py-1 mb-2">
                       Scale {category.label}
@@ -226,7 +219,7 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
             <button
               id="mobile_menu_toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-zinc-600 hover:text-[#00d4aa] transition-colors"
+              className="p-2 rounded-lg text-zinc-600 hover:text-[#22C55E] transition-colors"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>

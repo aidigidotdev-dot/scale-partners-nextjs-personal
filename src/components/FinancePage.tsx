@@ -56,10 +56,10 @@ export default function FinancePage({ type, setPage, openContactModal }: Finance
         "Qualifying Free Zone Persons are eligible for 0% corporate tax audits.",
         "Generous corporate group relief rules for associated entities."
       ],
-      image1: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop",
+      image1: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1200&auto=format&fit=crop",
       image1Label: "SOVEREIGN TAX & FTA COMPLIANCE ADVISORS",
       image1Desc: "Scale Partners structures multi-jurisdictional tax profiles under direct supervision of senior FTA-registered tax planners.",
-      image2: "https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?q=80&w=1200&auto=format&fit=crop",
+      image2: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1200&auto=format&fit=crop",
       image2Label: "FEDERAL TAX RESIDENCY COMPLIANCE",
       image2Heading: "Strategic Treaty Planning & VAT Audit Logs",
       image2Desc: "All international client entities are pre-registered with official FTA portals, enabling zero-friction corporate filing cycles."
@@ -78,10 +78,10 @@ export default function FinancePage({ type, setPage, openContactModal }: Finance
         "Fully reconciled monthly bank & credit card transactions statements.",
         "Pre-audited quarterly financial bundles delivered to board directors."
       ],
-      image1: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop",
+      image1: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop",
       image1Label: "SOVEREIGN LEDGER & FINANCIAL OFFICERS",
       image1Desc: "Chartered senior auditing managers build immaculate financial histories fully prepared for Federal Tax Authority audit requests.",
-      image2: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop",
+      image2: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1200&auto=format&fit=crop",
       image2Label: "CONTINUOUS STATEMENT BALANCING",
       image2Heading: "Full Monthly Escrow & P&L Analysis Reports",
       image2Desc: "Continuous dual-entry accounting guarantees your balance sheet remains fully prepared for licensing deans."
@@ -100,10 +100,10 @@ export default function FinancePage({ type, setPage, openContactModal }: Finance
         "Pre-screening on AML compliance and complex shareholder profiles.",
         "Guaranteed onboarding file verification prior to submission."
       ],
-      image1: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop",
+      image1: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop",
       image1Label: "FAST-TRACK CORPORATE BANKING COMPLIANCE LIAISONS",
       image1Desc: "Bypass traditional 60-day delays with designated digital and Tier-1 banker desk corridors led by senior banking officers.",
-      image2: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&auto=format&fit=crop",
+      image2: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
       image2Label: "DIRECT CAPITAL SHIELD ACCOUNTING",
       image2Heading: "Dual-Currency Broker Escrow & Capital Access",
       image2Desc: "We establish high-altitude commercial bank desks at Emirates NBD, Mashreq, and Abu Dhabi Treasury channels."
@@ -117,9 +117,13 @@ export default function FinancePage({ type, setPage, openContactModal }: Finance
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-      className="pt-[100px] pb-24 bg-gold-50 min-h-screen"
+      className="pt-[100px] pb-24 bg-gold-50 min-h-screen relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* SOFT AMBIENT BRAND GREEN GLOWS FOR ULTRA-PREMIUM VIBES */}
+      <div className="absolute top-0 right-0 w-[55%] h-[500px] bg-[radial-gradient(circle_at_top_right,rgba(18,183,106,0.045),transparent_50%)] pointer-events-none z-0"></div>
+      <div className="absolute bottom-[10%] left-[-10%] w-[50%] h-[450px] bg-[radial-gradient(circle_at_bottom_left,rgba(18,183,106,0.03),transparent_45%)] pointer-events-none z-0"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Navigation Indicator / Back */}
         <div className="mb-8">
@@ -167,7 +171,7 @@ export default function FinancePage({ type, setPage, openContactModal }: Finance
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover group-hover:scale-[1.015] transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent p-5 flex flex-col justify-end z-10">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B2E16]/90 via-[#08854C]/25 to-transparent p-5 flex flex-col justify-end z-10">
                 <span className="text-[10px] font-mono text-gold-400 uppercase tracking-widest font-bold">{current.image1Label}</span>
                 <p className="text-[12.5px] text-zinc-100 font-sans mt-0.5">{current.image1Desc}</p>
               </div>
@@ -193,9 +197,9 @@ export default function FinancePage({ type, setPage, openContactModal }: Finance
         </div>
 
         {/* Dynamic Pre-approved Tax & Banking Trust Badges Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20 border-t border-b border-zinc-150/40 py-6 relative z-10 bg-zinc-50/40 px-6 rounded-2xl animate-fade-in_500">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20 border-t border-b border-zinc-200/60/40 py-6 relative z-10 bg-zinc-50/40 px-6 rounded-2xl animate-fade-in_500">
           <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left space-y-2 md:space-y-0 md:space-x-3.5">
-            <div className="p-2.5 bg-white rounded-xl border border-zinc-150/60 shrink-0 shadow-3xs text-gold-600">
+            <div className="p-2.5 bg-white rounded-xl border border-zinc-200/60/60 shrink-0 shadow-3xs text-gold-600">
               <Building2 className="w-5 h-5" />
             </div>
             <div>
@@ -204,7 +208,7 @@ export default function FinancePage({ type, setPage, openContactModal }: Finance
             </div>
           </div>
           <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left space-y-2 md:space-y-0 md:space-x-3.5">
-            <div className="p-2.5 bg-white rounded-xl border border-zinc-150/60 shrink-0 shadow-3xs text-gold-600">
+            <div className="p-2.5 bg-white rounded-xl border border-zinc-200/60/60 shrink-0 shadow-3xs text-gold-600">
               <ShieldAlert className="w-5 h-5" />
             </div>
             <div>
@@ -213,7 +217,7 @@ export default function FinancePage({ type, setPage, openContactModal }: Finance
             </div>
           </div>
           <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left space-y-2 md:space-y-0 md:space-x-3.5">
-            <div className="p-2.5 bg-white rounded-xl border border-zinc-150/60 shrink-0 shadow-3xs text-gold-600">
+            <div className="p-2.5 bg-white rounded-xl border border-zinc-200/60/60 shrink-0 shadow-3xs text-gold-600">
               <Coins className="w-5 h-5" />
             </div>
             <div>
@@ -222,7 +226,7 @@ export default function FinancePage({ type, setPage, openContactModal }: Finance
             </div>
           </div>
           <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left space-y-3 md:space-y-0 md:space-x-3.5">
-            <div className="p-2.5 bg-white rounded-xl border border-zinc-150/60 shrink-0 shadow-3xs text-gold-600">
+            <div className="p-2.5 bg-white rounded-xl border border-zinc-200/60/60 shrink-0 shadow-3xs text-gold-600">
               <Award className="w-5 h-5" />
             </div>
             <div>
@@ -303,7 +307,7 @@ export default function FinancePage({ type, setPage, openContactModal }: Finance
               </div>
 
               {/* Tax Output Screen (Apple Style glass card) */}
-              <div className="lg:col-span-5 bg-gradient-to-tr from-[#0052ff] via-[#00a3ff] to-[#00d4aa] text-white rounded-2xl p-6 sm:p-8 space-y-6 relative overflow-hidden shadow-xl border-0">
+              <div className="lg:col-span-5 bg-gradient-to-tr from-[#0C2E1A] via-[#12B76A] to-[#22C55E] text-white rounded-2xl p-6 sm:p-8 space-y-6 relative overflow-hidden shadow-xl border-0">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
                 <div className="text-[10px] tracking-widest uppercase font-mono text-white/90 font-bold relative z-10">Calculated Liability</div>
                 
@@ -348,7 +352,7 @@ export default function FinancePage({ type, setPage, openContactModal }: Finance
             sizes="100vw"
             className="object-cover group-hover:scale-[1.015] transition-transform duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent flex flex-col justify-end p-6 sm:p-8 z-10">
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B2E16]/95 via-[#08854C]/35 to-transparent flex flex-col justify-end p-6 sm:p-8 z-10">
             <span className="text-[10.5px] font-mono uppercase tracking-[0.2em] text-gold-400 font-bold">{current.image2Label}</span>
             <h3 className="font-serif text-[20px] sm:text-[24px] text-white font-medium mt-1 leading-snug">{current.image2Heading}</h3>
             <p className="text-[12px] sm:text-[13px] text-zinc-300 max-w-xl mt-1 font-sans">

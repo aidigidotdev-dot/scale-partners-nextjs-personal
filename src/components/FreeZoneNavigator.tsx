@@ -676,7 +676,7 @@ export default function FreeZoneNavigator({ onSelectFreeZone, openContactModal }
                   <p className="text-[12.5px] text-zinc-500">{selectedZone.location} • Setup time: <strong>{selectedZone.setupTime}</strong></p>
                 </div>
 
-                <div className="border-t border-zinc-150 pt-4 space-y-3">
+                <div className="border-t border-zinc-200/60 pt-4 space-y-3">
                   <div>
                     <span className="text-[11px] font-mono uppercase text-zinc-400 block mb-0.5">Primary Alignment / Best For</span>
                     <p className="text-[13px] font-semibold text-zinc-800">{selectedZone.bestFor}</p>
@@ -747,7 +747,7 @@ export default function FreeZoneNavigator({ onSelectFreeZone, openContactModal }
         {/* COMPARISON TAB */}
         {activeTab === 'comparison' && (
           <div className="space-y-6 animate-fade-in">
-            <div className="overflow-x-auto rounded-xl border border-zinc-150">
+            <div className="overflow-x-auto rounded-xl border border-zinc-200/60">
               <table className="w-full text-left border-collapse bg-white">
                 <thead>
                   <tr className="border-b border-zinc-200 bg-zinc-50/50">

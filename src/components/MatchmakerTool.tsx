@@ -243,14 +243,14 @@ export default function MatchmakerTool({ onSelectSetup, openContactModal }: Matc
     <section id="corporate_matchmaker_section" className="py-20 bg-[#070b13] text-white relative overflow-hidden border-t border-zinc-800">
       
       {/* Decorative Radial Background Shadows */}
-      <div className="absolute top-1/4 left-1/4 w-[350px] h-[350px] rounded-full bg-[#0066ff]/10 blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#00d4aa]/10 blur-[155px] pointer-events-none"></div>
+      <div className="absolute top-1/4 left-1/4 w-[350px] h-[350px] rounded-full bg-gold-500/10 blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#22C55E]/10 blur-[155px] pointer-events-none"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <span className="inline-flex items-center space-x-1 bg-[#00d4aa]/10 text-[#00d4aa] px-3.5 py-1 rounded-full border border-[#00d4aa]/25 font-mono text-[10.5px] font-bold uppercase tracking-wider">
+          <span className="inline-flex items-center space-x-1 bg-[#22C55E]/10 text-[#22C55E] px-3.5 py-1 rounded-full border border-[#22C55E]/25 font-mono text-[10.5px] font-bold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5 text-gold-400" />
             <span>Scale Partners Decision Engine</span>
           </span>
@@ -291,7 +291,7 @@ export default function MatchmakerTool({ onSelectSetup, openContactModal }: Matc
                       onClick={() => setActivity(item.id)}
                       className={`text-left p-2.5 rounded-xl border text-[11.5px] transition-all ${
                         activity === item.id 
-                          ? 'border-[#00d4aa] bg-brand-grad/15 text-white font-semibold' 
+                          ? 'border-[#22C55E] bg-brand-grad/15 text-white font-semibold' 
                           : 'border-white/[0.08] hover:border-white/20 text-zinc-400 hover:text-white bg-slate-950/20'
                       }`}
                     >
@@ -318,7 +318,7 @@ export default function MatchmakerTool({ onSelectSetup, openContactModal }: Matc
                       onClick={() => setUrgency(item.id)}
                       className={`text-center p-2.5 rounded-xl border text-[11px] transition-all ${
                         urgency === item.id 
-                          ? 'border-[#00d4aa] bg-brand-grad/15 text-white font-semibold' 
+                          ? 'border-[#22C55E] bg-brand-grad/15 text-white font-semibold' 
                           : 'border-white/[0.08] hover:border-white/20 text-zinc-400 hover:text-white bg-slate-950/20'
                       }`}
                     >
@@ -345,7 +345,7 @@ export default function MatchmakerTool({ onSelectSetup, openContactModal }: Matc
                       onClick={() => setPartnersCount(item.id)}
                       className={`text-center p-2.5 rounded-xl border text-[11.5px] transition-all ${
                         partnersCount === item.id 
-                          ? 'border-[#00d4aa] bg-brand-grad/15 text-white font-semibold' 
+                          ? 'border-[#22C55E] bg-brand-grad/15 text-white font-semibold' 
                           : 'border-white/[0.08] hover:border-white/20 text-zinc-400 hover:text-white bg-slate-950/20'
                       }`}
                     >
@@ -373,7 +373,7 @@ export default function MatchmakerTool({ onSelectSetup, openContactModal }: Matc
                       onClick={() => setNationality(item.id)}
                       className={`text-center p-2 rounded-xl border text-[11px] transition-all ${
                         nationality === item.id 
-                          ? 'border-[#00d4aa] bg-brand-grad/15 text-white font-semibold' 
+                          ? 'border-[#22C55E] bg-brand-grad/15 text-white font-semibold' 
                           : 'border-white/[0.08] hover:border-white/20 text-zinc-400 hover:text-white bg-slate-950/20'
                       }`}
                     >
@@ -400,7 +400,7 @@ export default function MatchmakerTool({ onSelectSetup, openContactModal }: Matc
                       onClick={() => setOfficeType(item.id)}
                       className={`text-left p-2.5 rounded-xl border text-[11px] transition-all leading-snug ${
                         officeType === item.id 
-                          ? 'border-[#00d4aa] bg-brand-grad/15 text-white font-semibold' 
+                          ? 'border-[#22C55E] bg-brand-grad/15 text-white font-semibold' 
                           : 'border-white/[0.08] hover:border-white/20 text-zinc-400 hover:text-white bg-slate-950/20'
                       }`}
                     >
@@ -425,7 +425,7 @@ export default function MatchmakerTool({ onSelectSetup, openContactModal }: Matc
           {/* Results Block / Sidebar Callout (5 Cols) */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             {!recommendation?.showResult ? (
-              <div className="h-full min-h-[350px] bg-gradient-to-br from-[#0c152a] via-[#09101f] to-[#060a12] border border-[#00d4aa]/25 rounded-2xl p-8 flex flex-col justify-between space-y-6">
+              <div className="h-full min-h-[350px] bg-gradient-to-br from-[#0c152a] via-[#09101f] to-[#060a12] border border-[#22C55E]/25 rounded-2xl p-8 flex flex-col justify-between space-y-6">
                 <div className="space-y-4">
                   <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/[0.08] flex items-center justify-center text-gold-400">
                     <Sliders className="w-5 h-5" />
@@ -446,7 +446,7 @@ export default function MatchmakerTool({ onSelectSetup, openContactModal }: Matc
                 </div>
               </div>
             ) : showLeadForm && !leadCompleted ? (
-              <div className="h-full bg-gradient-to-br from-[#0c152a] via-[#09101f] to-[#060a12] border border-[#00d4aa]/30 rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-5 animate-fade-in text-left">
+              <div className="h-full bg-gradient-to-br from-[#0c152a] via-[#09101f] to-[#060a12] border border-[#22C55E]/30 rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-5 animate-fade-in text-left">
                 <div className="space-y-1.5 border-b border-white/[0.05] pb-4">
                   <span className="font-mono text-[9px] text-gold-400 uppercase tracking-widest font-bold block">Sovereign Compliance Gate</span>
                   <h3 className="font-serif text-[19px] font-semibold text-white tracking-tight">Generate Matchmaker Report</h3>
@@ -466,7 +466,7 @@ export default function MatchmakerTool({ onSelectSetup, openContactModal }: Matc
                     <label className="text-[10px] font-mono text-zinc-400 uppercase font-semibold block">Full Name</label>
                     <input
                       type="text"
-                      className="w-full bg-slate-950 border border-white/[0.1] rounded-xl px-4 py-3 text-[12px] text-white focus:outline-none focus:border-[#00d4aa] transition-all placeholder:text-zinc-600"
+                      className="w-full bg-slate-950 border border-white/[0.1] rounded-xl px-4 py-3 text-[12px] text-white focus:outline-none focus:border-[#22C55E] transition-all placeholder:text-zinc-600"
                       placeholder="e.g. Liam Sterling"
                       value={leadName}
                       onChange={(e) => setLeadName(e.target.value)}
@@ -477,7 +477,7 @@ export default function MatchmakerTool({ onSelectSetup, openContactModal }: Matc
                     <label className="text-[10px] font-mono text-zinc-400 uppercase font-semibold block">Corporate Email</label>
                     <input
                       type="email"
-                      className="w-full bg-slate-950 border border-white/[0.1] rounded-xl px-4 py-3 text-[12px] text-white focus:outline-none focus:border-[#00d4aa] transition-all placeholder:text-zinc-600"
+                      className="w-full bg-slate-950 border border-white/[0.1] rounded-xl px-4 py-3 text-[12px] text-white focus:outline-none focus:border-[#22C55E] transition-all placeholder:text-zinc-600"
                       placeholder="e.g. liam@sterling-holdings.co"
                       value={leadEmail}
                       onChange={(e) => setLeadEmail(e.target.value)}
@@ -488,7 +488,7 @@ export default function MatchmakerTool({ onSelectSetup, openContactModal }: Matc
                     <label className="text-[10px] font-mono text-zinc-400 uppercase font-semibold block">Mobile Number</label>
                     <input
                       type="tel"
-                      className="w-full bg-slate-950 border border-white/[0.1] rounded-xl px-4 py-3 text-[12px] text-white focus:outline-none focus:border-[#00d4aa] transition-all placeholder:text-zinc-600"
+                      className="w-full bg-slate-950 border border-white/[0.1] rounded-xl px-4 py-3 text-[12px] text-white focus:outline-none focus:border-[#22C55E] transition-all placeholder:text-zinc-600"
                       placeholder="e.g. +971 50 123 4567"
                       value={leadPhone}
                       onChange={(e) => setLeadPhone(e.target.value)}
@@ -516,11 +516,11 @@ export default function MatchmakerTool({ onSelectSetup, openContactModal }: Matc
                 </p>
               </div>
             ) : (
-              <div className="h-full bg-gradient-to-br from-[#0c152a] via-[#09101f] to-[#060a12] border border-[#00d4aa]/30 rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 animate-fade-in text-left">
+              <div className="h-full bg-gradient-to-br from-[#0c152a] via-[#09101f] to-[#060a12] border border-[#22C55E]/30 rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 animate-fade-in text-left">
                 
                 <div className="space-y-4">
                   <div>
-                    <span className="text-[9px] font-mono uppercase tracking-widest text-[#00d4aa] font-bold block mb-1">RECOMMENDED ALIGNMENT</span>
+                    <span className="text-[9px] font-mono uppercase tracking-widest text-[#22C55E] font-bold block mb-1">RECOMMENDED ALIGNMENT</span>
                     <h3 className="font-serif text-[24px] font-semibold text-white tracking-tight capitalize">
                       {recommendation.zoneType === 'mainland' ? 'Sovereign Mainland setup' : `${recommendation.bestFreeZone.name}`}
                     </h3>
@@ -529,7 +529,7 @@ export default function MatchmakerTool({ onSelectSetup, openContactModal }: Matc
                     </p>
                   </div>
 
-                  <div className="bg-[#091a33]/80 p-4 border border-[#00d4aa]/10 rounded-xl space-y-1 font-mono text-center">
+                  <div className="bg-[#091a33]/80 p-4 border border-[#22C55E]/10 rounded-xl space-y-1 font-mono text-center">
                     <span className="text-[9px] text-zinc-450 uppercase block">Estimated Setup Cost Pathway</span>
                     <span className="text-[22px] font-bold text-gold-400 font-mono">AED {recommendation.totalEstCost.toLocaleString()}</span>
                     <span className="text-[9.5px] text-zinc-455 block italic">Includes base licensing & primary partner visa allocation</span>
@@ -583,11 +583,11 @@ export default function MatchmakerTool({ onSelectSetup, openContactModal }: Matc
         <div id="free_zone_matrix_container" className="mt-16 p-6 sm:p-10 bg-white border border-zinc-200/80 rounded-3xl text-left space-y-8 shadow-[0_24px_70px_rgba(0,0,0,0.05)] relative overflow-hidden">
           {/* Subtle Radial shadow spotlight around the grid */}
           <div className="absolute inset-0 pointer-events-none z-0">
-            <div className="absolute top-[-20%] left-[-20%] w-[60%] h-[60%] rounded-full bg-[#00d4aa]/[0.05] blur-[100px]"></div>
+            <div className="absolute top-[-20%] left-[-20%] w-[60%] h-[60%] rounded-full bg-[#22C55E]/[0.05] blur-[100px]"></div>
             <div className="absolute bottom-[-20%] right-[-20%] w-[60%] h-[60%] rounded-full bg-gold-400/[0.04] blur-[120px]"></div>
           </div>
 
-          <div className="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-zinc-150 pb-6">
+          <div className="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-zinc-200/60 pb-6">
             <div className="space-y-1">
               <span className="text-[10px] font-mono tracking-wider uppercase text-gold-600 font-bold block">SOVEREIGN DATABASE CAPABILITIES</span>
               <h3 className="font-serif text-[24px] font-semibold text-zinc-900 tracking-tight">Active Free Zone Comparative Matrix</h3>
