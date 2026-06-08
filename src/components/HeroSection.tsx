@@ -195,56 +195,139 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                 Scale Partners is the Top Rated Business Setup & Professional Services in Dubai. We design custom-structured <strong className="font-semibold text-white">Dubai Mainland approvals</strong>, secure <strong className="font-bold text-white">exempt Free Zone companies</strong>, and establish high-speed structures. We coordinate directly with official government registrars to remove administrative friction entirely.
               </p>
 
+              {/* Premium Trust Badges Grid (Sovereign Trust Indicators) */}
+              <div className="bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-5 space-y-4 max-w-2xl mx-auto lg:mx-0">
+                {/* Row 1: Key Trust Metrics */}
+                <div className="flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-zinc-200 border-b border-white/10 pb-3">
+                  <div className="flex items-center space-x-2">
+                    <Users className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span className="font-light">Trusted by 30K+ Clients</span>
+                  </div>
+                  <div className="hidden sm:block text-white/20">|</div>
+                  <div className="flex items-center space-x-2">
+                    <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span className="font-light">12+ Years in the UAE</span>
+                  </div>
+                  <div className="hidden sm:block text-white/20">|</div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span className="font-light">End-to-End Setup</span>
+                  </div>
+                </div>
+
+                {/* Row 2: Setup Portfolios */}
+                <div className="grid grid-cols-3 gap-4 text-left">
+                  <div className="flex items-center space-x-2.5">
+                    <div className="p-2 bg-emerald-500/10 rounded-xl text-emerald-400 shrink-0">
+                      <Building2 className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-[13px] font-bold text-white leading-tight">Free Zone</h4>
+                      <p className="text-[10px] text-zinc-400 font-sans leading-normal">100% Ownership</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-2.5">
+                    <div className="p-2 bg-emerald-500/10 rounded-xl text-emerald-400 shrink-0">
+                      <Globe className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-[13px] font-bold text-white leading-tight">Mainland</h4>
+                      <p className="text-[10px] text-zinc-400 font-sans leading-normal">Trade Anywhere</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-2.5">
+                    <div className="p-2 bg-emerald-500/10 rounded-xl text-emerald-400 shrink-0">
+                      <Shield className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-[13px] font-bold text-white leading-tight">Offshore</h4>
+                      <p className="text-[10px] text-zinc-400 font-sans leading-normal">Global Structuring</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* HIGH-PREMIUM INTERACTIVE CTAs */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
                 <button
                   id="hero_cta_evaluator_prime"
                   onClick={() => setPage('calculator')}
-                  className="w-full sm:w-auto bg-white text-gold-500 hover:opacity-95 hover:scale-[1.015] active:scale-95 px-8 py-4 rounded-full font-sans text-[14.5px] font-bold tracking-tight transition-all duration-300 shadow-lg flex items-center justify-center space-x-2 border-0 cursor-pointer shrink-0"
+                  className="w-full sm:w-auto bg-white text-gold-700 hover:opacity-95 hover:scale-[1.015] active:scale-95 px-8 py-4 rounded-full font-sans text-[14.5px] font-bold tracking-tight transition-all duration-300 shadow-lg flex items-center justify-center space-x-2 border-0 cursor-pointer shrink-0"
                 >
                   <span>Initialize 24h Setup Session</span>
                   <ArrowRight className="w-4 h-4 text-gold-500" />
                 </button>
               </div>
 
-              {/* TRUST BADGES & REGULATORY COMPLIANCE SEALS */}
-              <div className="pt-6 border-t border-white/10 max-w-xl">
-                <span className="text-[10px] font-mono uppercase tracking-[0.15em] text-zinc-300 block mb-3.5 text-center lg:text-left select-none font-bold">Verified Corporate Trust Badges</span>
-                <div className="flex flex-wrap justify-center lg:justify-start items-center gap-3">
-                  
-                  {/* Badge 1 */}
-                  <div className="bg-white/5 border border-white/10 px-3 py-2 rounded-xl flex items-center space-x-2 shadow-2xs hover:scale-[1.01] transition-transform">
-                    <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
-                      <Award className="w-4 h-4 text-[#22C55E]" />
-                    </div>
-                    <div className="text-left leading-none">
-                      <span className="text-[9.5px] font-mono text-zinc-300 uppercase tracking-tight block">DET License Status</span>
-                      <strong className="text-[11.5px] font-semibold text-white font-sans tracking-tight block">A+ Rated Registered Agent</strong>
-                    </div>
-                  </div>
-
-                  {/* Badge 2 */}
-                  <div className="bg-white/5 border border-white/10 px-3 py-2 rounded-xl flex items-center space-x-2 shadow-2xs hover:scale-[1.01] transition-transform">
-                    <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
-                      <ShieldCheck className="w-4 h-4 text-[#22C55E]" />
-                    </div>
-                    <div className="text-left leading-none">
-                      <span className="text-[9.5px] font-mono text-zinc-300 uppercase tracking-tight block">Corporate Registry</span>
-                      <strong className="text-[11.5px] font-semibold text-white font-sans tracking-tight block">MoF Regulatory Cleared</strong>
+              {/* Reviews & Credibility Bar (GCC and Global Platforms) */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-y-4 gap-x-8 pt-6 border-t border-white/10 max-w-2xl mx-auto lg:mx-0">
+                {/* Google Reviews */}
+                <div className="flex items-center space-x-3 text-left">
+                  <svg className="w-5.5 h-5.5 shrink-0" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l3.66-2.85z" />
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.85c.87-2.6 3.3-4.53 6.16-4.53z" />
+                  </svg>
+                  <div>
+                    <h5 className="text-[12.5px] font-bold text-white leading-none">3,000+ Reviews</h5>
+                    <div className="flex items-center space-x-1.5 mt-1">
+                      <span className="text-[10px] text-zinc-400 font-mono leading-none">4.8/5 Rating</span>
+                      <div className="flex -space-x-0.5">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} className="w-2.5 h-2.5 text-amber-400 fill-amber-400" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                      </div>
                     </div>
                   </div>
+                </div>
 
-                  {/* Badge 3 */}
-                  <div className="bg-white/5 border border-white/10 px-3 py-2 rounded-xl flex items-center space-x-2 shadow-2xs hover:scale-[1.01] transition-transform font-sans">
-                    <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
-                      <Lock className="w-4 h-4 text-[#22C55E]" />
-                    </div>
-                    <div className="text-left leading-none">
-                      <span className="text-[9.5px] font-mono text-zinc-300 uppercase tracking-tight block">Direct Encryption</span>
-                      <strong className="text-[11.5px] font-semibold text-white font-sans tracking-tight block">SSL Secure & ISO Compliant</strong>
+                <div className="hidden sm:block text-white/10 h-8 w-px self-center"></div>
+
+                {/* Trustpilot-style Rating */}
+                <div className="flex items-center space-x-3 text-left">
+                  <div className="w-5.5 h-5.5 bg-[#00B67A] rounded-sm flex items-center justify-center shrink-0">
+                    <svg className="w-3.5 h-3.5 fill-white text-white" viewBox="0 0 24 24">
+                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h5 className="text-[12.5px] font-bold text-white leading-none">600+ Reviews</h5>
+                    <div className="flex items-center space-x-1.5 mt-1">
+                      <span className="text-[10px] text-zinc-400 font-mono leading-none">4.9/5 Rating</span>
+                      <div className="flex -space-x-0.5">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} className="w-2.5 h-2.5 text-[#00B67A] fill-[#00B67A]" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                      </div>
                     </div>
                   </div>
+                </div>
 
+                <div className="hidden sm:block text-white/10 h-8 w-px self-center"></div>
+
+                {/* Third Rating */}
+                <div className="flex items-center space-x-3 text-left">
+                  <div className="w-5.5 h-5.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full flex items-center justify-center shrink-0">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                  </div>
+                  <div>
+                    <h5 className="text-[12.5px] font-bold text-white leading-none">500+ Reviews</h5>
+                    <div className="flex items-center space-x-1.5 mt-1">
+                      <span className="text-[10px] text-zinc-400 font-mono leading-none">4.7/5 Rating</span>
+                      <div className="flex -space-x-0.5">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} className="w-2.5 h-2.5 text-emerald-400 fill-emerald-400" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
