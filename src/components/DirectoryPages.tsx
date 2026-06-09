@@ -630,32 +630,32 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Breadcrumbs / Back navigation indicators for clear navigation path */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-          <div className="flex items-center space-x-2 text-[11px] font-mono tracking-wider uppercase text-zinc-400">
-            <button onClick={() => setPage('home')} className="hover:text-zinc-800 transition-colors">Home</button>
+        {/* Breadcrumbs & Back Navigation */}
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 font-sans relative z-20">
+          <div className="flex flex-wrap items-center gap-2 text-[12px] font-mono uppercase tracking-wider text-zinc-400">
+            <button onClick={() => setPage('home')} className="hover:text-sp-emerald transition-colors cursor-pointer">Home</button>
             <span className="text-zinc-300">/</span>
             {page.startsWith('fz-') ? (
               <>
-                <button onClick={() => setPage('setup-freezone')} className="hover:text-zinc-800 transition-colors">Free Zones</button>
+                <button onClick={() => setPage('setup-freezone')} className="hover:text-sp-emerald transition-colors cursor-pointer">Free Zones Setup</button>
                 <span className="text-zinc-300">/</span>
-                <span className="text-zinc-800 font-semibold">{content.title.split(' ')[0]}</span>
+                <span className="text-zinc-850 font-semibold">{content.title.split(' ')[0]}</span>
               </>
             ) : (
               <>
-                <span className="text-zinc-300">Licensing Solutions</span>
+                <span className="text-zinc-350">Licensing Solutions</span>
                 <span className="text-zinc-300">/</span>
-                <span className="text-zinc-800 font-semibold">{content.title}</span>
+                <span className="text-zinc-850 font-semibold">{content.title}</span>
               </>
             )}
           </div>
-
+          
           <button 
             id={`back_to_menu_from_${page}`}
             onClick={() => setPage(page.startsWith('fz-') ? 'setup-freezone' : 'setup-mainland')}
-            className="flex items-center space-x-1 text-[12.5px] font-medium text-zinc-500 hover:text-zinc-950 transition-colors"
+            className="flex items-center space-x-1.5 text-[12px] font-mono uppercase tracking-wider text-zinc-500 hover:text-zinc-950 transition-colors cursor-pointer border border-zinc-200 hover:border-zinc-300 px-3.5 py-2 rounded-xl bg-white shadow-3xs"
           >
-            <ChevronLeft className="w-4 h-4" />
+            <ChevronLeft className="w-3.5 h-3.5" />
             <span>Return to Jurisdictions Index</span>
           </button>
         </div>
@@ -667,9 +667,9 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
           <div className="lg:col-span-2 space-y-8">
             
             {/* Header Fact Card */}
-            <div className="bg-white rounded-2xl border border-zinc-100 p-6 sm:p-8 space-y-4 shadow-sm relative overflow-hidden">
-              <span className="inline-flex items-center space-x-1 text-[10px] font-mono tracking-widest text-gold-600 font-bold uppercase bg-gold-400/10 px-2.5 py-1 rounded-full">
-                <Sparkles className="w-3 h-3" />
+            <div className="bg-gradient-to-br from-sp-mintBg/80 via-white to-white rounded-2xl border border-sp-border p-6 sm:p-8 space-y-4 shadow-sm relative overflow-hidden">
+              <span className="inline-flex items-center space-x-1.5 text-[9.5px] font-mono tracking-wider text-[#08854C] font-bold uppercase bg-emerald-50 border border-sp-border px-3 py-1 rounded-full shadow-3xs">
+                <Sparkles className="w-3.5 h-3.5 text-sp-emerald" />
                 <span>UAE Approved Commercial Registry Office</span>
               </span>
               
@@ -677,17 +677,17 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                 <h1 className="font-serif text-[28px] sm:text-[34px] font-semibold text-zinc-900 tracking-tight leading-tight">
                   {content.title}
                 </h1>
-                <p className="text-[14px] text-zinc-500 max-w-2xl font-sans">
+                <p className="text-[13.5px] text-zinc-500 max-w-2xl font-sans font-light leading-relaxed">
                   {content.subtitle}
                 </p>
               </div>
 
               {/* Author & Verification Signal Section */}
-              <div className="flex items-center space-x-2.5 pt-1 border-t border-zinc-100/60 pb-1">
-                <div className="w-6 h-6 rounded-full bg-brand-grad text-white font-serif font-bold text-[9px] flex items-center justify-center shrink-0 shadow-xs border-0">
+              <div className="flex items-center space-x-2.5 pt-2.5 border-t border-zinc-100/60 pb-1.5 font-sans">
+                <div className="w-7 h-7 rounded-full bg-brand-grad text-white font-serif font-bold text-[10px] flex items-center justify-center shrink-0 shadow-xs border-0">
                   {content.advisor.avatarText}
                 </div>
-                <div className="text-[11.5px] text-zinc-550 font-sans flex items-center flex-wrap gap-1.5">
+                <div className="text-[11.5px] text-zinc-550 flex items-center flex-wrap gap-1.5 font-sans font-light">
                   <span>Written & verified by</span>
                   <span className="font-bold text-zinc-800">{content.advisor.name}</span>
                   <span className="text-zinc-400">•</span>
@@ -699,23 +699,23 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                 </div>
               </div>
 
-              {/* Fast Fact Pill Box Bar */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-zinc-100">
-                <div className="space-y-1">
-                  <span className="text-[10px] uppercase font-mono text-zinc-400">Starting Setup Cost</span>
-                  <p className="text-[15px] font-mono font-bold text-gold-600">AED {content.price.toLocaleString()}</p>
+              {/* Fast Fact Pill Box Bar - Redesigned as Premium Dashboard Widgets */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-zinc-100/60">
+                <div className="bg-zinc-50/60 border border-zinc-100/80 p-3 rounded-xl hover:bg-zinc-100/40 transition-all duration-300 text-left">
+                  <span className="text-[9px] uppercase font-mono text-zinc-450 block mb-0.5">Starting Setup Cost</span>
+                  <p className="text-[14.5px] font-mono font-bold text-[#22C55E]">AED {content.price.toLocaleString()}</p>
                 </div>
-                <div className="space-y-1">
-                  <span className="text-[10px] uppercase font-mono text-zinc-400">SLA Processing Time</span>
-                  <p className="text-[13.5px] font-semibold text-zinc-800">{content.speed}</p>
+                <div className="bg-zinc-50/60 border border-zinc-100/80 p-3 rounded-xl hover:bg-zinc-100/40 transition-all duration-300 text-left">
+                  <span className="text-[9px] uppercase font-mono text-zinc-450 block mb-0.5">SLA Processing Time</span>
+                  <p className="text-[13px] font-sans font-semibold text-zinc-850">{content.speed}</p>
                 </div>
-                <div className="space-y-1">
-                  <span className="text-[10px] uppercase font-mono text-zinc-400">Registry Quality Rating</span>
-                  <p className="text-[13.5px] font-semibold text-zinc-800">{content.score} / 10</p>
+                <div className="bg-zinc-50/60 border border-zinc-100/80 p-3 rounded-xl hover:bg-zinc-100/40 transition-all duration-300 text-left">
+                  <span className="text-[9px] uppercase font-mono text-zinc-450 block mb-0.5">Registry Quality Rating</span>
+                  <p className="text-[13px] font-sans font-semibold text-zinc-850">{content.score} / 10</p>
                 </div>
-                <div className="space-y-1">
-                  <span className="text-[10px] uppercase font-mono text-zinc-400">Est. Visa Cost Deposit</span>
-                  <p className="text-[13.5px] font-mono font-semibold text-zinc-800">AED {content.visasCost.toLocaleString()}</p>
+                <div className="bg-zinc-50/60 border border-zinc-100/80 p-3 rounded-xl hover:bg-zinc-100/40 transition-all duration-300 text-left">
+                  <span className="text-[9px] uppercase font-mono text-zinc-450 block mb-0.5">Est. Visa Cost Deposit</span>
+                  <p className="text-[13px] font-mono font-semibold text-zinc-850">AED {content.visasCost.toLocaleString()}</p>
                 </div>
               </div>
             </div>
@@ -1132,9 +1132,10 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                 </div>
               </div>
             )}
+          </div>
 
-                    {/* Expert Sidebar Panel */}
-          <div className="space-y-8">
+          {/* Expert Sidebar Panel (1 Column, Sticky) */}
+          <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-[115px] h-fit">
             
             {/* 1. Expert Reviewer (Author) Card */}
             <div className="bg-white rounded-2xl border border-zinc-150 p-6 space-y-5 shadow-sm hover:shadow-md transition-shadow text-left">
@@ -1362,8 +1363,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
               <p className="text-[11px] text-zinc-450 leading-relaxed font-sans font-light">
                 Corporate licensing processes undergo real-time biometric and electronic verification, strictly matching Dubai Economy & Tourism protocols.
               </p>
-            </div>  </div>
-
+            </div>
           </div>
 
         </div>
