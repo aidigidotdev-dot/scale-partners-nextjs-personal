@@ -1136,8 +1136,84 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
 
           {/* Expert Sidebar Panel (1 Column, Sticky) */}
           <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-[115px] h-fit">
-            
-            {/* 1. Expert Reviewer (Author) Card */}
+                 {/* 1. Lead Application Action Card */}
+            <div className="bg-gradient-to-tr from-[#0C2E1A] via-[#12B76A] to-[#22C55E] text-white rounded-2xl p-6 sm:p-8 space-y-5 relative overflow-hidden shadow-xl border-0">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+              
+              <div className="space-y-2 relative z-10">
+                <span className="text-[10px] font-mono uppercase text-[#faf9f0] font-bold tracking-wider">Fast-track entry</span>
+                <h3 className="font-serif text-[20px] font-semibold tracking-tight text-white">Activate This Registry</h3>
+                <p className="text-[11.5px] text-white/95 font-sans leading-relaxed">
+                  Lock in this portfolio framework instantly. We coordinates directly with official registrars to bypass offline desk wait times.
+                </p>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-md p-4 border border-white/20 rounded-xl space-y-1 text-center font-mono relative z-10">
+                <span className="text-[10px] text-white/85 uppercase block">Estimated Base Booking Price</span>
+                <span className="text-[20px] font-bold text-white font-sans">AED {content.price.toLocaleString()}</span>
+              </div>
+
+              <button
+                id={`apply_action_for_${page}`}
+                onClick={() => onApplySetup(content.title, content.price)}
+                className="w-full bg-white text-gold-550 text-[13px] font-bold py-3.5 rounded-xl transition-all hover:scale-[1.015] flex items-center justify-center space-x-1 shadow-md border-0 relative z-10 cursor-pointer"
+              >
+                <span>Initiate Business Registration</span>
+                <ChevronLeft className="w-4 h-4 rotate-180 text-gold-550" />
+              </button>
+
+              <div className="text-center relative z-10">
+                <button 
+                  onClick={openContactModal}
+                  className="text-[11px] text-white/80 hover:text-white underline transition-colors cursor-pointer bg-transparent border-0"
+                >
+                  or schedule standard advisory session
+                </button>
+              </div>
+            </div>
+
+            {/* 2. Map coordinate simulation card */}
+            {page.startsWith('fz-') && (
+              <div className="bg-white rounded-2xl border border-zinc-100 overflow-hidden shadow-sm">
+                <div className="h-40 bg-zinc-100 relative flex items-center justify-center p-4">
+                  
+                  {/* Styled Map Background Grid */}
+                  <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                  
+                  {/* Simulated Center pin */}
+                  <div className="z-10 bg-white border border-zinc-200 p-3 rounded-xl flex items-center space-x-2 shadow-md">
+                    <span className="w-3 h-3 rounded-full bg-gold-600 animate-ping absolute -top-1 -right-1"></span>
+                    <MapPin className="w-4 h-4 text-gold-650" />
+                    <div>
+                      <span className="text-[11px] font-bold block text-zinc-800">{content.title.split(' ')[0]}</span>
+                      <span className="text-[8.5px] text-zinc-400 block tracking-tight">Authorized Registry Coordinates</span>
+                    </div>
+                  </div>
+
+                  <div className="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur-sm text-[8.5px] text-white px-2 py-0.5 rounded-full font-mono">
+                    PROXIMITY RADAR: ENABLED
+                  </div>
+                </div>
+
+                <div className="p-4 bg-zinc-50/50 border-t border-zinc-100 text-[11.5px] text-zinc-500 leading-normal font-sans">
+                  <span className="font-semibold block text-zinc-800 mb-0.5">Physical Access Address:</span>
+                  Scale Partners executive services complexes are licensed to deliver biometric clearance direct to respective registry halls in {content.location}.
+                </div>
+              </div>
+            )}
+
+            {/* 3. Official Registered Broker Logo Endorsement */}
+            <div className="bg-gold-50/25 border border-gold-300/10 rounded-2xl p-5 text-center space-y-3 font-sans">
+              <div className="flex items-center justify-center space-x-1.5 uppercase tracking-[0.15em] font-mono text-[9px] text-zinc-450 font-bold">
+                <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                <span>Approved Corporate Trustee</span>
+              </div>
+              <p className="text-[11px] text-zinc-450 leading-relaxed font-sans font-light">
+                Corporate licensing processes undergo real-time biometric and electronic verification, strictly matching Dubai Economy & Tourism protocols.
+              </p>
+            </div>
+
+            {/* 4. Expert Reviewer (Author) Card */}
             <div className="bg-white rounded-2xl border border-zinc-150 p-6 space-y-5 shadow-sm hover:shadow-md transition-shadow text-left">
               <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[11px] font-mono uppercase tracking-wider pb-3 border-b border-zinc-100">
                 <Award className="w-4 h-4 text-emerald-600" />
@@ -1184,8 +1260,8 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
               </div>
             </div>
 
-            {/* 2. Social Share Buttons (Placed Strategically under Author) */}
-            <div className="bg-white rounded-2xl border border-zinc-150 p-6 space-y-4 shadow-sm text-left">
+            {/* 5. Social Share Buttons (Placed Strategically under Author) */}
+            <div className="bg-white rounded-2xl border border-zinc-150 p-6 space-y-4 shadow-sm text-left font-sans">
               <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[11px] font-mono uppercase tracking-wider pb-3 border-b border-zinc-100">
                 <Share2 className="w-4 h-4 text-emerald-600" />
                 <span>Share This Directory</span>
@@ -1236,8 +1312,8 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
               </div>
             </div>
 
-            {/* 3. Contact Details & Address Card (Updated Correct Info) */}
-            <div className="bg-white rounded-2xl border border-zinc-150 p-6 space-y-4 shadow-sm text-left">
+            {/* 6. Contact Details & Address Card (Updated Correct Info) */}
+            <div className="bg-white rounded-2xl border border-zinc-150 p-6 space-y-4 shadow-sm text-left font-sans">
               <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[11px] font-mono uppercase tracking-wider pb-3 border-b border-zinc-100">
                 <MapPin className="w-4 h-4 text-emerald-600" />
                 <span>Registry Location Info</span>
@@ -1286,83 +1362,6 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* 4. Lead Application Action Card */}
-            <div className="bg-gradient-to-tr from-[#0C2E1A] via-[#12B76A] to-[#22C55E] text-white rounded-2xl p-6 sm:p-8 space-y-5 relative overflow-hidden shadow-xl border-0">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
-              
-              <div className="space-y-2 relative z-10">
-                <span className="text-[10px] font-mono uppercase text-[#faf9f0] font-bold tracking-wider">Fast-track entry</span>
-                <h3 className="font-serif text-[20px] font-semibold tracking-tight text-white">Activate This Registry</h3>
-                <p className="text-[11.5px] text-white/95 font-sans leading-relaxed">
-                  Lock in this portfolio framework instantly. We coordinates directly with official registrars to bypass offline desk wait times.
-                </p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-md p-4 border border-white/20 rounded-xl space-y-1 text-center font-mono relative z-10">
-                <span className="text-[10px] text-white/85 uppercase block">Estimated Base Booking Price</span>
-                <span className="text-[20px] font-bold text-white font-sans">AED {content.price.toLocaleString()}</span>
-              </div>
-
-              <button
-                id={`apply_action_for_${page}`}
-                onClick={() => onApplySetup(content.title, content.price)}
-                className="w-full bg-white text-gold-550 text-[13px] font-bold py-3.5 rounded-xl transition-all hover:scale-[1.015] flex items-center justify-center space-x-1 shadow-md border-0 relative z-10 cursor-pointer"
-              >
-                <span>Initiate Business Registration</span>
-                <ChevronLeft className="w-4 h-4 rotate-180 text-gold-550" />
-              </button>
-
-              <div className="text-center relative z-10">
-                <button 
-                  onClick={openContactModal}
-                  className="text-[11px] text-white/80 hover:text-white underline transition-colors cursor-pointer bg-transparent border-0"
-                >
-                  or schedule standard advisory session
-                </button>
-              </div>
-            </div>
-
-            {/* 5. Map coordinate simulation card */}
-            {page.startsWith('fz-') && (
-              <div className="bg-white rounded-2xl border border-zinc-100 overflow-hidden shadow-sm">
-                <div className="h-40 bg-zinc-100 relative flex items-center justify-center p-4">
-                  
-                  {/* Styled Map Background Grid */}
-                  <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                  
-                  {/* Simulated Center pin */}
-                  <div className="z-10 bg-white border border-zinc-200 p-3 rounded-xl flex items-center space-x-2 shadow-md">
-                    <span className="w-3 h-3 rounded-full bg-gold-600 animate-ping absolute -top-1 -right-1"></span>
-                    <MapPin className="w-4 h-4 text-gold-650" />
-                    <div>
-                      <span className="text-[11px] font-bold block text-zinc-800">{content.title.split(' ')[0]}</span>
-                      <span className="text-[8.5px] text-zinc-400 block tracking-tight">Authorized Registry Coordinates</span>
-                    </div>
-                  </div>
-
-                  <div className="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur-sm text-[8.5px] text-white px-2 py-0.5 rounded-full font-mono">
-                    PROXIMITY RADAR: ENABLED
-                  </div>
-                </div>
-
-                <div className="p-4 bg-zinc-50/50 border-t border-zinc-100 text-[11.5px] text-zinc-500 leading-normal font-sans">
-                  <span className="font-semibold block text-zinc-800 mb-0.5">Physical Access Address:</span>
-                  Scale Partners executive services complexes are licensed to deliver biometric clearance direct to respective registry halls in {content.location}.
-                </div>
-              </div>
-            )}
-
-            {/* 6. Official Registered Broker Logo Endorsement */}
-            <div className="bg-gold-50/25 border border-gold-300/10 rounded-2xl p-5 text-center space-y-3 font-sans">
-              <div className="flex items-center justify-center space-x-1.5 uppercase tracking-[0.15em] font-mono text-[9px] text-zinc-450 font-bold">
-                <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                <span>Approved Corporate Trustee</span>
-              </div>
-              <p className="text-[11px] text-zinc-450 leading-relaxed font-sans font-light">
-                Corporate licensing processes undergo real-time biometric and electronic verification, strictly matching Dubai Economy & Tourism protocols.
-              </p>
             </div>
           </div>
 

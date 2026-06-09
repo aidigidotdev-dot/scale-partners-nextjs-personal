@@ -257,7 +257,42 @@ export default function BusinessSetupPage({ type, setPage, openContactModal, onS
           
           <div className="lg:col-span-5 space-y-6">
             
-            {/* 1. Expert Reviewer (Author) Card */}
+            {/* 1. Prerequisites for Registry Approval */}
+            <div className="bg-gradient-to-br from-zinc-50/70 via-white to-[#22C55E]/5 border border-zinc-200/40 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm relative overflow-hidden text-left">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-[#22C55E]/5 rounded-full blur-xl"></div>
+              <div className="text-[11px] font-mono uppercase tracking-widest text-zinc-450 font-semibold relative z-10">
+                Prerequisites for Registry Approval
+              </div>
+              
+              <ul className="space-y-3.5 relative z-10 font-sans">
+                {current.preRequisites.map((req, idx) => (
+                  <li key={idx} className="flex items-start space-x-3 text-[13px] text-zinc-650 leading-snug bg-white/60 p-2.5 rounded-lg border border-zinc-100/50">
+                     <CheckCircle2 className="w-4 h-4 text-gold-500 shrink-0 mt-0.5" />
+                     <span>{req}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <div className="pt-4 border-t border-zinc-200/60/80 flex flex-wrap gap-3.5 relative z-10">
+                <button
+                  id={`calc_btn_pre_${type}`}
+                  onClick={() => setPage('calculator')}
+                  className="bg-brand-grad text-white text-[13px] font-bold px-5 py-3 rounded-xl flex items-center space-x-1.5 transition-all shadow-sm border-0 hover:scale-[1.015] cursor-pointer"
+                >
+                  <span>Calculate Setup Fees</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-gold-350" />
+                </button>
+                <button
+                  id={`consult_btn_pre_${type}`}
+                  onClick={openContactModal}
+                  className="bg-white border border-zinc-200 text-zinc-800 text-[13px] font-semibold px-5 py-3 rounded-xl hover:bg-zinc-50 transition-colors shadow-2xs cursor-pointer"
+                >
+                  <span>Request Strategic Consultation</span>
+                </button>
+              </div>
+            </div>
+
+            {/* 2. Expert Reviewer (Author) Card */}
             <div className="bg-white rounded-2xl border border-zinc-150 p-6 space-y-5 shadow-sm hover:shadow-md transition-shadow text-left">
               <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[11px] font-mono uppercase tracking-wider pb-3 border-b border-zinc-100">
                 <Award className="w-4 h-4 text-emerald-600" />
@@ -265,7 +300,7 @@ export default function BusinessSetupPage({ type, setPage, openContactModal, onS
               </div>
 
               <div className="space-y-4">
-                <div className="flex items-center space-x-3.5">
+                <div className="flex items-center space-x-3.5 font-sans">
                   <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 shadow-md border border-zinc-200 relative bg-zinc-50">
                     {currentExpert.avatarUrl ? (
                       <Image 
@@ -287,7 +322,7 @@ export default function BusinessSetupPage({ type, setPage, openContactModal, onS
                   </div>
                 </div>
 
-                <p className="text-[12px] text-zinc-650 leading-relaxed italic border-l-2 border-emerald-600 pl-3.5">
+                <p className="text-[12px] text-zinc-650 leading-relaxed italic border-l-2 border-emerald-600 pl-3.5 font-sans">
                   "{currentExpert.bio}"
                 </p>
 
@@ -304,8 +339,8 @@ export default function BusinessSetupPage({ type, setPage, openContactModal, onS
               </div>
             </div>
 
-            {/* 2. Social Share Buttons (Placed Strategically under Author) */}
-            <div className="bg-white rounded-2xl border border-zinc-150 p-6 space-y-4 shadow-sm text-left">
+            {/* 3. Social Share Buttons */}
+            <div className="bg-white rounded-2xl border border-zinc-150 p-6 space-y-4 shadow-sm text-left font-sans">
               <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[11px] font-mono uppercase tracking-wider pb-3 border-b border-zinc-100">
                 <Share2 className="w-4 h-4 text-emerald-600" />
                 <span>Share This Directory</span>
@@ -356,8 +391,8 @@ export default function BusinessSetupPage({ type, setPage, openContactModal, onS
               </div>
             </div>
 
-            {/* 3. Contact Details & Address Card (Updated Correct Info) */}
-            <div className="bg-white rounded-2xl border border-zinc-150 p-6 space-y-4 shadow-sm text-left">
+            {/* 4. Contact Details & Address Card */}
+            <div className="bg-white rounded-2xl border border-zinc-150 p-6 space-y-4 shadow-sm text-left font-sans">
               <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[11px] font-mono uppercase tracking-wider pb-3 border-b border-zinc-100">
                 <MapPin className="w-4 h-4 text-emerald-600" />
                 <span>Registry Location Info</span>
@@ -407,42 +442,8 @@ export default function BusinessSetupPage({ type, setPage, openContactModal, onS
                 </div>
               </div>
             </div>
-
-            {/* 4. Prerequisites for Registry Approval */}
-            <div className="bg-gradient-to-br from-zinc-50/70 via-white to-[#22C55E]/5 border border-zinc-200/40 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-[#22C55E]/5 rounded-full blur-xl"></div>
-              <div className="text-[11px] font-mono uppercase tracking-widest text-zinc-450 font-semibold relative z-10">
-                Prerequisites for Registry Approval
-              </div>
-              
-              <ul className="space-y-3.5 relative z-10">
-                {current.preRequisites.map((req, idx) => (
-                  <li key={idx} className="flex items-start space-x-3 text-[13px] text-zinc-650 leading-snug bg-white/60 p-2.5 rounded-lg border border-zinc-100/50">
-                     <CheckCircle2 className="w-4 h-4 text-gold-500 shrink-0 mt-0.5" />
-                     <span>{req}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <div className="pt-4 border-t border-zinc-200/60/80 flex flex-wrap gap-3.5 relative z-10">
-                <button
-                  id={`calc_btn_pre_${type}`}
-                  onClick={() => setPage('calculator')}
-                  className="bg-brand-grad text-white text-[13px] font-bold px-5 py-3 rounded-xl flex items-center space-x-1.5 transition-all shadow-sm border-0 hover:scale-[1.015]"
-                >
-                  <span>Calculate Setup Fees</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-gold-350" />
-                </button>
-                <button
-                  id={`consult_btn_pre_${type}`}
-                  onClick={openContactModal}
-                  className="bg-white border border-zinc-200 text-zinc-800 text-[13px] font-semibold px-5 py-3 rounded-xl hover:bg-zinc-50 transition-colors shadow-2xs"
-                >
-                  <span>Request Strategic Consultation</span>
-                </button>
-              </div>
-            </div>
           </div>
+
         </div>
 
         {/* Dynamic Pre-approved Corporate Trust Badges Row */}
