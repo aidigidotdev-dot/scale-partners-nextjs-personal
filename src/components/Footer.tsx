@@ -98,7 +98,7 @@ export default function Footer({ setPage, openContactModal }: FooterProps) {
             
             <div className="inline-flex items-center bg-white px-3.5 py-2 rounded-xl">
               <Image 
-                src="/assets/logo.jpg" 
+                src="/assets/logo_transparent.png" 
                 alt="Scale Partners Logo" 
                 width={130} 
                 height={42} 
@@ -115,18 +115,24 @@ export default function Footer({ setPage, openContactModal }: FooterProps) {
             <div className="space-y-2">
               <span className="text-white font-semibold font-mono uppercase tracking-wider text-[10.5px]">Headquarters</span>
               <p className="leading-relaxed text-zinc-500">
-                Tower 3, The Boulevard Chambers,<br />
-                Downtown Dubai, PO Box 450125<br />
-                United Arab Emirates
+                <a 
+                  href="https://google.ae/maps/place/Four+Roads+Group/data=!4m2!3m1!1s0x0:0xcf43204a335da6e1?sa=X&ved=1t:2428&ictx=111" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-gold-450 transition-colors"
+                >
+                  1703, Conrad Tower,<br />
+                  World Trade Center, Dubai
+                </a>
               </p>
             </div>
 
             <div className="space-y-2">
               <span className="text-white font-semibold font-mono uppercase tracking-wider text-[10.5px]">Direct Advisory desk</span>
               <p className="leading-relaxed text-zinc-500 flex flex-col space-y-1">
-                <span>WhatsApp: +971 50 123 4567</span>
-                <span>Landline: +971 4 999 8888</span>
-                <span>Email: contact@scalepartners.ae</span>
+                <span>WhatsApp: +971 4 360 7999</span>
+                <span>Landline: 04-360-7999</span>
+                <span>Email: info@fourroadsgroup.com</span>
               </p>
             </div>
           </div>
@@ -143,6 +149,7 @@ export default function Footer({ setPage, openContactModal }: FooterProps) {
             <a href="#" onClick={(e) => {e.preventDefault(); openContactModal();}} className="hover:text-gold-400 transition-colors">Privacy and NDA Agreement</a>
             <a href="#" onClick={(e) => {e.preventDefault(); openContactModal();}} className="hover:text-gold-400 transition-colors">Anti Money Laundering Policy (AML)</a>
             <a href="#" onClick={(e) => {e.preventDefault(); openContactModal();}} className="hover:text-gold-400 transition-colors">Service Level Agreements</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('open-cookie-settings')); }} className="hover:text-gold-400 transition-colors">Cookie Preferences</a>
           </div>
         </div>
 

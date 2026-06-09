@@ -178,19 +178,21 @@ export default function FinancePage({ type, setPage, openContactModal }: Finance
             </div>
           </div>
 
-          <div className="lg:col-span-5 bg-gold-50/20 border border-gold-300/10 rounded-2xl p-6 sm:p-8">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2 text-[12px] font-mono uppercase tracking-widest text-gold-600 font-bold">
-                <ShieldCheck className="w-4 h-4" />
-                <span>Statutory Compliance Matrix</span>
-              </div>
-              <div className="space-y-2.5 border-t border-zinc-100 pt-4">
-                {current.highlights.map((item, idx) => (
-                  <div key={idx} className="flex items-start space-x-2.5 text-[12.5px] text-zinc-600 leading-snug">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-gold-500 mt-0.5 shrink-0" />
-                    <span>{item}</span>
-                  </div>
-                ))}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="bg-gold-50/20 border border-gold-300/10 rounded-2xl p-6 sm:p-8">
+              <div className="space-y-4">
+                <div className="flex items-center space-x-2 text-[12px] font-mono uppercase tracking-widest text-gold-600 font-bold">
+                  <ShieldCheck className="w-4 h-4" />
+                  <span>Statutory Compliance Matrix</span>
+                </div>
+                <div className="space-y-2.5 border-t border-zinc-100 pt-4">
+                  {current.highlights.map((item, idx) => (
+                    <div key={idx} className="flex items-start space-x-2.5 text-[12.5px] text-zinc-600 leading-snug">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-gold-500 mt-0.5 shrink-0" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

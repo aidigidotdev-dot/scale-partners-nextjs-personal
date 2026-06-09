@@ -14,6 +14,7 @@ import ContactForm from './ContactForm';
 import { useQuote } from './QuoteProvider';
 import { PageId } from '../types';
 import { X } from 'lucide-react';
+import CookieConsentBanner from './CookieConsentBanner';
 
 export default function ClientShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -40,6 +41,9 @@ export default function ClientShell({ children }: { children: React.ReactNode })
       </div>
 
       <div className="relative z-10 flex flex-col min-h-screen">
+        {/* GDPR Cookie Consent Compliance Banner */}
+        <CookieConsentBanner />
+
         {/* Dynamic SEO & Schema.org JSON-LD Markup Generator */}
         <SeoEngine page={pageId} />
 
@@ -69,6 +73,7 @@ export default function ClientShell({ children }: { children: React.ReactNode })
 
         {/* FAQs will go at the end of the website */}
         {pageId === 'home' && <SeoFaqBlock setPage={setPage} />}
+
 
         {/* Structured Site Directory Footer */}
         <Footer setPage={setPage} openContactModal={openBlankModal} />

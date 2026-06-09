@@ -105,7 +105,7 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
             onClick={() => handleLinkClick('home')}
           >
             <Image 
-              src="/assets/logo.jpg" 
+              src="/assets/logo_transparent.png" 
               alt="Scale Partners Logo" 
               width={140} 
               height={50} 
@@ -213,7 +213,7 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
               onClick={openContactModal}
               className="bg-brand-grad text-white px-5.5 py-2.5 rounded-full font-sans text-[13px] font-bold tracking-tight transition-all duration-300 shadow-sm flex items-center space-x-2 border-0 hover:scale-[1.015]"
             >
-              <span>Secure 24h License</span>
+              <span>Initialize 24h Setup Session</span>
               <ArrowRight className="w-3.5 h-3.5 text-gold-300" />
             </button>
           </div>

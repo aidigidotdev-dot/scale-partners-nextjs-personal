@@ -202,15 +202,15 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
             <div className="lg:col-span-7 text-center lg:text-left space-y-7">
               
               <h1 className="font-sans text-[38px] sm:text-[52px] lg:text-[60px] font-extralight text-white leading-[1.2] tracking-wide">
-                The UAE Entry Point<br />
+                Scale Smarter.<br />
                 <span className="text-emerald-400 font-light">
-                  for Global Founders.
+                  Grow Faster.
                 </span>
               </h1>
               
               {/* GEO/AEO Rich Descriptive Abstract targeting prime corporate keywords */}
               <p className="max-w-xl mx-auto lg:mx-0 font-sans text-zinc-100/90 text-[14.5px] sm:text-[16px] leading-[1.7] tracking-wide font-light">
-                Scale Partners is the <strong className="font-semibold text-emerald-400">safest path into the UAE</strong>. We design secure, compliant corporate structures, protect your assets under the 9% corporate tax framework, and manage your entire mainland or free zone licensing process with absolute risk mitigation.
+                The UAE entry point for global founders, Scale Partners is the <strong className="font-semibold text-emerald-400">safest path into the UAE</strong>. We design secure, compliant corporate structures, protect your assets under the 9% corporate tax framework, and manage your entire mainland or free zone licensing process with absolute risk mitigation.
               </p>
 
               {/* Premium Trust Badges Grid (Sovereign Trust Indicators) */}

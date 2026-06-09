@@ -261,26 +261,28 @@ export default function VisaPage({ type, setPage, openContactModal }: VisaPagePr
             </div>
           </div>
 
-          <div className="lg:col-span-5 bg-gradient-to-br from-[#12B76A]/40 via-[#22C55E]/20 to-transparent p-[1.5px] rounded-3xl shadow-[0_20px_50px_rgba(18,183,106,0.05)] hover:shadow-[0_20px_50px_rgba(18,183,106,0.08)] transition-all duration-300 relative group">
-            <div className="bg-gradient-to-br from-[#E6F7ED]/40 via-white to-white rounded-[22px] p-6 sm:p-8 h-full relative overflow-hidden">
-              {/* Glowing Accent */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-[#12B76A]/5 rounded-full blur-xl pointer-events-none group-hover:scale-125 transition-transform duration-550"></div>
-              
-              <div className="space-y-4 relative z-10">
-                <div className="flex items-center space-x-2 text-[12px] font-mono uppercase tracking-widest text-[#08854C] font-bold">
-                  <ShieldCheck className="w-4 h-4 text-[#12B76A]" />
-                  <span>Exclusion Privileges & Safeguards</span>
-                </div>
-                <p className="text-[12px] text-zinc-550 leading-relaxed font-sans italic border-l-2 border-[#12B76A]/40 pl-3">
-                  "Our immigration lawyers handle submissions directly with GDRFA authorities to avoid queue delays."
-                </p>
-                <div className="space-y-3.5 border-t border-zinc-100 pt-4">
-                  {current.highlights.map((highlight, idx) => (
-                    <div key={idx} className="flex items-start space-x-2.5 text-[12.5px] text-zinc-650 leading-snug">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 mt-0.5 shrink-0" />
-                      <span>{highlight}</span>
-                    </div>
-                  ))}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="bg-gradient-to-br from-[#12B76A]/40 via-[#22C55E]/20 to-transparent p-[1.5px] rounded-3xl shadow-[0_20px_50px_rgba(18,183,106,0.05)] hover:shadow-[0_20px_50px_rgba(18,183,106,0.08)] transition-all duration-300 relative group">
+              <div className="bg-white/95 backdrop-blur-md rounded-[22px] p-6 sm:p-8 h-full relative overflow-hidden">
+                {/* Glowing Accent */}
+                <div className="absolute top-0 right-0 w-24 h-24 bg-[#12B76A]/5 rounded-full blur-xl pointer-events-none group-hover:scale-125 transition-transform duration-550"></div>
+                
+                <div className="space-y-4 relative z-10">
+                  <div className="flex items-center space-x-2 text-[12px] font-mono uppercase tracking-widest text-[#08854C] font-bold">
+                    <ShieldCheck className="w-4 h-4 text-[#12B76A]" />
+                    <span>Exclusion Privileges & Safeguards</span>
+                  </div>
+                  <p className="text-[12px] text-zinc-555 leading-relaxed font-sans italic border-l-2 border-[#12B76A]/40 pl-3">
+                    "Our immigration lawyers handle submissions directly with GDRFA authorities to avoid queue delays."
+                  </p>
+                  <div className="space-y-3.5 border-t border-zinc-100 pt-4">
+                    {current.highlights.map((highlight, idx) => (
+                      <div key={idx} className="flex items-start space-x-2.5 text-[12.5px] text-zinc-650 leading-snug">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 mt-0.5 shrink-0" />
+                        <span>{highlight}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

@@ -476,37 +476,38 @@ export default function FreeZoneNavigator({ onSelectFreeZone, openContactModal }
                 </div>
 
                 {/* Left Side Static Guide and Explanations */}
-                <div className="bg-gold-50/30 border border-gold-300/10 rounded-2xl p-6 space-y-6 flex flex-col justify-between">
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-2 text-gold-600 font-bold font-mono text-[11px] uppercase tracking-wider">
-                      <ShieldCheck className="w-4 h-4" />
+                <div className="bg-brand-dark-grad rounded-2xl p-6 sm:p-8 space-y-6 flex flex-col justify-between text-white shadow-emerald-glow border-0 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/[0.02] rounded-full blur-2xl pointer-events-none"></div>
+                  <div className="space-y-4 relative z-10 text-left">
+                    <div className="flex items-center space-x-2 text-emerald-300 font-bold font-mono text-[11px] uppercase tracking-wider">
+                      <ShieldCheck className="w-4 h-4 text-emerald-450" />
                       <span>Registry Regulatory Safeguards</span>
                     </div>
-                    <h5 className="text-[17px] font-serif font-semibold text-zinc-800 leading-tight">
+                    <h5 className="text-[18px] font-serif font-light text-white leading-tight">
                       Why does activity select matter?
                     </h5>
-                    <ul className="space-y-4 text-[12.5px] text-zinc-650 leading-relaxed font-sans">
+                    <ul className="space-y-4 text-[12.5px] text-emerald-100/90 leading-relaxed font-sans font-light">
                       <li className="flex items-start space-x-2">
-                        <span className="text-gold-500 font-bold shrink-0 mt-0.5">•</span>
-                        <span><strong>Meydan & Shams</strong> offer zero-cost bundled activities. You can register up to 3 activities for the exact same base registration fee, whereas other hubs charge up to 1,500 AED per activity.</span>
+                        <span className="text-emerald-400 font-bold shrink-0 mt-0.5">•</span>
+                        <span><strong className="text-white font-semibold">Meydan & Shams</strong> offer zero-cost bundled activities. You can register up to 3 activities for the exact same base registration fee, whereas other hubs charge up to 1,500 AED per activity.</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <span className="text-gold-500 font-bold shrink-0 mt-0.5">•</span>
-                        <span><strong>DMCC & DIFC</strong> are world-class financial zones that permit crypto currency utility setups and commodities brokering, but strictly enforce a physical desk occupancy and yearly fiscal audits.</span>
+                        <span className="text-emerald-400 font-bold shrink-0 mt-0.5">•</span>
+                        <span><strong className="text-white font-semibold">DMCC & DIFC</strong> are world-class financial zones that permit cryptocurrency utility setups and commodities brokering, but strictly enforce a physical desk occupancy and yearly fiscal audits.</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <span className="text-gold-500 font-bold shrink-0 mt-0.5">•</span>
-                        <span><strong>IFZA Dubai</strong> doesn\'t require initial local bank pre-approval checks or audited filing records, representing the fastest holding entity portal in Dubai outskirts.</span>
+                        <span className="text-emerald-400 font-bold shrink-0 mt-0.5">•</span>
+                        <span><strong className="text-white font-semibold">IFZA Dubai</strong> doesn't require initial local bank pre-approval checks or audited filing records, representing the fastest holding entity portal in Dubai outskirts.</span>
                       </li>
                     </ul>
                   </div>
 
-                  <div className="bg-white border border-zinc-100 rounded-xl p-4 space-y-2 mt-4">
-                    <div className="flex items-center space-x-2 text-[10px] text-zinc-400 font-mono">
-                      <Percent className="w-3.5 h-3.5 text-gold-500" />
+                  <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-4.5 space-y-2 mt-4 relative z-10 text-left">
+                    <div className="flex items-center space-x-2 text-[10px] text-emerald-350 font-mono">
+                      <Percent className="w-3.5 h-3.5 text-emerald-400" />
                       <span>LEAD GENERATOR & STRATEGY ASSURANCE</span>
                     </div>
-                    <p className="text-[11.5px] text-zinc-500 leading-relaxed italic">
+                    <p className="text-[11.5px] text-emerald-100/80 leading-relaxed italic font-light">
                       This recommendation tool instantly compiles matching criteria to bypass standard desk queues. Submitted setups are routed directly to licensed registrars.
                     </p>
                   </div>

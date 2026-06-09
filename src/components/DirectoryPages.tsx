@@ -25,7 +25,10 @@ import {
   TrendingUp, 
   Sparkles,
   HelpCircle,
-  Building2
+  Building2,
+  Share2,
+  Mail,
+  Phone
 } from 'lucide-react';
 import { PageId } from '../types';
 
@@ -80,7 +83,8 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
       credentials: "LLB (Hons, Dubai), Al-Karimi Corporate Associate",
       experience: "14+ Years in DIFC & DET Mainland setups",
       bio: "Tarik translates complex UAE corporate laws into secure growth architectures. He has advised over 650 multinational founders entering Dubai, Sharjah, & Jebel Ali trade hubs.",
-      avatarText: "TM"
+      avatarText: "TM",
+      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop"
     },
     amina: {
       name: "Amina Al-Haddad",
@@ -88,7 +92,8 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
       credentials: "MSc (Int'l Finance & Laws, London)",
       experience: "11+ Years liaising with free zone registrars",
       bio: "Amina coordinates instant electronic setups across Northern Free Zones and resolves complex compliance, capital clearances, and corporate holding configurations.",
-      avatarText: "AH"
+      avatarText: "AH",
+      avatarUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
     }
   };
 
@@ -1128,12 +1133,161 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
               </div>
             )}
 
-          </div>
-
-          {/* Expert Sidebar Panel */}
+                    {/* Expert Sidebar Panel */}
           <div className="space-y-8">
             
-            {/* Lead Application Action Card */}
+            {/* 1. Expert Reviewer (Author) Card */}
+            <div className="bg-white rounded-2xl border border-zinc-150 p-6 space-y-5 shadow-sm hover:shadow-md transition-shadow text-left">
+              <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[11px] font-mono uppercase tracking-wider pb-3 border-b border-zinc-100">
+                <Award className="w-4 h-4 text-emerald-600" />
+                <span>Verified Registry Advisor (Author)</span>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3.5">
+                  <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 shadow-md border border-zinc-200 relative bg-zinc-50">
+                    {content.advisor.avatarUrl ? (
+                      <Image 
+                        src={content.advisor.avatarUrl} 
+                        alt={`${content.advisor.name} Portrait`} 
+                        fill
+                        sizes="48px"
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-brand-grad text-white font-serif font-bold text-[14px] flex items-center justify-center">
+                        {content.advisor.avatarText}
+                      </div>
+                    )}
+                  </div>
+                  <div>
+                    <h4 className="text-[13.5px] font-bold text-zinc-900 leading-tight">{content.advisor.name}</h4>
+                    <p className="text-[11px] text-zinc-400 font-sans mt-0.5">{content.advisor.role}</p>
+                  </div>
+                </div>
+
+                <p className="text-[12px] text-zinc-650 leading-relaxed italic border-l-2 border-emerald-600 pl-3.5">
+                  "{content.advisor.bio}"
+                </p>
+
+                <div className="bg-zinc-50 rounded-xl p-3 border border-zinc-200/60 grid grid-cols-2 gap-2 text-[11px] text-zinc-550 font-sans">
+                  <div className="flex flex-col text-left">
+                    <span className="text-[9px] uppercase tracking-wider font-mono text-zinc-400">Credentials</span>
+                    <strong className="text-zinc-800 font-medium truncate" title={content.advisor.credentials}>{content.advisor.credentials.split(',')[0]}</strong>
+                  </div>
+                  <div className="flex flex-col text-left">
+                    <span className="text-[9px] uppercase tracking-wider font-mono text-zinc-400">Experience</span>
+                    <strong className="text-zinc-800 font-medium">{content.advisor.experience}</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 2. Social Share Buttons (Placed Strategically under Author) */}
+            <div className="bg-white rounded-2xl border border-zinc-150 p-6 space-y-4 shadow-sm text-left">
+              <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[11px] font-mono uppercase tracking-wider pb-3 border-b border-zinc-100">
+                <Share2 className="w-4 h-4 text-emerald-600" />
+                <span>Share This Directory</span>
+              </div>
+              
+              <div className="grid grid-cols-3 gap-2">
+                <button
+                  onClick={() => {
+                    const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+                    const shareTitle = typeof window !== "undefined" ? document.title : "";
+                    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`, "_blank", "noopener,noreferrer");
+                  }}
+                  className="flex flex-col items-center justify-center p-2.5 bg-zinc-50 border border-zinc-200 hover:border-zinc-350 hover:bg-zinc-100 rounded-xl text-[10px] text-zinc-700 transition-all font-semibold font-sans gap-1 cursor-pointer"
+                >
+                  <svg className="w-4 h-4 fill-current text-zinc-600" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                  <span>LinkedIn</span>
+                </button>
+                
+                <button
+                  onClick={() => {
+                    const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+                    const shareTitle = typeof window !== "undefined" ? document.title : "";
+                    window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareTitle)}`, "_blank", "noopener,noreferrer");
+                  }}
+                  className="flex flex-col items-center justify-center p-2.5 bg-zinc-50 border border-zinc-200 hover:border-zinc-350 hover:bg-zinc-100 rounded-xl text-[10px] text-zinc-700 transition-all font-semibold font-sans gap-1 cursor-pointer"
+                >
+                  <svg className="w-3.5 h-3.5 fill-current text-zinc-600" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                  <span>X (Twitter)</span>
+                </button>
+                
+                <button
+                  onClick={() => {
+                    const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+                    const shareTitle = typeof window !== "undefined" ? document.title : "";
+                    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(shareTitle + " - " + shareUrl)}`, "_blank", "noopener,noreferrer");
+                  }}
+                  className="flex flex-col items-center justify-center p-2.5 bg-zinc-50 border border-zinc-200 hover:border-zinc-350 hover:bg-zinc-100 rounded-xl text-[10px] text-zinc-700 transition-all font-semibold font-sans gap-1 cursor-pointer"
+                >
+                  <svg className="w-3.5 h-3.5 fill-current text-zinc-600" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.738-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.528 1.977 14.06 1.953 12.01 1.953c-5.438 0-9.864 4.372-9.868 9.8-.001 1.724.463 3.411 1.343 4.908L2.484 20.3l3.163-.83.003-.001z"/>
+                  </svg>
+                  <span>WhatsApp</span>
+                </button>
+              </div>
+            </div>
+
+            {/* 3. Contact Details & Address Card (Updated Correct Info) */}
+            <div className="bg-white rounded-2xl border border-zinc-150 p-6 space-y-4 shadow-sm text-left">
+              <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[11px] font-mono uppercase tracking-wider pb-3 border-b border-zinc-100">
+                <MapPin className="w-4 h-4 text-emerald-600" />
+                <span>Registry Location Info</span>
+              </div>
+              
+              <div className="space-y-3 font-sans text-[12.5px] text-zinc-650">
+                <div className="flex items-start space-x-2.5">
+                  <div className="p-1.5 bg-emerald-50 rounded-lg text-emerald-600 shrink-0 mt-0.5 animate-pulse">
+                    <MapPin className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="text-[9px] uppercase font-mono text-zinc-400 block font-bold">Headquarters</span>
+                    <a 
+                      href="https://google.ae/maps/place/Four+Roads+Group/data=!4m2!3m1!1s0x0:0xcf43204a335da6e1?sa=X&ved=1t:2428&ictx=111" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-zinc-900 font-semibold hover:text-emerald-600 transition-colors leading-relaxed"
+                    >
+                      1703, Conrad Tower,<br />
+                      World Trade Center, Dubai
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-2.5">
+                  <div className="p-1.5 bg-emerald-50 rounded-lg text-emerald-600 shrink-0 mt-0.5">
+                    <Phone className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="text-[9px] uppercase font-mono text-zinc-400 block font-bold">Direct Line</span>
+                    <a href="tel:+97143607999" className="text-zinc-900 font-bold hover:text-emerald-600 transition-colors">
+                      04-360-7999
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-2.5">
+                  <div className="p-1.5 bg-emerald-50 rounded-lg text-emerald-600 shrink-0 mt-0.5">
+                    <Mail className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="text-[9px] uppercase font-mono text-zinc-400 block font-bold">Email Desk</span>
+                    <a href="mailto:info@fourroadsgroup.com" className="text-zinc-900 font-semibold hover:text-emerald-600 transition-colors">
+                      info@fourroadsgroup.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 4. Lead Application Action Card */}
             <div className="bg-gradient-to-tr from-[#0C2E1A] via-[#12B76A] to-[#22C55E] text-white rounded-2xl p-6 sm:p-8 space-y-5 relative overflow-hidden shadow-xl border-0">
               <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
               
@@ -1153,62 +1307,23 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
               <button
                 id={`apply_action_for_${page}`}
                 onClick={() => onApplySetup(content.title, content.price)}
-                className="w-full bg-white text-gold-500 text-[13px] font-bold py-3.5 rounded-xl transition-all hover:scale-[1.015] flex items-center justify-center space-x-1 shadow-md border-0 relative z-10"
+                className="w-full bg-white text-gold-550 text-[13px] font-bold py-3.5 rounded-xl transition-all hover:scale-[1.015] flex items-center justify-center space-x-1 shadow-md border-0 relative z-10 cursor-pointer"
               >
                 <span>Initiate Business Registration</span>
-                <ChevronLeft className="w-4 h-4 rotate-180 text-gold-500" />
+                <ChevronLeft className="w-4 h-4 rotate-180 text-gold-550" />
               </button>
 
               <div className="text-center relative z-10">
                 <button 
                   onClick={openContactModal}
-                  className="text-[11px] text-white/80 hover:text-white underline transition-colors"
+                  className="text-[11px] text-white/80 hover:text-white underline transition-colors cursor-pointer bg-transparent border-0"
                 >
                   or schedule standard advisory session
                 </button>
               </div>
             </div>
 
-            {/* Expert Profiles Verification */}
-            <div className="bg-white rounded-2xl border border-zinc-100 p-6 sm:p-8 space-y-5 shadow-sm">
-              <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[13px] font-mono uppercase tracking-wider pb-3 border-b border-zinc-100">
-                <Award className="w-4 h-4 text-gold-500" />
-                <span>Verified Legal Reviewer</span>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3.5">
-                  <div className="w-11 h-11 rounded-full bg-brand-grad text-white font-serif font-bold text-[14px] flex items-center justify-center shrink-0 shadow-md border-0">
-                    {content.advisor.avatarText}
-                  </div>
-                  <div>
-                    <h4 className="text-[13.5px] font-semibold text-zinc-900">{content.advisor.name}</h4>
-                    <p className="text-[11px] text-zinc-400 capitalize">{content.advisor.role}</p>
-                  </div>
-                </div>
-
-                <p className="text-[12px] text-zinc-650 leading-relaxed italic border-l-2 border-gold-500 pl-3">
-                  "{content.advisor.bio}"
-                </p>
-
-                <div className="bg-zinc-50 rounded-xl p-4 border border-zinc-200/60 space-y-3.5 text-[11.5px] text-zinc-500">
-                  <div className="flex flex-col space-y-0.5 text-left">
-                    <span className="text-[10px] uppercase tracking-wider font-mono text-zinc-400">Credentials</span>
-                    <strong className="text-zinc-800 font-medium">{content.advisor.credentials}</strong>
-                  </div>
-                  <div className="flex flex-col space-y-0.5 text-left">
-                    <span className="text-[10px] uppercase tracking-wider font-mono text-zinc-400">Active Experience</span>
-                    <strong className="text-zinc-800 font-medium">{content.advisor.experience}</strong>
-                  </div>
-                  <div className="flex flex-col space-y-0.5 text-left">
-                    <span className="text-[10px] uppercase tracking-wider font-mono text-zinc-400">Advisory Status</span>
-                    <strong className="text-[#08854C] font-semibold">Active Registered Consultant</strong>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Map coordinate simulation card */}
+            {/* 5. Map coordinate simulation card */}
             {page.startsWith('fz-') && (
               <div className="bg-white rounded-2xl border border-zinc-100 overflow-hidden shadow-sm">
                 <div className="h-40 bg-zinc-100 relative flex items-center justify-center p-4">
@@ -1238,16 +1353,16 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
               </div>
             )}
 
-            {/* Official Registered Broker Logo Endorsement */}
+            {/* 6. Official Registered Broker Logo Endorsement */}
             <div className="bg-gold-50/25 border border-gold-300/10 rounded-2xl p-5 text-center space-y-3 font-sans">
-              <div className="flex items-center justify-center space-x-1.5 uppercase tracking-[0.15em] font-mono text-[9px] text-zinc-450">
+              <div className="flex items-center justify-center space-x-1.5 uppercase tracking-[0.15em] font-mono text-[9px] text-zinc-450 font-bold">
                 <ShieldCheck className="w-4 h-4 text-emerald-600" />
                 <span>Approved Corporate Trustee</span>
               </div>
-              <p className="text-[11px] text-zinc-450 leading-relaxed font-sans">
+              <p className="text-[11px] text-zinc-450 leading-relaxed font-sans font-light">
                 Corporate licensing processes undergo real-time biometric and electronic verification, strictly matching Dubai Economy & Tourism protocols.
               </p>
-            </div>
+            </div>  </div>
 
           </div>
 
