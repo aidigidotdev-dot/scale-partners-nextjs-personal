@@ -222,7 +222,7 @@ export default function BusinessSetupPage({ type, setPage, openContactModal, onS
                 className="object-cover group-hover:scale-[1.015] transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B2E16]/95 via-[#08854C]/35 to-transparent flex flex-col justify-end p-6 sm:p-8 z-10">
-                <span className="inline-block px-2.5 py-0.5 rounded-md bg-white/10 backdrop-blur-xs text-[10px] font-mono uppercase tracking-[0.2em] text-white border border-white/10 mb-1.5 shadow-3xs">{current.image1Label}</span>
+                <span className="w-fit inline-block px-2.5 py-0.5 rounded-md bg-white/10 backdrop-blur-xs text-[10px] font-mono uppercase tracking-[0.2em] text-white border border-white/10 mb-1.5 shadow-3xs">{current.image1Label}</span>
                 <h3 className="font-serif text-[18px] sm:text-[22px] text-white font-medium mt-1 leading-snug">{current.image1Heading}</h3>
                 <p className="text-[12px] text-zinc-300 max-w-xl mt-1 font-sans">
                   {current.image1Desc}
@@ -379,7 +379,7 @@ export default function BusinessSetupPage({ type, setPage, openContactModal, onS
             className="object-cover group-hover:scale-[1.015] transition-transform duration-700"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B2E16]/95 via-[#08854C]/35 to-transparent flex flex-col justify-end p-6 sm:p-8 z-10">
-            <span className="inline-block px-2.5 py-0.5 rounded-md bg-white/10 backdrop-blur-xs text-[10px] font-mono uppercase tracking-[0.2em] text-white border border-white/10 mb-1.5 shadow-3xs">{current.image2Label}</span>
+            <span className="w-fit inline-block px-2.5 py-0.5 rounded-md bg-white/10 backdrop-blur-xs text-[10px] font-mono uppercase tracking-[0.2em] text-white border border-white/10 mb-1.5 shadow-3xs">{current.image2Label}</span>
             <h3 className="font-serif text-[20px] sm:text-[24px] text-white font-medium mt-1 leading-snug">{current.image2Heading}</h3>
             <p className="text-[12px] sm:text-[13px] text-zinc-300 max-w-xl mt-1 font-sans">
               {current.image2Desc}
