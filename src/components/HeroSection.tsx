@@ -209,12 +209,24 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
               </h1>
               
               {/* GEO/AEO Rich Descriptive Abstract targeting prime corporate keywords */}
-              <p className="max-w-xl mx-auto lg:mx-0 font-sans text-zinc-100/90 text-[14.5px] sm:text-[16px] leading-[1.7] tracking-wide font-light">
-                The UAE entry point for global founders, Scale Partners is the <strong className="font-semibold text-emerald-400">safest path into the UAE</strong>. We design secure, compliant corporate structures, protect your assets under the 9% corporate tax framework, and manage your entire mainland or free zone licensing process with absolute risk mitigation.
+              <p className="max-w-lg mx-auto lg:mx-0 font-sans text-zinc-100/90 text-[14px] sm:text-[16px] leading-[1.55] sm:leading-[1.7] tracking-wide font-light">
+                Launch in the UAE with a <strong className="font-semibold text-emerald-400">secure, compliant structure</strong>. We handle mainland and free zone licensing, tax-ready setup, and risk controls.
               </p>
 
+              <div className="sm:hidden flex items-center justify-center gap-4 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2.5 text-[11.5px] text-zinc-200 backdrop-blur-md">
+                <div className="flex items-center gap-1.5">
+                  <Users className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>AED 8B+ processed</span>
+                </div>
+                <div className="h-4 w-px bg-white/15"></div>
+                <div className="flex items-center gap-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>12+ years</span>
+                </div>
+              </div>
+
               {/* Premium Trust Badges Grid (Sovereign Trust Indicators) */}
-              <div className="bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-5 space-y-4 max-w-2xl mx-auto lg:mx-0">
+              <div className="hidden sm:block bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-5 space-y-4 max-w-2xl mx-auto lg:mx-0">
                 {/* Row 1: Key Trust Metrics */}
                 <div className="flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-zinc-200 border-b border-white/10 pb-3">
                   <div className="flex items-center space-x-2">
@@ -272,13 +284,14 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                   onClick={() => setPage('calculator')}
                   className="w-full sm:w-auto bg-white text-gold-700 hover:opacity-95 hover:scale-[1.015] active:scale-95 px-8 py-4 rounded-full font-sans text-[14.5px] font-bold tracking-tight transition-all duration-300 shadow-lg flex items-center justify-center space-x-2 border-0 cursor-pointer shrink-0"
                 >
-                  <span>Initialize 24h Setup Session</span>
+                  <span className="sm:hidden">Start 24h Setup</span>
+                  <span className="hidden sm:inline">Initialize 24h Setup Session</span>
                   <ArrowRight className="w-4 h-4 text-gold-500" />
                 </button>
               </div>
 
               {/* Reviews & Credibility Bar (GCC and Global Platforms) */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-y-4 gap-x-8 pt-6 border-t border-white/10 max-w-2xl mx-auto lg:mx-0">
+              <div className="hidden sm:flex flex-wrap items-center justify-center lg:justify-start gap-y-4 gap-x-8 pt-6 border-t border-white/10 max-w-2xl mx-auto lg:mx-0">
                 {/* Google Reviews */}
                 <div className="flex items-center space-x-3 text-left">
                   <svg className="w-5.5 h-5.5 shrink-0" viewBox="0 0 24 24">
