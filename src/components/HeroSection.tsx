@@ -201,16 +201,16 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
             {/* Main Editorial Text Block */}
             <div className="lg:col-span-7 text-center lg:text-left space-y-7">
               
-              <h1 className="font-sans text-[38px] sm:text-[52px] lg:text-[60px] font-extralight text-white leading-[1.2] tracking-wide">
-                Scale Smarter.<br />
-                <span className="text-emerald-400 font-light">
-                  Grow Faster.
+              <h1 className="hero-brand-headline font-sans text-[46px] sm:text-[60px] lg:text-[72px] text-white leading-[1.08] tracking-normal">
+                Scale Partners<br />
+                <span className="text-emerald-400">
+                  Business Setup
                 </span>
               </h1>
               
               {/* GEO/AEO Rich Descriptive Abstract targeting prime corporate keywords */}
-              <p className="max-w-xl mx-auto lg:mx-0 font-sans text-zinc-100/90 text-[14.5px] sm:text-[16px] leading-[1.7] tracking-wide font-light">
-                The UAE entry point for global founders, Scale Partners is the <strong className="font-semibold text-emerald-400">safest path into the UAE</strong>. We design secure, compliant corporate structures, protect your assets under the 9% corporate tax framework, and manage your entire mainland or free zone licensing process with absolute risk mitigation.
+              <p className="max-w-xl mx-auto lg:mx-0 font-sans text-zinc-100/90 text-[17px] sm:text-[19px] leading-[1.55] tracking-normal font-medium">
+                Start your UAE company with a clear 24-hour launch plan, senior advisor callback, license guidance and banking-ready documentation.
               </p>
 
               {/* Premium Trust Badges Grid (Sovereign Trust Indicators) */}
@@ -275,6 +275,9 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                   <span>Initialize 24h Setup Session</span>
                   <ArrowRight className="w-4 h-4 text-gold-500" />
                 </button>
+                <span className="text-[12px] text-zinc-200/85 font-medium leading-snug max-w-xs">
+                  Next: answer a few setup details, then a senior advisor confirms your route and callback.
+                </span>
               </div>
 
               {/* Reviews & Credibility Bar (GCC and Global Platforms) */}
