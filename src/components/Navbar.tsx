@@ -109,22 +109,12 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
               alt="Scale Partners Logo" 
               width={140} 
               height={50} 
-              className="object-contain max-h-[50px] w-auto transition-transform group-hover:scale-[1.015]"
+              className="object-contain max-h-[54px] w-auto shrink-0 transition-transform group-hover:scale-[1.015]"
             />
           </div>
 
           {/* Desktop Navigation Link Directory */}
-          <nav id="desktop_nav" className="hidden lg:flex items-center space-x-1">
-            <button
-              id="nav_item_home"
-              onClick={() => handleLinkClick('home')}
-              className={`px-4 py-2 rounded-full font-sans text-[14px] font-medium transition-colors ${
-                currentPage === 'home' ? 'text-gold-600 bg-gold-500/5' : 'text-zinc-600 hover:text-zinc-900'
-              }`}
-            >
-              Overview
-            </button>
-
+          <nav id="desktop_nav" className="hidden lg:flex items-center space-x-1.5 xl:space-x-2">
             {navigationItems.map((category) => (
               <div 
                 key={category.id} 
@@ -134,7 +124,7 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
               >
                 <button
                   id={`nav_dropdown_trigger_${category.id}`}
-                  className={`px-4 py-2 rounded-full font-sans text-[14px] font-medium flex items-center space-x-1 transition-colors ${
+                  className={`px-3 xl:px-4 py-2 rounded-full font-sans text-[14px] xl:text-[15px] nav-header-link flex items-center space-x-1 transition-colors whitespace-nowrap ${
                     category.items.some(item => item.id === currentPage) 
                       ? 'text-gold-600' 
                       : 'text-zinc-600 hover:text-zinc-900'
@@ -198,7 +188,7 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
             <button
               id="nav_item_calculator"
               onClick={() => handleLinkClick('calculator')}
-              className={`px-4 py-2 rounded-full font-sans text-[14px] font-medium transition-colors ${
+              className={`px-3 xl:px-4 py-2 rounded-full font-sans text-[14px] xl:text-[15px] nav-header-link transition-colors whitespace-nowrap ${
                 currentPage === 'calculator' ? 'text-gold-600 bg-gold-500/5' : 'text-zinc-600 hover:text-zinc-900'
               }`}
             >
@@ -211,10 +201,9 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
             <button 
               id="nav_cta_consult"
               onClick={openContactModal}
-              className="bg-brand-grad text-white px-5.5 py-2.5 rounded-full font-sans text-[13px] font-bold tracking-tight transition-all duration-300 shadow-sm flex items-center space-x-2 border-0 hover:scale-[1.015]"
+              className="bg-brand-grad text-white px-4 xl:px-5 py-3 rounded-full font-sans text-[13px] nav-header-link tracking-tight transition-all duration-300 shadow-sm flex items-center justify-center border-0 hover:scale-[1.015] whitespace-nowrap text-center"
             >
               <span>Initialize 24h Setup Session</span>
-              <ArrowRight className="w-3.5 h-3.5 text-gold-300" />
             </button>
           </div>
 

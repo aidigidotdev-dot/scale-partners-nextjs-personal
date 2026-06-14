@@ -162,7 +162,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
     <div className="relative bg-white font-sans">
       
       {/* HERO REGION WITH VIDEO BACKGROUND */}
-      <div className="relative pt-[110px] pb-16 overflow-hidden text-white bg-[#07140B]">
+      <div className="relative pt-[96px] sm:pt-[110px] pb-12 sm:pb-16 overflow-hidden text-white bg-[#07140B]">
         
         {/* VIDEO BACKGROUND */}
         <video
@@ -180,16 +180,16 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
         
 
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-30">
           
           {/* TOP LEVEL TAGS: Trust Endorsement Indicator */}
           <div className="flex justify-center lg:justify-start">
-            <div className="inline-flex items-center space-x-2.5 bg-white/10 text-white border border-white/20 px-4.5 py-1.5 rounded-full shadow-sm mb-6 animate-fade-in">
+            <div className="inline-flex items-center space-x-2.5 bg-white/10 text-white border border-white/20 px-4 py-2 sm:px-4.5 sm:py-1.5 rounded-full shadow-sm mb-7 sm:mb-6 animate-fade-in max-w-full">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
               </span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white">
+              <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.16em] sm:tracking-[0.2em] text-white leading-relaxed">
                 VERIFIED JURISDICTION DESK • PLATINUM REGISTRY PARTNER
               </span>
             </div>
@@ -199,22 +199,22 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center bg-transparent">
             
             {/* Main Editorial Text Block */}
-            <div className="lg:col-span-7 text-center lg:text-left space-y-7">
+            <div className="lg:col-span-7 text-center lg:text-left space-y-6 sm:space-y-7">
               
-              <h1 className="font-sans text-[38px] sm:text-[52px] lg:text-[60px] font-extralight text-white leading-[1.2] tracking-wide">
-                Scale Smarter.<br />
-                <span className="text-emerald-400 font-light">
-                  Grow Faster.
+              <h1 className="hero-brand-headline font-sans text-[43px] sm:text-[60px] lg:text-[72px] text-white leading-[1.05] sm:leading-[1.08] tracking-normal max-w-[360px] sm:max-w-none mx-auto lg:mx-0">
+                Setup Your<br />
+                <span className="text-emerald-400">
+                  Business in UAE
                 </span>
               </h1>
               
               {/* GEO/AEO Rich Descriptive Abstract targeting prime corporate keywords */}
-              <p className="max-w-xl mx-auto lg:mx-0 font-sans text-zinc-100/90 text-[14.5px] sm:text-[16px] leading-[1.7] tracking-wide font-light">
-                The UAE entry point for global founders, Scale Partners is the <strong className="font-semibold text-emerald-400">safest path into the UAE</strong>. We design secure, compliant corporate structures, protect your assets under the 9% corporate tax framework, and manage your entire mainland or free zone licensing process with absolute risk mitigation.
+              <p className="max-w-[330px] sm:max-w-xl mx-auto lg:mx-0 font-sans text-zinc-100/90 text-[15.5px] sm:text-[19px] leading-[1.65] sm:leading-[1.55] tracking-normal font-medium">
+                Start your UAE company with a clear 24-hour launch plan, senior advisor callback, license guidance and banking-ready documentation.
               </p>
 
               {/* Premium Trust Badges Grid (Sovereign Trust Indicators) */}
-              <div className="bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-5 space-y-4 max-w-2xl mx-auto lg:mx-0">
+              <div className="hidden sm:block bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-5 space-y-4 max-w-2xl mx-auto lg:mx-0">
                 {/* Row 1: Key Trust Metrics */}
                 <div className="flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-zinc-200 border-b border-white/10 pb-3">
                   <div className="flex items-center space-x-2">
@@ -266,15 +266,18 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
               </div>
 
               {/* HIGH-PREMIUM INTERACTIVE CTAs */}
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-1 sm:pt-2">
                 <button
                   id="hero_cta_evaluator_prime"
                   onClick={() => setPage('calculator')}
-                  className="w-full sm:w-auto bg-white text-gold-700 hover:opacity-95 hover:scale-[1.015] active:scale-95 px-8 py-4 rounded-full font-sans text-[14.5px] font-bold tracking-tight transition-all duration-300 shadow-lg flex items-center justify-center space-x-2 border-0 cursor-pointer shrink-0"
+                  className="w-full max-w-[330px] sm:w-auto sm:max-w-none bg-white text-gold-700 hover:opacity-95 hover:scale-[1.015] active:scale-95 px-8 py-4 rounded-full font-sans text-[14.5px] font-bold tracking-tight transition-all duration-300 shadow-[0_16px_35px_rgba(0,0,0,0.22)] flex items-center justify-center space-x-2 border-0 cursor-pointer shrink-0"
                 >
                   <span>Initialize 24h Setup Session</span>
                   <ArrowRight className="w-4 h-4 text-gold-500" />
                 </button>
+                <span className="text-[11.5px] sm:text-[12px] text-zinc-200/85 font-medium leading-snug max-w-[310px] sm:max-w-xs">
+                  Next: answer a few setup details, then a senior advisor confirms your route and callback.
+                </span>
               </div>
 
               {/* Reviews & Credibility Bar (GCC and Global Platforms) */}

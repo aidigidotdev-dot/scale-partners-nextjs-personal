@@ -212,3 +212,23 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.hero-brand-headline,
+.hero-brand-headline span,
+.contact-modal-title,
+.contact-modal-title span,
+.process-card-title {
+  font-weight: 800 !important;
+  letter-spacing: 0 !important;
+}
+
+.nav-header-link {
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+}
+
+@media (max-width: 420px) {
+  .hero-brand-headline {
+    font-size: 43px !important;
+  }
+}
