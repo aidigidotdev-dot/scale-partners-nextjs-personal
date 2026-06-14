@@ -204,7 +204,7 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
             <button 
               id="nav_cta_consult"
               onClick={openContactModal}
-              className="bg-brand-grad text-white px-4 xl:px-5 py-3 rounded-full font-sans text-[13px] nav-header-link tracking-tight transition-all duration-300 shadow-sm flex items-center justify-center border-0 hover:scale-[1.015] whitespace-nowrap text-center"
+              className="bg-[#16c96f] hover:bg-[#12b864] text-white px-4 xl:px-5 py-3 rounded-full font-sans text-[13px] nav-header-link tracking-tight transition-all duration-300 shadow-sm flex items-center justify-center border-0 hover:scale-[1.015] whitespace-nowrap text-center"
             >
               <span>Initialize 24h Setup Session</span>
             </button>
