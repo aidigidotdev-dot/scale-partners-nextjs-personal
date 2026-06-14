@@ -101,19 +101,16 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
           {/* Logo Brand Symbol */}
           <div 
             id="brand_logo" 
-            className="flex items-center gap-2.5 cursor-pointer group"
+            className="flex items-center cursor-pointer group"
             onClick={() => handleLinkClick('home')}
           >
             <Image 
               src="/assets/logo_transparent.png" 
               alt="Scale Partners Logo" 
-              width={82} 
+              width={140} 
               height={50} 
               className="object-contain max-h-[54px] w-auto shrink-0 transition-transform group-hover:scale-[1.015]"
             />
-            <span className="brand-wordmark whitespace-nowrap shrink-0 text-[18px] sm:text-[20px] xl:text-[22px] leading-none text-[#07140B]">
-              Scale Partners
-            </span>
           </div>
 
           {/* Desktop Navigation Link Directory */}
@@ -204,7 +201,7 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
             <button 
               id="nav_cta_consult"
               onClick={openContactModal}
-              className="bg-[#16c96f] hover:bg-[#12b864] text-white px-4 xl:px-5 py-3 rounded-full font-sans text-[13px] nav-header-link tracking-tight transition-all duration-300 shadow-sm flex items-center justify-center border-0 hover:scale-[1.015] whitespace-nowrap text-center"
+              className="bg-brand-grad text-white px-4 xl:px-5 py-3 rounded-full font-sans text-[13px] nav-header-link tracking-tight transition-all duration-300 shadow-sm flex items-center justify-center border-0 hover:scale-[1.015] whitespace-nowrap text-center"
             >
               <span>Initialize 24h Setup Session</span>
             </button>

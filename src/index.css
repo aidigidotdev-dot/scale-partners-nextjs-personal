@@ -222,23 +222,12 @@
   letter-spacing: 0 !important;
 }
 
-.brand-wordmark {
-  color: lab(75.0771% -60.7313 19.4147) !important;
-  font-weight: 600 !important;
-  letter-spacing: 0 !important;
-}
-
 .nav-header-link {
   font-weight: 600 !important;
   letter-spacing: 0 !important;
 }
 
 @media (max-width: 420px) {
-  .brand-wordmark {
-    font-size: 16px !important;
-    max-width: 132px;
-  }
-
   .hero-brand-headline {
     font-size: 44px !important;
   }
