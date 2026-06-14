@@ -202,9 +202,9 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
             <div className="lg:col-span-7 text-center lg:text-left space-y-7">
               
               <h1 className="hero-brand-headline font-sans text-[46px] sm:text-[60px] lg:text-[72px] text-white leading-[1.08] tracking-normal">
-                Scale Partners<br />
+                Setup Your<br />
                 <span className="text-emerald-400">
-                  Business Setup
+                  Business in UAE
                 </span>
               </h1>
               
@@ -214,7 +214,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
               </p>
 
               {/* Premium Trust Badges Grid (Sovereign Trust Indicators) */}
-              <div className="bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-5 space-y-4 max-w-2xl mx-auto lg:mx-0">
+              <div className="hidden sm:block bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-5 space-y-4 max-w-2xl mx-auto lg:mx-0">
                 {/* Row 1: Key Trust Metrics */}
                 <div className="flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-zinc-200 border-b border-white/10 pb-3">
                   <div className="flex items-center space-x-2">
