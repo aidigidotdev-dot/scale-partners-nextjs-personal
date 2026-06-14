@@ -213,13 +213,23 @@
   scrollbar-width: none;
 }
 
-.brand-wordmark,
 .hero-brand-headline,
 .hero-brand-headline span,
 .contact-modal-title,
 .contact-modal-title span,
 .process-card-title {
   font-weight: 800 !important;
+  letter-spacing: 0 !important;
+}
+
+.brand-wordmark {
+  color: lab(75.0771% -60.7313 19.4147) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+}
+
+.nav-header-link {
+  font-weight: 600 !important;
   letter-spacing: 0 !important;
 }
 
