@@ -161,12 +161,34 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
               <p className="text-[9.5px] tracking-[0.2em] uppercase font-semibold text-sp-sage mb-1">
                 Scale Smarter. Grow Faster.
               </p>
-              <h1 className="text-2xl lg:text-3xl font-extralight text-sp-forest tracking-tight leading-tight mb-2">
+              <h1 className="contact-modal-title text-2xl lg:text-3xl text-sp-forest tracking-tight leading-tight mb-2">
                 Speak with a <span className="font-semibold text-sp-emerald">Senior Advisor</span>
               </h1>
               <p className="text-[12.5px] text-sp-sage leading-relaxed font-light max-w-xl">
                 Expert solutions that streamline your business, strengthen finances and drive growth. Initiate premium structures, tax advisory templates and secure DET registration pathways.
               </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mb-3">
+              {[
+                { step: "01", title: "Share Details", text: "Tell us your activity, contact and visa needs." },
+                { step: "02", title: "Route Check", text: "We match mainland or free zone options." },
+                { step: "03", title: "Advisor Call", text: "A senior advisor confirms next steps within 15 minutes." }
+              ].map((item) => (
+                <div key={item.step} className="rounded-xl border border-sp-border bg-white px-3 py-2.5 shadow-[0_4px_18px_rgba(18,183,106,0.05)]">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-5 h-5 rounded-full bg-sp-glass text-sp-emerald text-[10px] font-bold flex items-center justify-center">
+                      {item.step}
+                    </span>
+                    <h3 className="process-card-title text-[11px] text-sp-forest leading-none">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p className="text-[10px] text-sp-sage leading-snug font-light">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
             </div>
 
             {/* Callback Intake Form */}

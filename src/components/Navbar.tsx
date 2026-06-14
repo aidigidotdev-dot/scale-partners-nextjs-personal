@@ -101,7 +101,7 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
           {/* Logo Brand Symbol */}
           <div 
             id="brand_logo" 
-            className="flex items-center cursor-pointer group"
+            className="flex items-center gap-2.5 cursor-pointer group"
             onClick={() => handleLinkClick('home')}
           >
             <Image 
@@ -109,8 +109,11 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
               alt="Scale Partners Logo" 
               width={140} 
               height={50} 
-              className="object-contain max-h-[50px] w-auto transition-transform group-hover:scale-[1.015]"
+              className="object-contain max-h-[54px] w-auto transition-transform group-hover:scale-[1.015]"
             />
+            <span className="brand-wordmark text-[18px] sm:text-[20px] lg:text-[21px] leading-none text-[#07140B]">
+              Scale Partners
+            </span>
           </div>
 
           {/* Desktop Navigation Link Directory */}
