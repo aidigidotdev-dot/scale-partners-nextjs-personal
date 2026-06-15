@@ -341,7 +341,12 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                 <div className="space-y-4">
                   
                   {/* Free Zone Package */}
-                  <div className="home-pathway-card bg-white/10 border border-white/15 p-5 rounded-2xl relative transition-all hover:bg-white/15 hover:border-white/25 shadow-xs">
+                  <button
+                    type="button"
+                    onClick={() => setPage('setup-freezone')}
+                    aria-label="Open Free Zone Enterprise setup page"
+                    className="home-pathway-card w-full text-left bg-white/10 border border-white/15 p-5 rounded-2xl relative transition-all hover:bg-white/15 hover:border-white/25 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-emerald-300/50 shadow-xs cursor-pointer"
+                  >
                     <div className="flex justify-between items-start mb-2">
                       <div>
                         <span className="text-[10px] uppercase font-mono tracking-wider text-emerald-300 block">Option 1</span>
@@ -363,10 +368,15 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                         <CheckCircle2 className="w-4 h-4 text-[#22C55E] stroke-[2.25] shrink-0" /> 100% Repatriation
                       </span>
                     </div>
-                  </div>
+                  </button>
 
                   {/* Mainland Package */}
-                  <div className="home-pathway-card bg-white/10 border border-white/15 p-5 rounded-2xl relative transition-all hover:bg-white/15 hover:border-white/25 shadow-xs">
+                  <button
+                    type="button"
+                    onClick={() => setPage('setup-mainland')}
+                    aria-label="Open Mainland Corporate Setup page"
+                    className="home-pathway-card w-full text-left bg-white/10 border border-white/15 p-5 rounded-2xl relative transition-all hover:bg-white/15 hover:border-white/25 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-emerald-300/50 shadow-xs cursor-pointer"
+                  >
                     <div className="flex justify-between items-start mb-2">
                       <div>
                         <span className="text-[10px] uppercase font-mono tracking-wider text-emerald-300 block">Option 2</span>
@@ -388,12 +398,17 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                         <CheckCircle2 className="w-4 h-4 text-[#22C55E] stroke-[2.25] shrink-0" /> Local Branch Options
                       </span>
                     </div>
-                  </div>
+                  </button>
 
                 </div>
 
                 {/* DYNAMIC MULTI-YEAR DISCOUNT BANNER */}
-                <div className="home-benefit-banner bg-gradient-to-r from-emerald-500/20 to-[#22C55E]/10 border border-emerald-400/25 p-5 rounded-2xl flex items-center justify-between gap-3 shadow-inner">
+                <button
+                  type="button"
+                  onClick={openContactModal}
+                  aria-label="Claim multi-year license compliance benefit"
+                  className="home-benefit-banner w-full text-left bg-gradient-to-r from-emerald-500/20 to-[#22C55E]/10 border border-emerald-400/25 p-5 rounded-2xl flex items-center justify-between gap-3 shadow-inner transition-all duration-300 hover:border-emerald-300/60 hover:from-emerald-500/28 hover:to-[#22C55E]/16 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-emerald-300/50 cursor-pointer"
+                >
                   <div className="space-y-0.5">
                     <span className="text-[9.5px] font-mono text-emerald-300 uppercase tracking-widest block font-bold">
                       EXCLUSIVE COMPLIANCE BENEFIT
@@ -405,7 +420,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                   <div className="bg-white text-emerald-700 text-[11px] font-bold px-3 py-1.5 rounded-full shadow-sm font-mono tracking-tighter shrink-0 select-none">
                     ACTIVE 2026
                   </div>
-                </div>
+                </button>
 
                 {/* ENQUIRE NOW BUTTON & RATINGS SUMMARY */}
                 <div className="home-panel-actions pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">

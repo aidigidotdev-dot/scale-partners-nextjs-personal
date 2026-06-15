@@ -258,22 +258,52 @@
   }
 
   .home-setup-types {
-    max-width: 340px !important;
-    gap: 10px !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    max-width: 342px !important;
+    gap: 8px !important;
+    overflow: visible !important;
+    padding: 8px !important;
+    border-radius: 999px !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    background: rgba(3, 20, 12, 0.42) !important;
+    backdrop-filter: blur(16px) !important;
   }
 
   .home-setup-types > div {
-    min-height: 64px !important;
-    padding: 12px 14px !important;
-    border-radius: 18px !important;
-    background: rgba(255, 255, 255, 0.075) !important;
-    border-color: rgba(255, 255, 255, 0.16) !important;
+    min-width: 0 !important;
+    min-height: 74px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    padding: 9px 6px !important;
+    border-radius: 999px !important;
+    background: transparent !important;
+    border-color: transparent !important;
+    text-align: center !important;
   }
 
   .home-setup-types > div > div:first-child {
-    width: 38px !important;
-    height: 38px !important;
-    border-radius: 14px !important;
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 999px !important;
+    background: rgba(16, 185, 129, 0.14) !important;
+    box-shadow: inset 0 0 0 1px rgba(52, 211, 153, 0.2) !important;
+  }
+
+  .home-setup-types > div > div:last-child {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .home-setup-types h4 {
+    font-size: 10.5px !important;
+    line-height: 1.1 !important;
+  }
+
+  .home-setup-types p {
+    display: none !important;
   }
 
   .home-reviews {
@@ -287,12 +317,81 @@
   }
 
   .home-trust-strip {
-    padding-top: 20px !important;
+    padding-top: 22px !important;
+    padding-bottom: 18px !important;
   }
 
   .home-trust-strip-card {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    padding: 10px !important;
     margin-top: 0 !important;
-    border-radius: 22px !important;
+    border-radius: 26px !important;
+    border-color: rgba(18, 183, 106, 0.18) !important;
+    background: linear-gradient(145deg, #07140B 0%, #0B2E16 62%, #0C3A20 100%) !important;
+    box-shadow: 0 22px 55px rgba(7, 20, 11, 0.18) !important;
+  }
+
+  .home-trust-strip-card > div {
+    min-height: 112px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 9px !important;
+    padding: 14px 10px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px !important;
+    background: rgba(255, 255, 255, 0.055) !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  .home-trust-strip-card > div:first-child {
+    grid-column: 1 / -1 !important;
+    min-height: 94px !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    padding: 16px 18px !important;
+    background: linear-gradient(90deg, rgba(18, 183, 106, 0.22), rgba(255, 255, 255, 0.055)) !important;
+  }
+
+  .home-trust-strip-card > div > div:first-child {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 16px !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: #34D399 !important;
+  }
+
+  .home-trust-strip-card > div:first-child > div:first-child {
+    width: 48px !important;
+    height: 48px !important;
+    background: rgba(52, 211, 153, 0.18) !important;
+  }
+
+  .home-trust-strip-card > div > div:last-child {
+    text-align: center !important;
+  }
+
+  .home-trust-strip-card > div:first-child > div:last-child {
+    text-align: left !important;
+  }
+
+  .home-trust-strip-card > div > div:last-child > div:first-child {
+    color: #ffffff !important;
+    font-size: 21px !important;
+    line-height: 1 !important;
+  }
+
+  .home-trust-strip-card > div:first-child > div:last-child > div:first-child {
+    font-size: 26px !important;
+  }
+
+  .home-trust-strip-card > div > div:last-child > div:last-child {
+    color: rgba(255, 255, 255, 0.68) !important;
+    font-size: 11px !important;
+    margin-top: 5px !important;
   }
 }
 
