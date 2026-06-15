@@ -33,8 +33,8 @@ export default function GovernmentDepartments() {
   ];
 
   return (
-    <section id="government_departments" className="py-16 bg-white font-sans text-left border-b border-zinc-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="government_departments" className="home-page-section py-16 bg-white font-sans text-left border-b border-zinc-100">
+      <div className="home-wide-container max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
         
         {/* Section Heading */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">

@@ -162,7 +162,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
     <div className="relative bg-white font-sans">
       
       {/* HERO REGION WITH VIDEO BACKGROUND */}
-      <div className="relative pt-[96px] sm:pt-[110px] pb-12 sm:pb-16 overflow-hidden text-white bg-[#07140B]">
+      <div className="home-hero relative pt-[88px] sm:pt-[96px] lg:pt-[104px] pb-10 sm:pb-12 lg:pb-14 overflow-hidden text-white bg-[#07140B]">
         
         {/* VIDEO BACKGROUND */}
         <video
@@ -180,10 +180,10 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
         
 
 
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-30">
+        <div className="home-hero-inner max-w-[1760px] mx-auto px-5 sm:px-7 lg:px-8 xl:px-10 relative z-30">
           
           {/* TOP LEVEL TAGS: Trust Endorsement Indicator */}
-          <div className="flex justify-center lg:justify-start">
+          <div className="hidden">
             <div className="inline-flex items-center space-x-2.5 bg-white/10 text-white border border-white/20 px-4 py-2 sm:px-4.5 sm:py-1.5 rounded-full shadow-sm mb-7 sm:mb-6 animate-fade-in max-w-full">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -196,12 +196,12 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
           </div>
 
           {/* HERO COPY GRID - Fully optimized for SEO, GEO, AEO queries */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center bg-transparent">
+          <div className="home-hero-grid grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-20 items-center bg-transparent pt-8 sm:pt-10 lg:pt-8 xl:pt-10">
             
             {/* Main Editorial Text Block */}
-            <div className="lg:col-span-7 text-center lg:text-left space-y-6 sm:space-y-7">
+            <div className="home-hero-copy lg:col-span-7 text-center lg:text-left space-y-5 sm:space-y-6">
               
-              <h1 className="hero-brand-headline font-sans text-[43px] sm:text-[60px] lg:text-[72px] text-white leading-[1.05] sm:leading-[1.08] tracking-normal max-w-[360px] sm:max-w-none mx-auto lg:mx-0">
+              <h1 className="hero-brand-headline font-sans text-[43px] sm:text-[58px] lg:text-[66px] xl:text-[72px] text-white leading-[1.05] sm:leading-[1.08] tracking-normal max-w-[360px] sm:max-w-none mx-auto lg:mx-0">
                 Setup Your<br />
                 <span className="text-emerald-400">
                   Business in UAE
@@ -209,60 +209,29 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
               </h1>
               
               {/* GEO/AEO Rich Descriptive Abstract targeting prime corporate keywords */}
-              <p className="max-w-[330px] sm:max-w-xl mx-auto lg:mx-0 font-sans text-zinc-100/90 text-[15.5px] sm:text-[19px] leading-[1.65] sm:leading-[1.55] tracking-normal font-medium">
+              <p className="home-hero-lede max-w-[330px] sm:max-w-xl lg:max-w-[600px] xl:max-w-[620px] mx-auto lg:mx-0 font-sans text-zinc-100/90 text-[15.5px] sm:text-[18px] lg:text-[17.5px] xl:text-[18.5px] leading-[1.6] sm:leading-[1.5] tracking-normal font-medium">
                 Start your UAE company with a clear 24-hour launch plan, senior advisor callback, license guidance and banking-ready documentation.
               </p>
 
-              {/* Premium Trust Badges Grid (Sovereign Trust Indicators) */}
-              <div className="hidden sm:block bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-5 space-y-4 max-w-2xl mx-auto lg:mx-0">
-                {/* Row 1: Key Trust Metrics */}
-                <div className="flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-zinc-200 border-b border-white/10 pb-3">
-                  <div className="flex items-center space-x-2">
-                    <Users className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span className="font-light">AED 8B+ Processed</span>
-                  </div>
-                  <div className="hidden sm:block text-white/20">|</div>
-                  <div className="flex items-center space-x-2">
-                    <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span className="font-light">30,000+ Companies</span>
-                  </div>
-                  <div className="hidden sm:block text-white/20">|</div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span className="font-light">12+ Years Operating</span>
-                  </div>
-                </div>
-
-                {/* Row 2: Setup Portfolios */}
-                <div className="grid grid-cols-3 gap-4 text-left">
-                  <div className="flex items-center space-x-2.5">
-                    <div className="p-2 bg-emerald-500/10 rounded-xl text-emerald-400 shrink-0">
-                      <Building2 className="w-5 h-5" />
+              <div className="home-setup-types grid grid-cols-1 sm:grid-cols-3 gap-2.5 max-w-2xl lg:max-w-[590px] mx-auto lg:mx-0">
+                {[
+                  { icon: Building2, title: "Free Zone", subtitle: "100% Ownership" },
+                  { icon: Globe, title: "Mainland", subtitle: "Trade Anywhere" },
+                  { icon: Shield, title: "Offshore", subtitle: "Global Structuring" }
+                ].map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.title} className="group flex items-center gap-3 rounded-full border border-white/12 bg-black/10 px-3.5 py-2.5 backdrop-blur-md transition-all duration-300 hover:border-emerald-300/35 hover:bg-white/[0.08]">
+                      <div className="w-8 h-8 rounded-full border border-emerald-300/20 bg-emerald-300/10 text-emerald-300 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-emerald-400 group-hover:text-[#07140B] group-hover:border-emerald-300">
+                        <Icon className="w-4 h-4" />
+                      </div>
+                      <div className="text-left">
+                        <h4 className="text-[12.5px] font-semibold text-white leading-tight">{item.title}</h4>
+                        <p className="text-[10px] text-zinc-300/85 leading-tight">{item.subtitle}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-[13px] font-bold text-white leading-tight">Free Zone</h4>
-                      <p className="text-[10px] text-zinc-400 font-sans leading-normal">100% Ownership</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-2.5">
-                    <div className="p-2 bg-emerald-500/10 rounded-xl text-emerald-400 shrink-0">
-                      <Globe className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="text-[13px] font-bold text-white leading-tight">Mainland</h4>
-                      <p className="text-[10px] text-zinc-400 font-sans leading-normal">Trade Anywhere</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-2.5">
-                    <div className="p-2 bg-emerald-500/10 rounded-xl text-emerald-400 shrink-0">
-                      <Shield className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="text-[13px] font-bold text-white leading-tight">Offshore</h4>
-                      <p className="text-[10px] text-zinc-400 font-sans leading-normal">Global Structuring</p>
-                    </div>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
 
               {/* HIGH-PREMIUM INTERACTIVE CTAs */}
@@ -270,18 +239,15 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                 <button
                   id="hero_cta_evaluator_prime"
                   onClick={() => setPage('calculator')}
-                  className="w-full max-w-[330px] sm:w-auto sm:max-w-none bg-white text-gold-700 hover:opacity-95 hover:scale-[1.015] active:scale-95 px-8 py-4 rounded-full font-sans text-[14.5px] font-bold tracking-tight transition-all duration-300 shadow-[0_16px_35px_rgba(0,0,0,0.22)] flex items-center justify-center space-x-2 border-0 cursor-pointer shrink-0"
+                  className="home-hero-cta w-full max-w-[330px] sm:w-auto sm:max-w-none bg-white text-gold-700 hover:opacity-95 hover:scale-[1.015] active:scale-95 px-8 py-4 rounded-full font-sans text-[14.5px] font-bold tracking-tight transition-all duration-300 shadow-[0_16px_35px_rgba(0,0,0,0.22)] flex items-center justify-center space-x-2 border-0 cursor-pointer shrink-0"
                 >
                   <span>Initialize 24h Setup Session</span>
                   <ArrowRight className="w-4 h-4 text-gold-500" />
                 </button>
-                <span className="text-[11.5px] sm:text-[12px] text-zinc-200/85 font-medium leading-snug max-w-[310px] sm:max-w-xs">
-                  Next: answer a few setup details, then a senior advisor confirms your route and callback.
-                </span>
               </div>
 
               {/* Reviews & Credibility Bar (GCC and Global Platforms) */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-y-4 gap-x-8 pt-6 border-t border-white/10 max-w-2xl mx-auto lg:mx-0">
+              <div className="home-reviews flex flex-wrap items-center justify-center lg:justify-start gap-y-4 gap-x-8 pt-5 border-t border-white/10 max-w-2xl mx-auto lg:mx-0">
                 {/* Google Reviews */}
                 <div className="flex items-center space-x-3 text-left">
                   <svg className="w-5.5 h-5.5 shrink-0" viewBox="0 0 24 24">
@@ -355,9 +321,9 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
             </div>
 
             {/* RIGHT SIDEBAR: HIGHLY INTUITIVE PRESENTATION OF PATHWAYS */}
-            <div className="lg:col-span-5 relative mt-6 lg:mt-0 font-sans text-white text-left">
+            <div className="home-pathway-column lg:col-span-5 relative mt-6 lg:mt-0 font-sans text-white text-left">
               
-              <div className="relative bg-white/12 backdrop-blur-xl border border-white/20 rounded-3xl p-6 sm:p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] shadow-white/5 overflow-hidden space-y-6">
+              <div className="home-pathway-panel relative bg-white/12 backdrop-blur-xl border border-white/20 rounded-3xl p-6 sm:p-8 lg:p-9 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] shadow-white/5 overflow-hidden space-y-6">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/[0.02] rounded-full blur-2xl"></div>
                 
                 <div className="flex items-center justify-between border-b border-white/15 pb-4">
@@ -375,7 +341,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                 <div className="space-y-4">
                   
                   {/* Free Zone Package */}
-                  <div className="bg-white/10 border border-white/15 p-4.5 rounded-2xl relative transition-all hover:bg-white/15 hover:border-white/25 shadow-xs">
+                  <div className="home-pathway-card bg-white/10 border border-white/15 p-5 rounded-2xl relative transition-all hover:bg-white/15 hover:border-white/25 shadow-xs">
                     <div className="flex justify-between items-start mb-2">
                       <div>
                         <span className="text-[10px] uppercase font-mono tracking-wider text-emerald-300 block">Option 1</span>
@@ -386,7 +352,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                         <strong className="text-[17px] font-semibold text-white font-mono leading-none">AED 12,400*</strong>
                       </div>
                     </div>
-                    <p className="text-[11.5px] text-zinc-150 leading-relaxed font-light mb-2.5">
+                    <p className="home-pathway-desc text-[11.5px] text-zinc-150 leading-relaxed font-light mb-2.5">
                       Ideal for tech, web3, and professional consultants. Includes up to 3 allocated partner/employment visas and virtual flexi-desk approval.
                     </p>
                     <div className="flex items-center space-x-4 text-[11px] text-zinc-200">
@@ -400,7 +366,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                   </div>
 
                   {/* Mainland Package */}
-                  <div className="bg-white/10 border border-white/15 p-4.5 rounded-2xl relative transition-all hover:bg-white/15 hover:border-white/25 shadow-xs">
+                  <div className="home-pathway-card bg-white/10 border border-white/15 p-5 rounded-2xl relative transition-all hover:bg-white/15 hover:border-white/25 shadow-xs">
                     <div className="flex justify-between items-start mb-2">
                       <div>
                         <span className="text-[10px] uppercase font-mono tracking-wider text-emerald-300 block">Option 2</span>
@@ -411,7 +377,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                         <strong className="text-[17px] font-semibold text-white font-mono leading-none">AED 21,900*</strong>
                       </div>
                     </div>
-                    <p className="text-[11.5px] text-zinc-150 leading-relaxed font-light mb-2.5">
+                    <p className="home-pathway-desc text-[11.5px] text-zinc-150 leading-relaxed font-light mb-2.5">
                       Required for local UAE physical trade and contract bidding. Unlimited team visas and direct Dubai Economy (DET) registry files coverage.
                     </p>
                     <div className="flex items-center space-x-4 text-[11px] text-zinc-200">
@@ -427,7 +393,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                 </div>
 
                 {/* DYNAMIC MULTI-YEAR DISCOUNT BANNER */}
-                <div className="bg-gradient-to-r from-emerald-500/20 to-[#22C55E]/10 border border-emerald-400/25 p-4 rounded-2xl flex items-center justify-between gap-3 shadow-inner">
+                <div className="home-benefit-banner bg-gradient-to-r from-emerald-500/20 to-[#22C55E]/10 border border-emerald-400/25 p-5 rounded-2xl flex items-center justify-between gap-3 shadow-inner">
                   <div className="space-y-0.5">
                     <span className="text-[9.5px] font-mono text-emerald-300 uppercase tracking-widest block font-bold">
                       EXCLUSIVE COMPLIANCE BENEFIT
@@ -442,7 +408,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                 </div>
 
                 {/* ENQUIRE NOW BUTTON & RATINGS SUMMARY */}
-                <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="home-panel-actions pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <button
                     id="hero_enquire_now_prompt_action"
                     onClick={openContactModal}
@@ -465,11 +431,32 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
         </div>
       </div>
 
+      <section className="home-trust-strip bg-white relative z-20">
+        <div className="home-wide-container max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
+          <div className="home-trust-strip-card grid grid-cols-1 sm:grid-cols-3 overflow-hidden rounded-3xl border border-zinc-200/80 bg-white shadow-[0_22px_60px_rgba(7,20,11,0.08)]">
+              {trustFactors.slice(0, 3).map((factor, index) => {
+                const Icon = index === 0 ? Users : index === 1 ? ShieldCheck : CheckCircle2;
+                return (
+                  <div key={factor.label} className="group flex items-center justify-center gap-4 px-5 py-4 sm:px-6 lg:px-7 border-b sm:border-b-0 sm:border-r last:border-b-0 sm:last:border-r-0 border-zinc-200/70 transition-all duration-300 hover:bg-emerald-50/60 hover:shadow-[0_18px_45px_rgba(18,183,106,0.10)] hover:-translate-y-0.5">
+                    <div className="w-11 h-11 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-emerald-500 group-hover:text-white group-hover:scale-105">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <div className="min-w-0 text-left">
+                      <div className="text-[17px] lg:text-[18px] font-semibold text-zinc-950 leading-tight">{factor.value}</div>
+                      <div className="text-[12px] text-zinc-500 leading-tight mt-0.5">{factor.label}</div>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+      </section>
+
       {/* LIGHT BODY WRAPPER FOR THE REST OF HOMEPAGE */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16 py-12">
+      <div className="home-content-sections home-wide-container max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 relative z-10 space-y-12 lg:space-y-14 py-10 lg:py-12">
 
         {/* SECTION 6: HIGH-AESTHETIC CORE SERVICES BLOCK */}
-        <div className="pt-8 space-y-12">
+        <div className="pt-4 lg:pt-6 space-y-10 lg:space-y-12">
           
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <div className="space-y-3 text-left max-w-2xl">
@@ -767,8 +754,8 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
       <WhyChooseUs />
       <SetupSteps />
       {/* SECTION: ACCOUNTING & TAX SERVICES FOR NEW BUSINESSES IN DUBAI */}
-      <section className="py-20 border-t border-zinc-100 bg-white font-sans text-left relative z-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="home-page-section py-20 border-t border-zinc-100 bg-white font-sans text-left relative z-20">
+        <div className="home-wide-container max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Column: Text Content */}
@@ -829,8 +816,8 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
       </section>
 
       {/* SECTION: VIP CORPORATE BANK ACCOUNT OPENING SECTION */}
-      <section className="py-20 border-t border-zinc-100 bg-zinc-50/40 font-sans text-left relative z-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="home-page-section py-20 border-t border-zinc-100 bg-zinc-50/40 font-sans text-left relative z-20">
+        <div className="home-wide-container max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Column: Colored Bank Logos Grid */}
@@ -900,11 +887,11 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
       </section>
 
       {/* MID-HOME GRADIENT COLOR BREAKER BLOCK (SOVEREIGN VISA & RESIDENCE SERVICES) */}
-      <div className="w-full bg-breaker-parallax-section py-16 text-white my-16 relative overflow-hidden text-left z-20">
+      <div className="home-page-section w-full bg-breaker-parallax-section py-16 text-white my-16 relative overflow-hidden text-left z-20">
         {/* Constellation Canvas style drift backdrop */}
         <div className="absolute inset-0 bg-black/[0.08] mix-blend-overlay"></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
+        <div className="home-wide-container max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 relative z-10 space-y-12">
           
           <div className="max-w-3xl space-y-3">
             <span className="inline-flex items-center space-x-1.5 bg-white/10 text-emerald-300 px-3 py-1 rounded-full border border-white/10 font-mono text-[10px] font-bold uppercase tracking-wider">
