@@ -128,6 +128,36 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
     }
   ];
 
+  const setupPathwayCards = [
+    {
+      title: "Mainland",
+      description: "Trade across the UAE with DET licensing, local contracts, retail access, and scalable visa support.",
+      pageId: 'setup-mainland' as PageId,
+      cta: "Enquire Now",
+      variant: "image",
+      image: "/assets/dubai_skyline_financial.png",
+      action: "modal"
+    },
+    {
+      title: "Free Zone",
+      description: "Launch with 100% foreign ownership, cost-efficient packages, flexible offices, and investor visa pathways.",
+      pageId: 'setup-freezone' as PageId,
+      cta: "View Free Zone Setup",
+      variant: "image",
+      image: "/assets/dubai_skyline_premium.png",
+      action: "page"
+    },
+    {
+      title: "Offshore",
+      description: "Build an international holding, asset protection, or global trading structure with UAE offshore registry guidance.",
+      pageId: 'setup-offshore' as PageId,
+      cta: "View Offshore Setup",
+      variant: "image",
+      image: "/assets/dubai_skyline_financial.png",
+      action: "page"
+    }
+  ];
+
   // Government department logo strip, styled after clean public partner marquees.
   const mainlandLogos = [
     { name: "Abu Dhabi Judicial Department", src: "/assets/inzone-gov-judicial-dept.webp" },
@@ -554,6 +584,68 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* SETUP PATHWAY CARDS */}
+        <section className="py-2 lg:py-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-7">
+            {setupPathwayCards.map((card) => (
+              <button
+                key={card.title}
+                type="button"
+                onClick={() => card.action === "modal" ? openContactModal() : setPage(card.pageId)}
+                className={`group relative min-h-[320px] sm:min-h-[360px] lg:min-h-[410px] overflow-hidden rounded-[22px] text-left shadow-[0_24px_60px_rgba(7,20,11,0.10)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_80px_rgba(7,20,11,0.16)] focus:outline-none focus:ring-2 focus:ring-emerald-400/60 cursor-pointer ${
+                  card.variant === "solid"
+                    ? "bg-[#062313] border border-emerald-400/15"
+                    : "bg-zinc-950 border border-zinc-200/70"
+                }`}
+              >
+                {card.image && (
+                  <>
+                    <Image
+                      src={card.image}
+                      alt={`${card.title} business setup in Dubai`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/5"></div>
+                  </>
+                )}
+
+                <div className={`relative z-10 flex h-full min-h-[320px] sm:min-h-[360px] lg:min-h-[410px] flex-col p-7 sm:p-8 ${
+                  card.variant === "solid"
+                    ? "items-center justify-center text-center"
+                    : "justify-end"
+                }`}>
+                  <div className={card.variant === "solid" ? "max-w-[290px] space-y-5" : "space-y-4"}>
+                    <h3 className={`font-sans font-bold tracking-tight text-white ${
+                      card.variant === "solid"
+                        ? "text-[25px] sm:text-[29px] leading-[1.12]"
+                        : "text-[31px] sm:text-[35px] leading-tight"
+                    }`}>
+                      {card.title}
+                    </h3>
+                    <p className={`leading-relaxed ${
+                      card.variant === "solid"
+                        ? "text-[15.5px] text-white/88"
+                        : "max-w-sm text-[13.5px] text-white/78"
+                    }`}>
+                      {card.description}
+                    </p>
+                    <span className={`inline-flex items-center justify-center gap-2 rounded-full font-bold transition-all duration-300 ${
+                      card.variant === "solid"
+                        ? "bg-emerald-500 px-8 py-3 text-[14px] text-white shadow-[0_14px_30px_rgba(16,185,129,0.26)] group-hover:bg-emerald-400"
+                        : "border border-white/20 bg-white/12 px-5 py-2.5 text-[12.5px] text-white backdrop-blur-md group-hover:border-emerald-300/50 group-hover:bg-emerald-500"
+                    }`}>
+                      {card.cta}
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
+              </button>
+            ))}
           </div>
         </section>
 
