@@ -42,8 +42,8 @@ export default function SetupSteps() {
   ];
 
   return (
-    <section id="business_setup_steps" className="relative py-16 bg-[#FBFBFD] border-b border-zinc-100 font-sans text-left">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="business_setup_steps" className="home-page-section relative py-16 bg-[#FBFBFD] border-b border-zinc-100 font-sans text-left">
+      <div className="home-wide-container max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
         
         {/* Editorial Title */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">

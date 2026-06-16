@@ -27,7 +27,6 @@ import {
 import WhyChooseUs from './WhyChooseUs';
 import SetupSteps from './SetupSteps';
 import LeadershipTeam from './LeadershipTeam';
-import RecentBlogs from './RecentBlogs';
 import GovernmentDepartments from './GovernmentDepartments';
 import OurPodcast from './OurPodcast';
 
@@ -129,31 +128,68 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
     }
   ];
 
-  // Mainland Registry Authorities
+  const setupPathwayCards = [
+    {
+      title: "Mainland",
+      description: "Trade across the UAE with DET licensing, local contracts, retail access, and scalable visa support.",
+      pageId: 'setup-mainland' as PageId,
+      cta: "Enquire Now",
+      variant: "image",
+      image: "/assets/dubai_skyline_financial.png",
+      action: "modal"
+    },
+    {
+      title: "Free Zone",
+      description: "Launch with 100% foreign ownership, cost-efficient packages, flexible offices, and investor visa pathways.",
+      pageId: 'setup-freezone' as PageId,
+      cta: "View Free Zone Setup",
+      variant: "image",
+      image: "/assets/dubai_skyline_premium.png",
+      action: "page"
+    },
+    {
+      title: "Offshore",
+      description: "Build an international holding, asset protection, or global trading structure with UAE offshore registry guidance.",
+      pageId: 'setup-offshore' as PageId,
+      cta: "View Offshore Setup",
+      variant: "image",
+      image: "/assets/dubai_skyline_financial.png",
+      action: "page"
+    }
+  ];
+
+  // Government department logo strip, styled after clean public partner marquees.
   const mainlandLogos = [
-    { name: "Dubai DED", src: "/assets/imgi_103_dubai-ded.jpg" },
-    { name: "Abu Dhabi DED", src: "/assets/imgi_104_abu-dhabi-ded.jpg" },
-    { name: "Sharjah DED", src: "/assets/imgi_107_sharjah-ded.jpg" },
-    { name: "UAQ DED", src: "/assets/imgi_108_uaq-ded.jpg" },
-    { name: "Fujairah DED", src: "/assets/imgi_105_fujairah-ded.jpg" },
-    { name: "RAK Govt", src: "/assets/imgi_106_rak-govt.jpg" }
+    { name: "Abu Dhabi Judicial Department", src: "/assets/inzone-gov-judicial-dept.webp" },
+    { name: "MOHRE", src: "/assets/inzone-gov-mohre.webp" },
+    { name: "UAE Ministry of Economy", src: "/assets/inzone-gov-moe.webp" },
+    { name: "Dubai Courts", src: "/assets/inzone-gov-dubai-courts.webp" },
+    { name: "Dubai Economy and Tourism", src: "/assets/inzone-gov-dubai-economy.webp" },
+    { name: "UAE Ministry of Justice", src: "/assets/inzone-gov-justice.webp" },
+    { name: "UAE Ministry of Foreign Affairs", src: "/assets/inzone-gov-mofa.webp" },
+    { name: "Dubai Land Department", src: "/assets/inzone-gov-land-dept.webp" },
+    { name: "RTA Dubai", src: "/assets/inzone-gov-rta.webp" }
   ];
 
   // Free Zone Registry Authorities
   const freeZoneLogos = [
-    { name: "Meydan", src: "/assets/imgi_29_Meydan.webp" },
-    { name: "IFZA", src: "/assets/imgi_44_IFZA.webp" },
-    { name: "DMCC", src: "/assets/imgi_96_dmcc-fz.jpg" },
-    { name: "DIFC", src: "/assets/imgi_38_DIFC.webp" },
-    { name: "ADGM", src: "/assets/imgi_34_ADGM.webp" },
-    { name: "DAFZ", src: "/assets/imgi_37_DAFZ.webp" },
-    { name: "JAFZA", src: "/assets/imgi_45_JAFZA.webp" },
-    { name: "DSO", src: "/assets/imgi_40_Dubai-silicon.webp" },
-    { name: "DWTC", src: "/assets/imgi_42_DWTC.webp" },
-    { name: "Shams", src: "/assets/imgi_32_SHAMS.webp" },
-    { name: "RAKEZ", src: "/assets/imgi_30_RAKEZ.webp" },
-    { name: "SRTIP", src: "/assets/imgi_33_SRTIP.webp" },
-    { name: "SAIF", src: "/assets/imgi_31_SAIF.webp" }
+    { name: "Meydan", src: "/assets/inzone-partner-meydan.webp" },
+    { name: "IFZA", src: "/assets/inzone-partner-ifza.webp" },
+    { name: "DIFC", src: "/assets/inzone-partner-difc.webp" },
+    { name: "ADGM", src: "/assets/inzone-partner-adgm.webp" },
+    { name: "DAFZ", src: "/assets/inzone-partner-dafz.webp" },
+    { name: "JAFZA", src: "/assets/inzone-partner-jafza.webp" },
+    { name: "DTEC", src: "/assets/inzone-partner-dtec.webp" },
+    { name: "DSO", src: "/assets/inzone-partner-dubai-silicon.webp" },
+    { name: "Dubai South", src: "/assets/inzone-partner-dubai-south.webp" },
+    { name: "DWTC", src: "/assets/inzone-partner-dwtc.webp" },
+    { name: "Hamriyah", src: "/assets/inzone-partner-hamriyah.webp" },
+    { name: "KIZAD", src: "/assets/inzone-partner-kizad.webp" },
+    { name: "Shams", src: "/assets/inzone-partner-shams.webp" },
+    { name: "RAKEZ", src: "/assets/inzone-partner-rakez.webp" },
+    { name: "SRTIP", src: "/assets/inzone-partner-srtip.webp" },
+    { name: "SAIF", src: "/assets/inzone-partner-saif.webp" },
+    { name: "Ajman Free Zone", src: "/assets/inzone-partner-ajman-free-zone.webp" }
   ];
 
 
@@ -162,7 +198,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
     <div className="relative bg-white font-sans">
       
       {/* HERO REGION WITH VIDEO BACKGROUND */}
-      <div className="relative pt-[96px] sm:pt-[110px] pb-12 sm:pb-16 overflow-hidden text-white bg-[#07140B]">
+      <div className="home-hero relative pt-[88px] sm:pt-[96px] lg:pt-[104px] pb-10 sm:pb-12 lg:pb-14 overflow-hidden text-white bg-[#07140B]">
         
         {/* VIDEO BACKGROUND */}
         <video
@@ -180,10 +216,10 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
         
 
 
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-30">
+        <div className="home-hero-inner max-w-[1760px] mx-auto px-5 sm:px-7 lg:px-8 xl:px-10 relative z-30">
           
           {/* TOP LEVEL TAGS: Trust Endorsement Indicator */}
-          <div className="flex justify-center lg:justify-start">
+          <div className="hidden">
             <div className="inline-flex items-center space-x-2.5 bg-white/10 text-white border border-white/20 px-4 py-2 sm:px-4.5 sm:py-1.5 rounded-full shadow-sm mb-7 sm:mb-6 animate-fade-in max-w-full">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -196,12 +232,12 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
           </div>
 
           {/* HERO COPY GRID - Fully optimized for SEO, GEO, AEO queries */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center bg-transparent">
+          <div className="home-hero-grid grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-20 items-center bg-transparent pt-8 sm:pt-10 lg:pt-8 xl:pt-10">
             
             {/* Main Editorial Text Block */}
-            <div className="lg:col-span-7 text-center lg:text-left space-y-6 sm:space-y-7">
+            <div className="home-hero-copy lg:col-span-7 text-center lg:text-left space-y-5 sm:space-y-6">
               
-              <h1 className="hero-brand-headline font-sans text-[43px] sm:text-[60px] lg:text-[72px] text-white leading-[1.05] sm:leading-[1.08] tracking-normal max-w-[360px] sm:max-w-none mx-auto lg:mx-0">
+              <h1 className="hero-brand-headline font-sans text-[43px] sm:text-[58px] lg:text-[66px] xl:text-[72px] text-white leading-[1.05] sm:leading-[1.08] tracking-normal max-w-[360px] sm:max-w-none mx-auto lg:mx-0">
                 Setup Your<br />
                 <span className="text-emerald-400">
                   Business in UAE
@@ -209,79 +245,45 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
               </h1>
               
               {/* GEO/AEO Rich Descriptive Abstract targeting prime corporate keywords */}
-              <p className="max-w-[330px] sm:max-w-xl mx-auto lg:mx-0 font-sans text-zinc-100/90 text-[15.5px] sm:text-[19px] leading-[1.65] sm:leading-[1.55] tracking-normal font-medium">
+              <p className="home-hero-lede max-w-[330px] sm:max-w-xl lg:max-w-[600px] xl:max-w-[620px] mx-auto lg:mx-0 font-sans text-zinc-100/90 text-[15.5px] sm:text-[18px] lg:text-[17.5px] xl:text-[18.5px] leading-[1.6] sm:leading-[1.5] tracking-normal font-medium">
                 Start your UAE company with a clear 24-hour launch plan, senior advisor callback, license guidance and banking-ready documentation.
               </p>
 
-              {/* Premium Trust Badges Grid (Sovereign Trust Indicators) */}
-              <div className="hidden sm:block bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-5 space-y-4 max-w-2xl mx-auto lg:mx-0">
-                {/* Row 1: Key Trust Metrics */}
-                <div className="flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-zinc-200 border-b border-white/10 pb-3">
-                  <div className="flex items-center space-x-2">
-                    <Users className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span className="font-light">AED 8B+ Processed</span>
-                  </div>
-                  <div className="hidden sm:block text-white/20">|</div>
-                  <div className="flex items-center space-x-2">
-                    <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span className="font-light">30,000+ Companies</span>
-                  </div>
-                  <div className="hidden sm:block text-white/20">|</div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span className="font-light">12+ Years Operating</span>
-                  </div>
-                </div>
-
-                {/* Row 2: Setup Portfolios */}
-                <div className="grid grid-cols-3 gap-4 text-left">
-                  <div className="flex items-center space-x-2.5">
-                    <div className="p-2 bg-emerald-500/10 rounded-xl text-emerald-400 shrink-0">
-                      <Building2 className="w-5 h-5" />
+              <div className="home-setup-types grid grid-cols-1 sm:grid-cols-3 gap-2.5 max-w-2xl lg:max-w-[590px] mx-auto lg:mx-0">
+                {[
+                  { icon: Building2, title: "Free Zone", subtitle: "100% Ownership" },
+                  { icon: Globe, title: "Mainland", subtitle: "Trade Anywhere" },
+                  { icon: Shield, title: "Offshore", subtitle: "Global Structuring" }
+                ].map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.title} className="group flex items-center gap-3 rounded-full border border-white/12 bg-black/10 px-3.5 py-2.5 backdrop-blur-md transition-all duration-300 hover:border-emerald-300/35 hover:bg-white/[0.08]">
+                      <div className="w-8 h-8 rounded-full border border-emerald-300/20 bg-emerald-300/10 text-emerald-300 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-emerald-400 group-hover:text-[#07140B] group-hover:border-emerald-300">
+                        <Icon className="w-4 h-4" />
+                      </div>
+                      <div className="text-left">
+                        <h4 className="text-[12.5px] font-semibold text-white leading-tight">{item.title}</h4>
+                        <p className="text-[10px] text-zinc-300/85 leading-tight">{item.subtitle}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-[13px] font-bold text-white leading-tight">Free Zone</h4>
-                      <p className="text-[10px] text-zinc-400 font-sans leading-normal">100% Ownership</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-2.5">
-                    <div className="p-2 bg-emerald-500/10 rounded-xl text-emerald-400 shrink-0">
-                      <Globe className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="text-[13px] font-bold text-white leading-tight">Mainland</h4>
-                      <p className="text-[10px] text-zinc-400 font-sans leading-normal">Trade Anywhere</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-2.5">
-                    <div className="p-2 bg-emerald-500/10 rounded-xl text-emerald-400 shrink-0">
-                      <Shield className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="text-[13px] font-bold text-white leading-tight">Offshore</h4>
-                      <p className="text-[10px] text-zinc-400 font-sans leading-normal">Global Structuring</p>
-                    </div>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
 
               {/* HIGH-PREMIUM INTERACTIVE CTAs */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-1 sm:pt-2">
                 <button
                   id="hero_cta_evaluator_prime"
-                  onClick={() => setPage('calculator')}
-                  className="w-full max-w-[330px] sm:w-auto sm:max-w-none bg-white text-gold-700 hover:opacity-95 hover:scale-[1.015] active:scale-95 px-8 py-4 rounded-full font-sans text-[14.5px] font-bold tracking-tight transition-all duration-300 shadow-[0_16px_35px_rgba(0,0,0,0.22)] flex items-center justify-center space-x-2 border-0 cursor-pointer shrink-0"
+                  onClick={openContactModal}
+                  className="home-hero-cta w-full max-w-[330px] sm:w-auto sm:max-w-none bg-white text-gold-700 hover:opacity-95 hover:scale-[1.015] active:scale-95 px-8 py-4 rounded-full font-sans text-[14.5px] font-bold tracking-tight transition-all duration-300 shadow-[0_16px_35px_rgba(0,0,0,0.22)] flex items-center justify-center space-x-2 border-0 cursor-pointer shrink-0"
                 >
                   <span>Initialize 24h Setup Session</span>
                   <ArrowRight className="w-4 h-4 text-gold-500" />
                 </button>
-                <span className="text-[11.5px] sm:text-[12px] text-zinc-200/85 font-medium leading-snug max-w-[310px] sm:max-w-xs">
-                  Next: answer a few setup details, then a senior advisor confirms your route and callback.
-                </span>
               </div>
 
               {/* Reviews & Credibility Bar (GCC and Global Platforms) */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-y-4 gap-x-8 pt-6 border-t border-white/10 max-w-2xl mx-auto lg:mx-0">
+              <div className="home-reviews flex flex-wrap items-center justify-center lg:justify-start gap-y-4 gap-x-8 pt-5 border-t border-white/10 max-w-2xl mx-auto lg:mx-0">
                 {/* Google Reviews */}
                 <div className="flex items-center space-x-3 text-left">
                   <svg className="w-5.5 h-5.5 shrink-0" viewBox="0 0 24 24">
@@ -355,9 +357,9 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
             </div>
 
             {/* RIGHT SIDEBAR: HIGHLY INTUITIVE PRESENTATION OF PATHWAYS */}
-            <div className="lg:col-span-5 relative mt-6 lg:mt-0 font-sans text-white text-left">
+            <div className="home-pathway-column lg:col-span-5 relative mt-6 lg:mt-0 font-sans text-white text-left">
               
-              <div className="relative bg-white/12 backdrop-blur-xl border border-white/20 rounded-3xl p-6 sm:p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] shadow-white/5 overflow-hidden space-y-6">
+              <div className="home-pathway-panel relative bg-white/12 backdrop-blur-xl border border-white/20 rounded-3xl p-6 sm:p-8 lg:p-9 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] shadow-white/5 overflow-hidden space-y-6">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/[0.02] rounded-full blur-2xl"></div>
                 
                 <div className="flex items-center justify-between border-b border-white/15 pb-4">
@@ -375,7 +377,12 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                 <div className="space-y-4">
                   
                   {/* Free Zone Package */}
-                  <div className="bg-white/10 border border-white/15 p-4.5 rounded-2xl relative transition-all hover:bg-white/15 hover:border-white/25 shadow-xs">
+                  <button
+                    type="button"
+                    onClick={() => setPage('setup-freezone')}
+                    aria-label="Open Free Zone Enterprise setup page"
+                    className="home-pathway-card w-full text-left bg-white/10 border border-white/15 p-5 rounded-2xl relative transition-all hover:bg-white/15 hover:border-white/25 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-emerald-300/50 shadow-xs cursor-pointer"
+                  >
                     <div className="flex justify-between items-start mb-2">
                       <div>
                         <span className="text-[10px] uppercase font-mono tracking-wider text-emerald-300 block">Option 1</span>
@@ -386,7 +393,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                         <strong className="text-[17px] font-semibold text-white font-mono leading-none">AED 12,400*</strong>
                       </div>
                     </div>
-                    <p className="text-[11.5px] text-zinc-150 leading-relaxed font-light mb-2.5">
+                    <p className="home-pathway-desc text-[11.5px] text-zinc-150 leading-relaxed font-light mb-2.5">
                       Ideal for tech, web3, and professional consultants. Includes up to 3 allocated partner/employment visas and virtual flexi-desk approval.
                     </p>
                     <div className="flex items-center space-x-4 text-[11px] text-zinc-200">
@@ -397,10 +404,15 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                         <CheckCircle2 className="w-4 h-4 text-[#22C55E] stroke-[2.25] shrink-0" /> 100% Repatriation
                       </span>
                     </div>
-                  </div>
+                  </button>
 
                   {/* Mainland Package */}
-                  <div className="bg-white/10 border border-white/15 p-4.5 rounded-2xl relative transition-all hover:bg-white/15 hover:border-white/25 shadow-xs">
+                  <button
+                    type="button"
+                    onClick={() => setPage('setup-mainland')}
+                    aria-label="Open Mainland Corporate Setup page"
+                    className="home-pathway-card w-full text-left bg-white/10 border border-white/15 p-5 rounded-2xl relative transition-all hover:bg-white/15 hover:border-white/25 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-emerald-300/50 shadow-xs cursor-pointer"
+                  >
                     <div className="flex justify-between items-start mb-2">
                       <div>
                         <span className="text-[10px] uppercase font-mono tracking-wider text-emerald-300 block">Option 2</span>
@@ -411,7 +423,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                         <strong className="text-[17px] font-semibold text-white font-mono leading-none">AED 21,900*</strong>
                       </div>
                     </div>
-                    <p className="text-[11.5px] text-zinc-150 leading-relaxed font-light mb-2.5">
+                    <p className="home-pathway-desc text-[11.5px] text-zinc-150 leading-relaxed font-light mb-2.5">
                       Required for local UAE physical trade and contract bidding. Unlimited team visas and direct Dubai Economy (DET) registry files coverage.
                     </p>
                     <div className="flex items-center space-x-4 text-[11px] text-zinc-200">
@@ -422,12 +434,17 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                         <CheckCircle2 className="w-4 h-4 text-[#22C55E] stroke-[2.25] shrink-0" /> Local Branch Options
                       </span>
                     </div>
-                  </div>
+                  </button>
 
                 </div>
 
                 {/* DYNAMIC MULTI-YEAR DISCOUNT BANNER */}
-                <div className="bg-gradient-to-r from-emerald-500/20 to-[#22C55E]/10 border border-emerald-400/25 p-4 rounded-2xl flex items-center justify-between gap-3 shadow-inner">
+                <button
+                  type="button"
+                  onClick={openContactModal}
+                  aria-label="Claim multi-year license compliance benefit"
+                  className="home-benefit-banner w-full text-left bg-gradient-to-r from-emerald-500/20 to-[#22C55E]/10 border border-emerald-400/25 p-5 rounded-2xl flex items-center justify-between gap-3 shadow-inner transition-all duration-300 hover:border-emerald-300/60 hover:from-emerald-500/28 hover:to-[#22C55E]/16 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-emerald-300/50 cursor-pointer"
+                >
                   <div className="space-y-0.5">
                     <span className="text-[9.5px] font-mono text-emerald-300 uppercase tracking-widest block font-bold">
                       EXCLUSIVE COMPLIANCE BENEFIT
@@ -439,10 +456,10 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                   <div className="bg-white text-emerald-700 text-[11px] font-bold px-3 py-1.5 rounded-full shadow-sm font-mono tracking-tighter shrink-0 select-none">
                     ACTIVE 2026
                   </div>
-                </div>
+                </button>
 
                 {/* ENQUIRE NOW BUTTON & RATINGS SUMMARY */}
-                <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="home-panel-actions pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <button
                     id="hero_enquire_now_prompt_action"
                     onClick={openContactModal}
@@ -465,11 +482,175 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
         </div>
       </div>
 
+      <section className="home-trust-strip bg-white relative z-20">
+        <div className="home-wide-container max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
+          <div className="home-trust-strip-card grid grid-cols-1 sm:grid-cols-3 overflow-hidden rounded-3xl border border-zinc-200/80 bg-white shadow-[0_22px_60px_rgba(7,20,11,0.08)]">
+              {trustFactors.slice(0, 3).map((factor, index) => {
+                const Icon = index === 0 ? Users : index === 1 ? ShieldCheck : CheckCircle2;
+                return (
+                  <div key={factor.label} className="group flex items-center justify-center gap-4 px-5 py-4 sm:px-6 lg:px-7 border-b sm:border-b-0 sm:border-r last:border-b-0 sm:last:border-r-0 border-zinc-200/70 transition-all duration-300 hover:bg-emerald-50/60 hover:shadow-[0_18px_45px_rgba(18,183,106,0.10)] hover:-translate-y-0.5">
+                    <div className="w-11 h-11 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-emerald-500 group-hover:text-white group-hover:scale-105">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <div className="min-w-0 text-left">
+                      <div className="text-[17px] lg:text-[18px] font-semibold text-zinc-950 leading-tight">{factor.value}</div>
+                      <div className="text-[12px] text-zinc-500 leading-tight mt-0.5">{factor.label}</div>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+      </section>
+
       {/* LIGHT BODY WRAPPER FOR THE REST OF HOMEPAGE */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16 py-12">
+      <div className="home-content-sections home-wide-container max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 relative z-10 space-y-12 lg:space-y-14 py-10 lg:py-12">
+
+        {/* COMPANY ABOUT SECTION */}
+        <section className="py-6 lg:py-8 border-b border-zinc-200/70">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-6 space-y-5 text-left">
+              <span className="inline-flex items-center space-x-1.5 bg-emerald-500/10 text-[#08854C] px-3.5 py-1.5 rounded-full border border-emerald-500/20 font-mono text-[10px] font-bold uppercase tracking-wider">
+                <ShieldCheck className="w-3.5 h-3.5" />
+                <span>About Scale Partners UAE</span>
+              </span>
+              <div className="space-y-3">
+                <h2 className="text-[31px] sm:text-[40px] font-serif font-semibold text-zinc-900 tracking-tight leading-tight max-w-2xl">
+                  About Scale Partners Corporate Advisory
+                </h2>
+                <p className="text-[15px] text-zinc-500 leading-relaxed max-w-2xl">
+                  Scale Partners is a UAE corporate advisory firm helping founders, investors, and growing companies establish a confident presence in Dubai and across the Emirates.
+                </p>
+                <p className="text-[15px] text-zinc-500 leading-relaxed max-w-2xl">
+                  Our team combines company formation support, regulatory coordination, tax awareness, banking preparation, and residency planning into one practical advisory desk.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl">
+                {[
+                  { icon: FileText, label: "License route" },
+                  { icon: Shield, label: "Compliance file" },
+                  { icon: Lock, label: "Banking pack" }
+                ].map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.label} className="flex items-center gap-2.5 rounded-2xl border border-zinc-200 bg-white px-3.5 py-3 shadow-[0_10px_26px_rgba(7,20,11,0.04)]">
+                      <div className="w-9 h-9 rounded-xl bg-emerald-500/10 text-[#08854C] flex items-center justify-center shrink-0">
+                        <Icon className="w-4.5 h-4.5" />
+                      </div>
+                      <span className="text-[12.5px] font-medium text-zinc-800 leading-tight">{item.label}</span>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 pt-1">
+                <button
+                  onClick={openContactModal}
+                  className="w-full sm:w-auto bg-brand-grad text-white px-6 py-3.5 rounded-full text-[13.5px] font-semibold tracking-normal transition-all duration-300 shadow-[0_14px_32px_rgba(18,183,106,0.22)] flex items-center justify-center gap-2 border-0 hover:scale-[1.01] active:scale-95 cursor-pointer"
+                >
+                  <span>Start Your UAE Setup</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+                <span className="text-[12px] text-zinc-500">
+                  Senior advisor callback within 15 minutes.
+                </span>
+              </div>
+            </div>
+
+            <div className="lg:col-span-6">
+              <div className="relative min-h-[340px] sm:min-h-[420px] rounded-3xl overflow-hidden bg-zinc-900 shadow-[0_28px_70px_rgba(7,20,11,0.18)]">
+                <Image
+                  src="/assets/dubai_skyline_financial.png"
+                  alt="Dubai skyline business district"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#07140B]/85 via-[#07140B]/25 to-transparent"></div>
+                <div className="absolute inset-x-0 bottom-0 hidden sm:block p-5 sm:p-6 text-white">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    {[
+                      "Jurisdiction strategy",
+                      "Document preparation",
+                      "Post-setup support"
+                    ].map((item) => (
+                      <div key={item} className="rounded-2xl border border-white/15 bg-white/10 px-3.5 py-3 backdrop-blur-md">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-300 mb-2" />
+                        <span className="text-[11.5px] text-white/90 leading-tight block">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SETUP PATHWAY CARDS */}
+        <section className="py-2 lg:py-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-7">
+            {setupPathwayCards.map((card) => (
+              <button
+                key={card.title}
+                type="button"
+                onClick={() => card.action === "modal" ? openContactModal() : setPage(card.pageId)}
+                className={`group relative min-h-[320px] sm:min-h-[360px] lg:min-h-[410px] overflow-hidden rounded-[22px] text-left shadow-[0_24px_60px_rgba(7,20,11,0.10)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_80px_rgba(7,20,11,0.16)] focus:outline-none focus:ring-2 focus:ring-emerald-400/60 cursor-pointer ${
+                  card.variant === "solid"
+                    ? "bg-[#062313] border border-emerald-400/15"
+                    : "bg-zinc-950 border border-zinc-200/70"
+                }`}
+              >
+                {card.image && (
+                  <>
+                    <Image
+                      src={card.image}
+                      alt={`${card.title} business setup in Dubai`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/5"></div>
+                  </>
+                )}
+
+                <div className={`relative z-10 flex h-full min-h-[320px] sm:min-h-[360px] lg:min-h-[410px] flex-col p-7 sm:p-8 ${
+                  card.variant === "solid"
+                    ? "items-center justify-center text-center"
+                    : "justify-end"
+                }`}>
+                  <div className={card.variant === "solid" ? "max-w-[290px] space-y-5" : "space-y-4"}>
+                    <h3 className={`font-sans font-bold tracking-tight text-white ${
+                      card.variant === "solid"
+                        ? "text-[25px] sm:text-[29px] leading-[1.12]"
+                        : "text-[31px] sm:text-[35px] leading-tight"
+                    }`}>
+                      {card.title}
+                    </h3>
+                    <p className={`leading-relaxed ${
+                      card.variant === "solid"
+                        ? "text-[15.5px] text-white/88"
+                        : "max-w-sm text-[13.5px] text-white/78"
+                    }`}>
+                      {card.description}
+                    </p>
+                    <span className={`inline-flex items-center justify-center gap-2 rounded-full font-bold transition-all duration-300 ${
+                      card.variant === "solid"
+                        ? "bg-emerald-500 px-8 py-3 text-[14px] text-white shadow-[0_14px_30px_rgba(16,185,129,0.26)] group-hover:bg-emerald-400"
+                        : "border border-white/20 bg-white/12 px-5 py-2.5 text-[12.5px] text-white backdrop-blur-md group-hover:border-emerald-300/50 group-hover:bg-emerald-500"
+                    }`}>
+                      {card.cta}
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+        </section>
 
         {/* SECTION 6: HIGH-AESTHETIC CORE SERVICES BLOCK */}
-        <div className="pt-8 space-y-12">
+        <div className="pt-4 lg:pt-6 space-y-10 lg:space-y-12">
           
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <div className="space-y-3 text-left max-w-2xl">
@@ -579,28 +760,32 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
 
           {/* LICENSING AUTHORITIES LOGO MARQUEE */}
           <div className="pt-10 border-t border-zinc-150 space-y-6">
-            <div className="text-center space-y-1">
-              <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#08854C] font-bold block">
-                Authorized Mainland Registry Departments
-              </span>
-              <p className="text-[11.5px] text-zinc-400 font-sans">
-                Scale Partners integrates official mainland company formations directly with prime UAE Department of Economic Development (DED) branches.
+            <div className="text-center space-y-2">
+              <h2 className="text-[20px] sm:text-[24px] font-semibold tracking-normal text-zinc-900 leading-tight">
+                Authorized Government Departments
+              </h2>
+              <p className="text-[13px] sm:text-[14px] text-zinc-500 font-sans leading-relaxed max-w-2xl mx-auto">
+                We support setup and compliance workflows across key UAE government departments.
               </p>
             </div>
 
             {/* Auto-scroll marquee for mainland authorities */}
-            <div className="w-full overflow-hidden relative py-4 select-none">
-              <div className="flex animate-marquee gap-4 items-center">
+            <div className="w-full overflow-hidden relative py-5 select-none">
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white to-transparent"></div>
+              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent"></div>
+              <div className="flex animate-marquee gap-7 items-center">
                 {[...mainlandLogos, ...mainlandLogos].map((logo, indx) => (
                   <div 
                     key={indx} 
-                    className="h-20 w-[180px] shrink-0 relative flex items-center justify-center transition-all"
+                    className="h-[104px] w-[370px] shrink-0 relative transition-transform duration-300 hover:scale-[1.02]"
                   >
                     <Image 
                       src={logo.src} 
                       alt={logo.name} 
                       fill
-                      sizes="180px"
+                      sizes="370px"
+                      quality={100}
+                      unoptimized
                       className="object-contain transition-all duration-300" 
                     />
                   </div>
@@ -708,67 +893,76 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
               </div>
             ))}
           </div>
-                {/* Sovereign Free Zone Registry Partners */}
-        <div className="pt-16 border-t border-zinc-200/80 space-y-6 overflow-hidden">
-          <div className="text-center space-y-1">
-            <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#08854C] font-bold block">
-              Authorized Free Zone Registry Partners
-            </span>
-            <p className="text-[11.5px] text-zinc-400 font-sans">
-              Scale Partners integrates official company setups directly with prime UAE Free Zone registrar departments.
-            </p>
-          </div>
-
-          {/* Auto-scroll marquee for free zone authorities */}
-          <div className="w-full overflow-hidden relative py-4 select-none">
-            <div className="flex animate-marquee gap-4 items-center">
-              {[...freeZoneLogos, ...freeZoneLogos].map((logo, indx) => {
-                const pageIdMapping: Record<string, string> = {
-                  Meydan: 'fz-meydan',
-                  IFZA: 'fz-ifza',
-                  DMCC: 'fz-dmcc',
-                  DIFC: 'fz-dwtc',
-                  ADGM: 'fz-dwtc',
-                  DAFZ: 'fz-dwtc',
-                  JAFZA: 'fz-dwtc',
-                  DSO: 'fz-dwtc',
-                  DWTC: 'fz-dwtc',
-                  Shams: 'fz-shams',
-                  RAKEZ: 'fz-rakez',
-                  SRTIP: 'fz-shams',
-                  SAIF: 'fz-shams'
-                };
-                const targetPage = pageIdMapping[logo.name] || 'setup-freezone';
-
-                return (
-                  <div 
-                    key={indx} 
-                    onClick={() => {
-                      setPage(targetPage as PageId);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="h-20 w-[180px] shrink-0 relative flex items-center justify-center transition-all cursor-pointer hover:scale-105"
-                  >
-                    <Image 
-                      src={logo.src} 
-                      alt={logo.name} 
-                      fill
-                      sizes="180px"
-                      className="object-contain transition-all duration-300" 
-                    />
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>  </div>
+        </div>
       </div>
 
       <WhyChooseUs />
+      {/* Sovereign Free Zone Registry Partners */}
+      <section className="home-page-section py-14 bg-white border-b border-zinc-100 overflow-hidden">
+        <div className="home-wide-container max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
+          <div className="space-y-6">
+            <div className="text-center space-y-2">
+              <h2 className="text-[20px] sm:text-[24px] font-semibold tracking-normal text-zinc-900 leading-tight">
+                Authorized Free Zone Registry Partners
+              </h2>
+              <p className="text-[13px] sm:text-[14px] text-zinc-500 font-sans leading-relaxed max-w-2xl mx-auto">
+                Scale Partners supports official company setups across prime UAE free zone registrars.
+              </p>
+            </div>
+
+            {/* Auto-scroll marquee for free zone authorities */}
+            <div className="w-full overflow-hidden relative py-5 select-none">
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white to-transparent"></div>
+              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent"></div>
+              <div className="flex animate-marquee gap-7 items-center">
+                {[...freeZoneLogos, ...freeZoneLogos].map((logo, indx) => {
+                  const pageIdMapping: Record<string, string> = {
+                    Meydan: 'fz-meydan',
+                    IFZA: 'fz-ifza',
+                    DMCC: 'fz-dmcc',
+                    DIFC: 'fz-dwtc',
+                    ADGM: 'fz-dwtc',
+                    DAFZ: 'fz-dwtc',
+                    JAFZA: 'fz-dwtc',
+                    DSO: 'fz-dwtc',
+                    DWTC: 'fz-dwtc',
+                    Shams: 'fz-shams',
+                    RAKEZ: 'fz-rakez',
+                    SRTIP: 'fz-shams',
+                    SAIF: 'fz-shams'
+                  };
+                  const targetPage = pageIdMapping[logo.name] || 'setup-freezone';
+
+                  return (
+                    <div
+                      key={indx}
+                      onClick={() => {
+                        setPage(targetPage as PageId);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      className="h-[104px] w-[370px] shrink-0 relative transition-transform duration-300 cursor-pointer hover:scale-[1.02]"
+                    >
+                      <Image
+                        src={logo.src}
+                        alt={logo.name}
+                        fill
+                        sizes="370px"
+                        quality={100}
+                        unoptimized
+                        className="object-contain transition-all duration-300"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <SetupSteps />
       {/* SECTION: ACCOUNTING & TAX SERVICES FOR NEW BUSINESSES IN DUBAI */}
-      <section className="py-20 border-t border-zinc-100 bg-white font-sans text-left relative z-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="home-page-section py-20 border-t border-zinc-100 bg-white font-sans text-left relative z-20">
+        <div className="home-wide-container max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Column: Text Content */}
@@ -829,8 +1023,8 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
       </section>
 
       {/* SECTION: VIP CORPORATE BANK ACCOUNT OPENING SECTION */}
-      <section className="py-20 border-t border-zinc-100 bg-zinc-50/40 font-sans text-left relative z-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="home-page-section py-20 border-t border-zinc-100 bg-zinc-50/40 font-sans text-left relative z-20">
+        <div className="home-wide-container max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Column: Colored Bank Logos Grid */}
@@ -900,11 +1094,11 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
       </section>
 
       {/* MID-HOME GRADIENT COLOR BREAKER BLOCK (SOVEREIGN VISA & RESIDENCE SERVICES) */}
-      <div className="w-full bg-breaker-parallax-section py-16 text-white my-16 relative overflow-hidden text-left z-20">
+      <div className="home-page-section w-full bg-breaker-parallax-section py-16 text-white my-16 relative overflow-hidden text-left z-20">
         {/* Constellation Canvas style drift backdrop */}
         <div className="absolute inset-0 bg-black/[0.08] mix-blend-overlay"></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
+        <div className="home-wide-container max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 relative z-10 space-y-12">
           
           <div className="max-w-3xl space-y-3">
             <span className="inline-flex items-center space-x-1.5 bg-white/10 text-emerald-300 px-3 py-1 rounded-full border border-white/10 font-mono text-[10px] font-bold uppercase tracking-wider">
@@ -982,7 +1176,6 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
       <LeadershipTeam />
       <GovernmentDepartments />
       <OurPodcast />
-      <RecentBlogs />
 
     </div>
   );
