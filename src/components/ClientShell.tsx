@@ -11,6 +11,7 @@ import SovereignCta from './SovereignCta';
 import SeoFaqBlock from './SeoFaqBlock';
 import SeoEngine from './SeoEngine';
 import ContactForm from './ContactForm';
+import RecentBlogs from './RecentBlogs';
 import { useQuote } from './QuoteProvider';
 import { PageId } from '../types';
 import { X } from 'lucide-react';
@@ -74,6 +75,8 @@ export default function ClientShell({ children }: { children: React.ReactNode })
         {/* FAQs will go at the end of the website */}
         {pageId === 'home' && <SeoFaqBlock setPage={setPage} />}
 
+        {/* Recent blogs placed at the end of the homepage before footer */}
+        {pageId === 'home' && <RecentBlogs />}
 
         {/* Structured Site Directory Footer */}
         <Footer setPage={setPage} openContactModal={openBlankModal} />

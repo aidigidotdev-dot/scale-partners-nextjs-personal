@@ -109,6 +109,65 @@ export default function SeoEngine({ page }: SeoEngineProps) {
         ];
         break;
 
+      case 'business-setup-dubai':
+        title = 'Business Setup in Dubai | Company Formation UAE | Scale Partners';
+        description = 'Detailed business setup in Dubai guide covering mainland, free zone, offshore company formation, licensing, visas, banking, tax, and compliance support.';
+        baseBreadcrumbs.itemListElement.push({
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Business Setup in Dubai",
+          "item": `${siteUrl}/business-setup-dubai`
+        });
+        schemaJson = [
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Business Setup in Dubai",
+            "serviceType": "UAE company formation and corporate advisory",
+            "provider": {
+              "@type": "ProfessionalService",
+              "name": "Scale Partners Corporate Advisory"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "United Arab Emirates"
+            },
+            "description": "Mainland, free zone, and offshore business setup guidance with license, visa, banking, tax, and compliance support.",
+            "url": `${siteUrl}/business-setup-dubai`
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the best option for business setup in Dubai?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The best route depends on business activity, customer location, visa needs, office requirements, and banking profile. Scale Partners compares mainland, free zone, and offshore routes before submission."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does company formation in Dubai take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Simple free zone setups can move quickly once documents are ready. Mainland and regulated activities may require extra approvals, lease steps, or authority review."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can Scale Partners help after the license is issued?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Support can include corporate tax registration, VAT, bookkeeping, bank account preparation, visas, renewals, and ongoing compliance."
+                }
+              }
+            ]
+          }
+        ];
+        break;
+
       case 'setup-mainland':
         title = 'Mainland Business Setup Dubai | Corporate LLC Licensing';
         description = 'Scale your operations under full local commercial clearance. Secure 100% foreign ownership corporate license with full Dubai Department of Economy and Tourism (DET) approvals.';

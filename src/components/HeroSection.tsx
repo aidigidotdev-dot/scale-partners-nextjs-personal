@@ -27,7 +27,6 @@ import {
 import WhyChooseUs from './WhyChooseUs';
 import SetupSteps from './SetupSteps';
 import LeadershipTeam from './LeadershipTeam';
-import RecentBlogs from './RecentBlogs';
 import GovernmentDepartments from './GovernmentDepartments';
 import OurPodcast from './OurPodcast';
 
@@ -129,31 +128,38 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
     }
   ];
 
-  // Mainland Registry Authorities
+  // Government department logo strip, styled after clean public partner marquees.
   const mainlandLogos = [
-    { name: "Dubai DED", src: "/assets/imgi_103_dubai-ded.jpg" },
-    { name: "Abu Dhabi DED", src: "/assets/imgi_104_abu-dhabi-ded.jpg" },
-    { name: "Sharjah DED", src: "/assets/imgi_107_sharjah-ded.jpg" },
-    { name: "UAQ DED", src: "/assets/imgi_108_uaq-ded.jpg" },
-    { name: "Fujairah DED", src: "/assets/imgi_105_fujairah-ded.jpg" },
-    { name: "RAK Govt", src: "/assets/imgi_106_rak-govt.jpg" }
+    { name: "Abu Dhabi Judicial Department", src: "/assets/inzone-gov-judicial-dept.webp" },
+    { name: "MOHRE", src: "/assets/inzone-gov-mohre.webp" },
+    { name: "UAE Ministry of Economy", src: "/assets/inzone-gov-moe.webp" },
+    { name: "Dubai Courts", src: "/assets/inzone-gov-dubai-courts.webp" },
+    { name: "Dubai Economy and Tourism", src: "/assets/inzone-gov-dubai-economy.webp" },
+    { name: "UAE Ministry of Justice", src: "/assets/inzone-gov-justice.webp" },
+    { name: "UAE Ministry of Foreign Affairs", src: "/assets/inzone-gov-mofa.webp" },
+    { name: "Dubai Land Department", src: "/assets/inzone-gov-land-dept.webp" },
+    { name: "RTA Dubai", src: "/assets/inzone-gov-rta.webp" }
   ];
 
   // Free Zone Registry Authorities
   const freeZoneLogos = [
-    { name: "Meydan", src: "/assets/imgi_29_Meydan.webp" },
-    { name: "IFZA", src: "/assets/imgi_44_IFZA.webp" },
-    { name: "DMCC", src: "/assets/imgi_96_dmcc-fz.jpg" },
-    { name: "DIFC", src: "/assets/imgi_38_DIFC.webp" },
-    { name: "ADGM", src: "/assets/imgi_34_ADGM.webp" },
-    { name: "DAFZ", src: "/assets/imgi_37_DAFZ.webp" },
-    { name: "JAFZA", src: "/assets/imgi_45_JAFZA.webp" },
-    { name: "DSO", src: "/assets/imgi_40_Dubai-silicon.webp" },
-    { name: "DWTC", src: "/assets/imgi_42_DWTC.webp" },
-    { name: "Shams", src: "/assets/imgi_32_SHAMS.webp" },
-    { name: "RAKEZ", src: "/assets/imgi_30_RAKEZ.webp" },
-    { name: "SRTIP", src: "/assets/imgi_33_SRTIP.webp" },
-    { name: "SAIF", src: "/assets/imgi_31_SAIF.webp" }
+    { name: "Meydan", src: "/assets/inzone-partner-meydan.webp" },
+    { name: "IFZA", src: "/assets/inzone-partner-ifza.webp" },
+    { name: "DIFC", src: "/assets/inzone-partner-difc.webp" },
+    { name: "ADGM", src: "/assets/inzone-partner-adgm.webp" },
+    { name: "DAFZ", src: "/assets/inzone-partner-dafz.webp" },
+    { name: "JAFZA", src: "/assets/inzone-partner-jafza.webp" },
+    { name: "DTEC", src: "/assets/inzone-partner-dtec.webp" },
+    { name: "DSO", src: "/assets/inzone-partner-dubai-silicon.webp" },
+    { name: "Dubai South", src: "/assets/inzone-partner-dubai-south.webp" },
+    { name: "DWTC", src: "/assets/inzone-partner-dwtc.webp" },
+    { name: "Hamriyah", src: "/assets/inzone-partner-hamriyah.webp" },
+    { name: "KIZAD", src: "/assets/inzone-partner-kizad.webp" },
+    { name: "Shams", src: "/assets/inzone-partner-shams.webp" },
+    { name: "RAKEZ", src: "/assets/inzone-partner-rakez.webp" },
+    { name: "SRTIP", src: "/assets/inzone-partner-srtip.webp" },
+    { name: "SAIF", src: "/assets/inzone-partner-saif.webp" },
+    { name: "Ajman Free Zone", src: "/assets/inzone-partner-ajman-free-zone.webp" }
   ];
 
 
@@ -238,7 +244,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-1 sm:pt-2">
                 <button
                   id="hero_cta_evaluator_prime"
-                  onClick={() => setPage('calculator')}
+                  onClick={openContactModal}
                   className="home-hero-cta w-full max-w-[330px] sm:w-auto sm:max-w-none bg-white text-gold-700 hover:opacity-95 hover:scale-[1.015] active:scale-95 px-8 py-4 rounded-full font-sans text-[14.5px] font-bold tracking-tight transition-all duration-300 shadow-[0_16px_35px_rgba(0,0,0,0.22)] flex items-center justify-center space-x-2 border-0 cursor-pointer shrink-0"
                 >
                   <span>Initialize 24h Setup Session</span>
@@ -470,6 +476,87 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
       {/* LIGHT BODY WRAPPER FOR THE REST OF HOMEPAGE */}
       <div className="home-content-sections home-wide-container max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 relative z-10 space-y-12 lg:space-y-14 py-10 lg:py-12">
 
+        {/* COMPANY ABOUT SECTION */}
+        <section className="py-6 lg:py-8 border-b border-zinc-200/70">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-6 space-y-5 text-left">
+              <span className="inline-flex items-center space-x-1.5 bg-emerald-500/10 text-[#08854C] px-3.5 py-1.5 rounded-full border border-emerald-500/20 font-mono text-[10px] font-bold uppercase tracking-wider">
+                <ShieldCheck className="w-3.5 h-3.5" />
+                <span>About Scale Partners UAE</span>
+              </span>
+              <div className="space-y-3">
+                <h2 className="text-[31px] sm:text-[40px] font-serif font-semibold text-zinc-900 tracking-tight leading-tight max-w-2xl">
+                  About Scale Partners Corporate Advisory
+                </h2>
+                <p className="text-[15px] text-zinc-500 leading-relaxed max-w-2xl">
+                  Scale Partners is a UAE corporate advisory firm helping founders, investors, and growing companies establish a confident presence in Dubai and across the Emirates.
+                </p>
+                <p className="text-[15px] text-zinc-500 leading-relaxed max-w-2xl">
+                  Our team combines company formation support, regulatory coordination, tax awareness, banking preparation, and residency planning into one practical advisory desk.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl">
+                {[
+                  { icon: FileText, label: "License route" },
+                  { icon: Shield, label: "Compliance file" },
+                  { icon: Lock, label: "Banking pack" }
+                ].map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.label} className="flex items-center gap-2.5 rounded-2xl border border-zinc-200 bg-white px-3.5 py-3 shadow-[0_10px_26px_rgba(7,20,11,0.04)]">
+                      <div className="w-9 h-9 rounded-xl bg-emerald-500/10 text-[#08854C] flex items-center justify-center shrink-0">
+                        <Icon className="w-4.5 h-4.5" />
+                      </div>
+                      <span className="text-[12.5px] font-medium text-zinc-800 leading-tight">{item.label}</span>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 pt-1">
+                <button
+                  onClick={openContactModal}
+                  className="w-full sm:w-auto bg-brand-grad text-white px-6 py-3.5 rounded-full text-[13.5px] font-semibold tracking-normal transition-all duration-300 shadow-[0_14px_32px_rgba(18,183,106,0.22)] flex items-center justify-center gap-2 border-0 hover:scale-[1.01] active:scale-95 cursor-pointer"
+                >
+                  <span>Start Your UAE Setup</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+                <span className="text-[12px] text-zinc-500">
+                  Senior advisor callback within 15 minutes.
+                </span>
+              </div>
+            </div>
+
+            <div className="lg:col-span-6">
+              <div className="relative min-h-[340px] sm:min-h-[420px] rounded-3xl overflow-hidden bg-zinc-900 shadow-[0_28px_70px_rgba(7,20,11,0.18)]">
+                <Image
+                  src="/assets/dubai_skyline_financial.png"
+                  alt="Dubai skyline business district"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#07140B]/85 via-[#07140B]/25 to-transparent"></div>
+                <div className="absolute inset-x-0 bottom-0 hidden sm:block p-5 sm:p-6 text-white">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    {[
+                      "Jurisdiction strategy",
+                      "Document preparation",
+                      "Post-setup support"
+                    ].map((item) => (
+                      <div key={item} className="rounded-2xl border border-white/15 bg-white/10 px-3.5 py-3 backdrop-blur-md">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-300 mb-2" />
+                        <span className="text-[11.5px] text-white/90 leading-tight block">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* SECTION 6: HIGH-AESTHETIC CORE SERVICES BLOCK */}
         <div className="pt-4 lg:pt-6 space-y-10 lg:space-y-12">
           
@@ -581,28 +668,32 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
 
           {/* LICENSING AUTHORITIES LOGO MARQUEE */}
           <div className="pt-10 border-t border-zinc-150 space-y-6">
-            <div className="text-center space-y-1">
-              <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#08854C] font-bold block">
-                Authorized Mainland Registry Departments
-              </span>
-              <p className="text-[11.5px] text-zinc-400 font-sans">
-                Scale Partners integrates official mainland company formations directly with prime UAE Department of Economic Development (DED) branches.
+            <div className="text-center space-y-2">
+              <h2 className="text-[20px] sm:text-[24px] font-semibold tracking-normal text-zinc-900 leading-tight">
+                Authorized Government Departments
+              </h2>
+              <p className="text-[13px] sm:text-[14px] text-zinc-500 font-sans leading-relaxed max-w-2xl mx-auto">
+                We support setup and compliance workflows across key UAE government departments.
               </p>
             </div>
 
             {/* Auto-scroll marquee for mainland authorities */}
-            <div className="w-full overflow-hidden relative py-4 select-none">
-              <div className="flex animate-marquee gap-4 items-center">
+            <div className="w-full overflow-hidden relative py-5 select-none">
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white to-transparent"></div>
+              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent"></div>
+              <div className="flex animate-marquee gap-7 items-center">
                 {[...mainlandLogos, ...mainlandLogos].map((logo, indx) => (
                   <div 
                     key={indx} 
-                    className="h-20 w-[180px] shrink-0 relative flex items-center justify-center transition-all"
+                    className="h-[104px] w-[370px] shrink-0 relative transition-transform duration-300 hover:scale-[1.02]"
                   >
                     <Image 
                       src={logo.src} 
                       alt={logo.name} 
                       fill
-                      sizes="180px"
+                      sizes="370px"
+                      quality={100}
+                      unoptimized
                       className="object-contain transition-all duration-300" 
                     />
                   </div>
@@ -710,63 +801,72 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
               </div>
             ))}
           </div>
-                {/* Sovereign Free Zone Registry Partners */}
-        <div className="pt-16 border-t border-zinc-200/80 space-y-6 overflow-hidden">
-          <div className="text-center space-y-1">
-            <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#08854C] font-bold block">
-              Authorized Free Zone Registry Partners
-            </span>
-            <p className="text-[11.5px] text-zinc-400 font-sans">
-              Scale Partners integrates official company setups directly with prime UAE Free Zone registrar departments.
-            </p>
-          </div>
-
-          {/* Auto-scroll marquee for free zone authorities */}
-          <div className="w-full overflow-hidden relative py-4 select-none">
-            <div className="flex animate-marquee gap-4 items-center">
-              {[...freeZoneLogos, ...freeZoneLogos].map((logo, indx) => {
-                const pageIdMapping: Record<string, string> = {
-                  Meydan: 'fz-meydan',
-                  IFZA: 'fz-ifza',
-                  DMCC: 'fz-dmcc',
-                  DIFC: 'fz-dwtc',
-                  ADGM: 'fz-dwtc',
-                  DAFZ: 'fz-dwtc',
-                  JAFZA: 'fz-dwtc',
-                  DSO: 'fz-dwtc',
-                  DWTC: 'fz-dwtc',
-                  Shams: 'fz-shams',
-                  RAKEZ: 'fz-rakez',
-                  SRTIP: 'fz-shams',
-                  SAIF: 'fz-shams'
-                };
-                const targetPage = pageIdMapping[logo.name] || 'setup-freezone';
-
-                return (
-                  <div 
-                    key={indx} 
-                    onClick={() => {
-                      setPage(targetPage as PageId);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="h-20 w-[180px] shrink-0 relative flex items-center justify-center transition-all cursor-pointer hover:scale-105"
-                  >
-                    <Image 
-                      src={logo.src} 
-                      alt={logo.name} 
-                      fill
-                      sizes="180px"
-                      className="object-contain transition-all duration-300" 
-                    />
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>  </div>
+        </div>
       </div>
 
       <WhyChooseUs />
+      {/* Sovereign Free Zone Registry Partners */}
+      <section className="home-page-section py-14 bg-white border-b border-zinc-100 overflow-hidden">
+        <div className="home-wide-container max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
+          <div className="space-y-6">
+            <div className="text-center space-y-2">
+              <h2 className="text-[20px] sm:text-[24px] font-semibold tracking-normal text-zinc-900 leading-tight">
+                Authorized Free Zone Registry Partners
+              </h2>
+              <p className="text-[13px] sm:text-[14px] text-zinc-500 font-sans leading-relaxed max-w-2xl mx-auto">
+                Scale Partners supports official company setups across prime UAE free zone registrars.
+              </p>
+            </div>
+
+            {/* Auto-scroll marquee for free zone authorities */}
+            <div className="w-full overflow-hidden relative py-5 select-none">
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white to-transparent"></div>
+              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent"></div>
+              <div className="flex animate-marquee gap-7 items-center">
+                {[...freeZoneLogos, ...freeZoneLogos].map((logo, indx) => {
+                  const pageIdMapping: Record<string, string> = {
+                    Meydan: 'fz-meydan',
+                    IFZA: 'fz-ifza',
+                    DMCC: 'fz-dmcc',
+                    DIFC: 'fz-dwtc',
+                    ADGM: 'fz-dwtc',
+                    DAFZ: 'fz-dwtc',
+                    JAFZA: 'fz-dwtc',
+                    DSO: 'fz-dwtc',
+                    DWTC: 'fz-dwtc',
+                    Shams: 'fz-shams',
+                    RAKEZ: 'fz-rakez',
+                    SRTIP: 'fz-shams',
+                    SAIF: 'fz-shams'
+                  };
+                  const targetPage = pageIdMapping[logo.name] || 'setup-freezone';
+
+                  return (
+                    <div
+                      key={indx}
+                      onClick={() => {
+                        setPage(targetPage as PageId);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      className="h-[104px] w-[370px] shrink-0 relative transition-transform duration-300 cursor-pointer hover:scale-[1.02]"
+                    >
+                      <Image
+                        src={logo.src}
+                        alt={logo.name}
+                        fill
+                        sizes="370px"
+                        quality={100}
+                        unoptimized
+                        className="object-contain transition-all duration-300"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <SetupSteps />
       {/* SECTION: ACCOUNTING & TAX SERVICES FOR NEW BUSINESSES IN DUBAI */}
       <section className="home-page-section py-20 border-t border-zinc-100 bg-white font-sans text-left relative z-20">
@@ -984,7 +1084,6 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
       <LeadershipTeam />
       <GovernmentDepartments />
       <OurPodcast />
-      <RecentBlogs />
 
     </div>
   );
