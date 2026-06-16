@@ -558,7 +558,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
               </div>
             </div>
 
-            <div className="lg:col-span-6">
+            <div className="hidden lg:block lg:col-span-6">
               <div className="relative min-h-[340px] sm:min-h-[420px] rounded-3xl overflow-hidden bg-zinc-900 shadow-[0_28px_70px_rgba(7,20,11,0.18)]">
                 <Image
                   src="/assets/dubai_skyline_financial.png"
