@@ -18,7 +18,7 @@ export default function SovereignCta({ currentPage, openContactModal }: Sovereig
   // Define WhatsApp Phone Number and Message based on page context
 
   // Define WhatsApp Phone Number and Message based on page context
-  const whatsAppPhone = '97143607999'; // Premium UAE business line
+  const whatsAppPhone = '971552051241'; // Premium UAE business line
   
   // Custom Dynamic Content Generator
   const getCtaContent = () => {

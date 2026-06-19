@@ -251,21 +251,28 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
 
               <div className="home-setup-types grid grid-cols-1 sm:grid-cols-3 gap-2.5 max-w-2xl lg:max-w-[590px] mx-auto lg:mx-0">
                 {[
-                  { icon: Building2, title: "Free Zone", subtitle: "100% Ownership" },
-                  { icon: Globe, title: "Mainland", subtitle: "Trade Anywhere" },
-                  { icon: Shield, title: "Offshore", subtitle: "Global Structuring" }
+                  { icon: Building2, title: "Free Zone", subtitle: "100% Ownership", pageId: 'setup-freezone' as PageId },
+                  { icon: Globe, title: "Mainland", subtitle: "Trade Anywhere", pageId: 'setup-mainland' as PageId },
+                  { icon: Shield, title: "Offshore", subtitle: "Global Structuring", pageId: 'setup-offshore' as PageId }
                 ].map((item) => {
                   const Icon = item.icon;
                   return (
-                    <div key={item.title} className="group flex items-center gap-3 rounded-full border border-white/12 bg-black/10 px-3.5 py-2.5 backdrop-blur-md transition-all duration-300 hover:border-emerald-300/35 hover:bg-white/[0.08]">
+                    <button
+                      key={item.title}
+                      type="button"
+                      onClick={() => setPage(item.pageId)}
+                      aria-label={`Open ${item.title} setup page`}
+                      className="group flex items-center gap-3 rounded-full border border-white/12 bg-black/10 px-3.5 py-2.5 backdrop-blur-md transition-all duration-300 hover:border-emerald-300/35 hover:bg-white/[0.08] cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-300/50"
+                    >
                       <div className="w-8 h-8 rounded-full border border-emerald-300/20 bg-emerald-300/10 text-emerald-300 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-emerald-400 group-hover:text-[#07140B] group-hover:border-emerald-300">
                         <Icon className="w-4 h-4" />
                       </div>
-                      <div className="text-left">
+                      <div className="text-left min-w-0 flex-1">
                         <h4 className="text-[12.5px] font-semibold text-white leading-tight">{item.title}</h4>
                         <p className="text-[10px] text-zinc-300/85 leading-tight">{item.subtitle}</p>
                       </div>
-                    </div>
+                      <ChevronRight className="home-setup-arrow w-4 h-4 text-emerald-200/75 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:text-emerald-100" />
+                    </button>
                   );
                 })}
               </div>
