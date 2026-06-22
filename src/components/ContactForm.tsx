@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import Image from "next/image";
+import Script from "next/script";
 import { 
   Building2, 
   CheckCircle2, 
@@ -38,18 +39,24 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
   const [showConsentError, setShowConsentError] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const fullName = name.trim();
+  const nameParts = fullName.split(/\s+/).filter(Boolean);
+  const crmFirstName = nameParts[0] || "";
+  const crmLastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : nameParts[0] || "";
 
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
     if (!consent) {
+      e.preventDefault();
       setShowConsentError(true);
       return;
     }
     setShowConsentError(false);
-    if (!name || !email || !phone) return;
+    if (!name || !email || !phone) {
+      e.preventDefault();
+      return;
+    }
 
     setLoading(true);
-    // Simulate high-end submission
     setTimeout(() => {
       setLoading(false);
       setIsSubmitted(true);
@@ -58,6 +65,11 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
 
   return (
     <div className="w-full bg-sp-mintBg relative overflow-hidden text-left font-sans">
+      <Script
+        id="wf_anal"
+        src="https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=cbb7d74af16ca230373bb799ddef24925c24a16b4432eefb5b0db46783ca010efa41c5dcebf71d9d67b29217ccec22ffgidb26d5c1186a08fea5061d2fe384767e3569a99866201478a00be28d09e79c452gid8b4f15aafc00f9e2cdba3db53ca7cec459c408f3d84db796e2e75d4546c6f0f9gidd41bebc36940686d375d40be77e78aa080d4e6414c369daa776652cb141583d5&tw=0ac1bcc3a48c6247fd64cbf9f7562559d26ae51378b0d1a30e05bdc3a522aed4"
+        strategy="afterInteractive"
+      />
       {isSubmitted ? (
         <div className="flex flex-col md:flex-row min-h-[500px]">
           {/* Success Info (Left Side) */}
@@ -192,7 +204,27 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
             </div>
 
             {/* Callback Intake Form */}
-            <form onSubmit={handleSubmit} className="space-y-2.5">
+            <iframe name="zoho_crm_lead_target" title="Zoho CRM lead submission" className="hidden" />
+            <form
+              id="webform7452864000000701015"
+              name="WebToLeads7452864000000701015"
+              action="https://crm.zoho.com/crm/WebToLeadForm"
+              method="POST"
+              acceptCharset="UTF-8"
+              target="zoho_crm_lead_target"
+              onSubmit={handleSubmit}
+              className="space-y-2.5"
+            >
+              <input type="hidden" name="xnQsjsdp" value="161079c95565f8d0c2294e3dadb29eb5ef5e551104b178842ac4215ba6a9e22a" />
+              <input type="hidden" name="zc_gad" id="zc_gad" value="" />
+              <input type="hidden" name="xmIwtLD" value="fabfde2720ed89013401fff0d1c12a689bd63f0ca48bcb7cd91fc028b55d38e3b6fbeca3db07275abfa1038b85e0b8d9" />
+              <input type="hidden" name="actionType" value="TGVhZHM=" />
+              <input type="hidden" name="returnURL" value="null" />
+              <input type="hidden" name="First Name" value={crmFirstName} />
+              <input type="hidden" name="Last Name" value={crmLastName} />
+              <input type="hidden" name="Email" value={email} />
+              <input type="hidden" name="Mobile" value={phone} />
+              <input type="hidden" name="aG9uZXlwb3Q" value="" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {/* Full Name */}
                 <div className="space-y-1">
