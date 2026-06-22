@@ -8,6 +8,7 @@ export default function OurPodcast() {
   const [activeEpisode, setActiveEpisode] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [currentTime, setCurrentTime] = useState<number>(0);
+  const [expandedMobileEpisode, setExpandedMobileEpisode] = useState<number | null>(null);
 
   const episodes = [
     {
@@ -66,8 +67,8 @@ export default function OurPodcast() {
   const progressPercent = (currentTime / currentEpisodeDetails.totalSeconds) * 100;
 
   return (
-    <section id="our_podcast" className="py-16 bg-[#FBFBFD] font-sans text-left border-b border-zinc-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="our_podcast" className="home-page-section py-16 bg-[#FBFBFD] font-sans text-left border-b border-zinc-100">
+      <div className="home-wide-container max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -89,24 +90,27 @@ export default function OurPodcast() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* List of episodes (Left) */}
-          <div className="lg:col-span-7 space-y-3 flex flex-col justify-between">
+          <div className="lg:col-span-7 bg-white rounded-3xl border border-zinc-200/70 p-6 sm:p-8 shadow-[0_18px_50px_rgba(15,23,42,0.04)] flex flex-col justify-between h-full">
             <div className="space-y-3">
-              <span className="text-[10px] font-mono uppercase text-zinc-400 font-bold block mb-1">
+              <span className="text-[11px] uppercase text-zinc-500 font-medium block mb-2">
                 CHOOSE AN EPISODE TO PLAY
               </span>
               {episodes.map((ep, idx) => {
                 const isActive = activeEpisode === idx;
                 return (
-                  <div
-                    key={idx}
+                  <div key={idx}>
+                    <div
                     onClick={() => {
+                      if (activeEpisode !== idx) {
+                        setCurrentTime(0);
+                      }
                       setActiveEpisode(idx);
-                      setCurrentTime(0);
+                      setExpandedMobileEpisode((current) => (current === idx ? null : idx));
                     }}
                     className={`p-4 sm:p-5 text-left rounded-2xl border transition-all cursor-pointer flex items-center justify-between gap-4 ${
                       isActive 
-                        ? 'bg-white border-transparent shadow-[0_15px_40px_rgba(18,183,106,0.06)] ring-1 ring-zinc-100' 
-                        : 'bg-zinc-50/50 border-zinc-200 hover:border-zinc-300 hover:bg-white'
+                        ? 'bg-emerald-50/60 border-emerald-100 shadow-[0_15px_40px_rgba(18,183,106,0.06)] ring-1 ring-emerald-100/70' 
+                        : 'bg-zinc-50/70 border-zinc-200 hover:border-zinc-300 hover:bg-white'
                     }`}
                   >
                     <div className="space-y-1">
@@ -131,19 +135,79 @@ export default function OurPodcast() {
                         {isActive && isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5 translate-x-0.5" />}
                       </div>
                     </div>
+                    </div>
+
+                    {isActive && expandedMobileEpisode === idx && (
+                      <div className="lg:hidden mt-3 bg-zinc-900 text-white rounded-2xl p-4 text-left shadow-xl overflow-hidden relative">
+                        <div className="absolute top-0 right-0 w-28 h-28 bg-gold-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                        <div className="relative z-10 space-y-4">
+                          <div className="bg-gradient-to-tr from-zinc-800 to-zinc-950 border border-white/10 aspect-video rounded-xl flex flex-col items-center justify-center relative overflow-hidden">
+                            <Image
+                              src="/assets/podcast_studio_dubai.png"
+                              alt="Podcast Studio Dubai"
+                              fill
+                              className="object-cover opacity-60"
+                            />
+                            <div className="absolute inset-0 bg-black/60"></div>
+                            <div className="relative z-10 flex flex-col items-center text-center p-4">
+                              <Headphones className="w-7 h-7 text-white mb-2" />
+                              <strong className="text-[11px] font-mono text-emerald-300 uppercase block tracking-wider leading-tight">
+                                {currentEpisodeDetails.category}
+                              </strong>
+                              <span className="text-[10.5px] text-zinc-300 mt-1">Host: {currentEpisodeDetails.host}</span>
+                            </div>
+                          </div>
+
+                          <div className="space-y-2">
+                            <h4 className="text-[14px] font-semibold text-white leading-tight">
+                              {currentEpisodeDetails.title}
+                            </h4>
+                            <p className="text-[11.5px] text-zinc-300 leading-relaxed font-light">
+                              {currentEpisodeDetails.summary}
+                            </p>
+                          </div>
+
+                          <div className="space-y-3 pt-3 border-t border-white/10">
+                            <div className="space-y-1.5">
+                              <div className="relative h-1 w-full bg-white/20 rounded-full overflow-hidden">
+                                <div
+                                  className="absolute top-0 left-0 h-full bg-gold-500 transition-all duration-300"
+                                  style={{ width: `${progressPercent}%` }}
+                                />
+                              </div>
+                              <div className="flex items-center justify-between text-[10px] font-mono text-zinc-400">
+                                <span>{formatTime(currentTime)}</span>
+                                <span>{currentEpisodeDetails.duration}</span>
+                              </div>
+                            </div>
+
+                            <button
+                              onClick={(event) => {
+                                event.stopPropagation();
+                                setIsPlaying(!isPlaying);
+                              }}
+                              className="w-full px-5 py-3 bg-gold-500 hover:bg-[#0B2E16] text-white font-bold rounded-xl space-x-1.5 transition-all flex items-center justify-center cursor-pointer active:scale-95"
+                            >
+                              {isPlaying ? <Pause className="w-4 h-4 text-white" /> : <Play className="w-4 h-4 text-white translate-x-0.5" />}
+                              <span>{isPlaying ? "Pause Briefing" : "Listen Now"}</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 );
               })}
             </div>
             
-            <div className="text-[11.5px] text-zinc-400 bg-white/50 border border-zinc-200/50 rounded-xl p-3 inline-flex items-center gap-2 mt-4 select-none">
+            <div className="text-[11.5px] text-zinc-500 bg-zinc-50 border border-zinc-200/70 rounded-xl p-3 inline-flex items-center gap-2 mt-5 select-none">
               <Volume2 className="w-4 h-4 text-gold-500" />
               <span>Available on Spotify, Apple Podcasts, and major corporate advisory archives.</span>
             </div>
           </div>
 
           {/* Premium Visual Player Board (Right) */}
-          <div className="lg:col-span-5 bg-zinc-900 text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden text-left shadow-xl">
+          <div className="hidden lg:flex lg:col-span-5 bg-zinc-900 text-white rounded-3xl p-6 sm:p-8 flex-col justify-between relative overflow-hidden text-left shadow-xl h-full">
             
             {/* Ambient decorative glow effect */}
             <div className="absolute top-0 right-0 w-44 h-44 bg-gold-500/20 rounded-full blur-3xl pointer-events-none"></div>

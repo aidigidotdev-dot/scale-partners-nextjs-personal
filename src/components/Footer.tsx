@@ -130,7 +130,7 @@ export default function Footer({ setPage, openContactModal }: FooterProps) {
             <div className="space-y-2">
               <span className="text-white font-semibold font-mono uppercase tracking-wider text-[10.5px]">Direct Advisory desk</span>
               <p className="leading-relaxed text-zinc-500 flex flex-col space-y-1">
-                <span>WhatsApp: +971 4 360 7999</span>
+                <span>WhatsApp: +971 55 205 1241</span>
                 <span>Landline: 04-360-7999</span>
                 <span>Email: info@fourroadsgroup.com</span>
               </p>

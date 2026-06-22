@@ -5,6 +5,7 @@
 
 export type PageId =
   | 'home'
+  | 'business-setup-dubai'
   | 'setup-mainland'
   | 'setup-freezone'
   | 'setup-offshore'

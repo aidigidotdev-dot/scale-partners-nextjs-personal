@@ -34,6 +34,7 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [sector, setSector] = useState("Technology & Professional Services");
+  const [otherSector, setOtherSector] = useState("");
   const [notes, setNotes] = useState("");
   const [consent, setConsent] = useState(false);
   const [showConsentError, setShowConsentError] = useState(false);
@@ -43,6 +44,27 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
   const nameParts = fullName.split(/\s+/).filter(Boolean);
   const crmFirstName = nameParts[0] || "";
   const crmLastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : nameParts[0] || "";
+
+  const setupPath = [
+    {
+      step: "01",
+      title: "Share details",
+      text: "Contact, sector, notes.",
+      meta: "2 min"
+    },
+    {
+      step: "02",
+      title: "Advisor assigned",
+      text: "Matched to your setup type.",
+      meta: "<15 min"
+    },
+    {
+      step: "03",
+      title: "Plan confirmed",
+      text: "Route, documents, next move.",
+      meta: "24h"
+    }
+  ];
 
   const handleSubmit = (e: FormEvent) => {
     if (!consent) {
@@ -80,8 +102,26 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
             <div className="space-y-3">
               <h3 className="font-serif text-[28px] font-semibold text-sp-forest tracking-tight">Setup Session Initialized</h3>
               <p className="text-[14px] text-sp-sage max-w-sm mx-auto font-sans leading-relaxed">
-                Welcome to Scale Partners. A Senior Onboarding Director has been assigned to your file and will contact you via WhatsApp or email within **15 minutes** to guide your next steps.
+                Your request is in. A senior advisor will contact you within 15 minutes.
               </p>
+            </div>
+            <div className="w-full max-w-md rounded-2xl border border-sp-border bg-white p-4 text-left shadow-[0_10px_30px_rgba(18,183,106,0.08)]">
+              <div className="text-[11px] uppercase tracking-normal text-sp-emerald font-semibold mb-3">
+                Next Steps
+              </div>
+              <div className="space-y-3">
+                {setupPath.map((item) => (
+                  <div key={item.step} className="flex items-start gap-3">
+                    <span className="mt-0.5 w-6 h-6 rounded-full bg-sp-glass text-sp-emerald text-[10px] font-bold flex items-center justify-center shrink-0">
+                      {item.step}
+                    </span>
+                    <div>
+                      <div className="text-[13px] text-sp-forest font-medium leading-tight">{item.title}</div>
+                      <p className="text-[11px] text-sp-sage leading-snug mt-0.5">{item.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
               <div className="text-[11.5px] font-mono text-sp-forest flex items-center space-x-1.5 bg-sp-glass border border-sp-border px-4 py-2 rounded-full font-semibold">
@@ -159,48 +199,23 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
             
             {/* Top Badges Row */}
             <div className="flex flex-wrap items-center gap-2 mb-3">
-              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-sp-glass border border-sp-border text-[9px] tracking-widest uppercase font-semibold text-sp-forest">
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-sp-glass border border-sp-border text-[11px] font-medium text-sp-forest">
                 <Sparkles className="w-3 h-3 text-sp-emerald" />
                 Priority Advisory Desk
               </span>
-              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50/50 border border-sp-border text-[10px] font-medium text-sp-forest">
+              <span className="hidden">
                 <span className="text-amber-500">★★★★★</span> 4.9/5 TrustScore
               </span>
             </div>
 
             {/* Header & Subtitle */}
-            <div className="mb-3">
-              <p className="text-[9.5px] tracking-[0.2em] uppercase font-semibold text-sp-sage mb-1">
-                Scale Smarter. Grow Faster.
-              </p>
+            <div className="mb-4">
               <h1 className="contact-modal-title text-2xl lg:text-3xl text-sp-forest tracking-tight leading-tight mb-2">
                 Speak with a <span className="font-semibold text-sp-emerald">Senior Advisor</span>
               </h1>
-              <p className="text-[12.5px] text-sp-sage leading-relaxed font-light max-w-xl">
-                Expert solutions that streamline your business, strengthen finances and drive growth. Initiate premium structures, tax advisory templates and secure DET registration pathways.
+              <p className="text-[14px] text-sp-sage leading-relaxed font-normal max-w-xl">
+                Enter your details. We will call back within 15 minutes.
               </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mb-3">
-              {[
-                { step: "01", title: "Share Details", text: "Tell us your activity, contact and visa needs." },
-                { step: "02", title: "Route Check", text: "We match mainland or free zone options." },
-                { step: "03", title: "Advisor Call", text: "A senior advisor confirms next steps within 15 minutes." }
-              ].map((item) => (
-                <div key={item.step} className="rounded-xl border border-sp-border bg-white px-3 py-2.5 shadow-[0_4px_18px_rgba(18,183,106,0.05)]">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="w-5 h-5 rounded-full bg-sp-glass text-sp-emerald text-[10px] font-bold flex items-center justify-center">
-                      {item.step}
-                    </span>
-                    <h3 className="process-card-title text-[11px] text-sp-forest leading-none">
-                      {item.title}
-                    </h3>
-                  </div>
-                  <p className="text-[10px] text-sp-sage leading-snug font-light">
-                    {item.text}
-                  </p>
-                </div>
-              ))}
             </div>
 
             {/* Callback Intake Form */}
@@ -227,9 +242,9 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
               <input type="hidden" name="aG9uZXlwb3Q" value="" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {/* Full Name */}
-                <div className="space-y-1">
-                  <label className="block text-[9.5px] tracking-wider uppercase font-semibold text-sp-forest">
-                    Your Full Name <span className="text-red-500">*</span>
+                <div className="space-y-1.5">
+                  <label className="block text-[12px] tracking-normal font-medium text-sp-forest">
+                    Full name <span className="text-red-500">*</span>
                   </label>
                   <input 
                     type="text"
@@ -237,13 +252,13 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
                     placeholder="e.g. Alexander Mercer"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full px-3 py-2 bg-white border border-sp-border rounded-xl text-sm placeholder-gray-400 focus:outline-none focus:border-sp-emerald/40 focus:ring-2 focus:ring-sp-neon/10 transition-all font-light text-sp-forest"
+                    className="w-full px-3.5 py-2.5 bg-white border border-sp-border rounded-xl text-[15px] placeholder-gray-400 focus:outline-none focus:border-sp-emerald/40 focus:ring-2 focus:ring-sp-neon/10 transition-all font-normal text-sp-forest"
                   />
                 </div>
                 {/* Contact Email */}
-                <div className="space-y-1">
-                  <label className="block text-[9.5px] tracking-wider uppercase font-semibold text-sp-forest">
-                    Contact Email <span className="text-red-500">*</span>
+                <div className="space-y-1.5">
+                  <label className="block text-[12px] tracking-normal font-medium text-sp-forest">
+                    Email <span className="text-red-500">*</span>
                   </label>
                   <input 
                     type="email"
@@ -251,16 +266,16 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
                     placeholder="alexander@mercerholdings.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-3 py-2 bg-white border border-sp-border rounded-xl text-sm placeholder-gray-400 focus:outline-none focus:border-sp-emerald/40 focus:ring-2 focus:ring-sp-neon/10 transition-all font-light text-sp-forest"
+                    className="w-full px-3.5 py-2.5 bg-white border border-sp-border rounded-xl text-[15px] placeholder-gray-400 focus:outline-none focus:border-sp-emerald/40 focus:ring-2 focus:ring-sp-neon/10 transition-all font-normal text-sp-forest"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {/* Active Phone / WhatsApp */}
-                <div className="space-y-1">
-                  <label className="block text-[9.5px] tracking-wider uppercase font-semibold text-sp-forest">
-                    Active Phone / WhatsApp <span className="text-red-500">*</span>
+                <div className="space-y-1.5">
+                  <label className="block text-[12px] tracking-normal font-medium text-sp-forest">
+                    Phone / WhatsApp <span className="text-red-500">*</span>
                   </label>
                   <input 
                     type="tel"
@@ -268,24 +283,25 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
                     placeholder="+971 50 123 4567"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-3 py-2 bg-white border border-sp-border rounded-xl text-sm placeholder-gray-400 focus:outline-none focus:border-sp-emerald/40 focus:ring-2 focus:ring-sp-neon/10 transition-all font-light text-sp-forest"
+                    className="w-full px-3.5 py-2.5 bg-white border border-sp-border rounded-xl text-[15px] placeholder-gray-400 focus:outline-none focus:border-sp-emerald/40 focus:ring-2 focus:ring-sp-neon/10 transition-all font-normal text-sp-forest"
                   />
                 </div>
                 {/* Sector / Business Nature */}
-                <div className="space-y-1">
-                  <label className="block text-[9.5px] tracking-wider uppercase font-semibold text-sp-forest">
-                    Sector / Business Nature
+                <div className="space-y-1.5">
+                  <label className="block text-[12px] tracking-normal font-medium text-sp-forest">
+                    Business sector
                   </label>
                   <div className="relative">
                     <select 
                       value={sector}
                       onChange={(e) => setSector(e.target.value)}
-                      className="w-full px-3 py-2 bg-white border border-sp-border rounded-xl text-sm text-sp-forest focus:outline-none focus:border-sp-emerald/40 focus:ring-2 focus:ring-sp-neon/10 transition-all appearance-none font-light"
+                      className="w-full px-3.5 py-2.5 bg-white border border-sp-border rounded-xl text-[15px] text-sp-forest focus:outline-none focus:border-sp-emerald/40 focus:ring-2 focus:ring-sp-neon/10 transition-all appearance-none font-normal"
                     >
                       <option>Technology & Professional Services</option>
                       <option>Finance & Investment</option>
                       <option>Trade & Logistics</option>
                       <option>Real Estate & Development</option>
+                      <option>Other</option>
                     </select>
                     <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none text-sp-sage">
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -296,20 +312,36 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
                 </div>
               </div>
 
-              {/* Operational Notes */}
-              <div className="space-y-1">
-                <div className="flex justify-between items-center">
-                  <label className="block text-[9.5px] tracking-wider uppercase font-semibold text-sp-forest">
-                    Operational Notes / Sector Specifications
+              {sector === "Other" && (
+                <div className="space-y-1.5">
+                  <label className="block text-[12px] tracking-normal font-medium text-sp-forest">
+                    Specify business sector <span className="text-red-500">*</span>
                   </label>
-                  <span className="text-[8px] text-sp-sage uppercase tracking-wider font-semibold">Optional</span>
+                  <input
+                    type="text"
+                    required
+                    placeholder="e.g. Healthcare, education, consulting"
+                    value={otherSector}
+                    onChange={(e) => setOtherSector(e.target.value)}
+                    className="w-full px-3.5 py-2.5 bg-white border border-sp-border rounded-xl text-[15px] placeholder-gray-400 focus:outline-none focus:border-sp-emerald/40 focus:ring-2 focus:ring-sp-neon/10 transition-all font-normal text-sp-forest"
+                  />
+                </div>
+              )}
+
+              {/* Operational Notes */}
+              <div className="space-y-1.5">
+                <div className="flex justify-between items-center">
+                  <label className="block text-[12px] tracking-normal font-medium text-sp-forest">
+                    Notes
+                  </label>
+                  <span className="text-[11px] text-sp-sage font-medium">Optional</span>
                 </div>
                 <textarea 
                   rows={2}
                   placeholder="e.g. Establishing a tech-holding structure seeking a 10-Year Golden Visa pathway."
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="w-full px-3 py-2 bg-white border border-sp-border rounded-xl text-sm placeholder-gray-400 focus:outline-none focus:border-sp-emerald/40 focus:ring-2 focus:ring-sp-neon/10 transition-all resize-none font-light leading-normal text-sp-forest"
+                  className="w-full px-3.5 py-2.5 bg-white border border-sp-border rounded-xl text-[15px] placeholder-gray-400 focus:outline-none focus:border-sp-emerald/40 focus:ring-2 focus:ring-sp-neon/10 transition-all resize-none font-normal leading-normal text-sp-forest"
                 />
               </div>
 
@@ -335,7 +367,7 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
                     showConsentError ? 'text-red-700 font-medium' : 'text-sp-sage'
                   }`}
                 >
-                  I consent to the secure collection & processing of my contact information under UAE & GDPR regulations. <span className="text-red-500">*</span>
+                  I consent to be contacted and to secure processing of my details. <span className="text-red-500">*</span>
                 </label>
               </div>
 
@@ -388,13 +420,6 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
                   {preloadedQuote && preloadedSelections ? 'Configured Summary' : 'Dubai Launchdesk'}
                 </h2>
                 
-                {/* Live Status Indicator */}
-                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-sp-neon animate-pulse"></span>
-                  <span className="text-[9.5px] text-white/80 font-light tracking-wide">
-                    Live Desk Active <span className="text-white/40">(Callback Guarantee: &lt;15m)</span>
-                  </span>
-                </div>
               </div>
 
               {/* Dynamic Body Content */}
@@ -433,56 +458,42 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
                   </div>
                 </div>
               ) : (
-                /* Default List of exactly 3 premium solutions cards to fit the screen size, styled with hover states */
+                /* Default session flow cards */
                 <div className="space-y-2">
-                  <p className="text-[9.5px] tracking-[0.25em] uppercase font-semibold text-sp-sage/75 mb-1.5 text-left">
-                    Expert UAE Solutions
+                  <p className="text-[12px] tracking-normal font-medium text-sp-sage/85 mb-1.5 text-left">
+                    Session Flow
                   </p>
 
                   <div className="space-y-2">
-                    {/* Solution 1 */}
-                    <div className="group flex items-start gap-2.5 p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.07] hover:bg-white/[0.08] hover:border-sp-emerald/40 hover:shadow-[0_4px_20px_rgba(18,183,106,0.1)] transition-all duration-300 backdrop-blur-md text-left cursor-pointer">
-                      <div className="p-1.5 rounded-lg bg-white/5 border border-white/5 text-sp-emerald group-hover:text-sp-neon group-hover:bg-sp-emerald/10 group-hover:border-sp-emerald/20 shrink-0 mt-0.5 transition-all duration-300 font-bold">
-                        <Building2 className="w-3.5 h-3.5" />
-                      </div>
-                      <div>
-                        <h3 className="text-[11.5px] font-semibold tracking-wide text-white/90 group-hover:text-white transition-colors duration-300">Management Services</h3>
-                        <p className="text-[9.5px] text-white/50 group-hover:text-white/70 font-light mt-0.5 leading-normal transition-colors duration-300 font-sans">Corporate administration & sovereign compliance management desk</p>
-                      </div>
-                    </div>
-
-                    {/* Solution 2 */}
-                    <div className="group flex items-start gap-2.5 p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.07] hover:bg-white/[0.08] hover:border-sp-emerald/40 hover:shadow-[0_4px_20px_rgba(18,183,106,0.1)] transition-all duration-300 backdrop-blur-md text-left cursor-pointer">
-                      <div className="p-1.5 rounded-lg bg-white/5 border border-white/5 text-sp-emerald group-hover:text-sp-neon group-hover:bg-sp-emerald/10 group-hover:border-sp-emerald/20 shrink-0 mt-0.5 transition-all duration-300 font-bold">
-                        <FileText className="w-3.5 h-3.5" />
-                      </div>
-                      <div>
-                        <h3 className="text-[11.5px] font-semibold tracking-wide text-white/90 group-hover:text-white transition-colors duration-300">Accounting & Bookkeeping</h3>
-                        <p className="text-[9.5px] text-white/50 group-hover:text-white/70 font-light mt-0.5 leading-normal transition-colors duration-300 font-sans">Tax-ready bookkeeping records and expert corporate accounting</p>
-                      </div>
-                    </div>
-
-                    {/* Solution 3 */}
-                    <div className="group flex items-start gap-2.5 p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.07] hover:bg-white/[0.08] hover:border-sp-emerald/40 hover:shadow-[0_4px_20px_rgba(18,183,106,0.1)] transition-all duration-300 backdrop-blur-md text-left cursor-pointer">
-                      <div className="p-1.5 rounded-lg bg-white/5 border border-white/5 text-sp-emerald group-hover:text-sp-neon group-hover:bg-sp-emerald/10 group-hover:border-sp-emerald/20 shrink-0 mt-0.5 transition-all duration-300 font-bold">
-                        <CheckCircle2 className="w-3.5 h-3.5" />
-                      </div>
-                      <div>
-                        <h3 className="text-[11.5px] font-semibold tracking-wide text-white/90 group-hover:text-white transition-colors duration-300">Audit & Compliance</h3>
-                        <p className="text-[9.5px] text-white/50 group-hover:text-white/70 font-light mt-0.5 leading-normal transition-colors duration-300 font-sans">Compliance optimization and 9% Corporate Tax audits defense</p>
-                      </div>
-                    </div>
+                    {setupPath.map((item, index) => {
+                      const Icon = index === 0 ? FileText : index === 1 ? Phone : CheckCircle2;
+                      return (
+                        <div key={item.step} className="group flex items-center gap-2.5 p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.09] hover:bg-white/[0.08] hover:border-sp-emerald/40 hover:shadow-[0_4px_20px_rgba(18,183,106,0.1)] transition-all duration-300 backdrop-blur-md text-left">
+                          <div className="p-1.5 rounded-lg bg-white/5 border border-white/5 text-sp-emerald group-hover:text-sp-neon group-hover:bg-sp-emerald/10 group-hover:border-sp-emerald/20 shrink-0 mt-0.5 transition-all duration-300 font-bold">
+                            <Icon className="w-3.5 h-3.5" />
+                          </div>
+                          <div className="min-w-0">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <span className="text-[9px] font-mono text-sp-emerald">{item.step}</span>
+                              <h3 className="text-[12.5px] font-medium tracking-normal text-white/90 group-hover:text-white transition-colors duration-300">{item.title}</h3>
+                              <span className="text-[9.5px] text-white/45">{item.meta}</span>
+                            </div>
+                            <p className="text-[10.5px] text-white/55 group-hover:text-white/75 font-light mt-0.5 leading-normal transition-colors duration-300 font-sans">{item.text}</p>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               )}
 
               {/* Bottom Office Info */}
               <div className="pt-2 border-t border-white/10 text-left space-y-0.5">
-                <span className="text-[8.5px] font-mono uppercase text-sp-emerald tracking-wider font-bold">
-                  Corporate Headquarters
+                <span className="text-[10px] text-sp-emerald font-medium">
+                  Headquarters
                 </span>
-                <p className="text-[9.5px] text-zinc-350 font-sans leading-tight font-light">
-                  Scale Partners Corporate Advisory | <a href="https://google.ae/maps/place/Four+Roads+Group/data=!4m2!3m1!1s0x0:0xcf43204a335da6e1?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener noreferrer" className="hover:text-sp-emerald transition-colors font-medium">1703, Conrad Tower, WTC, Dubai</a>
+                <p className="text-[10px] text-zinc-350 font-sans leading-tight font-light">
+                  <a href="https://google.ae/maps/place/Four+Roads+Group/data=!4m2!3m1!1s0x0:0xcf43204a335da6e1?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener noreferrer" className="hover:text-sp-emerald transition-colors font-medium">Conrad Tower, WTC, Dubai</a>
                 </p>
               </div>
 

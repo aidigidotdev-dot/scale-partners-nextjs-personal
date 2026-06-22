@@ -23,7 +23,8 @@ import {
   Receipt, 
   Scale, 
   Wallet,
-  Globe
+  Globe,
+  Briefcase
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -49,6 +50,7 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
       label: 'Business Setup',
       id: 'setup',
       items: [
+        { name: 'Business Setup in Dubai', description: 'Complete UAE launch guide covering licensing, visas, banking, tax, and compliance.', icon: Briefcase, id: 'business-setup-dubai' as PageId },
         { name: 'Mainland Company Setup', description: 'Maximum freedom, trade directly with UAE local market with 100% ownership.', icon: Building2, id: 'setup-mainland' as PageId },
         { name: 'Free Zone Ecosystems', description: 'Zero corporate tax zones, 100% import/export tax exemption, simplified setup.', icon: Globe, id: 'setup-freezone' as PageId },
         { name: 'Offshore Vehicles', description: 'International operations, maximum privacy, physical space not required.', icon: Compass, id: 'setup-offshore' as PageId },

@@ -48,8 +48,8 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section id="why_choose_scale_partners" className="relative py-16 bg-white border-t border-b border-zinc-100 font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="why_choose_scale_partners" className="home-page-section relative py-16 bg-white border-t border-b border-zinc-100 font-sans">
+      <div className="home-wide-container max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
         
         {/* Editorial Heading & Slider Controls */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 gap-6">
