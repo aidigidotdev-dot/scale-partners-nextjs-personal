@@ -27,6 +27,21 @@ interface Message {
   time: string;
 }
 
+declare global {
+  interface Window {
+    $zoho?: {
+      salesiq?: {
+        chat?: {
+          start?: () => void;
+        };
+        floatwindow?: {
+          visible?: (status: 'show' | 'hide') => void;
+        };
+      };
+    };
+  }
+}
+
 export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelpProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [leadCaptured, setLeadCaptured] = useState(false);
@@ -201,6 +216,22 @@ export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelp
     setPhone('');
     setLeadCaptured(false);
     setMessages([]);
+  };
+
+  const openZohoSalesIQ = () => {
+    const salesiq = window.$zoho?.salesiq;
+
+    if (salesiq?.floatwindow?.visible) {
+      salesiq.floatwindow.visible('show');
+      return;
+    }
+
+    if (salesiq?.chat?.start) {
+      salesiq.chat.start();
+      return;
+    }
+
+    setIsOpen((current) => !current);
   };
 
   return (
@@ -424,9 +455,9 @@ export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelp
 
         {/* B. Symmetrical AI Chatbot Balloon trigger */}
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={openZohoSalesIQ}
           id="ai_system_drawer_trigger"
-          title="Ask Scale Partners AI Advisory"
+          title="Chat with Scale Partners"
           className="w-12 h-12 rounded-full bg-brand-grad text-white shadow-xl flex items-center justify-center hover:scale-105 active:scale-95 transition-transform relative border-0 hover:rotate-6 duration-300 cursor-pointer"
         >
           {isOpen ? (
