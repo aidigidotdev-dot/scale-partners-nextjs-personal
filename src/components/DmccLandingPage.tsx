@@ -605,7 +605,7 @@ export default function DmccLandingPage() {
                 </a>
               </div>
 
-              <div className="dmcc-hero-proof mx-auto grid max-w-2xl grid-cols-1 gap-4 border-t border-white/10 pt-5 sm:grid-cols-3 lg:mx-0">
+              <div className="dmcc-hero-proof mx-auto grid max-w-2xl grid-cols-1 justify-items-center gap-4 border-t border-white/10 pt-5 sm:grid-cols-3 sm:justify-items-stretch lg:mx-0">
                 {[
                   { icon: ShieldCheck, value: 'Activity', label: 'License route review' },
                   { icon: CheckCircle2, value: 'Visa', label: 'Investor and employee planning' },
@@ -614,7 +614,7 @@ export default function DmccLandingPage() {
                   const Icon = item.icon;
                   return (
                     <React.Fragment key={item.label}>
-                      <div className="flex items-center space-x-3 text-left sm:border-l sm:border-white/10 sm:pl-5 first:sm:border-l-0 first:sm:pl-0">
+                      <div className="flex w-[220px] items-center justify-start space-x-3 text-left sm:w-auto sm:border-l sm:border-white/10 sm:pl-5 first:sm:border-l-0 first:sm:pl-0">
                         <Icon className="h-5.5 w-5.5 shrink-0 text-emerald-400" />
                         <div>
                           <h5 className="text-[12.5px] font-bold leading-none text-white">{item.value}</h5>
