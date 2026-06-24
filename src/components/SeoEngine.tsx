@@ -323,24 +323,24 @@ export default function SeoEngine({ page }: SeoEngineProps) {
         break;
 
       case 'fz-dmcc':
-        title = 'DMCC Dubai Setup & Licensing | JLT Commodities & Crypto Trade';
-        description = 'Establish your elite presence inside standard-setting DMCC. Access specialized diamond, gold, crypto, and gaming ecosystems with premium global corporate stature.';
+        title = 'DMCC Company Formation in Dubai | JLT License, Office & Visa Support';
+        description = 'Set up your DMCC company in Dubai with licensing, office selection, visa, banking readiness, renewal, and compliance support for serious founders.';
         baseBreadcrumbs.itemListElement.push(
-          { "@type": "ListItem", "position": 2, "name": "Free Zones", "item": `${siteUrl}/#setup-freezone` },
-          { "@type": "ListItem", "position": 3, "name": "DMCC Dubai", "item": `${siteUrl}/#fz-dmcc` }
+          { "@type": "ListItem", "position": 2, "name": "Free Zones", "item": `${siteUrl}/setup-freezone` },
+          { "@type": "ListItem", "position": 3, "name": "DMCC Company Formation", "item": `${siteUrl}/fz-dmcc` }
         );
         schemaJson = [
           baseBreadcrumbs,
           {
             "@context": "https://schema.org",
             "@type": "Product",
-            "name": "DMCC Premium Corporate Setup Package",
-            "description": "Elite global commodities, energy, and gaming platform setup including commercial flexi-box allocation structures.",
+            "name": "DMCC Company Formation Advisory",
+            "description": "DMCC licensing, office selection, visa planning, banking readiness, renewal, and compliance support.",
             "offers": {
               "@type": "Offer",
-              "price": "26000",
+              "price": "27900",
               "priceCurrency": "AED",
-              "url": `${siteUrl}/#fz-dmcc`
+              "url": `${siteUrl}/fz-dmcc`
             }
           }
         ];

@@ -28,6 +28,8 @@ export default function ClientShell({ children }: { children: React.ReactNode })
     pageId = pathname.substring(1) as PageId;
   }
 
+  const isCustomDmccPage = pageId === 'fz-dmcc';
+
   const setPage = (page: PageId) => {
     router.push(page === 'home' ? '/' : `/${page}`);
   };
@@ -64,13 +66,13 @@ export default function ClientShell({ children }: { children: React.ReactNode })
         <SovereignFloatingHelp setPage={setPage} />
 
         {/* Corporate Comparison Desk on Every Page */}
-        {pageId !== 'contact' && <ComparisonBlock setPage={setPage} />}
+        {pageId !== 'contact' && !isCustomDmccPage && <ComparisonBlock setPage={setPage} />}
 
         {/* Corporate Custom Call To Action with FOMO on Every Page */}
-        <SovereignCta currentPage={pageId} openContactModal={openBlankModal} />
+        {!isCustomDmccPage && <SovereignCta currentPage={pageId} openContactModal={openBlankModal} />}
 
         {/* Corporate Required Documents Listed on Every Page */}
-        {pageId !== 'home' && <RequiredDocuments />}
+        {pageId !== 'home' && !isCustomDmccPage && <RequiredDocuments />}
 
         {/* FAQs will go at the end of the website */}
         {pageId === 'home' && <SeoFaqBlock setPage={setPage} />}

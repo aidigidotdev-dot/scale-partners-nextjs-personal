@@ -1,8 +1,18 @@
-import { Linkedin, Mail, ShieldAlert, Award, FileText } from 'lucide-react';
+import { Linkedin, Mail, ShieldAlert, Award } from 'lucide-react';
 import Image from 'next/image';
 
 export default function LeadershipTeam() {
   const leaders = [
+    {
+      name: "Selim James Ellouze",
+      role: "Partner & Chief Growth Officer at Four Roads Group",
+      experience: "20+ Years UAE, Europe & North Africa",
+      desc: "International growth executive and strategic advisor with over 20 years of experience across the UAE, Europe, and North Africa. Leads strategic growth, partnerships, and investment initiatives, helping businesses, entrepreneurs, and investors unlock opportunities, scale with confidence, and create sustainable long-term value.",
+      avatarText: "SJE",
+      image: "/assets/selim-james-ellouze.jpeg",
+      badge: "Partner & Chief Growth Officer",
+      specialty: "Strategic Growth, Partnerships & Investment"
+    },
     {
       name: "Advocate Tarik Al-Mehairi",
       role: "Senior Legal & Corporate Structuring Advisor",
@@ -12,16 +22,6 @@ export default function LeadershipTeam() {
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop",
       badge: "Founder & Equity Partner",
       specialty: "Holding SPVs & OECD Compliance"
-    },
-    {
-      name: "Elena Rostova",
-      role: "Chief Client Liaison Officer",
-      experience: "Ex-European Foreign Arbitrage Legalist",
-      desc: "Architects compliant asset shielding bridges for European, North American, and East Asian founders relocating wealth or setting up remote virtual structures in the GCC.",
-      avatarText: "ER",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d85734a5a2?q=80&w=400&auto=format&fit=crop",
-      badge: "International Advisory Head",
-      specialty: "Cross-border Asset Shielding"
     },
     {
       name: "Zayn Al-Sayegh",
@@ -70,7 +70,7 @@ export default function LeadershipTeam() {
           
           <div className="bg-white/5 border border-white/10 p-4.5 rounded-2xl flex items-center space-x-2.5 max-w-sm">
             <ShieldAlert className="w-5 h-5 text-amber-400 shrink-0" />
-            <p className="text-[11px] text-zinc-350 leading-relaxed font-sans font-light">
+            <p className="text-[11px] text-white leading-relaxed font-sans font-light">
               <strong>Official Credentials:</strong> Every senior advisor holds active GCC registry certifications or registered paralegal authority.
             </p>
           </div>
