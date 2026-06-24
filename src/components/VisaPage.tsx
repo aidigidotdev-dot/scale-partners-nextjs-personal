@@ -8,7 +8,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { PageId } from '../types';
-import { 
+import {
   Award, 
   Users, 
   FileSignature, 
@@ -24,6 +24,7 @@ import {
   Coins
 } from 'lucide-react';
 import { motion } from 'motion/react';
+import { sendLeadEmail } from '../lib/leadEmail';
 
 interface VisaPageProps {
   type: 'golden' | 'residence' | 'pro';
@@ -571,6 +572,21 @@ export default function VisaPage({ type, setPage, openContactModal }: VisaPagePr
                           return;
                         }
                         setLeadError('');
+                        void sendLeadEmail({
+                          source: `${current.title} Eligibility Lead`,
+                          name: leadName,
+                          email: leadEmail,
+                          phone: leadPhone,
+                          fields: {
+                            PageType: type,
+                            SelectedTrack: selectedTrack,
+                            CapitalValue: capitalValue,
+                            OwnsRealEstate: ownsRealEstate,
+                            EligibilityStatus: eligibilityResult?.status,
+                            EligibilityTitle: eligibilityResult?.title,
+                            EligibilityDescription: eligibilityResult?.description,
+                          },
+                        });
                         setLeadSubmitted(true);
                       }}
                       className="w-full py-3 bg-brand-grad hover:opacity-95 text-white rounded-xl text-[12.5px] font-bold tracking-tight transition-transform hover:scale-[1.01] shadow-lg text-center border-0"

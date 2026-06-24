@@ -3,7 +3,7 @@
 import { useState, FormEvent } from "react";
 import Image from "next/image";
 import Script from "next/script";
-import { 
+import {
   Building2, 
   CheckCircle2, 
   ArrowRight, 
@@ -17,6 +17,7 @@ import {
   ShieldAlert
 } from "lucide-react";
 import { CostBreakdown } from "../types";
+import { sendLeadEmail } from "../lib/leadEmail";
 
 interface ContactFormProps {
   preloadedQuote?: CostBreakdown;
@@ -77,6 +78,22 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
       e.preventDefault();
       return;
     }
+
+    void sendLeadEmail({
+      source: preloadedQuote && preloadedSelections ? "Configured Quote Callback Form" : "Contact Callback Form",
+      name,
+      email,
+      phone,
+      message: notes,
+      fields: {
+        Sector: sector,
+        Jurisdiction: preloadedSelections?.jurisdiction,
+        Activity: preloadedSelections?.activity,
+        Visas: preloadedSelections?.visas,
+        Office: preloadedSelections?.office,
+        EstimatedTotal: preloadedQuote?.total ? `AED ${preloadedQuote.total.toLocaleString()}` : undefined,
+      },
+    });
 
     setLoading(true);
     setTimeout(() => {

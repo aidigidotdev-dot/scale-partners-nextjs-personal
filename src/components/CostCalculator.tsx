@@ -7,7 +7,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { 
+import {
   Building2, 
   Globe, 
   Users, 
@@ -22,6 +22,7 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { CostBreakdown } from '../types';
+import { sendLeadEmail } from '../lib/leadEmail';
 
 interface CostCalculatorProps {
   onQuoteSubmit: (breakdown: CostBreakdown, selections: {
@@ -488,6 +489,24 @@ export default function CostCalculator({ onQuoteSubmit, openContactModal }: Cost
                       return;
                     }
                     setLeadError('');
+                    void sendLeadEmail({
+                      source: 'Cost Calculator Lead',
+                      name: leadName,
+                      email: leadEmail,
+                      phone: leadPhone,
+                      fields: {
+                        Jurisdiction: jurisdiction,
+                        Activity: activity,
+                        Visas: visasCount,
+                        OfficeType: officeType,
+                        JurisdictionFee: `AED ${costs.jurisdictionFee.toLocaleString()}`,
+                        ActivityFee: `AED ${costs.activityFee.toLocaleString()}`,
+                        VisaFee: `AED ${costs.visaFee.toLocaleString()}`,
+                        OfficeFee: `AED ${costs.officeFee.toLocaleString()}`,
+                        AdminFee: `AED ${costs.adminFee.toLocaleString()}`,
+                        EstimatedTotal: `AED ${costs.total.toLocaleString()}`,
+                      },
+                    });
                     setLeadSubmitted(true);
                   }}
                   className="w-full py-3.5 bg-white text-gold-500 hover:bg-zinc-50 rounded-xl text-[13px] font-bold tracking-tight transition-transform hover:scale-[1.015] shadow-lg text-center border-0"

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { PageId } from '../types';
-import { 
+import {
   MessageSquare, 
   Send, 
   X, 
@@ -16,6 +16,7 @@ import {
   ChevronDown,
   Phone
 } from 'lucide-react';
+import { sendLeadEmail } from '../lib/leadEmail';
 
 interface SovereignFloatingHelpProps {
   setPage: (page: PageId) => void;
@@ -102,6 +103,12 @@ export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelp
     }
 
     setFormError('');
+    void sendLeadEmail({
+      source: 'Floating Help Advisory Lead',
+      name,
+      email,
+      phone,
+    });
     sessionStorage.setItem('lead_name', name);
     sessionStorage.setItem('lead_email', email);
     sessionStorage.setItem('lead_phone', phone);
