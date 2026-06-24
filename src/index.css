@@ -292,7 +292,10 @@
 
   .dmcc-license-feature::after,
   .dmcc-license-row::after,
-  .dmcc-structure-node::after {
+  .dmcc-structure-node::after,
+  .dmcc-process-card::after,
+  .dmcc-pricing-card::after,
+  .dmcc-cost-tile::after {
     transition: none !important;
   }
 }
@@ -385,13 +388,19 @@
 
 .dmcc-license-feature,
 .dmcc-license-row,
-.dmcc-structure-node {
+.dmcc-structure-node,
+.dmcc-process-card,
+.dmcc-pricing-card,
+.dmcc-cost-tile {
   isolation: isolate;
 }
 
 .dmcc-license-feature::after,
 .dmcc-license-row::after,
-.dmcc-structure-node::after {
+.dmcc-structure-node::after,
+.dmcc-process-card::after,
+.dmcc-pricing-card::after,
+.dmcc-cost-tile::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -404,12 +413,18 @@
 
 .dmcc-license-feature:hover::after,
 .dmcc-license-row:hover::after,
-.dmcc-structure-node:hover::after {
+.dmcc-structure-node:hover::after,
+.dmcc-process-card:hover::after,
+.dmcc-pricing-card:hover::after,
+.dmcc-cost-tile:hover::after {
   transform: translateX(130%);
 }
 
 .dmcc-license-row::before,
-.dmcc-structure-node::before {
+.dmcc-structure-node::before,
+.dmcc-process-card::before,
+.dmcc-pricing-card::before,
+.dmcc-cost-tile::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -421,7 +436,10 @@
 }
 
 .dmcc-license-row:hover::before,
-.dmcc-structure-node:hover::before {
+.dmcc-structure-node:hover::before,
+.dmcc-process-card:hover::before,
+.dmcc-pricing-card:hover::before,
+.dmcc-cost-tile:hover::before {
   opacity: 1;
 }
 

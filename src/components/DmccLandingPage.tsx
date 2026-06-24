@@ -26,6 +26,7 @@ import {
   IdCard,
   ReceiptText,
   Scale,
+  SearchCheck,
   ShieldCheck,
   Sparkles,
   Users,
@@ -147,36 +148,42 @@ const legalStructures = [
 
 const processSteps = [
   {
+    icon: SearchCheck,
     step: '01',
     title: 'Discovery & Activity Mapping',
     timeline: 'Day 1',
     text: 'We identify your exact activity, shareholder structure, visa needs, office requirement, and banking profile before any application is filed.',
   },
   {
+    icon: BadgeCheck,
     step: '02',
     title: 'Name, Structure & Pre-Approval',
     timeline: 'Days 1-3',
     text: 'The company name, legal structure, shareholder details, and activity wording are prepared for DMCC pre-approval through the online flow.',
   },
   {
+    icon: FileText,
     step: '03',
     title: 'Document Submission & Signing',
     timeline: 'Days 3-6',
     text: 'Passports, address proof, corporate documents, UBO information, resolutions, and forms are checked, uploaded, signed, and corrected where needed.',
   },
   {
+    icon: Building2,
     step: '04',
     title: 'Office Solution Selection',
     timeline: 'Days 5-8',
     text: 'A flexi desk, serviced office, or physical office path is selected based on activity, visa quota, banking comfort, and budget.',
   },
   {
+    icon: ReceiptText,
     step: '05',
     title: 'Payment, License & E-License',
     timeline: 'Around 10 working days',
     text: 'Once approvals, documents, office selection, and payment are complete, the DMCC e-license is issued electronically.',
   },
   {
+    icon: WalletCards,
     step: '06',
     title: 'Post-License Execution',
     timeline: 'After issuance',
@@ -485,6 +492,39 @@ export default function DmccLandingPage() {
   };
 
   const quoteDmcc = () => handleFreeZoneSelected('DMCC Dubai', 27900);
+  const dmccWhatsAppUrl = 'https://wa.me/971552051241?text=Hello%20Scale%20Partners%20Advisory%20Desk.%20I%20would%20like%20to%20speak%20to%20an%20advisor%20about%20DMCC%20company%20setup.';
+  const [activeProcessIndex, setActiveProcessIndex] = React.useState(0);
+  const processRefs = React.useRef<Array<HTMLDivElement | null>>([]);
+  const processProgress = ((activeProcessIndex + 1) / processSteps.length) * 100;
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleEntry?.target instanceof HTMLElement) {
+          const index = Number(visibleEntry.target.dataset.processIndex);
+          if (!Number.isNaN(index)) {
+            setActiveProcessIndex(index);
+          }
+        }
+      },
+      {
+        rootMargin: '-22% 0px -38% 0px',
+        threshold: [0.35, 0.55, 0.75],
+      }
+    );
+
+    processRefs.current.forEach((node) => {
+      if (node) {
+        observer.observe(node);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="dmcc-page overflow-x-clip bg-white font-sans text-zinc-950">
@@ -504,7 +544,7 @@ export default function DmccLandingPage() {
         <div className="home-hero-inner relative z-30 mx-auto max-w-[1760px] px-5 sm:px-7 lg:px-8 xl:px-10">
           <div className="home-hero-grid grid grid-cols-1 items-center gap-10 bg-transparent pt-8 sm:pt-10 lg:grid-cols-12 lg:gap-14 lg:pt-8 xl:gap-20 xl:pt-10">
             <div className="home-hero-copy space-y-5 text-center sm:space-y-6 lg:col-span-8 lg:text-left xl:col-span-7">
-              <div className="mx-auto inline-flex max-w-full items-center space-x-2.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-white shadow-sm backdrop-blur-md lg:mx-0">
+              <div className="mx-auto hidden max-w-full items-center space-x-2.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-white shadow-sm backdrop-blur-md lg:mx-0 lg:inline-flex">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
@@ -555,25 +595,26 @@ export default function DmccLandingPage() {
                   <span>Get DMCC Setup Quote</span>
                   <ArrowRight className="h-4 w-4 text-gold-500" />
                 </button>
-                <button
-                  onClick={openBlankModal}
+                <a
+                  href={dmccWhatsAppUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex w-full max-w-[330px] cursor-pointer items-center justify-center rounded-full border border-white/15 bg-black/10 px-8 py-4 font-sans text-[14.5px] font-bold tracking-tight text-white backdrop-blur-md transition-all duration-300 hover:bg-white/10 active:scale-95 sm:w-auto sm:max-w-none"
                 >
                   Speak to an Advisor
-                </button>
+                </a>
               </div>
 
-              <div className="home-reviews mx-auto flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-4 border-t border-white/10 pt-5 lg:mx-0 lg:justify-start">
+              <div className="dmcc-hero-proof mx-auto grid max-w-2xl grid-cols-1 gap-4 border-t border-white/10 pt-5 sm:grid-cols-3 lg:mx-0">
                 {[
-                  { icon: ShieldCheck, value: '26,000+', label: 'DMCC member companies' },
-                  { icon: CheckCircle2, value: '1,000+', label: 'Licensed activities' },
-                  { icon: Building2, value: 'JLT', label: 'Office and visa planning' },
+                  { icon: ShieldCheck, value: 'Activity', label: 'License route review' },
+                  { icon: CheckCircle2, value: 'Visa', label: 'Investor and employee planning' },
+                  { icon: Building2, value: 'Office', label: 'JLT workspace guidance' },
                 ].map((item, index) => {
                   const Icon = item.icon;
                   return (
                     <React.Fragment key={item.label}>
-                      {index > 0 && <div className="hidden h-8 w-px self-center bg-white/10 sm:block" />}
-                      <div className="flex items-center space-x-3 text-left">
+                      <div className="flex items-center space-x-3 text-left sm:border-l sm:border-white/10 sm:pl-5 first:sm:border-l-0 first:sm:pl-0">
                         <Icon className="h-5.5 w-5.5 shrink-0 text-emerald-400" />
                         <div>
                           <h5 className="text-[12.5px] font-bold leading-none text-white">{item.value}</h5>
@@ -955,24 +996,143 @@ export default function DmccLandingPage() {
         </div>
       </section>
 
-      <section className="px-5 py-20 sm:px-7 lg:px-10 lg:py-28">
-        <div className="mx-auto max-w-[1320px]">
-          <SectionHeading
-            eyebrow="Timeline"
-            title="How to set up a DMCC company"
-            text="DMCC publishes a digital setup journey and typical completion around 10 working days, but that assumes the activity, documents, approvals, office solution, and payment are all moving cleanly."
-          />
-          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {processSteps.map((item) => (
-              <div key={item.step} className="rounded-[8px] border border-zinc-200 bg-white p-6 shadow-sm">
-                <div className="flex items-center justify-between gap-4">
-                  <span className="text-[32px] leading-none text-[#08854C]">{item.step}</span>
-                  <span className="rounded-full bg-zinc-100 px-3 py-1 text-[11px] text-zinc-500">{item.timeline}</span>
+      <section className="relative bg-white px-5 py-20 sm:px-7 lg:px-10 lg:py-28">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute left-[-12%] top-20 h-[340px] w-[340px] rounded-full bg-emerald-500/[0.05] blur-3xl" />
+          <div className="absolute right-[-10%] bottom-24 h-[360px] w-[360px] rounded-full bg-[#C7A969]/[0.08] blur-3xl" />
+        </div>
+
+        <div className="relative z-10 mx-auto grid max-w-[1320px] gap-9 lg:grid-cols-[0.74fr_1.26fr] lg:items-start">
+          <div className="relative overflow-hidden rounded-[30px] bg-[#07140B] p-6 text-white shadow-[0_30px_90px_rgba(7,20,11,0.18)] sm:p-8 lg:sticky lg:top-28">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_84%_12%,rgba(52,211,153,0.16),transparent_34%),linear-gradient(140deg,rgba(255,255,255,0.08),transparent_34%)]" />
+            <div className="relative z-10">
+              <span className="inline-flex items-center space-x-1.5 rounded-full border border-emerald-300/20 bg-white/10 px-3.5 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-200">
+                <Clock3 className="h-3.5 w-3.5" />
+                <span>Timeline</span>
+              </span>
+              <h2 className="mt-5 max-w-xl font-serif text-[31px] font-semibold leading-tight tracking-normal text-white sm:text-[40px]">
+                How To Set Up A DMCC Company
+              </h2>
+              <p className="mt-4 text-[15px] leading-7 text-white/68">
+                A premium DMCC setup is not just filing forms. It is a sequenced route where activity, ownership, office, visa, payment, and banking logic are aligned before submission.
+              </p>
+
+              <div className="mt-8 border-t border-white/10 pt-6">
+                <div className="flex items-end justify-between gap-5">
+                  <div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-white/42">Current Phase</div>
+                    <div className="mt-2 text-[22px] leading-tight text-white">
+                      Step {processSteps[activeProcessIndex]?.step}
+                      <span className="text-white/35"> / {String(processSteps.length).padStart(2, '0')}</span>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-white/42">Typical Window</div>
+                    <div className="mt-2 text-[15px] font-semibold text-emerald-200">
+                      {processSteps[activeProcessIndex]?.timeline}
+                    </div>
+                  </div>
                 </div>
-                <h3 className="mt-5 text-[18px] text-zinc-950">{item.title}</h3>
-                <p className="mt-3 text-[13px] leading-6 text-zinc-600">{item.text}</p>
+                <div className="mt-5 h-1.5 overflow-hidden rounded-full bg-white/10">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-emerald-300 via-emerald-400 to-[#C7A969] transition-all duration-700 ease-out"
+                    style={{ width: `${processProgress}%` }}
+                  />
+                </div>
+                <p className="mt-4 text-[13px] leading-6 text-white/56">
+                  {processSteps[activeProcessIndex]?.title}
+                </p>
               </div>
-            ))}
+
+              <div className="mt-7 grid grid-cols-3 border-y border-white/10 py-5">
+                {[
+                  ['01', 'Route'],
+                  ['10', 'Working Days'],
+                  ['06', 'Phases'],
+                ].map(([value, label]) => (
+                  <div key={label} className="border-r border-white/10 px-3 text-center last:border-r-0">
+                    <div className="text-[24px] leading-tight text-white">{value}</div>
+                    <div className="mt-1 text-[10px] uppercase leading-4 tracking-[0.12em] text-white/42">{label}</div>
+                  </div>
+                ))}
+              </div>
+
+              <button
+                onClick={quoteDmcc}
+                className="mt-7 flex w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-[13.5px] font-semibold text-[#07140B] transition-all duration-300 hover:bg-emerald-50"
+              >
+                <span>Plan My Setup Timeline</span>
+                <ArrowRight className="h-4 w-4 text-[#08854C]" />
+              </button>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute bottom-0 left-4 top-0 hidden w-px bg-zinc-200 md:block" />
+            <div
+              className="absolute left-4 top-0 hidden w-px bg-gradient-to-b from-emerald-400 via-emerald-500 to-[#C7A969] transition-all duration-700 ease-out md:block"
+              style={{ height: `${processProgress}%` }}
+            />
+            <div className="space-y-5">
+              {processSteps.map((item, index) => {
+                const Icon = item.icon;
+                const isActive = index <= activeProcessIndex;
+                return (
+                  <div
+                    key={item.step}
+                    ref={(node) => {
+                      processRefs.current[index] = node;
+                    }}
+                    data-process-index={index}
+                    className="relative md:pl-14"
+                  >
+                    <div
+                      className={`absolute left-0 top-7 z-20 hidden h-8 w-8 items-center justify-center rounded-full border transition-all duration-500 md:flex ${
+                        isActive
+                          ? 'border-emerald-400 bg-[#07140B] shadow-[0_0_0_8px_rgba(18,183,106,0.10),0_0_30px_rgba(18,183,106,0.24)]'
+                          : 'border-zinc-200 bg-white shadow-[0_8px_20px_rgba(7,20,11,0.06)]'
+                      }`}
+                    >
+                      <span className={`h-2.5 w-2.5 rounded-full transition-colors ${isActive ? 'bg-emerald-300' : 'bg-zinc-300'}`} />
+                    </div>
+
+                    <div
+                      className={`dmcc-process-card group relative overflow-hidden rounded-[24px] border p-5 transition-all duration-500 sm:p-6 ${
+                        isActive
+                          ? 'border-emerald-500/35 bg-white shadow-[0_24px_70px_rgba(7,20,11,0.10)]'
+                          : 'border-zinc-200/80 bg-[#FBFCFB] shadow-[0_14px_38px_rgba(7,20,11,0.045)]'
+                      } hover:-translate-y-1 hover:border-emerald-500/35 hover:shadow-[0_26px_72px_rgba(7,20,11,0.11)]`}
+                    >
+                      <div className="relative z-10">
+                        <div className="flex flex-wrap items-start justify-between gap-4">
+                          <div className="flex items-center gap-4">
+                            <div
+                              className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl transition-all duration-300 ${
+                                isActive ? 'bg-[#07140B] text-emerald-300' : 'bg-emerald-500/10 text-[#08854C]'
+                              } group-hover:bg-emerald-500 group-hover:text-white`}
+                            >
+                              <Icon className="h-5.5 w-5.5" />
+                            </div>
+                            <div>
+                              <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-zinc-350">Step {item.step}</div>
+                              <h3 className="mt-1 text-[20px] leading-tight text-zinc-950 sm:text-[22px]">{item.title}</h3>
+                            </div>
+                          </div>
+                          <span
+                            className={`rounded-full px-3 py-1 text-[11px] transition-colors ${
+                              isActive ? 'bg-emerald-50 text-[#08854C]' : 'bg-zinc-100 text-zinc-500'
+                            }`}
+                          >
+                            {item.timeline}
+                          </span>
+                        </div>
+                        <p className="mt-5 text-[13.5px] leading-7 text-zinc-600">{item.text}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
@@ -1003,77 +1163,154 @@ export default function DmccLandingPage() {
         </div>
       </section>
 
-      <section className="px-5 py-20 sm:px-7 lg:px-10 lg:py-28">
-        <div className="mx-auto grid max-w-[1320px] gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <SectionHeading
-            eyebrow="Office Requirement"
-            title="Office and flexi desk requirements"
-            text="Every DMCC company needs a registered address inside DMCC. Choosing too little space can limit visas and banking comfort; choosing too much space can inflate first-year cost."
-          />
-          <div className="grid gap-4">
-            {officeOptions.map((item) => (
-              <div key={item.title} className="rounded-[8px] border border-zinc-200 bg-white p-6 shadow-sm">
-                <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-                  <h3 className="text-[19px] text-zinc-950">{item.title}</h3>
-                  <span className="rounded-full border border-[#C7A969]/30 px-3 py-1 text-[11px] text-[#8A6A1F]">{item.fit}</span>
-                </div>
-                <p className="mt-3 text-[13.5px] leading-7 text-zinc-600">{item.text}</p>
+      <section className="relative bg-[#F7FBF8] px-5 py-16 sm:px-7 lg:px-10 lg:py-20">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute left-[-12%] top-10 h-[280px] w-[280px] rounded-full bg-emerald-500/[0.045] blur-3xl" />
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-[1320px]">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#C7A969]/25 bg-[#F8F4EA] px-3.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[#8A6A1F]">
+              <Coins className="h-3.5 w-3.5" />
+              <span>Pricing Logic</span>
+            </span>
+            <h2 className="mx-auto mt-4 max-w-2xl font-serif text-[31px] font-semibold leading-tight tracking-tight text-zinc-900 sm:text-[40px]">
+              Packages And Cost Estimate
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-[14.5px] leading-7 text-zinc-600 sm:text-[15.5px]">
+              DMCC pricing depends on the package, activity, office route, establishment card, visas, and support scope. Use these as planning benchmarks before the final authority quote.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-7 grid max-w-4xl overflow-hidden rounded-[22px] border border-zinc-200/80 bg-white shadow-[0_16px_42px_rgba(7,20,11,0.045)] sm:grid-cols-3">
+            {[
+              ['Starting Reference', 'AED 10,345+'],
+              ['Core Benchmark', 'AED 27,900+'],
+              ['Final Quote', 'Route Based'],
+            ].map(([label, value]) => (
+              <div key={label} className="border-b border-zinc-200/80 px-5 py-4 text-center last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0">
+                <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-400">{label}</div>
+                <div className="mt-1 text-[19px] leading-tight text-zinc-950">{value}</div>
               </div>
             ))}
-            <div className="rounded-[8px] bg-[#07140B] p-6 text-white">
-              <p className="text-[13.5px] leading-7 text-white/76">
-                Scale Partners recommendation: choose the office route after reviewing activity, visa count, bank target, renewal package, and operating model. The cheapest desk is not always the most bankable structure.
-              </p>
-            </div>
           </div>
-        </div>
-      </section>
 
-      <section className="bg-[#F7FBF8] px-5 py-20 sm:px-7 lg:px-10 lg:py-28">
-        <div className="mx-auto max-w-[1320px]">
-          <SectionHeading
-            eyebrow="Pricing"
-            title="Packages and cost estimate"
-            text="DMCC costs vary by package, activity, license duration, office type, establishment card, visas, and support requirements. The figures below are planning benchmarks; final authority fees should be reconfirmed before filing."
-          />
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          <div className="mt-8 grid gap-4 lg:grid-cols-3 lg:items-stretch">
             {packages.map((item) => (
               <div
                 key={item.name}
-                className={`rounded-[8px] border p-6 shadow-sm ${
-                  item.featured ? 'border-[#0B2E16] bg-[#07140B] text-white' : 'border-zinc-200 bg-white text-zinc-950'
+                className={`dmcc-pricing-card group relative flex min-h-full flex-col overflow-hidden rounded-[22px] border p-5 transition-all duration-300 sm:p-6 ${
+                  item.featured
+                    ? 'order-first border-[#07140B] bg-[#07140B] text-white shadow-[0_22px_62px_rgba(7,20,11,0.15)] lg:order-none'
+                    : 'border-zinc-200/80 bg-white text-zinc-950 shadow-[0_14px_38px_rgba(7,20,11,0.045)] hover:-translate-y-1 hover:border-emerald-500/25 hover:shadow-[0_22px_56px_rgba(7,20,11,0.08)]'
                 }`}
               >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-[20px]">{item.name}</h3>
-                    <p className={`mt-1 text-[11px] uppercase tracking-[0.14em] ${item.featured ? 'text-[#C7A969]' : 'text-zinc-500'}`}>
-                      {item.label}
-                    </p>
+                <div className="relative z-10 flex h-full flex-col">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <span
+                        className={`inline-flex rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] ${
+                          item.featured ? 'bg-emerald-300/12 text-emerald-200' : 'bg-emerald-500/10 text-[#08854C]'
+                        }`}
+                      >
+                        {item.featured ? 'Recommended' : 'Planning Route'}
+                      </span>
+                      <h3 className={`mt-4 text-[20px] leading-tight ${item.featured ? 'text-white' : 'text-zinc-950'}`}>{item.name}</h3>
+                    </div>
+                    <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl ${item.featured ? 'bg-white/10 text-[#C7A969]' : 'bg-[#F7FBF8] text-[#08854C]'}`}>
+                      {item.featured ? <Award className="h-5 w-5" /> : <WalletCards className="h-5 w-5" />}
+                    </div>
                   </div>
-                  {item.featured && <Award className="h-6 w-6 text-[#C7A969]" />}
+
+                  <div className={`mt-5 text-[31px] leading-none ${item.featured ? 'text-white' : 'text-[#08854C]'}`}>{item.price}</div>
+                  <p className={`mt-2 text-[11px] uppercase leading-5 tracking-[0.13em] ${item.featured ? 'text-[#C7A969]' : 'text-zinc-500'}`}>
+                    {item.label}
+                  </p>
+                  <p className={`mt-4 text-[13px] leading-6 ${item.featured ? 'text-white/70' : 'text-zinc-600'}`}>{item.text}</p>
+
+                  <ul className={`mt-5 space-y-2.5 border-t pt-5 ${item.featured ? 'border-white/10' : 'border-zinc-200/80'}`}>
+                    {item.included.map((included) => (
+                      <li key={included} className={`flex gap-2.5 text-[12.5px] leading-5 ${item.featured ? 'text-white/80' : 'text-zinc-700'}`}>
+                        <CheckCircle2 className={`mt-0.5 h-4 w-4 shrink-0 ${item.featured ? 'text-[#34D399]' : 'text-[#12B76A]'}`} />
+                        <span>{included}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <button
+                    onClick={quoteDmcc}
+                    className={`mt-auto inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-[13px] font-semibold transition-all duration-300 ${
+                      item.featured
+                        ? 'bg-white text-[#07140B] hover:bg-emerald-50'
+                        : 'bg-brand-grad text-white shadow-[0_14px_32px_rgba(18,183,106,0.16)] hover:scale-[1.01]'
+                    }`}
+                  >
+                    <span>Get Exact Quote</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </button>
                 </div>
-                <div className={`mt-6 text-[34px] leading-none ${item.featured ? 'text-white' : 'text-[#08854C]'}`}>{item.price}</div>
-                <p className={`mt-5 text-[13px] leading-6 ${item.featured ? 'text-white/72' : 'text-zinc-600'}`}>{item.text}</p>
-                <ul className="mt-6 space-y-3">
-                  {item.included.map((included) => (
-                    <li key={included} className={`flex gap-2 text-[13px] leading-5 ${item.featured ? 'text-white/82' : 'text-zinc-700'}`}>
-                      <CheckCircle2 className={`mt-0.5 h-4 w-4 shrink-0 ${item.featured ? 'text-[#34D399]' : 'text-[#12B76A]'}`} />
-                      <span>{included}</span>
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  onClick={quoteDmcc}
-                  className={`mt-7 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-[13px] font-semibold ${
-                    item.featured ? 'bg-white text-[#07140B] hover:bg-[#F7FBF8]' : 'bg-brand-grad text-white'
-                  }`}
-                >
-                  <span>Get Exact Quote</span>
-                  <ArrowRight className="h-4 w-4" />
-                </button>
               </div>
             ))}
+          </div>
+
+          <p className="mx-auto mt-5 max-w-3xl text-center text-[12.5px] leading-6 text-zinc-500">
+            Final pricing is confirmed after activity mapping, office selection, visa assumptions, and document review.
+          </p>
+        </div>
+      </section>
+
+      <section className="px-5 py-16 sm:px-7 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-[1160px]">
+          <div className="grid gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#C7A969]/25 bg-[#F8F4EA] px-3.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[#8A6A1F]">
+                <Building2 className="h-3.5 w-3.5" />
+                <span>Office Requirement</span>
+              </span>
+              <h2 className="mt-4 max-w-xl font-serif text-[31px] font-semibold leading-tight tracking-tight text-zinc-900 sm:text-[40px]">
+                Office And Flexi Desk Requirements
+              </h2>
+              <p className="mt-4 max-w-xl text-[14.5px] leading-7 text-zinc-600 sm:text-[15.5px]">
+                Every DMCC company needs a registered DMCC address. The right workspace should match your visa plan, banking profile, activity, and first-year budget.
+              </p>
+              <div className="mt-5 flex items-start gap-2.5 rounded-[18px] border border-emerald-500/15 bg-emerald-500/[0.04] px-4 py-3 text-[12.5px] leading-6 text-zinc-600">
+                <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[#12B76A]" />
+                <span>Choose the office route after reviewing activity, visa count, bank target, renewal package, and operating model.</span>
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-[22px] border border-zinc-200/80 bg-white shadow-[0_18px_50px_rgba(7,20,11,0.055)]">
+              <div className="hidden grid-cols-[1.05fr_0.95fr_1.2fr] border-b border-zinc-200/80 bg-[#F7FBF8] px-5 py-3 font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-400 md:grid">
+                <div>Workspace Route</div>
+                <div>Best Fit</div>
+                <div>Planning Note</div>
+              </div>
+              {officeOptions.map((item, index) => {
+                const icons = [MapPin, BriefcaseBusiness, Building2];
+                const Icon = icons[index] ?? Building2;
+                return (
+                  <div key={item.title} className="grid gap-4 border-b border-zinc-200/80 px-5 py-5 last:border-b-0 md:grid-cols-[1.05fr_0.95fr_1.2fr] md:items-start">
+                    <div className="flex items-start gap-3.5">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/10 text-[#08854C]">
+                        <Icon className="h-4.5 w-4.5" />
+                      </div>
+                      <div>
+                        <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-350 md:hidden">Workspace Route</div>
+                        <h3 className="mt-1 text-[17px] leading-tight text-zinc-950 md:mt-0">{item.title}</h3>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-350 md:hidden">Best Fit</div>
+                      <p className="mt-1 text-[13px] leading-6 text-[#8A6A1F] md:mt-0">{item.fit}</p>
+                    </div>
+                    <div>
+                      <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-350 md:hidden">Planning Note</div>
+                      <p className="mt-1 text-[13px] leading-6 text-zinc-600 md:mt-0">{item.text}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
