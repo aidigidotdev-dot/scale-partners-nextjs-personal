@@ -7,7 +7,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { 
+import {
   Building, 
   MapPin, 
   Clock, 
@@ -31,6 +31,7 @@ import {
   Phone
 } from 'lucide-react';
 import { PageId } from '../types';
+import { sendLeadEmail } from '../lib/leadEmail';
 
 interface DirectoryPagesProps {
   page: PageId;
@@ -883,6 +884,20 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                     }
                     setFormError('');
                     const total = content.price + (calcVisas * content.visasCost);
+                    void sendLeadEmail({
+                      source: `${content.title} Directory Quote Form`,
+                      name: calcName,
+                      email: calcEmail,
+                      phone: calcPhone,
+                      fields: {
+                        Page: page,
+                        Activity: calcActivity,
+                        Visas: calcVisas,
+                        BaseAuthorityLicenseFee: `AED ${content.price.toLocaleString()}`,
+                        VisaFees: `AED ${(calcVisas * content.visasCost).toLocaleString()}`,
+                        EstimatedTotal: `AED ${total.toLocaleString()}`,
+                      },
+                    });
                     setCalculatedTotal(total);
                     setQuoteCalculated(true);
                   }} className="space-y-4 relative z-10">

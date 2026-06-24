@@ -4,7 +4,7 @@
  */
 
 import { useState } from 'react';
-import { 
+import {
   Sliders, 
   Building2, 
   Sparkles, 
@@ -22,6 +22,7 @@ import {
   Layers,
   ArrowRight
 } from 'lucide-react';
+import { sendLeadEmail } from '../lib/leadEmail';
 
 interface FreeZone {
   id: string;
@@ -504,6 +505,24 @@ export default function MatchmakerTool({ onSelectSetup, openContactModal }: Matc
                       return;
                     }
                     setLeadError('');
+                    void sendLeadEmail({
+                      source: 'Free Zone Matchmaker Lead',
+                      name: leadName,
+                      email: leadEmail,
+                      phone: leadPhone,
+                      fields: {
+                        Activity: activity,
+                        Urgency: urgency,
+                        PartnersCount: partnersCount,
+                        Nationality: nationality,
+                        OfficeType: officeType,
+                        RecommendedType: recommendation?.zoneType,
+                        RecommendedZone: recommendation?.zoneType === 'freezone' ? recommendation.bestFreeZone.name : 'Dubai Mainland',
+                        RecommendedLocation: recommendation?.zoneType === 'freezone' ? recommendation.bestFreeZone.location : 'Dubai',
+                        EstimatedTotal: recommendation?.totalEstCost ? `AED ${recommendation.totalEstCost.toLocaleString()}` : undefined,
+                        Reason: recommendation?.reason,
+                      },
+                    });
                     setLeadCompleted(true);
                   }}
                   className="w-full py-3 bg-brand-grad hover:opacity-95 text-white rounded-xl text-[12.5px] font-bold tracking-tight transition-transform hover:scale-[1.01] shadow-lg text-center border-0"
