@@ -1,18 +1,22 @@
-'use client';
+import type { Metadata } from "next";
+import ContactPageClient from "./ContactPageClient";
 
-import React from 'react';
-import ContactForm from '@/src/components/ContactForm';
-import { useQuote } from '@/src/components/QuoteProvider';
+export const metadata: Metadata = {
+  title: "Contact Scale Partners | UAE Corporate Advisory Desk",
+  description:
+    "Contact Scale Partners for UAE company formation, DMCC setup, visas, banking readiness, tax, renewal, and ongoing compliance advisory.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact Scale Partners | UAE Corporate Advisory",
+    description:
+      "Speak with a Scale Partners advisor about UAE company setup, visas, banking readiness, tax, renewal, and compliance.",
+    url: "/contact",
+    type: "website",
+  },
+};
 
 export default function ContactPage() {
-  const { quoteBreakdown, quoteSelection } = useQuote();
-
-  return (
-    <div className="pt-24 pb-20 max-w-5xl mx-auto px-4 animate-fade-in">
-      <ContactForm 
-        preloadedQuote={quoteBreakdown}
-        preloadedSelections={quoteSelection}
-      />
-    </div>
-  );
+  return <ContactPageClient />;
 }

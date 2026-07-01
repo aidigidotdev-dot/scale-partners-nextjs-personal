@@ -590,14 +590,56 @@ export default function SeoEngine({ page }: SeoEngineProps) {
         ];
         break;
 
+      case 'about-us':
+        title = 'About Scale Partners | UAE Corporate Advisory Team';
+        description = 'Learn how Scale Partners supports UAE company formation, licensing, visa, banking, tax, renewal, and compliance planning for founders and corporate shareholders.';
+        baseBreadcrumbs.itemListElement.push({
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About Us",
+          "item": `${siteUrl}/about-us`
+        });
+        schemaJson = [
+          baseBreadcrumbs
+        ];
+        break;
+
+      case 'privacy-policy':
+        title = 'Privacy Policy | Scale Partners Corporate Advisory';
+        description = 'Read how Scale Partners handles website enquiries, advisory intake details, communications, cookies, retention, and privacy requests.';
+        baseBreadcrumbs.itemListElement.push({
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Privacy Policy",
+          "item": `${siteUrl}/privacy-policy`
+        });
+        schemaJson = [
+          baseBreadcrumbs
+        ];
+        break;
+
+      case 'terms-and-conditions':
+        title = 'Terms & Conditions | Scale Partners Corporate Advisory';
+        description = 'Review the terms for using the Scale Partners website, advisory information, quotations, third-party authority coordination, and client responsibilities.';
+        baseBreadcrumbs.itemListElement.push({
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Terms & Conditions",
+          "item": `${siteUrl}/terms-and-conditions`
+        });
+        schemaJson = [
+          baseBreadcrumbs
+        ];
+        break;
+
       case 'contact':
         title = 'Book Corporate Consultation | Scale Partners Expert Advisors';
         description = 'Schedule a secure, white-glove 1-on-1 session with our licensed registration specialists. Complete UAE company setup planning, bank setups, and golden visa filings.';
         baseBreadcrumbs.itemListElement.push({
           "@type": "ListItem",
           "position": 2,
-          "name": "Consultation",
-          "item": `${siteUrl}/#contact`
+          "name": "Contact",
+          "item": `${siteUrl}/contact`
         });
         schemaJson = [
           baseBreadcrumbs

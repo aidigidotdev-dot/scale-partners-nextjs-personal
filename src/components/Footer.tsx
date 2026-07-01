@@ -61,6 +61,15 @@ export default function Footer({ setPage, openContactModal }: FooterProps) {
         { name: "9% Corporate Tax Advisor", id: "finance-tax" as PageId },
         { name: "VIP Corporate Banking", id: "finance-banking" as PageId },
       ]
+    },
+    {
+      title: "Scale Partners",
+      links: [
+        { name: "About Us", id: "about-us" as PageId },
+        { name: "Contact Advisory Desk", id: "contact" as PageId },
+        { name: "Privacy Policy", id: "privacy-policy" as PageId },
+        { name: "Terms & Conditions", id: "terms-and-conditions" as PageId },
+      ]
     }
   ];
 
@@ -69,7 +78,7 @@ export default function Footer({ setPage, openContactModal }: FooterProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Directory Map Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pb-12 border-b border-[#151a2d]">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 pb-12 border-b border-[#151a2d]">
           {footerGroups.map((group, idx) => (
             <div key={idx} className="space-y-4">
               <h4 className="text-[11.5px] font-mono tracking-widest uppercase text-white font-bold">
@@ -146,9 +155,9 @@ export default function Footer({ setPage, openContactModal }: FooterProps) {
           </div>
           
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-zinc-600">
-            <a href="#" onClick={(e) => {e.preventDefault(); openContactModal();}} className="hover:text-gold-400 transition-colors">Privacy and NDA Agreement</a>
-            <a href="#" onClick={(e) => {e.preventDefault(); openContactModal();}} className="hover:text-gold-400 transition-colors">Anti Money Laundering Policy (AML)</a>
-            <a href="#" onClick={(e) => {e.preventDefault(); openContactModal();}} className="hover:text-gold-400 transition-colors">Service Level Agreements</a>
+            <a href="/privacy-policy" onClick={(e) => {e.preventDefault(); handleLinkClick('privacy-policy');}} className="hover:text-gold-400 transition-colors">Privacy Policy</a>
+            <a href="/terms-and-conditions" onClick={(e) => {e.preventDefault(); handleLinkClick('terms-and-conditions');}} className="hover:text-gold-400 transition-colors">Terms & Conditions</a>
+            <a href="/contact" onClick={(e) => {e.preventDefault(); handleLinkClick('contact');}} className="hover:text-gold-400 transition-colors">Contact</a>
             <a href="#" onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('open-cookie-settings')); }} className="hover:text-gold-400 transition-colors">Cookie Preferences</a>
           </div>
         </div>
