@@ -37,6 +37,8 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
   const [sector, setSector] = useState("Technology & Professional Services");
   const [otherSector, setOtherSector] = useState("");
   const [notes, setNotes] = useState("");
+  const [captchaDigest, setCaptchaDigest] = useState("");
+  const [captchaVersion, setCaptchaVersion] = useState(0);
   const [consent, setConsent] = useState(false);
   const [showConsentError, setShowConsentError] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -45,6 +47,17 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
   const nameParts = fullName.split(/\s+/).filter(Boolean);
   const crmFirstName = nameParts[0] || "";
   const crmLastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : nameParts[0] || "";
+  const crmDescription = [
+    `Business Sector: ${sector === "Other" ? otherSector || "Other" : sector}`,
+    notes && `Notes: ${notes}`,
+    preloadedSelections?.jurisdiction && `Jurisdiction: ${preloadedSelections.jurisdiction}`,
+    preloadedSelections?.activity && `Activity: ${preloadedSelections.activity}`,
+    preloadedSelections && `Visas: ${preloadedSelections.visas}`,
+    preloadedSelections?.office && `Office: ${preloadedSelections.office}`,
+    preloadedQuote?.total && `Estimated Total: AED ${preloadedQuote.total.toLocaleString()}`,
+  ].filter(Boolean).join("\n");
+  const captchaBaseUrl = "https://crm.zoho.com/crm/CaptchaServlet?formId=cefab69c153a134aecf722906c776541a5639cb27744672fb5d6cf3b85fdc18826ec778e5ab46ff7733e2d13fc4dcccf&grpid=b324843087e6745e3516ec9250df6c7dec7632039e0ae721f5de987976f6a1bd";
+  const captchaImageUrl = captchaVersion ? `${captchaBaseUrl}&d=${captchaVersion}` : captchaBaseUrl;
 
   const setupPath = [
     {
@@ -67,7 +80,7 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
     }
   ];
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     if (!consent) {
       e.preventDefault();
       setShowConsentError(true);
@@ -77,6 +90,24 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
     if (!name || !email || !phone) {
       e.preventDefault();
       return;
+    }
+
+    try {
+      const salesiq = window.$zoho?.salesiq as {
+        visitor?: {
+          uniqueid?: () => string;
+          name?: (visitorName: string) => void;
+          email?: (visitorEmail: string) => void;
+        };
+      } | undefined;
+      const visitorIdField = e.currentTarget.elements.namedItem("LDTuvid") as HTMLInputElement | null;
+      if (visitorIdField && salesiq?.visitor?.uniqueid) {
+        visitorIdField.value = salesiq.visitor.uniqueid();
+      }
+      salesiq?.visitor?.name?.(fullName);
+      salesiq?.visitor?.email?.(email);
+    } catch {
+      // Zoho visitor tracking is optional and must not block lead submission.
     }
 
     void sendLeadEmail({
@@ -106,7 +137,7 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
     <div className="w-full bg-sp-mintBg relative overflow-hidden text-left font-sans">
       <Script
         id="wf_anal"
-        src="https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=cbb7d74af16ca230373bb799ddef24925c24a16b4432eefb5b0db46783ca010efa41c5dcebf71d9d67b29217ccec22ffgidb26d5c1186a08fea5061d2fe384767e3569a99866201478a00be28d09e79c452gid8b4f15aafc00f9e2cdba3db53ca7cec459c408f3d84db796e2e75d4546c6f0f9gidd41bebc36940686d375d40be77e78aa080d4e6414c369daa776652cb141583d5&tw=0ac1bcc3a48c6247fd64cbf9f7562559d26ae51378b0d1a30e05bdc3a522aed4"
+        src="https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=85de4e0dbd494bb0f3af92932f4654904631f06fdd6c9432bc2b80876c8a9b50645dd83812942f5c15ccf0d7391a5014gid571ea16447587368299afe454d16ea352b4106277047348ff29f198f11950fbagid7173d1763ffd5b1b886e27477fa78f9a3177d3abec54ecf2dd77ef92a788e51egid6c730f7044ca8f22c1bc38ad6ae1f5e7925a3fec45b1983f0ea4df1a65b8db1c&tw=e0e20503cf2050ea80b767b25e0b6c8e0e71abf9e6cb72b83803274bbe9dad39"
         strategy="afterInteractive"
       />
       {isSubmitted ? (
@@ -238,8 +269,8 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
             {/* Callback Intake Form */}
             <iframe name="zoho_crm_lead_target" title="Zoho CRM lead submission" className="hidden" />
             <form
-              id="webform7452864000000701015"
-              name="WebToLeads7452864000000701015"
+              id="webform7022345000000823001"
+              name="WebToLeads7022345000000823001"
               action="https://crm.zoho.com/crm/WebToLeadForm"
               method="POST"
               acceptCharset="UTF-8"
@@ -247,15 +278,19 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
               onSubmit={handleSubmit}
               className="space-y-2.5"
             >
-              <input type="hidden" name="xnQsjsdp" value="161079c95565f8d0c2294e3dadb29eb5ef5e551104b178842ac4215ba6a9e22a" />
+              <input type="hidden" name="xnQsjsdp" value="b324843087e6745e3516ec9250df6c7dec7632039e0ae721f5de987976f6a1bd" />
               <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-              <input type="hidden" name="xmIwtLD" value="fabfde2720ed89013401fff0d1c12a689bd63f0ca48bcb7cd91fc028b55d38e3b6fbeca3db07275abfa1038b85e0b8d9" />
+              <input type="hidden" name="xmIwtLD" value="cefab69c153a134aecf722906c776541a5639cb27744672fb5d6cf3b85fdc18826ec778e5ab46ff7733e2d13fc4dcccf" />
               <input type="hidden" name="actionType" value="TGVhZHM=" />
               <input type="hidden" name="returnURL" value="null" />
+              <input type="hidden" id="ldeskuid" name="ldeskuid" />
+              <input type="hidden" id="LDTuvid" name="LDTuvid" />
+              <input type="hidden" name="Company" value={fullName} />
               <input type="hidden" name="First Name" value={crmFirstName} />
               <input type="hidden" name="Last Name" value={crmLastName} />
               <input type="hidden" name="Email" value={email} />
-              <input type="hidden" name="Mobile" value={phone} />
+              <input type="hidden" name="Phone" value={phone} />
+              <input type="hidden" name="Description" value={crmDescription} />
               <input type="hidden" name="aG9uZXlwb3Q" value="" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {/* Full Name */}
@@ -360,6 +395,40 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
                   onChange={(e) => setNotes(e.target.value)}
                   className="w-full px-3.5 py-2.5 bg-white border border-sp-border rounded-xl text-[15px] placeholder-gray-400 focus:outline-none focus:border-sp-emerald/40 focus:ring-2 focus:ring-sp-neon/10 transition-all resize-none font-normal leading-normal text-sp-forest"
                 />
+              </div>
+
+              {/* Zoho CRM CAPTCHA */}
+              <div className="space-y-2">
+                <label htmlFor="zoho_captcha_digest" className="block text-[12px] tracking-normal font-medium text-sp-forest">
+                  Security code <span className="text-red-500">*</span>
+                </label>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+                  <input
+                    id="zoho_captcha_digest"
+                    type="text"
+                    name="enterdigest"
+                    required
+                    maxLength={10}
+                    autoComplete="off"
+                    placeholder="Enter the code shown"
+                    value={captchaDigest}
+                    onChange={(e) => setCaptchaDigest(e.target.value)}
+                    className="w-full sm:flex-1 px-3.5 py-2.5 bg-white border border-sp-border rounded-xl text-[15px] placeholder-gray-400 focus:outline-none focus:border-sp-emerald/40 focus:ring-2 focus:ring-sp-neon/10 transition-all font-normal text-sp-forest"
+                  />
+                  <div className="flex items-center gap-2 rounded-xl border border-sp-border bg-white px-3 py-2">
+                    <img src={captchaImageUrl} alt="Zoho verification code" className="h-8 w-auto" />
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setCaptchaDigest("");
+                        setCaptchaVersion(Date.now());
+                      }}
+                      className="text-[11px] font-semibold text-sp-emerald hover:underline"
+                    >
+                      Reload
+                    </button>
+                  </div>
+                </div>
               </div>
 
               {/* GDPR Legal Consent Checkbox */}
