@@ -53,11 +53,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         <Script id="zoho-salesiq-init" strategy="beforeInteractive">
-          {`window.$zoho=window.$zoho||{};$zoho.salesiq=$zoho.salesiq||{ready:function(){try{if($zoho.salesiq.floatbutton&&$zoho.salesiq.floatbutton.visible){$zoho.salesiq.floatbutton.visible("hide");}}catch(e){}}};`}
+          {`window.$zoho = window.$zoho || {}; $zoho.salesiq = $zoho.salesiq || { ready: function(){ try { if ($zoho.salesiq.floatbutton?.visible) { $zoho.salesiq.floatbutton.visible("hide"); } } catch (error) {} } };`}
         </Script>
         <Script
           id="zsiqscript"
-          src="https://salesiq.zoho.com/widget?wc=siq8a8b8930f76c263e0da96f4fa6d9b67c1de183db684e13417911357414099800"
+          src="https://salesiq.zoho.com/widget?wc=siq4137c3aa6fde9d2a980db1b3214bc8dbec0fed867d6ad29eb87ea634eab0d233"
           strategy="afterInteractive"
         />
         <QuoteProvider>
