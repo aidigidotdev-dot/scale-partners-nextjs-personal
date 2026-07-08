@@ -23,6 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <Script
+          id="zoho-pagesense"
+          src="https://cdn.pagesense.io/js/scalepartners/c09b8f80672e4fefb41c3eebb71c64bf.js"
+          strategy="beforeInteractive"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
