@@ -8,8 +8,8 @@ const contactItems = [
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "+971 55 205 1241",
-    href: "https://wa.me/971552051241",
+    value: "+971 52 669 2157",
+    href: "https://wa.me/971526692157",
   },
   {
     icon: Phone,

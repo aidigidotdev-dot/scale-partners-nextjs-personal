@@ -445,7 +445,7 @@ export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelp
         
         {/* A. WhatsApp Circular support badge */}
         <a 
-          href="https://wa.me/971552051241?text=Hello%20Scale%20Partners%20Advisory%20Desk.%20I%20would%20like%20to%20enquire%20about%20starting%20a%20company%20in%20Dubai."
+          href="https://wa.me/971526692157?text=Hello%20Scale%20Partners%20Advisory%20Desk.%20I%20would%20like%20to%20enquire%20about%20starting%20a%20company%20in%20Dubai."
           target="_blank"
           rel="noopener noreferrer"
           id="whatsapp_engagement_bubble"

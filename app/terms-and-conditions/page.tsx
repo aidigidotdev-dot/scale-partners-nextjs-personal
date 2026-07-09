@@ -163,7 +163,7 @@ export default function TermsAndConditionsPage() {
                 </div>
                 <h2 className="mt-4 text-[28px] sm:text-[36px] leading-tight text-white">Questions About These Terms</h2>
                 <p className="mt-4 max-w-2xl text-[14px] leading-[1.8] text-white/66">
-                  Contact Scale Partners Corporate Advisory at info@fourroadsgroup.com or WhatsApp +971 55 205 1241. Our office is 1703, Conrad Tower, World Trade Center, Dubai.
+                  Contact Scale Partners Corporate Advisory at info@fourroadsgroup.com or WhatsApp +971 52 669 2157. Our office is 1703, Conrad Tower, World Trade Center, Dubai.
                 </p>
               </div>
               <Link

@@ -492,7 +492,7 @@ export default function DmccLandingPage() {
   };
 
   const quoteDmcc = () => handleFreeZoneSelected('DMCC Dubai', 27900);
-  const dmccWhatsAppUrl = 'https://wa.me/971552051241?text=Hello%20Scale%20Partners%20Advisory%20Desk.%20I%20would%20like%20to%20speak%20to%20an%20advisor%20about%20DMCC%20company%20setup.';
+  const dmccWhatsAppUrl = 'https://wa.me/971526692157?text=Hello%20Scale%20Partners%20Advisory%20Desk.%20I%20would%20like%20to%20speak%20to%20an%20advisor%20about%20DMCC%20company%20setup.';
   const [activeProcessIndex, setActiveProcessIndex] = React.useState(0);
   const processRefs = React.useRef<Array<HTMLDivElement | null>>([]);
   const processProgress = ((activeProcessIndex + 1) / processSteps.length) * 100;

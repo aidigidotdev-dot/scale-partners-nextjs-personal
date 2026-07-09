@@ -204,12 +204,12 @@ export default function SidebarAdvisoryDesk({ expert }: SidebarAdvisoryDeskProps
                   <div className="flex flex-col">
                     <span className="text-[9.5px] uppercase font-mono text-zinc-400">WhatsApp Advisor</span>
                     <a 
-                      href="https://wa.me/971552051241" 
+                      href="https://wa.me/971526692157" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="text-zinc-900 font-bold hover:text-emerald-600 transition-colors"
                     >
-                      +971 55 205 1241
+                      +971 52 669 2157
                     </a>
                   </div>
                 </div>
