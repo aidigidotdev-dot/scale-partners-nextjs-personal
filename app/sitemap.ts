@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { freeZonePages } from '@/src/lib/freeZonePages';
 
 const siteUrl = 'https://scalepartners.ae';
 
@@ -33,8 +34,18 @@ const routes = [
   { path: '/terms-and-conditions', changeFrequency: 'yearly', priority: 0.3 },
 ] as const;
 
+const freeZoneRoutes = freeZonePages.map((page) => ({
+  path: `/${page.slug}`,
+  changeFrequency: 'monthly' as const,
+  priority: 0.8,
+}));
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map(({ path, changeFrequency, priority }) => ({
+  const uniqueRoutes = [...routes, ...freeZoneRoutes].filter(
+    (route, index, allRoutes) => allRoutes.findIndex((item) => item.path === route.path) === index,
+  );
+
+  return uniqueRoutes.map(({ path, changeFrequency, priority }) => ({
     url: `${siteUrl}${path}`,
     changeFrequency,
     priority,

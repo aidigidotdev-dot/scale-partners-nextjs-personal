@@ -1,24 +1,8 @@
-'use client';
+import RoutePageClient from '@/src/components/RoutePageClient';
+import { routeMetadata } from '@/src/lib/routeMetadata';
 
-import React from 'react';
-import FinancePage from '@/src/components/FinancePage';
-import { useQuote } from '@/src/components/QuoteProvider';
-import { useRouter } from 'next/navigation';
-import { PageId } from '@/src/types';
+export const metadata = routeMetadata['finance-tax'];
 
 export default function FinanceTaxPage() {
-  const { openBlankModal } = useQuote();
-  const router = useRouter();
-  
-  const setPage = (page: PageId) => {
-    router.push(page === 'home' ? '/' : `/${page}`);
-  };
-
-  return (
-    <FinancePage 
-      type="tax" 
-      setPage={setPage} 
-      openContactModal={openBlankModal} 
-    />
-  );
+  return <RoutePageClient page="finance-tax" />;
 }

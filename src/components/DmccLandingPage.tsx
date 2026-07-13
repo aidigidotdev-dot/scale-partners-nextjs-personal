@@ -1175,10 +1175,10 @@ export default function DmccLandingPage() {
               <span>Pricing Logic</span>
             </span>
             <h2 className="mx-auto mt-4 max-w-2xl font-serif text-[31px] font-semibold leading-tight tracking-tight text-zinc-900 sm:text-[40px]">
-              Packages And Cost Estimate
+              Setup Packages and Cost Planning
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-[14.5px] leading-7 text-zinc-600 sm:text-[15.5px]">
-              DMCC pricing depends on the package, activity, office route, establishment card, visas, and support scope. Use these as planning benchmarks before the final authority quote.
+              DMCC pricing is planned around license activity, office route, establishment card, visa count and support scope. Use these figures as planning benchmarks before the final route is confirmed.
             </p>
           </div>
 
@@ -1186,7 +1186,7 @@ export default function DmccLandingPage() {
             {[
               ['Starting Reference', 'AED 10,345+'],
               ['Core Benchmark', 'AED 27,900+'],
-              ['Final Quote', 'Route Based'],
+              ['Quote Basis', 'Activity + office'],
             ].map(([label, value]) => (
               <div key={label} className="border-b border-zinc-200/80 px-5 py-4 text-center last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0">
                 <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-400">{label}</div>

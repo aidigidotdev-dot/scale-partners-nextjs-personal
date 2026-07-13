@@ -950,7 +950,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                         <input
                           type="text"
                           required
-                          placeholder="Advocate Founder Name"
+                          placeholder="Full legal name"
                           value={calcName}
                           onChange={(e) => setCalcName(e.target.value)}
                           className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-[12.5px] placeholder-white/50 text-white focus:outline-none focus:border-white transition-all"
@@ -963,7 +963,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                           <input
                             type="email"
                             required
-                            placeholder="fdi@scale-partners.com"
+                            placeholder="name@company.com"
                             value={calcEmail}
                             onChange={(e) => setCalcEmail(e.target.value)}
                             className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-[12.5px] placeholder-white/50 text-white focus:outline-none focus:border-white transition-all"
@@ -974,7 +974,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                           <label className="text-[11px] font-mono text-white/85 uppercase font-semibold block">Mobile Number</label>
                           <input
                             type="tel"
-                            placeholder="+971 50 123 4567"
+                            placeholder="Phone or WhatsApp number"
                             value={calcPhone}
                             onChange={(e) => setCalcPhone(e.target.value)}
                             className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-[12.5px] placeholder-white/50 text-white focus:outline-none focus:border-white transition-all"

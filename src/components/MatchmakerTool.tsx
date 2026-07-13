@@ -468,7 +468,7 @@ export default function MatchmakerTool({ onSelectSetup, openContactModal }: Matc
                     <input
                       type="text"
                       className="w-full bg-slate-950 border border-white/[0.1] rounded-xl px-4 py-3 text-[12px] text-white focus:outline-none focus:border-[#22C55E] transition-all placeholder:text-zinc-600"
-                      placeholder="e.g. Liam Sterling"
+                      placeholder="Full legal name"
                       value={leadName}
                       onChange={(e) => setLeadName(e.target.value)}
                     />
@@ -479,7 +479,7 @@ export default function MatchmakerTool({ onSelectSetup, openContactModal }: Matc
                     <input
                       type="email"
                       className="w-full bg-slate-950 border border-white/[0.1] rounded-xl px-4 py-3 text-[12px] text-white focus:outline-none focus:border-[#22C55E] transition-all placeholder:text-zinc-600"
-                      placeholder="e.g. liam@sterling-holdings.co"
+                      placeholder="name@company.com"
                       value={leadEmail}
                       onChange={(e) => setLeadEmail(e.target.value)}
                     />
@@ -490,7 +490,7 @@ export default function MatchmakerTool({ onSelectSetup, openContactModal }: Matc
                     <input
                       type="tel"
                       className="w-full bg-slate-950 border border-white/[0.1] rounded-xl px-4 py-3 text-[12px] text-white focus:outline-none focus:border-[#22C55E] transition-all placeholder:text-zinc-600"
-                      placeholder="e.g. +971 50 123 4567"
+                      placeholder="Phone or WhatsApp number"
                       value={leadPhone}
                       onChange={(e) => setLeadPhone(e.target.value)}
                     />

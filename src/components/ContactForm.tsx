@@ -296,7 +296,7 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
                   <input 
                     type="text"
                     required
-                    placeholder="e.g. Alexander Mercer"
+                    placeholder="Full legal name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="w-full px-3.5 py-2.5 bg-white border border-sp-border rounded-xl text-[15px] placeholder-gray-400 focus:outline-none focus:border-sp-emerald/40 focus:ring-2 focus:ring-sp-neon/10 transition-all font-normal text-sp-forest"
@@ -310,7 +310,7 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
                   <input 
                     type="email"
                     required
-                    placeholder="alexander@mercerholdings.com"
+                    placeholder="name@company.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full px-3.5 py-2.5 bg-white border border-sp-border rounded-xl text-[15px] placeholder-gray-400 focus:outline-none focus:border-sp-emerald/40 focus:ring-2 focus:ring-sp-neon/10 transition-all font-normal text-sp-forest"
@@ -327,7 +327,7 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
                   <input 
                     type="tel"
                     required
-                    placeholder="+971 50 123 4567"
+                    placeholder="Phone or WhatsApp number"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     className="w-full px-3.5 py-2.5 bg-white border border-sp-border rounded-xl text-[15px] placeholder-gray-400 focus:outline-none focus:border-sp-emerald/40 focus:ring-2 focus:ring-sp-neon/10 transition-all font-normal text-sp-forest"
@@ -367,7 +367,7 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Healthcare, education, consulting"
+                    placeholder="Business activity or sector"
                     value={otherSector}
                     onChange={(e) => setOtherSector(e.target.value)}
                     className="w-full px-3.5 py-2.5 bg-white border border-sp-border rounded-xl text-[15px] placeholder-gray-400 focus:outline-none focus:border-sp-emerald/40 focus:ring-2 focus:ring-sp-neon/10 transition-all font-normal text-sp-forest"
@@ -385,7 +385,7 @@ export default function ContactForm({ preloadedQuote, preloadedSelections, onClo
                 </div>
                 <textarea 
                   rows={2}
-                  placeholder="e.g. Establishing a tech-holding structure seeking a 10-Year Golden Visa pathway."
+                  placeholder="Briefly describe your setup, visa or advisory requirement."
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   className="w-full px-3.5 py-2.5 bg-white border border-sp-border rounded-xl text-[15px] placeholder-gray-400 focus:outline-none focus:border-sp-emerald/40 focus:ring-2 focus:ring-sp-neon/10 transition-all resize-none font-normal leading-normal text-sp-forest"

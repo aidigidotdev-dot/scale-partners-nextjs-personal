@@ -7,7 +7,7 @@
 
 import { PageId } from '../types';
 import Image from 'next/image';
-import { Compass, Landmark, ShieldCheck, Mail, Phone, MapPin, Scale } from 'lucide-react';
+import { Compass, Landmark, ShieldCheck, Mail, Phone, MapPin, Scale, Facebook, Instagram } from 'lucide-react';
 
 interface FooterProps {
   setPage: (page: PageId) => void;
@@ -20,6 +20,19 @@ export default function Footer({ setPage, openContactModal }: FooterProps) {
     setPage(pageId);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const socialLinks = [
+    {
+      name: "Facebook",
+      href: "https://www.facebook.com/profile.php?id=61586771470454",
+      icon: Facebook,
+    },
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/scale_partners1",
+      icon: Instagram,
+    },
+  ];
 
   const footerGroups = [
     {
@@ -143,6 +156,27 @@ export default function Footer({ setPage, openContactModal }: FooterProps) {
                 <span>Landline: 04-360-7999</span>
                 <span>Email: info@fourroadsgroup.com</span>
               </p>
+            </div>
+
+            <div className="space-y-3">
+              <span className="text-white font-semibold font-mono uppercase tracking-wider text-[10.5px]">Social</span>
+              <div className="flex flex-wrap gap-2.5">
+                {socialLinks.map((link) => {
+                  const Icon = link.icon;
+                  return (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Scale Partners on ${link.name}`}
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-zinc-400 transition-colors hover:border-gold-400/40 hover:text-gold-400"
+                    >
+                      <Icon className="h-4 w-4" />
+                    </a>
+                  );
+                })}
+              </div>
             </div>
           </div>
 

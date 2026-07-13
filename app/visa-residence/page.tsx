@@ -1,24 +1,8 @@
-'use client';
+import RoutePageClient from '@/src/components/RoutePageClient';
+import { routeMetadata } from '@/src/lib/routeMetadata';
 
-import React from 'react';
-import VisaPage from '@/src/components/VisaPage';
-import { useQuote } from '@/src/components/QuoteProvider';
-import { useRouter } from 'next/navigation';
-import { PageId } from '@/src/types';
+export const metadata = routeMetadata['visa-residence'];
 
 export default function VisaResidencePage() {
-  const { openBlankModal } = useQuote();
-  const router = useRouter();
-  
-  const setPage = (page: PageId) => {
-    router.push(page === 'home' ? '/' : `/${page}`);
-  };
-
-  return (
-    <VisaPage 
-      type="residence" 
-      setPage={setPage} 
-      openContactModal={openBlankModal} 
-    />
-  );
+  return <RoutePageClient page="visa-residence" />;
 }

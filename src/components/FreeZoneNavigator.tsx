@@ -623,7 +623,7 @@ export default function FreeZoneNavigator({ onSelectFreeZone, openContactModal }
                   <Search className="absolute left-3.5 top-3.5 w-4 h-4 text-zinc-400" />
                   <input
                     type="text"
-                    placeholder="Search Free Zone e.g. Meydan..."
+                    placeholder="Search free zone by name"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="w-full bg-zinc-50 border border-zinc-200 focus:border-gold-500 focus:outline-none text-[13px] pl-10 pr-4 py-3 rounded-xl transition-all"

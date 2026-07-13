@@ -452,7 +452,7 @@ export default function CostCalculator({ onQuoteSubmit, openContactModal }: Cost
                     <input
                       type="text"
                       className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-[12.5px] text-white focus:outline-none focus:border-white transition-all placeholder:text-white/60"
-                      placeholder="e.g. Alexander Vance"
+                      placeholder="Full legal name"
                       value={leadName}
                       onChange={(e) => setLeadName(e.target.value)}
                     />
@@ -463,7 +463,7 @@ export default function CostCalculator({ onQuoteSubmit, openContactModal }: Cost
                     <input
                       type="email"
                       className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-[12.5px] text-white focus:outline-none focus:border-white transition-all placeholder:text-white/60"
-                      placeholder="e.g. alex@vance-holdings.com"
+                      placeholder="name@company.com"
                       value={leadEmail}
                       onChange={(e) => setLeadEmail(e.target.value)}
                     />
@@ -474,7 +474,7 @@ export default function CostCalculator({ onQuoteSubmit, openContactModal }: Cost
                     <input
                       type="tel"
                       className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-[12.5px] text-white focus:outline-none focus:border-white transition-all placeholder:text-white/60"
-                      placeholder="e.g. +971 50 123 4567"
+                      placeholder="Phone or WhatsApp number"
                       value={leadPhone}
                       onChange={(e) => setLeadPhone(e.target.value)}
                     />

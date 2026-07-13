@@ -801,13 +801,13 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div className="space-y-2 text-center md:text-left">
               <span className="text-[10px] uppercase font-mono tracking-wider text-gold-500 font-bold block">
-                Corporate Reputation & Compliance Standing
+                Advisory Standards & File Discipline
               </span>
               <h3 className="font-sans text-[26px] sm:text-[32px] font-light text-zinc-900 tracking-wide leading-none">
-                4.9/5 Client Satisfaction Rating
+                Evidence-Led UAE Company Setup
               </h3>
               <p className="text-[13px] text-zinc-500 font-sans">
-                Review verified corporate setups, direct DET registry files, and strategic tax exemption clearances.
+                Every route is mapped against activity wording, authority rules, banking evidence, tax position and renewal obligations.
               </p>
             </div>
             
@@ -821,8 +821,8 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                 ))}
               </div>
               <div className="text-left font-sans">
-                <span className="text-[12.5px] font-bold text-zinc-800 block leading-tight">184 Verified Reviews</span>
-                <span className="text-[10px] text-zinc-400 block font-mono">VERIFIED SETUP FEEDBACK</span>
+                <span className="text-[12.5px] font-bold text-zinc-800 block leading-tight">Route Discipline</span>
+                <span className="text-[10px] text-zinc-400 block font-mono">LICENSE, BANKING, COMPLIANCE</span>
               </div>
             </div>
           </div>
@@ -830,28 +830,28 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                name: "Marcus Vance",
-                role: "Managing Director, NexusFlow software holding",
-                review: "Scale Partners handled our entire DET mainland licensing structure and tax registration. Handled in under 24 hours without a single office visit. Clean, transparent corporate setups at its pinnacle.",
-                rating: 5,
-                date: "2 days ago",
-                avatar: "MV"
+                name: "License Route Mapping",
+                role: "Mainland, free zone and offshore setup",
+                review: "Activity wording, legal structure, office route, visa plan and renewal exposure are checked before a filing path is recommended.",
+                rating: 0,
+                date: "Standard 01",
+                avatar: "01"
               },
               {
-                name: "Amara Al-Suwaidi",
-                role: "Founder, Oryx Luxury Trading",
-                review: "Absolute class. The cost estimator was exactly aligned with the real registry fee breakdown. They fast-tracked our corporate account with Wio and set up our virtual desk smoothly.",
-                rating: 5,
-                date: "1 week ago",
-                avatar: "AA"
+                name: "Bank-Ready Company File",
+                role: "Evidence, contracts and funds-flow logic",
+                review: "The company story is prepared around clients, invoices, source of funds, shareholder documents and realistic banking expectations.",
+                rating: 0,
+                date: "Standard 02",
+                avatar: "02"
               },
               {
-                name: "Dr. Robert Chen",
-                role: "Chief Compliance Officer, BioGen UAE",
-                review: "Setting up biotech holding branches is complex, but senior advisor advocate Tarik Al-Mehairi managed the complete ministerial registrations. Flawless 10-year Golden Visa tracking.",
-                rating: 5,
-                date: "3 weeks ago",
-                avatar: "RC"
+                name: "Post-License Compliance",
+                role: "Tax, accounting, visas and renewals",
+                review: "After issuance, the handover keeps establishment card, visas, accounting records, corporate tax and renewal dates visible.",
+                rating: 0,
+                date: "Standard 03",
+                avatar: "03"
               }
             ].map((rev, idx) => (
               <div key={idx} className="bg-white border border-zinc-200/80 p-5 rounded-2xl space-y-4 hover:shadow-[0_15px_40px_rgba(0,0,0,0.03)] hover:border-zinc-350 transition-all font-sans relative text-left">
@@ -879,11 +879,11 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
                 </div>
                 
                 <p className="text-[12.5px] text-zinc-650 leading-relaxed italic font-sans">
-                  "{rev.review}"
+                  {rev.review}
                 </p>
                 
                 <div className="text-[9.5px] font-mono font-bold text-emerald-600 flex items-center space-x-1 uppercase tracking-wide bg-emerald-50/50 py-1 px-2.5 rounded-lg border border-emerald-100/30 self-start inline-block">
-                  <span>✓ Verified Setup Entry</span>
+                  <span>Advisory Standard</span>
                 </div>
               </div>
             ))}

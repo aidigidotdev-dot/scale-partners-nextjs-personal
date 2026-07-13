@@ -28,7 +28,7 @@ export default function ClientShell({ children }: { children: React.ReactNode })
     pageId = pathname.substring(1) as PageId;
   }
 
-  const isCustomDmccPage = pageId === 'fz-dmcc';
+  const isCustomFreeZonePage = pathname.startsWith('/fz-');
   const isUtilityPage = pageId === 'contact' || pageId === 'about-us' || pageId === 'privacy-policy' || pageId === 'terms-and-conditions';
 
   const setPage = (page: PageId) => {
@@ -67,13 +67,13 @@ export default function ClientShell({ children }: { children: React.ReactNode })
         <SovereignFloatingHelp setPage={setPage} />
 
         {/* Corporate Comparison Desk on Every Page */}
-        {!isUtilityPage && !isCustomDmccPage && <ComparisonBlock setPage={setPage} />}
+        {!isUtilityPage && !isCustomFreeZonePage && <ComparisonBlock setPage={setPage} />}
 
         {/* Corporate Custom Call To Action with FOMO on Every Page */}
-        {!isUtilityPage && !isCustomDmccPage && <SovereignCta currentPage={pageId} openContactModal={openBlankModal} />}
+        {!isUtilityPage && !isCustomFreeZonePage && <SovereignCta currentPage={pageId} openContactModal={openBlankModal} />}
 
         {/* Corporate Required Documents Listed on Every Page */}
-        {pageId !== 'home' && !isUtilityPage && !isCustomDmccPage && <RequiredDocuments />}
+        {pageId !== 'home' && !isUtilityPage && !isCustomFreeZonePage && <RequiredDocuments />}
 
         {/* FAQs will go at the end of the website */}
         {pageId === 'home' && <SeoFaqBlock setPage={setPage} />}

@@ -1,10 +1,7 @@
-import React from 'react';
 import DmccLandingPage from '@/src/components/DmccLandingPage';
+import { routeMetadata } from '@/src/lib/routeMetadata';
 
-export const metadata = {
-  title: 'DMCC Company Formation in Dubai | Scale Partners',
-  description: 'Set up a DMCC company in Dubai with licensing, office, visa, banking, renewal, and compliance support from Scale Partners.',
-};
+export const metadata = routeMetadata['fz-dmcc'];
 
 export default function DmccPage() {
   return <DmccLandingPage />;

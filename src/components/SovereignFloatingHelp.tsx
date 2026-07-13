@@ -305,7 +305,7 @@ export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelp
                         required
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        placeholder="e.g. Marcus Vance"
+                        placeholder="Full legal name"
                         className="w-full pl-9 pr-3.5 py-2 text-[12.5px] bg-white border border-zinc-200 rounded-xl focus:outline-none focus:border-gold-500 placeholder-zinc-350"
                       />
                     </div>
@@ -320,7 +320,7 @@ export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelp
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="e.g. founder@company.ae"
+                        placeholder="name@company.com"
                         className="w-full pl-9 pr-3.5 py-2 text-[12.5px] bg-white border border-zinc-200 rounded-xl focus:outline-none focus:border-gold-500 placeholder-zinc-350"
                       />
                     </div>
@@ -335,7 +335,7 @@ export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelp
                         required
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        placeholder="e.g. +971 50 123 4567"
+                        placeholder="Phone or WhatsApp number"
                         className="w-full pl-9 pr-3.5 py-2 text-[12.5px] bg-white border border-zinc-200 rounded-xl focus:outline-none focus:border-gold-500 placeholder-zinc-350"
                       />
                     </div>
@@ -407,7 +407,7 @@ export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelp
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask about registries, taxes, prices..."
+                  placeholder="Ask about registries, taxes or setup costs"
                   className="flex-grow px-3.5 py-2 bg-zinc-50 border border-zinc-200 rounded-xl text-[12.5px] focus:outline-none focus:border-gold-500 placeholder-zinc-400"
                 />
                 <button 

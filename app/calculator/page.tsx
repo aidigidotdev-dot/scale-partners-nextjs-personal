@@ -1,23 +1,8 @@
-'use client';
+import RoutePageClient from '@/src/components/RoutePageClient';
+import { routeMetadata } from '@/src/lib/routeMetadata';
 
-import React from 'react';
-import CostCalculator from '@/src/components/CostCalculator';
-import { useQuote } from '@/src/components/QuoteProvider';
-import { useRouter } from 'next/navigation';
-import { PageId } from '@/src/types';
+export const metadata = routeMetadata['calculator'];
 
 export default function CalculatorPage() {
-  const { openBlankModal, handleQuoteCalculated } = useQuote();
-  const router = useRouter();
-  
-  const setPage = (page: PageId) => {
-    router.push(page === 'home' ? '/' : `/${page}`);
-  };
-
-  return (
-    <CostCalculator 
-      onQuoteSubmit={handleQuoteCalculated} 
-      openContactModal={openBlankModal} 
-    />
-  );
+  return <RoutePageClient page="calculator" />;
 }
