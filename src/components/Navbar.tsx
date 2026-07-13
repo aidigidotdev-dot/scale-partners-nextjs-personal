@@ -56,11 +56,6 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleAnchorClick = (event: React.MouseEvent<HTMLAnchorElement>, pageId: string) => {
-    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    handleLinkClick(pageId);
-  };
 
   const pageHref = (pageId: string) => pageId === 'home' ? '/' : '/' + pageId;
 
@@ -237,7 +232,6 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
                       </div>
                       <a
                         href={pageHref('setup-freezone')}
-                        onClick={(event) => handleAnchorClick(event, 'setup-freezone')}
                         className="flex items-center gap-2 rounded-full border border-gold-500/25 bg-gold-50/60 px-3 py-2 text-[12px] font-semibold text-gold-700 transition-colors hover:bg-gold-100/70"
                       >
                         <span>Free Zone overview</span>
@@ -288,7 +282,6 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
                                 key={item.id}
                                 id={`nav_freezone_link_${item.id}`}
                                 href={pageHref(item.id)}
-                                onClick={(event) => handleAnchorClick(event, item.id)}
                                 className={`group flex min-h-10 w-full items-center justify-between gap-2 rounded-lg bg-white px-3 py-2 text-left text-[12.5px] leading-snug shadow-sm ring-1 ring-zinc-100 transition-colors ${
                                   isSelected
                                     ? 'text-gold-700 font-semibold ring-gold-500/25 bg-gold-50'
@@ -432,7 +425,6 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
                               <a
                                 key={item.id}
                                 href={pageHref(item.id)}
-                                onClick={(event) => handleAnchorClick(event, item.id)}
                                 className={`block w-full rounded-lg px-3 py-2 text-left text-[13px] leading-tight transition-colors ${
                                   isSelected ? 'bg-gold-50 text-gold-700 font-semibold' : 'text-zinc-600 hover:bg-white hover:text-zinc-900'
                                 }`}
