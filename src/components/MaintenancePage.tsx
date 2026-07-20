@@ -18,25 +18,8 @@ export default function MaintenancePage() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-emerald-50/80">
-            We are performing scheduled maintenance and will be back online shortly. For urgent business setup, visa, or advisory requests, please contact our team directly.
+            We are performing scheduled maintenance and will be back online shortly.
           </p>
-
-          <div className="mt-10 grid gap-4 text-sm text-emerald-50/85 sm:grid-cols-2">
-            <a
-              href="tel:+971585682558"
-              className="border border-white/15 bg-white/8 px-5 py-4 transition hover:border-[#22C55E]/60 hover:bg-white/12"
-            >
-              <span className="block text-xs uppercase tracking-[0.16em] text-emerald-200/70">Call</span>
-              <span className="mt-2 block text-base text-white">+971 58 568 2558</span>
-            </a>
-            <a
-              href="mailto:info@scalepartners.ae"
-              className="border border-white/15 bg-white/8 px-5 py-4 transition hover:border-[#22C55E]/60 hover:bg-white/12"
-            >
-              <span className="block text-xs uppercase tracking-[0.16em] text-emerald-200/70">Email</span>
-              <span className="mt-2 block text-base text-white">info@scalepartners.ae</span>
-            </a>
-          </div>
         </div>
       </section>
     </main>

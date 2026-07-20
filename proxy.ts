@@ -54,32 +54,8 @@ const maintenanceHtml = `<!doctype html>
       font-size: 18px;
       line-height: 1.75;
     }
-    .links {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      max-width: 760px;
-      margin-top: 40px;
-    }
-    a {
-      display: block;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      background: rgba(255, 255, 255, 0.08);
-      padding: 18px 20px;
-      color: #ffffff;
-      text-decoration: none;
-    }
-    small {
-      display: block;
-      margin-bottom: 8px;
-      color: rgba(167, 243, 208, 0.75);
-      font-size: 12px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
     @media (max-width: 640px) {
       main { padding: 48px 20px; }
-      .links { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -88,11 +64,7 @@ const maintenanceHtml = `<!doctype html>
     <div class="wrap">
       <div class="label"><span class="dot"></span>Maintenance Mode</div>
       <h1>Scale Partners is getting a quick upgrade.</h1>
-      <p>We are performing scheduled maintenance and will be back online shortly. For urgent business setup, visa, or advisory requests, please contact our team directly.</p>
-      <div class="links">
-        <a href="tel:+971585682558"><small>Call</small>+971 58 568 2558</a>
-        <a href="mailto:info@scalepartners.ae"><small>Email</small>info@scalepartners.ae</a>
-      </div>
+      <p>We are performing scheduled maintenance and will be back online shortly.</p>
     </div>
   </main>
 </body>
