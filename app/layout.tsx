@@ -1,12 +1,16 @@
 import React from 'react';
 import Script from 'next/script';
 import { QuoteProvider } from '@/src/components/QuoteProvider';
-import ClientShell from '@/src/components/ClientShell';
+import MaintenancePage from '@/src/components/MaintenancePage';
 import '@/src/index.css';
 
 export const metadata = {
-  title: 'Scale Partners | Business Setup & Corporate Advisory in Dubai',
-  description: 'Scale Partners is the UAE\'s premier legal advisory for market entry, mainland configurations, and corporate expansion. Professional, precise licensing and visa services.',
+  title: 'Scale Partners | Maintenance',
+  description: 'Scale Partners is currently undergoing scheduled maintenance.',
+  robots: {
+    index: false,
+    follow: false,
+  },
   verification: {
     google: 'DZU8v3oZp05XXgCju9UgcK-jJHoURZ_j_eq0wEzRK-4',
     other: {
@@ -66,11 +70,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           strategy="afterInteractive"
         />
         <QuoteProvider>
-          <ClientShell>
-            {children}
-          </ClientShell>
+          <MaintenancePage />
         </QuoteProvider>
       </body>
     </html>
   );
 }
+
