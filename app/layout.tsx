@@ -1,15 +1,14 @@
 import React from 'react';
 import Script from 'next/script';
 import { QuoteProvider } from '@/src/components/QuoteProvider';
-import MaintenancePage from '@/src/components/MaintenancePage';
 import '@/src/index.css';
 
 export const metadata = {
-  title: 'Scale Partners | Maintenance',
-  description: 'Scale Partners is currently undergoing scheduled maintenance.',
+  title: 'Scale Partners',
+  description: 'Scale Partners provides UAE business setup, visa, finance, and tax advisory services.',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
   verification: {
     google: 'DZU8v3oZp05XXgCju9UgcK-jJHoURZ_j_eq0wEzRK-4',
@@ -69,9 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           src="https://salesiq.zoho.com/widget?wc=siq4137c3aa6fde9d2a980db1b3214bc8dbec0fed867d6ad29eb87ea634eab0d233"
           strategy="afterInteractive"
         />
-        <QuoteProvider>
-          <MaintenancePage />
-        </QuoteProvider>
+        <QuoteProvider>{children}</QuoteProvider>
       </body>
     </html>
   );
