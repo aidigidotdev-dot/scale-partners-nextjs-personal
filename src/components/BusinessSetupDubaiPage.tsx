@@ -72,28 +72,6 @@ const costFactors = [
   { label: "Add-ons", text: "Corporate tax, VAT, bookkeeping, bank account support, PRO services, and document attestation." },
 ];
 
-const faqs = [
-  {
-    q: "What is the best option for business setup in Dubai?",
-    a: "The best route depends on your activity, where your customers are, whether you need visas, and how important UAE mainland trading is. Many digital founders prefer free zones, while retail, contracting, and local service businesses often need mainland licensing.",
-  },
-  {
-    q: "How long does company formation in Dubai take?",
-    a: "Straightforward free zone setups can be completed quickly once documents are ready. Mainland and regulated activities may need extra approvals, lease steps, or authority review. We map the timeline before submission.",
-  },
-  {
-    q: "Can foreign investors own 100% of a UAE company?",
-    a: "Many mainland and free zone activities allow full foreign ownership. Some regulated or strategic activities may have special approval requirements, which should be checked before choosing the license route.",
-  },
-  {
-    q: "Do I need a UAE office for company setup?",
-    a: "Some free zones allow flexi-desk or virtual workspace packages. Mainland and visa-heavy structures may require a lease or office allocation depending on activity and visa count.",
-  },
-  {
-    q: "Can Scale Partners help after the license is issued?",
-    a: "Yes. The setup plan can include corporate tax registration, VAT, accounting, bank account preparation, visas, renewals, and ongoing compliance support.",
-  },
-];
 
 export default function BusinessSetupDubaiPage() {
   const router = useRouter();
@@ -416,31 +394,6 @@ export default function BusinessSetupDubaiPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-4 space-y-4">
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-emerald-600">FAQ</span>
-            <h2 className="text-[30px] sm:text-[38px] font-semibold leading-tight text-zinc-900">
-              Business setup in Dubai FAQs
-            </h2>
-            <p className="text-[15px] text-zinc-500 leading-relaxed">
-              Answers to the questions founders usually ask before choosing a UAE company structure.
-            </p>
-          </div>
-          <div className="lg:col-span-8 space-y-3">
-            {faqs.map((faq) => (
-              <details key={faq.q} className="group rounded-2xl border border-zinc-200 bg-white p-5 open:shadow-[0_16px_40px_rgba(7,20,11,0.05)]">
-                <summary className="cursor-pointer list-none flex items-center justify-between gap-4">
-                  <span className="text-[15px] font-semibold text-zinc-900">{faq.q}</span>
-                  <ArrowRight className="w-4 h-4 text-emerald-600 transition-transform group-open:rotate-90" />
-                </summary>
-                <p className="text-[13.5px] text-zinc-500 leading-relaxed mt-3">{faq.a}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="bg-zinc-950 py-14 sm:py-16 text-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -468,3 +421,6 @@ export default function BusinessSetupDubaiPage() {
     </div>
   );
 }
+
+
+

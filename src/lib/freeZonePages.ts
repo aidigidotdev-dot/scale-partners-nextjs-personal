@@ -18,6 +18,7 @@ export interface FreeZonePageInput {
   comparisonStance: string;
   rawInput: string;
   quoteBasePrice: number;
+  status?: 'draft' | 'published';
 }
 
 export const freeZonePages: FreeZonePageInput[] = [
@@ -487,6 +488,7 @@ export const freeZonePages: FreeZonePageInput[] = [
   },
   {
     "slug": "fz-masdar-city",
+    "status": "draft",
     "aliases": [],
     "zone": "Masdar City Free Zone",
     "headingName": "Masdar City Free Zone",
@@ -511,6 +513,7 @@ export const freeZonePages: FreeZonePageInput[] = [
   },
   {
     "slug": "fz-twofour54",
+    "status": "draft",
     "aliases": [
       "fz-two-four-54"
     ],
@@ -537,6 +540,7 @@ export const freeZonePages: FreeZonePageInput[] = [
   },
   {
     "slug": "fz-adafz",
+    "status": "draft",
     "aliases": [
       "fz-abu-dhabi-airports-free-zone"
     ],
@@ -563,6 +567,7 @@ export const freeZonePages: FreeZonePageInput[] = [
   },
   {
     "slug": "fz-srtip",
+    "status": "draft",
     "aliases": [
       "fz-sharjah-research-technology-innovation-park"
     ],
@@ -615,6 +620,7 @@ export const freeZonePages: FreeZonePageInput[] = [
   },
   {
     "slug": "fz-saif-zone",
+    "status": "draft",
     "aliases": [
       "fz-saif"
     ],
@@ -641,6 +647,7 @@ export const freeZonePages: FreeZonePageInput[] = [
   },
   {
     "slug": "fz-spc",
+    "status": "draft",
     "aliases": [
       "fz-sharjah-publishing-city"
     ],
@@ -667,6 +674,7 @@ export const freeZonePages: FreeZonePageInput[] = [
   },
   {
     "slug": "fz-hfza",
+    "status": "draft",
     "aliases": [
       "fz-hamriyah-free-zone"
     ],
@@ -693,6 +701,7 @@ export const freeZonePages: FreeZonePageInput[] = [
   },
   {
     "slug": "fz-ffz",
+    "status": "draft",
     "aliases": [
       "fz-fujairah-free-zone"
     ],
@@ -719,6 +728,7 @@ export const freeZonePages: FreeZonePageInput[] = [
   },
   {
     "slug": "fz-fcc",
+    "status": "draft",
     "aliases": [
       "fz-fujairah-creative-city"
     ],
@@ -745,6 +755,7 @@ export const freeZonePages: FreeZonePageInput[] = [
   },
   {
     "slug": "fz-foiz",
+    "status": "draft",
     "aliases": [
       "fz-fujairah-oil-industry-zone"
     ],
@@ -771,6 +782,7 @@ export const freeZonePages: FreeZonePageInput[] = [
   },
   {
     "slug": "fz-ajman-free-zone",
+    "status": "draft",
     "aliases": [
       "fz-afz"
     ],
@@ -797,6 +809,7 @@ export const freeZonePages: FreeZonePageInput[] = [
   },
   {
     "slug": "fz-ajman-media-city",
+    "status": "draft",
     "aliases": [],
     "zone": "Ajman Media City Free Zone",
     "headingName": "Ajman Media City Free Zone",
@@ -821,6 +834,7 @@ export const freeZonePages: FreeZonePageInput[] = [
   },
   {
     "slug": "fz-ajman-nuventures-centre",
+    "status": "draft",
     "aliases": [
       "fz-ajman-nuventures"
     ],
@@ -846,6 +860,7 @@ export const freeZonePages: FreeZonePageInput[] = [
   },
   {
     "slug": "fz-al-zorah",
+    "status": "draft",
     "aliases": [],
     "zone": "Al Zorah Free Zone",
     "headingName": "Al Zorah Free Zone",
@@ -870,6 +885,7 @@ export const freeZonePages: FreeZonePageInput[] = [
   },
   {
     "slug": "fz-ajman-car-souq",
+    "status": "draft",
     "aliases": [],
     "zone": "Ajman Car Souq Free Zone",
     "headingName": "Ajman Car Souq Free Zone",
@@ -894,14 +910,19 @@ export const freeZonePages: FreeZonePageInput[] = [
   }
 ];
 
-export const freeZonePagesBySlug: Record<string, FreeZonePageInput> = freeZonePages.reduce((acc, page) => {
+export const draftFreeZoneSlugs = new Set(freeZonePages.filter((page) => page.status === 'draft').map((page) => page.slug));
+
+export const publishedFreeZonePages = freeZonePages.filter((page) => page.status !== 'draft');
+
+export const freeZonePagesBySlug: Record<string, FreeZonePageInput> = publishedFreeZonePages.reduce((acc, page) => {
   acc[page.slug] = page;
   return acc;
 }, {} as Record<string, FreeZonePageInput>);
 
-export const freeZoneAliasRedirects: Record<string, string> = freeZonePages.reduce((acc, page) => {
+export const freeZoneAliasRedirects: Record<string, string> = publishedFreeZonePages.reduce((acc, page) => {
   page.aliases.forEach((alias) => {
     acc[alias] = page.slug;
   });
   return acc;
 }, {} as Record<string, string>);
+

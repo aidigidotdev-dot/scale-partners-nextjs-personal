@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { freeZonePages } from '@/src/lib/freeZonePages';
+import { publishedFreeZonePages } from '@/src/lib/freeZonePages';
 
 const siteUrl = 'https://scalepartners.ae';
 
@@ -34,7 +34,7 @@ const routes = [
   { path: '/terms-and-conditions', changeFrequency: 'yearly', priority: 0.3 },
 ] as const;
 
-const freeZoneRoutes = freeZonePages.map((page) => ({
+const freeZoneRoutes = publishedFreeZonePages.map((page) => ({
   path: `/${page.slug}`,
   changeFrequency: 'monthly' as const,
   priority: 0.8,

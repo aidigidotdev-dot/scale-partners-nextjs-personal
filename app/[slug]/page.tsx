@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import React from 'react';
-import { permanentRedirect } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import DirectorySlugClient from '@/src/components/DirectorySlugClient';
 import FreeZoneLandingPage from '@/src/components/FreeZoneLandingPage';
-import { freeZoneAliasRedirects, freeZonePages, freeZonePagesBySlug } from '@/src/lib/freeZonePages';
+import { freeZoneAliasRedirects, freeZonePagesBySlug, publishedFreeZonePages } from '@/src/lib/freeZonePages';
 import { legacyDirectorySlugs, metadataForSlug } from '@/src/lib/routeMetadata';
 
 interface PageProps {
@@ -34,7 +34,7 @@ function pageDescription(name: string) {
 
 export function generateStaticParams() {
   return [
-    ...freeZonePages.map((page) => ({ slug: page.slug })),
+    ...publishedFreeZonePages.map((page) => ({ slug: page.slug })),
     ...legacyDirectorySlugs.map((slug) => ({ slug })),
   ];
 }
@@ -86,5 +86,11 @@ export default async function DirectorySlugPage({ params }: PageProps) {
     );
   }
 
+
+  if (slug.startsWith('fz-') && !metadataForSlug(slug)) {
+    notFound();
+  }
+
   return <DirectorySlugClient slug={slug} />;
 }
+

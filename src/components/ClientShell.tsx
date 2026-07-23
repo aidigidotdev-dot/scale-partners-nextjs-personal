@@ -8,8 +8,6 @@ import SovereignFloatingHelp from './SovereignFloatingHelp';
 import ComparisonBlock from './ComparisonBlock';
 import RequiredDocuments from './RequiredDocuments';
 import SovereignCta from './SovereignCta';
-import SeoFaqBlock from './SeoFaqBlock';
-import SeoEngine from './SeoEngine';
 import ContactForm from './ContactForm';
 import RecentBlogs from './RecentBlogs';
 import { useQuote } from './QuoteProvider';
@@ -48,9 +46,6 @@ export default function ClientShell({ children }: { children: React.ReactNode })
         {/* GDPR Cookie Consent Compliance Banner */}
         <CookieConsentBanner />
 
-        {/* Dynamic SEO & Schema.org JSON-LD Markup Generator */}
-        <SeoEngine page={pageId} />
-
         {/* Prime Header & Navigation System */}
         <Navbar 
           currentPage={pageId} 
@@ -74,9 +69,6 @@ export default function ClientShell({ children }: { children: React.ReactNode })
 
         {/* Corporate Required Documents Listed on Every Page */}
         {pageId !== 'home' && !isUtilityPage && !isCustomFreeZonePage && <RequiredDocuments />}
-
-        {/* FAQs will go at the end of the website */}
-        {pageId === 'home' && <SeoFaqBlock setPage={setPage} />}
 
         {/* Recent blogs placed at the end of the homepage before footer */}
         {pageId === 'home' && <RecentBlogs />}
@@ -112,3 +104,4 @@ export default function ClientShell({ children }: { children: React.ReactNode })
     </div>
   );
 }
+

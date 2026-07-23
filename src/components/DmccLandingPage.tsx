@@ -11,7 +11,6 @@ import {
   Building2,
   CalendarCheck,
   CheckCircle2,
-  ChevronDown,
   Clock3,
   Coins,
   FileCheck2,
@@ -386,40 +385,6 @@ const comparisons = [
   },
 ];
 
-const faqs = [
-  {
-    q: 'How long does DMCC company formation take?',
-    a: 'DMCC states that company registration typically takes around 10 working days, depending on complete documents, activity review, office selection, payment, and approvals.',
-  },
-  {
-    q: 'Can I set up a DMCC company remotely?',
-    a: 'Yes. DMCC offers a digital setup process for application, document upload, payment, and signing. If you apply for a UAE residence visa afterward, you must come to the UAE for medical fitness and Emirates ID biometrics.',
-  },
-  {
-    q: 'Does DMCC require an office?',
-    a: 'Yes. A DMCC company needs a registered address within DMCC. Depending on the activity, budget, visa needs, and banking profile, this can be a flexi desk, serviced office, co-working solution, or dedicated physical office.',
-  },
-  {
-    q: 'What is the starting cost for DMCC setup?',
-    a: 'DMCC publishes package ranges that can start from AED 10,345 and vary significantly by package, activity, license duration, and office inclusion. Many premium ecosystem packages sit higher, so an exact quote should be confirmed before filing.',
-  },
-  {
-    q: 'How many visas can a DMCC company get?',
-    a: 'The visa allocation depends on the office solution, license activity, and DMCC rules at the time of application. A larger physical office usually supports a stronger visa position than a lean flexi desk.',
-  },
-  {
-    q: 'Is DMCC better than IFZA or Meydan?',
-    a: 'DMCC is usually better when prestige, trading credibility, JLT presence, commodities, crypto/tech ecosystem access, or banking confidence matters. IFZA or Meydan may be better for leaner budgets or simpler consulting structures.',
-  },
-  {
-    q: 'Can a DMCC company open a UAE bank account?',
-    a: 'Yes, but bank approval is never automatic. A strong bank pack should explain the activity, shareholders, source of funds, expected turnover, counterparties, office setup, and contract flow.',
-  },
-  {
-    q: 'Do DMCC companies have ongoing compliance?',
-    a: 'Yes. Expect license renewal, office validity, UBO updates, accounting records, corporate tax assessment, VAT review where relevant, visa tracking, and activity discipline. Some businesses also need extra regulator approvals or audit planning.',
-  },
-];
 
 function SectionHeading({
   eyebrow,
@@ -1466,27 +1431,6 @@ export default function DmccLandingPage() {
         </div>
       </section>
 
-      <section className="px-5 py-20 sm:px-7 lg:px-10 lg:py-28">
-        <div className="mx-auto grid max-w-[1320px] gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <SectionHeading
-            eyebrow="FAQs"
-            title="DMCC company setup questions"
-            text="These are the questions founders usually ask before choosing DMCC over a cheaper free zone."
-          />
-          <div className="space-y-3">
-            {faqs.map((faq) => (
-              <details key={faq.q} className="group rounded-[8px] border border-zinc-200 bg-white p-5 shadow-sm">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] text-zinc-950">
-                  <span>{faq.q}</span>
-                  <ChevronDown className="h-4 w-4 shrink-0 text-zinc-400 transition-transform group-open:rotate-180" />
-                </summary>
-                <p className="mt-4 text-[13.5px] leading-7 text-zinc-600">{faq.a}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="px-5 pb-24 sm:px-7 lg:px-10 lg:pb-32">
         <div className="mx-auto overflow-hidden rounded-[8px] bg-[#07140B] text-white shadow-[0_30px_100px_rgba(7,20,11,0.18)]">
           <div className="grid gap-8 px-6 py-12 sm:px-10 lg:grid-cols-[1fr_0.55fr] lg:items-center lg:px-14 lg:py-16">
@@ -1516,3 +1460,6 @@ export default function DmccLandingPage() {
     </div>
   );
 }
+
+
+

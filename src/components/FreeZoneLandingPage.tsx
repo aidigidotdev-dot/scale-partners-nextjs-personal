@@ -11,7 +11,6 @@ import {
   Building2,
   CalendarCheck,
   CheckCircle2,
-  ChevronDown,
   Clock3,
   Coins,
   FileCheck2,
@@ -422,44 +421,43 @@ function buildComparisons(page: FreeZonePageInput) {
   ];
 }
 
-function buildFaqs(page: FreeZonePageInput) {
-  return [
-    { q: `How long does ${page.headingName} company formation take?`, a: `${page.headingName} formation timeline is ${page.verifiedNumbers.timeline}. The final window depends on complete documents, activity approval, workspace selection, payment and any regulated-sector checks.` },
-    { q: `What is the starting cost for ${page.headingName} setup?`, a: publicSetupCostAnswer(page) },
-    { q: `Who is ${page.headingName} best for?`, a: `${page.headingName} is best for ${page.bestFor.join('; ')}.` },
-    { q: `What licenses does ${page.headingName} issue?`, a: `${page.headingName} license routes include ${page.licenseTypes}. The exact activity wording should be confirmed before filing.` },
-    { q: `Where is ${page.headingName} located?`, a: `${page.headingName} is linked to ${page.location}. Location matters for address credibility, logistics, sector ecosystem and office planning.` },
-    { q: `Can a ${page.headingName} company sponsor visas?`, a: `A ${page.headingName} company can usually plan investor and employee visas after licensing, but quota depends on the authority package, office route, role and current rules.` },
-    { q: `What does ${page.headingName} renewal cost?`, a: `${page.headingName} renewal fees are ${page.verifiedNumbers.renewalFees}. Confirm the current authority schedule before renewal because office, establishment card, visas and penalties can change the total.` },
-    { q: `When is ${page.headingName} the wrong choice?`, a: `${publicWrongChoiceSentence(page)} We compare cheaper, sector-specific and infrastructure-led alternatives before filing.` },
-  ];
+function publicFeeValue(value: string, fallback: 'setup' | 'renewal') {
+  if (!value || isVerify(value) || !hasNumericPrice(value)) {
+    return fallback === 'setup' ? 'Custom setup quote' : 'Custom renewal quote';
+  }
+  const match = value.match(/AED\s*([0-9][0-9,]*)/i);
+  return match ? `AED ${match[1]}+` : firstSentence(value).slice(0, 34);
 }
 
-function SectionHeading({ eyebrow, title, text, align = 'left', tone = 'light' }: { eyebrow: string; title: string; text?: string; align?: 'left' | 'center'; tone?: 'light' | 'dark' }) {
+function SectionHeading({
+  eyebrow,
+  title,
+  text,
+  align = 'left',
+  tone = 'light',
+}: {
+  eyebrow: string;
+  title: string;
+  text?: string;
+  align?: 'left' | 'center';
+  tone?: 'light' | 'dark';
+}) {
   return (
     <div className={align === 'center' ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'}>
       <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#C7A969]/25 bg-[#F8F4EA] px-3 py-1 text-[10px] font-mono uppercase tracking-[0.18em] text-[#8A6A1F]">
         <Sparkles className="h-3.5 w-3.5" />
         <span>{eyebrow}</span>
       </div>
-      <h2 className={`dmcc-section-title text-[30px] leading-[1.14] sm:text-[38px] lg:text-[44px] ${tone === 'dark' ? 'text-white' : 'text-zinc-950'}`}>{title}</h2>
-      {text && <p className={`mt-4 text-[14.5px] leading-7 sm:text-[16px] ${tone === 'dark' ? 'text-white/68' : 'text-zinc-600'}`}>{text}</p>}
+      <h2 className={`dmcc-section-title text-[30px] leading-[1.14] sm:text-[38px] lg:text-[44px] ${tone === 'dark' ? 'text-white' : 'text-zinc-950'}`}>
+        {title}
+      </h2>
+      {text && (
+        <p className={`mt-4 text-[14.5px] leading-7 sm:text-[16px] ${tone === 'dark' ? 'text-white/68' : 'text-zinc-600'}`}>
+          {text}
+        </p>
+      )}
     </div>
   );
-}
-
-function publicFeeValue(value: string, type: 'setup' | 'renewal' = 'setup') {
-  if (isVerify(value)) return type === 'renewal' ? 'Renewal plan' : 'Custom package';
-  if (!hasNumericPrice(value)) return type === 'renewal' ? 'Renewal plan' : 'Custom package';
-  return cleanPublicText(value) || (type === 'renewal' ? 'Renewal plan' : 'Custom package');
-}
-
-function publicSetupCostAnswer(page: FreeZonePageInput) {
-  const value = page.verifiedNumbers.setupCostRange;
-  if (!hasNumericPrice(value)) {
-    return `${page.headingName} setup pricing is prepared after activity mapping, shareholder review, workspace selection, establishment card planning and visa assumptions. This gives founders a clean first-year budget without showing an unsupported public fee.`;
-  }
-  return `${page.headingName} setup cost range is ${value}. Treat this as a planning benchmark until license, workspace, establishment card and visa assumptions are confirmed.`;
 }
 function PrimaryButton({ children, onClick, dark = false }: { children: React.ReactNode; onClick: () => void; dark?: boolean }) {
   return (
@@ -498,7 +496,6 @@ export default function FreeZoneLandingPage({ page }: { page: FreeZonePageInput 
   const renewalSteps = React.useMemo(() => buildRenewalSteps(page), [page]);
   const complianceItems = React.useMemo(() => buildCompliance(page), [page]);
   const comparisons = React.useMemo(() => buildComparisons(page), [page]);
-  const faqs = React.useMemo(() => buildFaqs(page), [page]);
   const [activeProcessIndex, setActiveProcessIndex] = React.useState(0);
   const processRefs = React.useRef<Array<HTMLDivElement | null>>([]);
   const processProgress = ((activeProcessIndex + 1) / processSteps.length) * 100;
@@ -636,9 +633,11 @@ export default function FreeZoneLandingPage({ page }: { page: FreeZonePageInput 
 
       <section className="bg-[#07140B] px-5 py-20 text-white sm:px-7 lg:px-10 lg:py-28"><div className="mx-auto max-w-[1320px]"><SectionHeading eyebrow="Comparison" title={`${page.headingName} vs other UAE free zones`} text={publicComparisonLine(page)} tone="dark" /><div className="mt-10 overflow-hidden rounded-[8px] border border-white/12"><div className="hidden grid-cols-[0.8fr_1.1fr_1.3fr_1.1fr_0.9fr] bg-white/10 px-5 py-4 text-[11px] uppercase tracking-[0.14em] text-white/55 lg:grid"><div>Zone</div><div>Position</div><div>Best for</div><div>Office</div><div>Cost profile</div></div>{comparisons.map((item) => (<div key={item.zone} className="grid gap-3 border-t border-white/10 px-5 py-5 text-[13px] text-white/76 lg:grid-cols-[0.8fr_1.1fr_1.3fr_1.1fr_0.9fr]"><div className="text-[16px] text-white">{item.zone}</div><div>{item.position}</div><div>{item.best}</div><div>{item.office}</div><div className="text-[#C7A969]">{item.cost}</div></div>))}</div></div></section>
 
-      <section className="px-5 py-20 sm:px-7 lg:px-10 lg:py-28"><div className="mx-auto grid max-w-[1320px] gap-10 lg:grid-cols-[0.9fr_1.1fr]"><SectionHeading eyebrow="FAQs" title={`${page.headingName} company setup questions`} text={`These are the questions founders usually ask before choosing ${page.headingName} over another UAE free zone.`} /><div className="space-y-3">{faqs.map((faq) => (<details key={faq.q} className="group rounded-[8px] border border-zinc-200 bg-white p-5 shadow-sm"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] text-zinc-950"><span>{faq.q}</span><ChevronDown className="h-4 w-4 shrink-0 text-zinc-400 transition-transform group-open:rotate-180" /></summary><p className="mt-4 text-[13.5px] leading-7 text-zinc-600">{faq.a}</p></details>))}</div></div></section>
-
       <section className="px-5 pb-24 sm:px-7 lg:px-10 lg:pb-32"><div className="mx-auto overflow-hidden rounded-[8px] bg-[#07140B] text-white shadow-[0_30px_100px_rgba(7,20,11,0.18)]"><div className="grid gap-8 px-6 py-12 sm:px-10 lg:grid-cols-[1fr_0.55fr] lg:items-center lg:px-14 lg:py-16"><div><div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-mono uppercase tracking-[0.16em] text-[#C7A969]"><Coins className="h-3.5 w-3.5" /><span>Final CTA</span></div><h2 className="max-w-3xl text-[32px] leading-[1.12] text-white sm:text-[44px]">Build your {page.headingName} company with the right license, office, visa, and banking plan from day one.</h2><p className="mt-5 max-w-2xl text-[15px] leading-7 text-white/70">Send us your activity, shareholder structure, visa requirement and budget. We will map the {page.headingName} route, compare alternatives and give you a practical first-year cost view before filing.</p></div><div className="flex flex-col gap-3"><PrimaryButton onClick={quoteZone} dark>Get {publicName} Setup Quote</PrimaryButton><SecondaryButton onClick={openBlankModal} dark>Book Advisory Call</SecondaryButton></div></div></div></section>
     </div>
   );
 }
+
+
+
+

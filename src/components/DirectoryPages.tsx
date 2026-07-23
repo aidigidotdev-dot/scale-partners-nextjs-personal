@@ -24,7 +24,6 @@ import {
   CheckCircle2, 
   TrendingUp, 
   Sparkles,
-  HelpCircle,
   Building2,
   Share2,
   Mail,
@@ -127,13 +126,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
             "Establishment of Virtual Shared Flexi Desk coordinate system",
             "Immediate routing to Wio Business or ADIB for instant corporate IBAN creation"
           ],
-          advisor: advisors.tarik,
-          faq: [
-            { q: "Is a physical office required in Meydan?", a: "No. Meydan is designed around virtual and flexible workspace options. Founders operating worldwide can easily set up a company online without having to rent local property." },
-            { q: "Do members have to submit yearly financial audits?", a: "No. Meydan Free Zone officially waives the yearly corporate financial audit submission requirement for standard commercial and consultancy licenses." },
-            { q: "Can we trade physical products under Meydan?", a: "Yes. Meydan is highly flexible and permits choosing up to 3 separate activity divisions (including import/export trading) under a single base license fee." }
-          ]
-        };
+          advisor: advisors.tarik        };
 
       case 'fz-ifza':
         return {
@@ -158,12 +151,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
             "Office lease certificate issuance (virtual desk space is standard)",
             "Issuance of primary trade certificate & immediate visa clearance portal log"
           ],
-          advisor: advisors.amina,
-          faq: [
-            { q: "Can holding companies register in IFZA?", a: "Yes. IFZA is one of the most cost-effective and secure free zones in Dubai for registering intellectual property holding firms and stocks holding." },
-            { q: "Does IFZA require high capital deposits?", a: "No. While you register a capitalization value on paper (typically AED 50,000 to 100,000), submitting physical bank deposit receipts is not required." }
-          ]
-        };
+          advisor: advisors.amina        };
 
       case 'fz-dmcc':
         return {
@@ -188,12 +176,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
             "Mandatory physical flexi-office lease or physical workspace registration",
             "Corporate banking profile setup and final registry ledger authentication"
           ],
-          advisor: advisors.tarik,
-          faq: [
-            { q: "Is a physical office mandatory for DMCC?", a: "Yes. Under DMCC structural laws, companies must secure a physical office suite or an approved physical shared flexi-desk agreement in the JLT sector." },
-            { q: "Are yearly structural financial audits required?", a: "Yes. All DMCC-registered businesses must submit a yearly audited financial statement compiled by an approved local audit firm to maintain compliance." }
-          ]
-        };
+          advisor: advisors.tarik        };
 
       case 'fz-shams':
         return {
@@ -218,12 +201,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
             "Issuance of digital commercial license ledger",
             "Routing to electronic biometric screening booking for visa-seeking partners"
           ],
-          advisor: advisors.amina,
-          faq: [
-            { q: "How fast is Shams company setup?", a: "Our average setup time for Sharjah Media City is under 24 to 48 hours for standard consulting and media activities." },
-            { q: "Can dynamic bank accounts be opened in Dubai for a Sharjah entity?", a: "Yes, though the board of registry is Sharjah, the company remains fully valid across the UAE, and major Dubai banks regularly greenlight Shams accounts." }
-          ]
-        };
+          advisor: advisors.amina        };
 
       case 'fz-rakez':
         return {
@@ -248,12 +226,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
             "Establishment of dual-license mainland branch pathways (Optional)",
             "Issuance of structural factory operational permits & biometric corporate registration"
           ],
-          advisor: advisors.tarik,
-          faq: [
-            { q: "Are custom warehouses available in RAKEZ?", a: "Yes, RAKEZ provides highly affordable customizable physical warehouses, manufacturing plants, and storage facilities directly linked to ocean ports." },
-            { q: "Is visa processing cheaper in Ras Al Khaimah?", a: "Significantly. Government and medical-biometric fees are standard, but the licensing body charges much less for staff visa registrations." }
-          ]
-        };
+          advisor: advisors.tarik        };
 
       case 'fz-dwtc':
         return {
@@ -278,12 +251,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
             "Security clearing check and electronic UBO ledger registry logging",
             "Trade license delivery and rapid local bank executive priority profiling"
           ],
-          advisor: advisors.amina,
-          faq: [
-            { q: "Does DWTC require physical office leasing?", a: "Yes, DWTC centers on premium physical presence on Sheikh Zayed Road. Desk shares or offices are standard prerequisites for active trade licenses." },
-            { q: "Is DWTC aligned with high-end banking?", a: "Extremely. Having a DWTC office on Sheikh Zayed Road dramatically simplifies KYC approval times at tier-1 international banks." }
-          ]
-        };
+          advisor: advisors.amina        };
 
       // ----------------------------------------------------
       // LICENSE TYPE SPECIFIC PAGES
@@ -311,12 +279,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
             "Securing flexi desk digital logistics compliance coordinates",
             "Delivery of complete operating license with global trade clearance rights"
           ],
-          advisor: advisors.tarik,
-          faq: [
-            { q: "Can I use Stripe with a UAE E-Commerce license?", a: "Absolutely. Stripe, Checkout.com, and local networks require an active corporate trade license and a corporate bank account to activate processing pipelines." },
-            { q: "Is a physical warehouse required to dropship?", a: "No. For standard dropshipping, virtual workspace coordinates are 100% compliant and accepted by the Department of Economy and Tourism and Free Zone systems." }
-          ]
-        };
+          advisor: advisors.tarik        };
 
       case 'lic-trading':
         return {
@@ -341,12 +304,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
             "Establishing logistics warehouse agreements (Meydan, IFZA, or RAKEZ coordinates)",
             "Customs code issuance and corporate logistics clearing registry"
           ],
-          advisor: advisors.tarik,
-          faq: [
-            { q: "How do I secure a UAE Customs Code?", a: "Once your General Trading license is issued, our PRO desk submits it to Dubai Customs, securing your official customs code within 48 hours." },
-            { q: "Are separate licenses needed for distinct products?", a: "No, a General Trading license explicitly permits the import and trade of multiple non-conflicting product groups under one unified structure." }
-          ]
-        };
+          advisor: advisors.tarik        };
 
       case 'lic-commercial':
         return {
@@ -371,12 +329,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
             "Payment processing gateways integration & VAT setup logistics matching",
             "Trade license delivery and priority bank corporate profiling"
           ],
-          advisor: advisors.amina,
-          faq: [
-            { q: "Can consulting firms operate remotely?", a: "Yes. UAE service-based consultancies can operate 100% remotely with virtual desk coordinates, while maintaining standard compliance levels." },
-            { q: "Are professional services exempt from corporate tax?", a: "If your taxable income is below AED 375,000, you qualify for 0% corporate tax under Small Business Relief schemes. Over this threshold, standard corporate tax is 9%." }
-          ]
-        };
+          advisor: advisors.amina        };
 
       case 'lic-media':
         return {
@@ -401,12 +354,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
             "Issuance of Digital Freelance Permit or commercial media license",
             "Emirates ID & residency visa clearing (completed on-site or virtual scan)"
           ],
-          advisor: advisors.amina,
-          faq: [
-            { q: "Do I need a National Media Council (NMC) license?", a: "For freelancers and creative consultants, Shams and similar free zones package media activities so that separate NMC filings are not required." },
-            { q: "Can a freelancer open a corporate bank account in the UAE?", a: "Yes. Our team structures your creative business registration so that you can open a dedicated corporate bank account as a corporate entity." }
-          ]
-        };
+          advisor: advisors.amina        };
 
       case 'lic-industrial':
         return {
@@ -431,12 +379,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
             "Factory facility installation monitoring alongside municipal inspectors",
             "Trade license delivery and final logistics activation"
           ],
-          advisor: advisors.tarik,
-          faq: [
-            { q: "Is municipal inspection mandatory?", a: "Yes. All physical industrial processing and assembly plants must pass standard local safety, waste, and fire inspections prior to operational launch." },
-            { q: "Can products be sold directly to the UAE domestic market?", a: "Yes. However, you must route local domestic sales through a licensed mainland distributor, or hold a dual-licensing mainland branch permission." }
-          ]
-        };
+          advisor: advisors.tarik        };
 
       case 'lic-holding':
         return {
@@ -461,12 +404,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
             "Issuance of secure holding corporate coordinates & tax certificates",
             "Routing to international banking desks for global asset custodian setup"
           ],
-          advisor: advisors.amina,
-          faq: [
-            { q: "Does a UAE holding company pay corporate taxes?", a: "No. Dividends and capital gains received from qualifying retail participations are generally exempted from the UAE's 9% corporate tax." },
-            { q: "Is a physical office required to manage global shares?", a: "No. UAE holding companies and SPVs operate highly efficiently on virtual desk logs without requiring active commercial space." }
-          ]
-        };
+          advisor: advisors.amina        };
 
       default:
         return null;
@@ -840,29 +778,7 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
                 ))}
               </div>
             </div>
-
-            {/* Dynamic FAQs Section Specific to target setup - COMPLIANT SHADED CONTAINER */}
-            <div className="bg-gradient-to-br from-[#22C55E]/5 via-zinc-50/40 to-white rounded-2xl border border-[#22C55E]/20 p-6 sm:p-8 space-y-5 shadow-sm relative overflow-hidden">
-              <div className="absolute bottom-0 right-0 w-32 h-32 bg-[#22C55E]/5 rounded-full blur-2xl"></div>
-              <div className="flex items-center space-x-2 text-zinc-800 font-semibold text-[16px] pb-3 border-b border-zinc-200/60 relative z-10">
-                <HelpCircle className="w-4 h-4 text-gold-500" />
-                <h2>Registration FAQs & Compliance Guide</h2>
-              </div>
-
-              <div className="space-y-3.5 relative z-10">
-                {content.faq.map((faq_item, ind) => (
-                  <div key={ind} className="bg-white/95 backdrop-blur-xs border border-zinc-200/60/60 p-4.5 rounded-xl hover:border-[#22C55E]/40 shadow-2xs hover:shadow-xs transition-all space-y-2">
-                    <h3 className="text-[13.5px] font-bold text-zinc-900 flex items-start space-x-2">
-                      <span className="text-gold-650 font-mono font-bold">Q:</span>
-                      <span>{faq_item.q}</span>
-                    </h3>
-                    <p className="text-[12.5px] text-zinc-650 leading-relaxed font-sans pl-5 border-l border-gold-450/30">
-                      {faq_item.a}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>            {/* INTERACTIVE COMPONENT: CHOOSE ACTIVITY FORM & PRICE CALCULATOR */}
+            {/* INTERACTIVE COMPONENT: CHOOSE ACTIVITY FORM & PRICE CALCULATOR */}
             {page.startsWith('fz-') && (
               <div id="fz_interactive_calculator_card" className="bg-gradient-to-tr from-[#0C2E1A] via-[#12B76A] to-[#22C55E] text-white rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl border-0 relative overflow-hidden text-left">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
@@ -1386,3 +1302,6 @@ export default function DirectoryPages({ page, setPage, onApplySetup, openContac
     </div>
   );
 }
+
+
+

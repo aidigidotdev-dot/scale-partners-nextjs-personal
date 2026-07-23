@@ -1,6 +1,7 @@
 import React from 'react';
 import Script from 'next/script';
 import { QuoteProvider } from '@/src/components/QuoteProvider';
+import ClientShell from '@/src/components/ClientShell';
 import '@/src/index.css';
 
 export const metadata = {
@@ -68,9 +69,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           src="https://salesiq.zoho.com/widget?wc=siq4137c3aa6fde9d2a980db1b3214bc8dbec0fed867d6ad29eb87ea634eab0d233"
           strategy="afterInteractive"
         />
-        <QuoteProvider>{children}</QuoteProvider>
+        <QuoteProvider><ClientShell>{children}</ClientShell></QuoteProvider>
       </body>
     </html>
   );
 }
+
 

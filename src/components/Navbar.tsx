@@ -59,6 +59,24 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
 
   const pageHref = (pageId: string) => pageId === 'home' ? '/' : '/' + pageId;
 
+  const draftFreeZoneIds = new Set([
+    'fz-masdar-city',
+    'fz-twofour54',
+    'fz-adafz',
+    'fz-srtip',
+    'fz-saif-zone',
+    'fz-spc',
+    'fz-hfza',
+    'fz-ffz',
+    'fz-fcc',
+    'fz-foiz',
+    'fz-ajman-free-zone',
+    'fz-ajman-media-city',
+    'fz-ajman-nuventures-centre',
+    'fz-al-zorah',
+    'fz-ajman-car-souq',
+  ]);
+
   const freeZoneMenuGroups: FreeZoneGroup[] = [
     {
       tier: 'Dubai Free Zones',
@@ -122,8 +140,12 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
     },
   ];
 
-  const allFreeZoneIds = freeZoneMenuGroups.flatMap((group) => group.items.map((item) => item.id));
-  const activeFreeZoneMenuGroup = freeZoneMenuGroups.find((group) => group.tier === activeFreeZoneGroup) ?? freeZoneMenuGroups[0];
+  const publishedFreeZoneMenuGroups = freeZoneMenuGroups
+    .map((group) => ({ ...group, items: group.items.filter((item) => !draftFreeZoneIds.has(item.id)) }))
+    .filter((group) => group.items.length > 0);
+
+  const allFreeZoneIds = publishedFreeZoneMenuGroups.flatMap((group) => group.items.map((item) => item.id));
+  const activeFreeZoneMenuGroup = publishedFreeZoneMenuGroups.find((group) => group.tier === activeFreeZoneGroup) ?? publishedFreeZoneMenuGroups[0];
 
   const navigationItems: Array<{
     label: string;
@@ -241,7 +263,7 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
 
                     <div className="grid grid-cols-[245px_1fr] gap-4">
                       <div className="space-y-1 border-r border-zinc-100 pr-4">
-                        {freeZoneMenuGroups.map((group) => {
+                        {publishedFreeZoneMenuGroups.map((group) => {
                           const isActiveGroup = activeFreeZoneMenuGroup.tier === group.tier;
                           const hasCurrentPage = group.items.some((item) => item.id === currentPage);
                           return (
@@ -412,7 +434,7 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
 
                 {category.id === 'freezones_mega' ? (
                   <div className="space-y-3">
-                    {freeZoneMenuGroups.map((group) => (
+                    {publishedFreeZoneMenuGroups.map((group) => (
                       <div key={group.tier} className="rounded-xl border border-zinc-100 bg-zinc-50/60 p-2">
                         <div className="flex items-center gap-2 px-2 py-1.5 text-[12px] font-semibold text-[#08854C]">
                           <MapPin className="h-3.5 w-3.5" />
@@ -474,3 +496,4 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
     </header>
   );
 }
+
