@@ -7,7 +7,6 @@ export default function LeadershipTeam() {
       name: "Selim James Ellouze",
       role: "Partner & Chief Growth Officer at Four Roads Group",
       experience: "20+ Years UAE, Europe & North Africa",
-      desc: "International growth executive and strategic advisor with over 20 years of experience across the UAE, Europe, and North Africa. Leads strategic growth, partnerships, and investment initiatives, helping businesses, entrepreneurs, and investors unlock opportunities, scale with confidence, and create sustainable long-term value.",
       avatarText: "SJE",
       image: "/assets/selim-james-ellouze.jpeg",
       badge: "Partner & Chief Growth Officer",
@@ -17,7 +16,6 @@ export default function LeadershipTeam() {
       name: "Iqbal Hussain",
       role: "Group CEO",
       experience: "Executive Leadership",
-      desc: "Group CEO overseeing the Scale Partners leadership desk, strategic direction, client trust standards, and long-term corporate advisory growth.",
       avatarText: "IH",
       image: "/assets/iqbal-hussain.png",
       badge: "Group CEO",
@@ -27,7 +25,6 @@ export default function LeadershipTeam() {
       name: "Khizer Abbas",
       role: "Founder and Managing Director",
       experience: "Founder Leadership",
-      desc: "Founder and Managing Director guiding company formation delivery, partner coordination, operational discipline, and client advisory standards.",
       avatarText: "KA",
       image: "/assets/khizer-abbas.jpg",
       badge: "Founder & Managing Director",
@@ -37,7 +34,6 @@ export default function LeadershipTeam() {
       name: "S. Mohana Kumar",
       role: "Partner AML and Compliance",
       experience: "AML & Compliance Partner",
-      desc: "Partner for AML and compliance, supporting client onboarding, regulatory file discipline, due diligence controls, and compliance-ready advisory workflows.",
       avatarText: "SMK",
       image: "/assets/s-mohana-kumar.jpg",
       badge: "Partner AML & Compliance",
@@ -114,11 +110,6 @@ export default function LeadershipTeam() {
                     {leader.experience}
                   </p>
                 </div>
-
-                <p className="text-[12.5px] text-zinc-300 leading-relaxed font-sans line-clamp-4 text-left font-light">
-                  {leader.desc}
-                </p>
-
               </div>
 
               {/* Specialty & Links block */}
