@@ -29,7 +29,7 @@ export default function LeadershipTeam() {
       experience: "Founder Leadership",
       desc: "Founder and Managing Director guiding company formation delivery, partner coordination, operational discipline, and client advisory standards.",
       avatarText: "KA",
-      image: "/assets/khizer-abbas.jfif",
+      image: "/assets/khizer-abbas.jpg",
       badge: "Founder & Managing Director",
       specialty: "Company Formation & Operations Leadership"
     },
@@ -39,7 +39,7 @@ export default function LeadershipTeam() {
       experience: "AML & Compliance Partner",
       desc: "Partner for AML and compliance, supporting client onboarding, regulatory file discipline, due diligence controls, and compliance-ready advisory workflows.",
       avatarText: "SMK",
-      image: "/assets/s-mohana-kumar.jfif",
+      image: "/assets/s-mohana-kumar.jpg",
       badge: "Partner AML & Compliance",
       specialty: "AML, Due Diligence & Compliance Controls"
     }
