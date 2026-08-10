@@ -14,34 +14,34 @@ export default function LeadershipTeam() {
       specialty: "Strategic Growth, Partnerships & Investment"
     },
     {
-      name: "Advocate Tarik Al-Mehairi",
-      role: "Senior Legal & Corporate Structuring Advisor",
-      experience: "16+ Years GCC Government Advisor",
-      desc: "Specializes in design of multi-jurisdictional holding SPVs, dual-registry structures, and complete UAE corporate tax exemption shielding protocols under OECD indexes.",
-      avatarText: "TA",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop",
-      badge: "Founder & Equity Partner",
-      specialty: "Holding SPVs & OECD Compliance"
+      name: "Iqbal Hussain",
+      role: "Group CEO",
+      experience: "Executive Leadership",
+      desc: "Group CEO overseeing the Scale Partners leadership desk, strategic direction, client trust standards, and long-term corporate advisory growth.",
+      avatarText: "IH",
+      image: "/assets/iqbal-hussain.png",
+      badge: "Group CEO",
+      specialty: "Executive Strategy & Group Leadership"
     },
     {
-      name: "Zayn Al-Sayegh",
-      role: "Director of Banking & Treasury Relations",
-      experience: "Ex-VP Wealth Strategist, HSBC Middle East",
-      desc: "Coordinates direct fast-track compliance reviews with global and local UAE financial institutions, securing high-tier multi-currency bank gates.",
-      avatarText: "ZS",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop",
-      badge: "VIP Banking Strategist",
-      specialty: "High-Net-Worth VIP Banking Gateway"
+      name: "Khizer Abbas",
+      role: "Founder and Managing Director",
+      experience: "Founder Leadership",
+      desc: "Founder and Managing Director guiding company formation delivery, partner coordination, operational discipline, and client advisory standards.",
+      avatarText: "KA",
+      image: "/assets/khizer-abbas.jfif",
+      badge: "Founder & Managing Director",
+      specialty: "Company Formation & Operations Leadership"
     },
     {
-      name: "Faisal Al-Suwaidi",
-      role: "Director of Government PRO & Ministries Liaison",
-      experience: "Former Senior Officer, Ministerial Registry",
-      desc: "Maintains direct administrative coordination channels with the Ministry of Economy, Dubai Economy (DET), and official Free Zone registrars.",
-      avatarText: "FS",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop",
-      badge: "Senior Government Liaison",
-      specialty: "DET & GDRFA Fast-track clearances"
+      name: "S. Mohana Kumar",
+      role: "Partner AML and Compliance",
+      experience: "AML & Compliance Partner",
+      desc: "Partner for AML and compliance, supporting client onboarding, regulatory file discipline, due diligence controls, and compliance-ready advisory workflows.",
+      avatarText: "SMK",
+      image: "/assets/s-mohana-kumar.jfif",
+      badge: "Partner AML & Compliance",
+      specialty: "AML, Due Diligence & Compliance Controls"
     }
   ];
 
