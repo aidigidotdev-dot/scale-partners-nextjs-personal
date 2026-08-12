@@ -26,7 +26,6 @@ import {
 } from 'lucide-react';
 import WhyChooseUs from './WhyChooseUs';
 import SetupSteps from './SetupSteps';
-import LeadershipTeam from './LeadershipTeam';
 import GovernmentDepartments from './GovernmentDepartments';
 import OurPodcast from './OurPodcast';
 
@@ -1168,7 +1167,6 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
 
 
       {/* Dynamic Leadership, Registries, Media, and Educational sections */}
-      <LeadershipTeam />
       <GovernmentDepartments />
       <OurPodcast />
 
