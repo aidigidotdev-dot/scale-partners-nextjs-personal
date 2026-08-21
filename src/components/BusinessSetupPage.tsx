@@ -282,11 +282,11 @@ export default function BusinessSetupPage({ type, setPage, openContactModal, onS
               
               <div className="pt-4 border-t border-zinc-200/60/80 flex flex-wrap gap-3.5 relative z-10">
                 <button
-                  id={`calc_btn_pre_${type}`}
-                  onClick={() => setPage('calculator')}
+                  id={`cost_guidance_btn_pre_${type}`}
+                  onClick={openContactModal}
                   className="bg-brand-grad text-white text-[13px] font-bold px-5 py-3 rounded-xl flex items-center space-x-1.5 transition-all shadow-sm border-0 hover:scale-[1.015] cursor-pointer"
                 >
-                  <span>Calculate Setup Fees</span>
+                  <span>Request Setup Fees</span>
                   <ArrowRight className="w-3.5 h-3.5 text-gold-350" />
                 </button>
                 <button

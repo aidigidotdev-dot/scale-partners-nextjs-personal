@@ -912,7 +912,7 @@ export const freeZonePages: FreeZonePageInput[] = [
 
 export const draftFreeZoneSlugs = new Set(freeZonePages.filter((page) => page.status === 'draft').map((page) => page.slug));
 
-export const publishedFreeZonePages = freeZonePages.filter((page) => page.status !== 'draft');
+export const publishedFreeZonePages: FreeZonePageInput[] = [];
 
 export const freeZonePagesBySlug: Record<string, FreeZonePageInput> = publishedFreeZonePages.reduce((acc, page) => {
   acc[page.slug] = page;

@@ -74,7 +74,7 @@ export default function ClientShell({ children }: { children: React.ReactNode })
         {pageId === 'home' && <RecentBlogs />}
 
         {/* Structured Site Directory Footer */}
-        <Footer setPage={setPage} openContactModal={openBlankModal} />
+        <Footer openContactModal={openBlankModal} />
 
         {/* PREMIUM GLASSMORPHIC SLIDE OVERLAY MODAL */}
         {modalOpen && (

@@ -43,7 +43,7 @@ declare global {
   }
 }
 
-export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelpProps) {
+export default function SovereignFloatingHelp({ setPage: _setPage }: SovereignFloatingHelpProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [leadCaptured, setLeadCaptured] = useState(false);
   
@@ -205,7 +205,7 @@ export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelp
         ...prev,
         {
           role: 'model',
-          text: "I apologize, our secure corporate server is undergoing brief periodic compliance audits. Please feel free to calculate your pricing using our corporate cost tool in the meantime!",
+          text: "I apologize, our secure corporate server is undergoing brief periodic compliance audits. Please share your setup details here and our advisory desk will guide the next step.",
           time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         }
       ]);
@@ -420,12 +420,7 @@ export default function SovereignFloatingHelp({ setPage }: SovereignFloatingHelp
               </form>
               
               <div className="flex items-center justify-between text-[10px] text-zinc-400 font-mono px-1">
-                <button 
-                  onClick={() => setPage('calculator')}
-                  className="hover:underline text-gold-650 font-semibold"
-                >
-                  View Cost Calculator
-                </button>
+                <span className="text-zinc-400">Advisory desk active</span>
                 <button 
                   onClick={resetLeadState}
                   className="hover:underline text-zinc-500 inline-flex items-center space-x-1"

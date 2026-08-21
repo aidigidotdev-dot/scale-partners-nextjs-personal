@@ -25,7 +25,7 @@ const policySections = [
     items: [
       "Contact details such as name, email address, phone number, WhatsApp number, and preferred communication channel.",
       "Business details such as proposed activity, jurisdiction interest, shareholder structure, visa needs, office preference, and banking requirements.",
-      "Quote or calculator inputs submitted through the website, including selected activity, jurisdiction, visa count, and workspace option.",
+      "Quote or enquiry inputs submitted through the website, including selected activity, jurisdiction, visa count, and workspace option.",
       "Communication records from forms, email, phone calls, WhatsApp, CRM notes, and meeting follow-ups.",
       "Basic technical data such as browser, device, IP address, pages visited, cookie preferences, and analytics events where permitted.",
     ],

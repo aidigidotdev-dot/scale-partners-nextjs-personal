@@ -119,10 +119,10 @@ export default function BusinessSetupDubaiPage() {
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={() => setPage("calculator")}
+                  onClick={openBlankModal}
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-7 py-4 text-[14px] font-semibold text-white backdrop-blur-md transition-all hover:bg-white/15 active:scale-95"
                 >
-                  Estimate Setup Cost
+                  Request Cost Guidance
                 </button>
               </div>
 

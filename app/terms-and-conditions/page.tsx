@@ -39,7 +39,7 @@ const termsSections = [
   },
   {
     title: "Quotations And Cost Estimates",
-    text: "Any quotation, package, calculator output, or cost estimate shown on the website or shared during enquiry handling is indicative unless confirmed in a written proposal.",
+    text: "Any quotation, package, or cost estimate shown on the website or shared during enquiry handling is indicative unless confirmed in a written proposal.",
     items: [
       "Authority fees, office fees, visa fees, third-party charges, government charges, courier fees, bank charges, and tax can vary.",
       "Quoted totals may change if the activity, shareholder structure, visa requirement, office route, urgency, or authority request changes.",

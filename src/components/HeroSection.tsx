@@ -911,19 +911,7 @@ export default function HeroSection({ setPage, openContactModal }: HeroSectionPr
               <div className="flex animate-marquee gap-7 items-center">
                 {[...freeZoneLogos, ...freeZoneLogos].map((logo, indx) => {
                   const pageIdMapping: Record<string, string> = {
-                    Meydan: 'fz-meydan',
-                    IFZA: 'fz-ifza',
                     DMCC: 'fz-dmcc',
-                    DIFC: 'fz-dwtc',
-                    ADGM: 'fz-dwtc',
-                    DAFZ: 'fz-dwtc',
-                    JAFZA: 'fz-dwtc',
-                    DSO: 'fz-dwtc',
-                    DWTC: 'fz-dwtc',
-                    Shams: 'fz-shams',
-                    RAKEZ: 'fz-rakez',
-                    SRTIP: 'fz-shams',
-                    SAIF: 'fz-shams'
                   };
                   const targetPage = pageIdMapping[logo.name] || 'setup-freezone';
 

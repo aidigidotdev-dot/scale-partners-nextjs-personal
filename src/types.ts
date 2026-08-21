@@ -15,7 +15,6 @@ export type PageId =
   | 'finance-tax'
   | 'finance-accounting'
   | 'finance-banking'
-  | 'calculator'
   | 'contact'
   | 'about-us'
   | 'privacy-policy'

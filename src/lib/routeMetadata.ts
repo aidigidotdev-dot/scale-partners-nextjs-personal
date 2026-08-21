@@ -73,11 +73,6 @@ export const routeMetadata = {
     'UAE business banking support for company setup files, bank-ready narratives, activity evidence, compliance documents and account applications.',
     '/finance-banking',
   ),
-  calculator: metadata(
-    'UAE Business Setup Cost Calculator | Scale Partners',
-    'Estimate UAE company setup costs across mainland, free zone and offshore routes with visa, office and activity planning assumptions.',
-    '/calculator',
-  ),
   contact: metadata(
     'Contact Scale Partners | UAE Corporate Advisory Desk',
     'Contact Scale Partners for UAE business setup, free zone selection, visa, tax, accounting and banking advisory support.',
@@ -102,11 +97,6 @@ export const routeMetadata = {
     'DMCC Company Formation in Dubai | Scale Partners',
     'Set up a DMCC company in Dubai with licensing, office, visa, banking, renewal and compliance support from Scale Partners.',
     '/fz-dmcc',
-  ),
-  'fz-rakez': metadata(
-    'RAKEZ Company Formation | Scale Partners UAE',
-    'RAKEZ company setup guidance for Ras Al Khaimah free zone licensing, flexi desk or facility planning, visas, banking and renewals.',
-    '/fz-rakez',
   ),
   'lic-commercial': metadata(
     'Commercial License UAE | Scale Partners Dubai',
@@ -143,7 +133,6 @@ export const routeMetadata = {
 export type RouteMetadataKey = keyof typeof routeMetadata;
 
 export const legacyDirectorySlugs: RouteMetadataKey[] = [
-  'fz-rakez',
   'lic-commercial',
   'lic-trading',
   'lic-media',

@@ -6,7 +6,6 @@ import HeroSection from './HeroSection';
 import BusinessSetupPage from './BusinessSetupPage';
 import VisaPage from './VisaPage';
 import FinancePage from './FinancePage';
-import CostCalculator from './CostCalculator';
 import { useQuote } from './QuoteProvider';
 import type { PageId } from '../types';
 
@@ -15,7 +14,7 @@ type RoutePageClientProps = {
 };
 
 export default function RoutePageClient({ page }: RoutePageClientProps) {
-  const { openBlankModal, handleFreeZoneSelected, handleQuoteCalculated } = useQuote();
+  const { openBlankModal, handleFreeZoneSelected } = useQuote();
   const router = useRouter();
 
   const setPage = (nextPage: PageId) => {
@@ -64,10 +63,6 @@ export default function RoutePageClient({ page }: RoutePageClientProps) {
 
   if (page === 'finance-banking') {
     return <FinancePage type="banking" setPage={setPage} openContactModal={openBlankModal} />;
-  }
-
-  if (page === 'calculator') {
-    return <CostCalculator onQuoteSubmit={handleQuoteCalculated} openContactModal={openBlankModal} />;
   }
 
   return null;

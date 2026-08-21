@@ -16,7 +16,6 @@ import {
   Building2,
   Compass,
   Landmark,
-  Calculator,
   Award,
   Users,
   Scale,
@@ -59,23 +58,7 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
 
   const pageHref = (pageId: string) => pageId === 'home' ? '/' : '/' + pageId;
 
-  const draftFreeZoneIds = new Set([
-    'fz-masdar-city',
-    'fz-twofour54',
-    'fz-adafz',
-    'fz-srtip',
-    'fz-saif-zone',
-    'fz-spc',
-    'fz-hfza',
-    'fz-ffz',
-    'fz-fcc',
-    'fz-foiz',
-    'fz-ajman-free-zone',
-    'fz-ajman-media-city',
-    'fz-ajman-nuventures-centre',
-    'fz-al-zorah',
-    'fz-ajman-car-souq',
-  ]);
+  const liveFreeZoneIds = new Set(['fz-dmcc']);
 
   const freeZoneMenuGroups: FreeZoneGroup[] = [
     {
@@ -141,7 +124,7 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
   ];
 
   const publishedFreeZoneMenuGroups = freeZoneMenuGroups
-    .map((group) => ({ ...group, items: group.items.filter((item) => !draftFreeZoneIds.has(item.id)) }))
+    .map((group) => ({ ...group, items: group.items.filter((item) => liveFreeZoneIds.has(item.id)) }))
     .filter((group) => group.items.length > 0);
 
   const allFreeZoneIds = publishedFreeZoneMenuGroups.flatMap((group) => group.items.map((item) => item.id));
@@ -161,7 +144,6 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
         { name: 'Mainland Company Setup', description: 'Maximum freedom, trade directly with UAE local market with 100% ownership.', icon: Building2, id: 'setup-mainland' },
         { name: 'Free Zone Ecosystems', description: 'Zero corporate tax zones, 100% import/export tax exemption, simplified setup.', icon: Globe, id: 'setup-freezone' },
         { name: 'Offshore Vehicles', description: 'International operations, maximum privacy, physical space not required.', icon: Compass, id: 'setup-offshore' },
-        { name: 'Cost Estimator Engine', description: 'Tailor-make your corporate license quote with our dynamic budget calculator.', icon: Calculator, id: 'calculator' },
       ],
     },
     {
@@ -370,15 +352,6 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
               </div>
             ))}
 
-            <button
-              id="nav_item_calculator"
-              onClick={() => handleLinkClick('calculator')}
-              className={`px-3 xl:px-4 py-2 rounded-full font-sans text-[14px] xl:text-[15px] nav-header-link transition-colors whitespace-nowrap ${
-                currentPage === 'calculator' ? 'text-gold-600 bg-gold-500/5' : 'text-zinc-600 hover:text-zinc-900'
-              }`}
-            >
-              Cost Estimator
-            </button>
           </nav>
 
           <div className="hidden lg:flex items-center space-x-4">
@@ -415,14 +388,6 @@ export default function Navbar({ currentPage, setPage, openContactModal }: Navba
                 }`}
               >
                 Corporate Overview
-              </button>
-              <button
-                onClick={() => handleLinkClick('calculator')}
-                className={`w-full text-left px-3 py-2.5 rounded-xl text-[14px] font-medium flex items-center ${
-                  currentPage === 'calculator' ? 'bg-gold-50 text-gold-700 font-semibold' : 'text-zinc-700'
-                }`}
-              >
-                Cost Estimator Engine
               </button>
             </div>
 
